@@ -7,9 +7,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>eWarranty.iOS.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list</SymbolFile>
+      <SymbolFile>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list</SymbolFile>
       <DSymName>eWarranty.iOS.app.dSYM</DSymName>
-      <SourceProjectPath>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS</SourceProjectPath>
+      <SourceProjectPath>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS</SourceProjectPath>
     </_PostProcessingItem>
   </ItemGroup>
 </Project>

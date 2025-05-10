@@ -8,3 +8,13 @@
 /Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.csproj.CoreCompileInputs.cache
 /Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.dll
 /Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.pdb
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/bin/Debug/netstandard2.1/eWarranty.Core.deps.json
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/bin/Debug/netstandard2.1/eWarranty.Core.dll
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/bin/Debug/netstandard2.1/eWarranty.Core.pdb
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.csproj.AssemblyReference.cache
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.AssemblyInfoInputs.cache
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.AssemblyInfo.cs
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.csproj.CoreCompileInputs.cache
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.dll
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/Debug/netstandard2.1/eWarranty.Core.pdb

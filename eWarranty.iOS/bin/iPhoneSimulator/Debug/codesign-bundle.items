@@ -12,7 +12,7 @@
       <CodesignDisableTimestamp>true</CodesignDisableTimestamp>
       <CodesignKeychain></CodesignKeychain>
       <CodesignUseHardenedRuntime></CodesignUseHardenedRuntime>
-      <SourceProjectPath>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS</SourceProjectPath>
+      <SourceProjectPath>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS</SourceProjectPath>
     </_CodesignBundle>
   </ItemGroup>
 </Project>

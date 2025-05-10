@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mastcgroup.ciaa" android:versionName="1.0.53" android:versionCode="1053">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mastcgroup.ciaa" android:versionName="1.0.54" android:versionCode="1054">
 	<uses-sdk android:minSdkVersion="22" android:targetSdkVersion="30" />
 	<application android:label="Panasonic Smart Care" android:theme="@style/MainTheme" android:supportsRtl="true" android:networkSecurityConfig="@xml/network_security_config" android:icon="@drawable/pslogo">
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDV0SlLSl92Tj7yUbPzYF98vGfbm7KObM8" />

@@ -6,10 +6,10 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon60x60@2x.png</string>
-			<string>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon76x76@2x~ipad.png</string>
-			<string>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/Assets.car</string>
-			<string>/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/partial-info.plist</string>
+			<string>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon60x60@2x.png</string>
+			<string>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/AppIcon76x76@2x~ipad.png</string>
+			<string>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/bundle/Assets.car</string>
+			<string>/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/iPhoneSimulator/Debug/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>

@@ -25,11 +25,11 @@ androidgeneratejnimarshalmethods=false
 os=unix
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
-_nugetassetstimestamp=638824779276001598
+_nugetassetstimestamp=638824900040733724
 typemapkind=strings-asm
 androidsupportedabis=arm64-v8a
 armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
-projectfullpath=/users/imacslim2015/projects/panasmartcare/ewarranty/ewarranty.android/ewarranty.android.csproj
+projectfullpath=/users/imacslim2015/projects/panasmartcaregithub/ewarranty/ewarranty.android/ewarranty.android.csproj

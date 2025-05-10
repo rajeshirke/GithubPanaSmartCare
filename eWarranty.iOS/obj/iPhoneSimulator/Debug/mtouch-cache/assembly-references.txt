@@ -1,6 +1,6 @@
-/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/bin/iPhoneSimulator/Debug/eWarranty.iOS.exe
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/bin/iPhoneSimulator/Debug/eWarranty.iOS.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/16.4.0.23/lib/mono/Xamarin.iOS/mscorlib.dll
-/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/bin/Debug/netstandard2.1/eWarranty.dll
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/bin/Debug/netstandard2.1/eWarranty.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/16.4.0.23/lib/mono/Xamarin.iOS/Facades/netstandard.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/16.4.0.23/lib/mono/Xamarin.iOS/System.Core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/16.4.0.23/lib/mono/Xamarin.iOS/System.dll
@@ -31,7 +31,7 @@
 /Users/imacslim2015/.nuget/packages/xamarin.firebase.ios.instanceid/4.3.3/lib/xamarinios10/Firebase.InstanceID.dll
 /Users/imacslim2015/.nuget/packages/xamarin.essentials/1.7.1/lib/xamarinios10/Xamarin.Essentials.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/16.4.0.23/lib/mono/Xamarin.iOS/OpenTK-1.0.dll
-/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/bin/Debug/netstandard2.1/eWarranty.Core.dll
+/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/bin/Debug/netstandard2.1/eWarranty.Core.dll
 /Users/imacslim2015/.nuget/packages/newtonsoft.json/13.0.1/lib/netstandard2.0/Newtonsoft.Json.dll
 /Users/imacslim2015/.nuget/packages/shiny.core/2.0.0.2639/lib/xamarinios10/Shiny.Core.dll
 /Users/imacslim2015/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/5.0.0/lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
