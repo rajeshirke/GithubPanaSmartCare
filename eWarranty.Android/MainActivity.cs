@@ -24,7 +24,7 @@ using Plugin.LocalNotification;
 
 namespace eWarranty.Droid
 {//eWarranty
-    [Activity(Label = "CIAA", Icon = "@mipmap/masticon", Theme = "@style/MainTheme",ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Panasonic Smart Care", Icon = "@mipmap/icon", Theme = "@style/MainTheme",ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public static int StatusBarHeight;

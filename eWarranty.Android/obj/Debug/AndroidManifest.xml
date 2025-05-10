@@ -5,7 +5,7 @@
     Changes to this file may cause incorrect behavior and will be lost if
     the contents are regenerated.
     -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mastcgroup.ciaa" android:versionName="1.0.53" android:versionCode="1053">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mastcgroup.ciaa" android:versionName="1.0.54" android:versionCode="1054">
   <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -34,8 +34,8 @@
 			</intent-filter>
 		</service>-->
     <receiver android:enabled="true" android:label="Local Notifications Broadcast Receiver" android:name="crc640e161908d53a0292.AlarmHandler" />
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/masticon" android:label="CIAA" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc64de3b6a2383bb0084.MainActivity" />
-    <activity android:icon="@drawable/masticon" android:noHistory="true" android:theme="@style/MyTheme.Splash" android:name="crc64de3b6a2383bb0084.SplashActivity" android:exported="true">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Panasonic Smart Care" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc64de3b6a2383bb0084.MainActivity" />
+    <activity android:icon="@drawable/pslogo" android:noHistory="true" android:theme="@style/MyTheme.Splash" android:name="crc64de3b6a2383bb0084.SplashActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

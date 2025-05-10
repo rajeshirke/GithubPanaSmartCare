@@ -23,7 +23,7 @@
                         <RowDefinition Height="auto"/>                    
                     </Grid.RowDefinitions>             
             
-                    <Image Margin="30,0,30,0"  Source="ciaaloginlogo.png" Aspect="AspectFit" Grid.Row="0">
+                    <Image Margin="30,0,30,0"  Source="pslogo.png" Aspect="AspectFit" Grid.Row="0">
                         <Image.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android">140</On>

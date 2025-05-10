@@ -8,7 +8,7 @@
         android:right="50dp"
        >
     <bitmap
-        android:src="@drawable/ciaasplashscreen"
+        android:src="@drawable/landing"
         android:tileMode="disabled"
         
         android:gravity="center"/>

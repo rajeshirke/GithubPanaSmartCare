@@ -2,13 +2,12 @@
 using Android.App;
 using Android.Content;
 using Android.OS;
-
 using Android.Util;
 using AndroidX.AppCompat.App;
 
 namespace eWarranty.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", Icon = "@drawable/masticon", MainLauncher = true, NoHistory = true)]
+    [Activity(Theme = "@style/MyTheme.Splash", Icon = "@drawable/pslogo", MainLauncher = true, NoHistory = true)]
     public class SplashActivity: AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof (SplashActivity).Name;

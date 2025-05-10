@@ -15,7 +15,7 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
         
-                <Image Source="ciaaloginlogo.png" VerticalOptions="Start" Aspect="AspectFit" Grid.Row="0" Grid.RowSpan="2"   >
+                <Image Source="pslogo.png" VerticalOptions="Start" Aspect="AspectFit" Grid.Row="0" Grid.RowSpan="2"   >
                  <Image.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="Android">0,5,0,0</On>

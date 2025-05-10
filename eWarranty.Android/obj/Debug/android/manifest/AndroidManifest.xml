@@ -5,7 +5,7 @@
     Changes to this file may cause incorrect behavior and will be lost if
     the contents are regenerated.
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.mastcgroup.ciaa" android:versionCode="1053" android:versionName="1.0.53">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.mastcgroup.ciaa" android:versionCode="1054" android:versionName="1.0.54">
   <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -43,8 +43,8 @@
 		</service>
         -->
     <receiver android:name="crc640e161908d53a0292.AlarmHandler" android:enabled="true" android:label="Local Notifications Broadcast Receiver" />
-    <activity android:name="crc64de3b6a2383bb0084.MainActivity" android:configChanges="orientation|screenSize" android:icon="@mipmap/masticon" android:label="CIAA" android:screenOrientation="portrait" android:theme="@style/MainTheme" />
-    <activity android:name="crc64de3b6a2383bb0084.SplashActivity" android:exported="true" android:icon="@drawable/masticon" android:noHistory="true" android:theme="@style/MyTheme.Splash">
+    <activity android:name="crc64de3b6a2383bb0084.MainActivity" android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Panasonic Smart Care" android:screenOrientation="portrait" android:theme="@style/MainTheme" />
+    <activity android:name="crc64de3b6a2383bb0084.SplashActivity" android:exported="true" android:icon="@drawable/pslogo" android:noHistory="true" android:theme="@style/MyTheme.Splash">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

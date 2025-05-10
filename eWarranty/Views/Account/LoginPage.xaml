@@ -65,7 +65,7 @@
                          <Path Grid.Row="0" Data="m202.98501,143.28501l218.99999,0l0,132.40452c-107.49999,-46 -109.49999,50.44855 -218.99999,21.78461l0,-154.18913z"
                     Margin="-20"  Fill="{StaticResource BlueColor}" Aspect="Fill" Stroke="{StaticResource BlueColor}"></Path>
 
-                        <Image Source="ciaaloginlogo.png" VerticalOptions="Start"  Aspect="AspectFit" Grid.Row="0" Grid.RowSpan="2" ><!--ciaaloginlogo-->
+                        <Image Source="pslogo.png" VerticalOptions="Start"  Aspect="AspectFit" Grid.Row="0" Grid.RowSpan="2" ><!--pslogo-->
                             <Image.HeightRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android">120</On>

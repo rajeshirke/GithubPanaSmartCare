@@ -87,8 +87,8 @@ namespace eWarranty.Droid.DependencyServices
                 .SetContentIntent(pendingIntent)
                 .SetContentTitle(title)
                 .SetContentText(message)
-                .SetLargeIcon(BitmapFactory.DecodeResource(AndroidApp.Context.Resources, Resource.Drawable.ciaaloginlogo))
-                .SetSmallIcon(Resource.Drawable.ciaaloginlogo)
+                .SetLargeIcon(BitmapFactory.DecodeResource(AndroidApp.Context.Resources, Resource.Drawable.pslogo))
+                .SetSmallIcon(Resource.Drawable.pslogo)
                 .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate);
 
             Notification notification = builder.Build();
