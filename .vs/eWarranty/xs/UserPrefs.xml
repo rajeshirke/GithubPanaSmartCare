@@ -1,11 +1,8 @@
-﻿<Properties StartupConfiguration="{47960A9F-A298-4A63-A7A2-9EF36D911836}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.eWarranty.Android PreferredExecutionTarget="Android.galaxy_nexus_r_11_0_-_api_30" Xamarin.HotReload.DebuggerTimeoutException.eWarranty.Android.HideInfoBar="True" />
-  <MultiItemStartupConfigurations />
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{47960A9F-A298-4A63-A7A2-9EF36D911836}|Default">
   <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.ItemProperties.eWarranty.Android Xamarin.HotReload.DebuggerTimeoutException.eWarranty.Android.HideInfoBar="True" AndroidDesignerPreferredTheme="MainTheme" PreferredExecutionTarget="Android.galaxy_nexus_r_11_0_-_api_30" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="eWarranty/App.xaml.cs">
     <Files>
       <File FileName="eWarranty/eWarranty.csproj" Line="4" Column="21" />
@@ -36,5 +33,6 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.galaxy_nexus_r_11_0_-_api_30" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
