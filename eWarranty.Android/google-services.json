@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1550189657",
+    "project_id": "notificationciaa",
+    "storage_bucket": "notificationciaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1550189657:android:92ae624f0a9014bf37dd48",
+        "android_client_info": {
+          "package_name": "com.mastcgroup.ciaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH1qMMZ7qBhYeDgvBp76lwERi8ulQekSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

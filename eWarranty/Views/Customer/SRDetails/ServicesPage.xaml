@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.ServicesPage" Title="Service Requests" FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}" IconImageSource="services"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:converters="clr-namespace:eWarranty.Converters" xmlns:sf="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"            
+             x:Name="root" >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="noteadd.png" Text="Item 1" Priority="0" Command="{Binding AddProductCommand}"  />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+            
+                <Grid Grid.Row="1" Padding="5" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <CollectionView   Grid.Row="0" ItemsSource="{Binding Services}"   BackgroundColor="Transparent"  EmptyView="NA">  
+                        <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+
+                               <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="{x:Static resource:AppResources.lblNoServiceRequest}" HeightRequest="60" />           
+      
+                            </DataTemplate>
+                        </CollectionView.EmptyViewTemplate>
+                        <CollectionView.ItemTemplate>  
+                            <DataTemplate>  
+                                <Grid Margin="10">
+                                   <Grid.RowDefinitions>
+                                       <RowDefinition Height="auto"/>
+                                   </Grid.RowDefinitions>
+                                    <Frame Margin="5"  VerticalOptions="Center" Grid.Row="0" BorderColor="AliceBlue" Style="{StaticResource FrameStyle}" >
+                                        <Frame.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="{StaticResource BlueColor}"
+                                                                Offset="0.1" />
+                                                <GradientStop Color="{StaticResource Pinkshade1}"
+                                                                Offset="0.7" />
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="40"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>                                        
+                                            </Grid.RowDefinitions>
+                                            <BoxView Grid.Row="0" Margin="-20,-20,-20,0">
+                                                <BoxView.Background>
+                                                     <LinearGradientBrush>
+                                                        <GradientStop Color="{StaticResource BlueColor}"
+                                                                        Offset="0.1" />
+                                                        <GradientStop Color="{StaticResource BlueColor}"
+                                                                        Offset="1.0" />
+                                                    </LinearGradientBrush>
+                                                </BoxView.Background>
+                                            </BoxView>
+                                            <Grid Grid.Row="0" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>                  
+                                                </Grid.RowDefinitions>
+                                
+                                                <Label Grid.Row="0" Margin="10,0,10,0" Text="{Binding ProductClassificationName}"
+                                                       Style="{StaticResource LabelLargeWhite}" HorizontalTextAlignment="Start"/>
+
+                                            </Grid>
+                                            <!--<contr:RoundedCornerView Margin="10,0,10,0" Grid.Row="1" BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+                                               
+                                            </contr:RoundedCornerView>-->
+                                            <Grid Grid.Row="1" Padding="10,5,10,5"    BackgroundColor="{StaticResource TransparentColor}">
+                                                <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                             
+                                                    </Grid.RowDefinitions>
+
+                                                <Label Grid.Row="0" LineBreakMode="WordWrap" >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblRequestNo}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text="{Binding ServiceRequestNumber}"  Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                           
+                                                <Label Grid.Row="1" LineBreakMode="WordWrap">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblDate}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text="{Binding CreationDate, StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                </Label>
+                                                <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblModelNo}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text="{Binding ProductModelNumber}"  Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblWarranty}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text="{Binding ProductModelWarrantyTypeNameWithLang}"  Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                <Label Grid.Row="4" LineBreakMode="WordWrap" >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblRemark}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text=": " Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                    <Span Text="{Binding CustomerRemark}"  Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                          
+                                            </Grid>
+                                            <sf:SfBorder Grid.Row="2"  Padding="10,5,10,5" BorderColor="Transparent" IsClippedToBounds="True">
+                                                <Label >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblStatus}" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                            <Span Text=" : " Style="{StaticResource MyValueLabel}" TextColor="{StaticResource WhiteColor}"/>
+                                                            <Span Text="{Binding CustServiceRequestStatusName}" Style="{StaticResource MyTitleLabel}" TextColor="Aqua" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </sf:SfBorder>
+                                            <Grid Grid.Row="3" Margin="10,5,10,0" >
+                                                   <Grid.ColumnDefinitions>
+                                                       <ColumnDefinition Width="5*"/>
+                                                       <ColumnDefinition Width="5*"/>
+                                                   </Grid.ColumnDefinitions>
+
+                                                 <Button Grid.Column="0" Style="{StaticResource ButtonBrickRedStyle}" 
+                                                    Text="{x:Static resource:AppResources.lblFeedback}" IsVisible="{Binding JobClosed}"
+                                                    Command="{Binding BindingContext.FeedbackCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"/>
+
+                                                <Button Grid.Column="0" Style="{StaticResource ButtonBrickRedStyle}"
+                                                    Text="{x:Static resource:AppResources.btnFollowup}" IsVisible="{Binding JobClosed, Converter={converters:InverseBoolConverter}}"
+                                                    Command="{Binding BindingContext.followupCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding ServiceRequestId}"/>
+
+                                                <Button Grid.Column="1" Style="{StaticResource ButtonBrickRedStyle}"
+                                                    Text="{x:Static resource:AppResources.btnDetails}"
+                                                    Command="{Binding BindingContext.ServiceDetailsCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding ServiceRequestId}"/>
+
+                                                  <!--<contr:RoundedCornerView  IsVisible="{Binding JobClosed}"  Grid.Column="0" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                       <Grid BackgroundColor="{StaticResource BlueColor}">
+                                                       <Label Text="{x:Static resource:AppResources.lblFeedback}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                       <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                  Command="{Binding BindingContext.FeedbackCommand, Source={x:Reference Name=root}}"
+                                                                     CommandParameter="{Binding .}"/>
+                                                      </Grid.GestureRecognizers>
+                                                           </Grid>
+                                                   </contr:RoundedCornerView>-->
+                                                   <!--<contr:RoundedCornerView  IsVisible="{Binding JobClosed, Converter={converters:InverseBoolConverter}}"  Grid.Column="0" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                        <Grid BackgroundColor="{StaticResource BlueColor}">
+                                                           <Label Text="{x:Static resource:AppResources.btnFollowup}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                           <Grid.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                      Command="{Binding BindingContext.followupCommand, Source={x:Reference Name=root}}"
+                                                                         CommandParameter="{Binding ServiceRequestId}"/>
+                                                          </Grid.GestureRecognizers>
+                                                        </Grid>
+                                                   </contr:RoundedCornerView>-->
+                                                   <!--<contr:RoundedCornerView Grid.Column="1" BorderColor="#EA1D24" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                       <Grid BackgroundColor="#EA1D24">
+                                                       <Label Text="{x:Static resource:AppResources.btnDetails}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                       <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                  Command="{Binding BindingContext.ServiceDetailsCommand, Source={x:Reference Name=root}}"
+                                                                    CommandParameter="{Binding ServiceRequestId}"
+                                                                 NumberOfTapsRequired="1"  />
+                                                      </Grid.GestureRecognizers>
+                                                           </Grid>
+                                                   </contr:RoundedCornerView>-->
+                                       
+                                           </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                           </DataTemplate>  
+                       </CollectionView.ItemTemplate>  
+                    </CollectionView> 
+                </Grid>
+            </Grid>
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

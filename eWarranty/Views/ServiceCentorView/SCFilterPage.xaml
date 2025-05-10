@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popup:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     CloseWhenBackgroundIsClicked="True"
+      HasSystemPadding="False"
+    HasKeyboardOffset="False"
+
+     xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.ServiceCentorView.SCFilterPage">
+   <popup:PopupPage.Content>
+       <StackLayout Padding="0,110,0,0" >
+           <contr:RoundedCornerView Margin="50,0,50,0" HeightRequest="300" HorizontalOptions="FillAndExpand" RoundedCornerRadius="8"  VerticalOptions="Center" BackgroundColor="White">
+       <Grid Padding="10" BackgroundColor="White" >
+           <Grid.RowDefinitions>
+               <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+           </Grid.RowDefinitions>
+           <Grid Grid.Row="0">
+               <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="1*"/>
+               </Grid.ColumnDefinitions>
+               <Label Text="Filter" TextColor="{StaticResource BlueColor}" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="0"/>
+          
+           </Grid>
+           <Grid Grid.Row="1" RowSpacing="20">
+               <Grid.RowDefinitions>
+                   <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+               </Grid.RowDefinitions>
+               <Label Grid.Row="0" x:Name="lblmsg" Text="Filter Near by  KM 0">
+                 
+               </Label>
+               <Slider x:Name="slKilometer" Grid.Row="1" Maximum="2000" 
+                ValueChanged="Slider_ValueChanged" />
+
+               <Entry x:Name="txtCity" Grid.Row="2" Placeholder="Search City" FontAttributes="Bold" Style="{StaticResource EnteryTxtValues}" />
+               <Grid Grid.Row="3" >
+                   <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="5*"/>
+                       <ColumnDefinition Width="10"/>
+                       <ColumnDefinition Width="5*"/>
+                   </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Clear" Style="{StaticResource ButtonBlueStyle}" Clicked="Button_Clicked_1"/>
+                    <Button Grid.Column="2"  Text="Filter" Style="{StaticResource ButtonPinkStyle}" Clicked="Button_Clicked"/>
+               </Grid>
+              
+           </Grid>
+       </Grid>
+               </contr:RoundedCornerView>
+       </StackLayout>
+    </popup:PopupPage.Content>
+
+</popup:PopupPage>

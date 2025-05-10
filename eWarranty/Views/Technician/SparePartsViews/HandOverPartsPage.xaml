@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.SparePartsViews.HandOverPartsPage"
+                xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+               xmlns:lang="clr-namespace:eWarranty.Hepler"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" >
+        <ContentPage.Content>
+            <Grid Padding="20">
+                <Frame Grid.Column="0"  Style="{StaticResource FrameStyle}" BackgroundColor="{StaticResource YellowColorShade2}" >
+    
+                    <Grid RowSpacing="20" Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                              <RowDefinition Height="auto"/>
+                              <RowDefinition Height="auto"/>
+                              <RowDefinition Height="auto"/>
+                              <RowDefinition Height="auto"/>
+                              <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <contr:TitleDropdownView Grid.Row="0" Placeholder="Select Category" PickerItemsSource="{Binding CategorySource}" ItemDisplayBinding="Title"  SelectedItem="{Binding SelectedCategory}" Command="{Binding CategoryChangeCommand}" />
+
+                        <contr:TitledEntryView Grid.Row="1"  Placeholder="Part Name"  Text="{Binding ProductName}"
+                                        PlaceholderColor="Gray"/>
+
+                            <Grid Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Desc"  TextColor="{StaticResource inputTitle}" VerticalTextAlignment="Center"/>
+                            <Editor Grid.Row="1" HeightRequest="100"   BackgroundColor="White"   Placeholder="Desc" TextColor="{StaticResource inputText}" VerticalOptions="Start" 
+                                                />
+                            <BoxView Grid.Row="2" BackgroundColor="Gray"/>
+                            </Grid>
+
+                        <contr:TitledEntryView Grid.Row="4"  Placeholder="Number of Items" EntryKeyboard="Numeric"  Text="{Binding ProductName}"
+                                        PlaceholderColor="Gray"/>
+
+                        <Button Text="Hand over to Service Center" Grid.Row="5"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ContentPage.Content>
+</ContentPage>

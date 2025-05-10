@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Accesssories.AccesssoriesSuccessPage"
+              Title="Succesfully" xmlns:resource="clr-namespace:eWarranty.Resx" BackgroundColor="{StaticResource NavigationPrimary}" FlowDirection="{Binding flowDirection}">
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="checkcircle" Aspect="AspectFit" Grid.Row="0"/>
+            <Label Text="Congratulations" Grid.Row="1" HorizontalTextAlignment="Center" TextColor="White"/>
+            <Label Grid.Row="2" Text="Thank you for the product registration, you will receive the warranty card with in 24 Hrs, If not please contact."  HorizontalTextAlignment="Center" TextColor="White" LineBreakMode="WordWrap"/>
+            
+        </Grid>
+            <Grid Grid.Row="1" BackgroundColor="White" >
+               
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                
+                <Button Margin="30,0,30,0" Grid.Row="1" Command="{Binding SaveCommand}" Text="Go to Products" FontSize="20" BackgroundColor="#687089" TextColor="White" Clicked="Back_Clicked" />
+            </Grid>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    x:Class="eWarranty.Views.AppOnBoard.AppOnBoardPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid RowDefinitions="8.5*,1.5*">
+            <Grid Grid.Row="0" VerticalOptions="CenterAndExpand" Padding="20,5,20,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                 <carousel:SfCarousel x:Name="carouselView"
+                             ViewMode="Linear"
+                             Offset="30"
+                            SelectedItemOffset="10"
+                             HeightRequest="700" 
+                             WidthRequest="700" >
+                     <carousel:SfCarousel.ItemTemplate>
+                          <DataTemplate>
+                            <Grid>
+
+                                 <StackLayout Padding="5" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                                     <!--<Frame Style="{StaticResource FrameStyle}" IsClippedToBounds="True">
+                                        <Image Source="{Binding BannerImage}" HorizontalOptions="Center"
+                                               VerticalOptions="Center" IsOpaque="True" />
+
+                                     </Frame>-->
+                                    <!--<Label Text="{Binding Discription}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="20"/>-->
+                                 <Image Source="{Binding BannerImage}" HorizontalOptions="Center"
+                                               VerticalOptions="Center" IsOpaque="True" />
+                                </StackLayout>
+                            </Grid>
+                            
+                        </DataTemplate>
+                     </carousel:SfCarousel.ItemTemplate>
+                 </carousel:SfCarousel>
+                 <!--<CarouselView x:Name="carouselView" VerticalOptions="CenterAndExpand" Grid.Row="0" Margin="20">
+                      <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+
+                                 <StackLayout Padding="20" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                                    <Image Source="{Binding BannerImage}" HorizontalOptions="Center" VerticalOptions="Center" IsOpaque="True" />
+                                    <Label Text="{Binding Discription}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="20"/>
+                                
+                                </StackLayout>
+                            </Grid>
+                            
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>           
+                </CarouselView>-->
+                <IndicatorView Grid.Row="1"
+                                x:Name="indicatorview"
+                                IndicatorColor="LightGray"
+                                HorizontalOptions="Center"
+                                SelectedIndicatorColor="#687089" />
+            </Grid>
+
+            <Button Grid.Row="1" Text="Lets Get Started" VerticalOptions="CenterAndExpand" BackgroundColor="#FF7B00" TextColor="White"
+                    HorizontalOptions="Center" Padding="5" Clicked="Button_Clicked" />
+
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

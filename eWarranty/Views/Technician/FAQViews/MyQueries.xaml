@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hrlper="clr-namespace:eWarranty.Hepler"
+    xmlns:conv="clr-namespace:eWarranty.Converters"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Technician.FAQViews.MyQueries"
+    Title="My Queries" >
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <StackLayout Grid.Row="1" Grid.RowSpan="1" Padding="0,0,0,0" >
+            <Grid Padding="5" VerticalOptions="FillAndExpand">
+
+                <Grid.RowDefinitions>
+                    <!--<RowDefinition Height="*"/>-->
+                    <RowDefinition Height="auto"/>   
+                </Grid.RowDefinitions>
+                         
+                <Grid  Padding="0,0,0,0">
+                    <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">0,5,0,0</On>
+                        <On Platform="iOS">0,5,0,0</On>
+                    </OnPlatform>
+                    </Grid.Padding>
+                    <Grid.RowDefinitions>                                
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--<contr:RoundedCornerView   Grid.Row="0" BorderColor="{StaticResource borderColor}"
+                                               BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="White" >
+                        
+                    </contr:RoundedCornerView>-->
+                    <Button Grid.Row="0"  Command="{Binding AddNewQuery}" Text="Add new query"
+                            Style="{StaticResource ButtonBlueStyle}" Margin="10" Padding="10"/>
+                    
+
+                    <CollectionView Grid.Row="1"  ItemsSource="{Binding TechnicianQueriesWithSolution}" BackgroundColor="Transparent">  
+                        <CollectionView.ItemTemplate>  
+                            <DataTemplate>                                
+
+                                <Grid Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="0"/>                                            
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                               
+                                        <contr:RoundedCornerView   Grid.Row="0" BorderColor="{StaticResource borderColor}"
+                                                                   BorderWidth="1"  RoundedCornerRadius="5"
+                                                                   BackgroundColor="White" >                         
+                                            <Grid VerticalOptions="Center"  Padding="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label  Grid.Row="0" LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Model Number: " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ModelNumber}" Style="{StaticResource MyValueLabel}"  />
+                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                                <Label Grid.Row="1" LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Serial Number: " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding SerialNumber}" Style="{StaticResource MyValueLabel}"  />
+                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                                <Label  Grid.Row="2" LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Subject: " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding Subject}" Style="{StaticResource MyValueLabel}"  />
+                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+
+                                                <Label Grid.Row="3"  LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Query: " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding QueryContent}" Style="{StaticResource MyValueLabel}"  />
+                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                                <Label Grid.Row="4" LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Soultion: " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding QuerySolutionContent}" Style="{StaticResource MyValueLabel}" />
+                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                     
+                                            </Grid>
+                                        </contr:RoundedCornerView>
+
+                                    </Grid>
+                               
+                                </Grid>
+                               
+                            </DataTemplate>  
+                        </CollectionView.ItemTemplate>  
+                    </CollectionView>                    
+
+                </Grid>
+
+            </Grid>
+        </StackLayout>
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>

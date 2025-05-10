@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eWarranty.Views.Technician.SparePartsViews.TechnicianSparePartListPage"
+    xmlns:local="clr-namespace:eWarranty"
+    xmlns:lang="clr-namespace:eWarranty.Hepler"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    Title="Spare Part Requests">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid Padding="5">
+            <Grid.RowDefinitions>                
+                <RowDefinition Height="auto" />                
+            </Grid.RowDefinitions>            
+            <Grid Grid.Row="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>                    
+                </Grid.RowDefinitions>               
+                <Grid Grid.Row="0">
+                    <CollectionView x:Name="collectionView" ItemsSource="{Binding obPartRequestView}" EmptyView="No Parts Available."  >
+                    <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+                                <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource LabelLargeBlack}" Text="No Parts Available." HeightRequest="60" />                 
+                            </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>                                    
+                                    </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">                               
+                                    <Frame Margin="5,2,5,2"  Grid.Row="0"    Style="{StaticResource FrameStyle}" BackgroundColor="{StaticResource WhiteColor}" >
+                                         <Frame.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="{StaticResource BlueColor}"
+                                                                Offset="0.1" />
+                                                <GradientStop Color="{StaticResource Pinkshade1}"
+                                                                Offset="0.7" />
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid BackgroundColor="Transparent" Padding="5">
+                                             <Grid.RowDefinitions>
+                                                 <RowDefinition Height="auto"/>
+                                                 <RowDefinition Height="auto"/>
+                                                 <RowDefinition Height="auto"/>
+                                                 <RowDefinition Height="auto"/>
+                                                 <RowDefinition Height="auto"/>
+                                             </Grid.RowDefinitions>                                            
+                                            <Label  Grid.Row="0" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalTextAlignment="Start">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Part Req.No: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding PartRequestNumber}"    Style="{StaticResource MyValueLabel}" FontAttributes="Bold" TextColor="White"/>                                                  
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                             <Label  Grid.Row="1" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalTextAlignment="Start">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Part No: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding PartNumber}"    Style="{StaticResource MyValueLabel}" TextColor="White"/>                                                  
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label  Grid.Row="2" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalTextAlignment="Start">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Request Date: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding RequestDate,StringFormat='{0:MMM dd,yyyy}'}" Style="{StaticResource MyValueLabel}" TextColor="White"/>                                                  
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                           
+                                            <Label  Grid.Row="3" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start">
+                                               <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Qty: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding RequestedPartQuantity}" Style="{StaticResource MyValueLabel}" TextColor="White"/>                                                  
+                                                    </FormattedString>
+                                                  </Label.FormattedText>
+                                          </Label>
+                                             <Label  Grid.Row="4" HorizontalTextAlignment="Start">
+                                               <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Status: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding StatusName}" Style="{StaticResource MyValueLabel}" TextColor="White"/>                                                        
+                                                    </FormattedString>
+                                                  </Label.FormattedText>
+                                          </Label>
+                                            <Label  Grid.Row="5" LineBreakMode="TailTruncation" MaxLines="1" VerticalOptions="Start"   HorizontalTextAlignment="Start">
+                                               <Label.FormattedText>
+                                                    <FormattedString>
+                                                      <Span Text="Type: " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                      <Span Text="{Binding TypeName}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>                                                  
+                                                    </FormattedString>
+                                                  </Label.FormattedText>
+                                          </Label>
+                                     
+                                       </Grid>
+                                    </Frame>
+                                </Grid>                               
+                              </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+             </CollectionView>
+                </Grid>
+            </Grid>
+        </Grid>
+            <!--<contr:LoaderAnimView
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

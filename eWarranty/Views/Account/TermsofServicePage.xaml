@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="{StaticResource contentBG}"
+             x:Class="eWarranty.Views.Account.TermsofServicePage" Title="{x:Static resource:AppResources.lblTermsofservice}" FlowDirection="{Binding flowDirection}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+             <Label x:Name="labelLoading" Grid.Row="0" FontAttributes="Bold" Text="Loading..." IsVisible="false" />
+            <WebView x:Name="wvData" Grid.Row="0" Source="https://mastcgroup.com/privacy-policy/" Navigated="WebView_Navigated"  />
+            <!--<Label Margin="40" x:Name="lblName"  TextType="Html"  Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+            <Grid Grid.Row="1" >
+                <Grid  Padding="40">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                  
+                    
+                    <Button Grid.Row="0" Text="{x:Static resource:AppResources.lblAgreed}" Style="{StaticResource ButtonBlueStyle}" WidthRequest="100" Clicked="Button_Clicked" />
+                </Grid>
+                </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

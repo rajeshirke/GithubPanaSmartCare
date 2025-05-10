@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"             
+             xmlns:fontawesome="clr-namespace:eWarranty.Models"
+             x:Class="eWarranty.Controls.TitledDateTimePicker">
+    <ContentView.Content>
+         <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <!--<RowDefinition Height="auto"/>-->
+            </Grid.RowDefinitions>
+
+            <!--<Label Style="{StaticResource EnteryTitleLabel}" Grid.Row="0" x:Name="LabelTitle" Text="{Binding Title}"   VerticalTextAlignment="Center"/>-->
+              <Grid Grid.Row="0" VerticalOptions="Center" >
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="9*"/>
+                     <ColumnDefinition Width="1*"/>
+                     <!--<ColumnDefinition Width="2"/>-->
+                 </Grid.ColumnDefinitions>
+                   <Grid.RowDefinitions>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="1"/>
+                 </Grid.RowDefinitions>
+                 <DatePicker x:Name="dPicker"  Format="MM-dd-yyyy" VerticalOptions="End" Grid.Row="0"  Grid.Column="0"  MinimumDate="01/01/1980" MaximumDate="{x:Static sys:DateTime.Now}" HeightRequest="40" Date="{Binding SDate}" DateSelected="dPicker_DateSelected" 
+                                Style="{StaticResource EnteryTxtValues}"  BackgroundColor="White"
+                                />
+                     <!--<Image x:Name="imgDP" Grid.Column="1" Source="calendar" Aspect="AspectFit" HorizontalOptions="End" HeightRequest="25" WidthRequest="25">
+                          <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Tapped="TapGestureRecognizer_Tapped"
+                                        NumberOfTapsRequired="1" />
+                          </Image.GestureRecognizers>
+                     </Image>-->
+                  <Label  Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Center" 
+                        Text="{x:Static fontawesome:Solid.Calendar_Alt}" Margin="0,0,2,0"
+                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                        FontSize="20"  >
+                    <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+             </Grid>
+             
+        </Grid>
+    </ContentView.Content>
+</ContentView>

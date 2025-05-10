@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.SRDetails.SubViews.ProductDetailsSubView"
+             xmlns:contr="clr-namespace:eWarranty.Controls">
+    <ContentView.Content>
+        <ScrollView>
+            
+                 <Grid  Padding="10,20,10,10"  VerticalOptions="FillAndExpand"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{x:Static resource:AppResources.titleProductDetails}"  Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource LabelLargeBlack}"/>
+               
+                    </Grid>
+                    <BoxView Grid.Row="1" BackgroundColor="#687089"/>
+                    <Grid Grid.Row="2" Padding="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                           <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                              <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                              <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                             <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Frame Grid.Row="0" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="{StaticResource YellowColorShade}">
+                            <Grid   Padding="0,0,0,0" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Margin="5,0,5,0" Text="{Binding ProductModel.ProductClassificationName}" Style="{StaticResource LabelLargeBlack}" HorizontalTextAlignment="Start"/>
+                                <!--<contr:RoundedCornerView Margin="5,0,5,0" Grid.Row="1" BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5" Shadow="True">
+                                </contr:RoundedCornerView>-->
+                                    <Grid Margin="5,0,5,0" Grid.Row="1" Padding="0,5,5,5" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="1"/>
+                                            <ColumnDefinition Width="7*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Frame Grid.Column="0" HeightRequest="50" CornerRadius="15" IsClippedToBounds="True">
+                                            <Image Source="{Binding ProductModel.ModelImageURL}" IsOpaque="True" />
+                                        </Frame>
+                                        <BoxView Grid.Column="1" BackgroundColor="LightGray" Margin="0,5,0,5"/>
+                                        <Grid Grid.Column="2" Padding="5" RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0"  />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblModelNo}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.ModelNumber}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblSerialNo}"  Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.SerialNumber}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                            <Grid Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0"  />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblPurchasedon}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.PurchaseDate, StringFormat='{0:MMM dd, yyyy}'}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                            <Grid Grid.Row="3">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0"  />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblRegisteredon}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.RegistrationDate, StringFormat='{0:MMM dd, yyyy}'}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                            
+                                          
+                                            </Grid>
+                                          
+                                    </Grid>
+                                  
+                            </Grid>
+
+                        </Frame>
+
+                        <Frame Grid.Row="2" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="{StaticResource YellowColorShade1}">
+                           <Grid Padding="5,0,5,0">
+                                     <Grid.RowDefinitions>
+                                         <RowDefinition Height="auto"/>
+                                           <RowDefinition Height="auto"/>
+                                     </Grid.RowDefinitions>
+                                     <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblWarrantyInformation}" FontAttributes="Bold" Style="{StaticResource LabelLargeBlack}"/>
+                                      <Grid Grid.Row="1" Padding="5,0,5,0">
+                                           <Grid.RowDefinitions>
+                                                 <RowDefinition Height="auto"/>
+                                                   <RowDefinition Height="auto"/>
+                                             </Grid.RowDefinitions> 
+                                            <Grid Grid.Row="0">
+                                                          <Grid.ColumnDefinitions>
+                                                              <ColumnDefinition Width="auto"/>
+                                                               <ColumnDefinition Width="*"/>
+                                                          </Grid.ColumnDefinitions>
+                                                          <Label Grid.Column="0"  />
+                                                          <Label Grid.Column="1" >
+                                                              <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblWarrantyType}" Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text="{Binding ProductModel.ActiveWarrantyCustomerProduct.WarrantyTypeName}"    Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                         </Label>
+                                                      </Grid>
+                                           <Grid Grid.Row="1">
+                                                          <Grid.ColumnDefinitions>
+                                                              <ColumnDefinition Width="auto"/>
+                                                               <ColumnDefinition Width="*"/>
+                                                          </Grid.ColumnDefinitions>
+                                                          <Label Grid.Column="0"  />
+                                                          <Label Grid.Column="1" >
+                                                              <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblExpiresIn}" Style="{StaticResource MyTitleLabel}"/>                                                                
+                                                                        <Span Text="{Binding ExpiredOn, StringFormat='{0:MMM dd, yyyy}'}"    Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                         </Label>
+                                                      </Grid>
+                                      </Grid>
+                                 </Grid>
+                        </Frame>
+
+                        <Frame Grid.Row="4" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="{StaticResource YellowColorShade2}">
+                           <Grid Padding="8">
+                                     <Grid.RowDefinitions>
+                                         <RowDefinition Height="auto"/>
+                                           <RowDefinition Height="auto"/>
+                                     </Grid.RowDefinitions>
+                                     <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblDealerInformation}" FontAttributes="Bold" Style="{StaticResource LabelLargeBlack}"/>
+                                      <Grid Grid.Row="1" Padding="5,0,5,0">
+                                           <Grid.RowDefinitions>
+                                                 <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                               <!--<RowDefinition Height="auto"/>-->
+                                             </Grid.RowDefinitions> 
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0"  />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblDealerName}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.DealerName}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                        <!--<Grid Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblDealerAddress}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text="{Binding ProductModel.DealerAddress}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                        </Grid>-->
+                                            <Grid Grid.Row="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" />
+                                                <Label Grid.Column="1" >
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblInvoiceNumber}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding ProductModel.PurchaseInvoiceNumber}"    Style="{StaticResource MyValueLabel}"/>
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>
+                                      </Grid>
+                                 </Grid>
+                        </Frame>
+
+                
+
+                        <Grid Grid.Row="6" RowSpacing="0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" HorizontalOptions="Center" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="100"/>
+                                </Grid.RowDefinitions>
+                                <Label Margin="0,0,0,10" Grid.Row="0" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Center" Text="Product Image" VerticalOptions="Center" />
+                                <Image Grid.Row="1" Source="{Binding ProductImagePath1}"  Aspect="AspectFill">
+                                    <!--<Image.Source>
+                                        <UriImageSource Uri="{Binding ProductImagePath1}" />
+                                    </Image.Source>-->
+                                    </Image>
+                            </Grid>
+
+                            <Grid Grid.Column="1" HorizontalOptions="Center" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="100"/>
+                                </Grid.RowDefinitions>
+                                <Label Margin="0,0,0,10" Grid.Row="0" Style="{StaticResource MyTitleLabel}"  HorizontalTextAlignment="Center" Text="Product Invoice" VerticalOptions="Center" />
+                                <Image Grid.Row="1" Source="{Binding InvoiceImagePath1}"  Aspect="AspectFill">
+                                    <!--<Image.Source>
+                                        <UriImageSource Uri="{Binding InvoiceImagePath1}" />
+                                    </Image.Source>-->
+                                </Image>
+                            </Grid>
+                        </Grid>
+               
+              
+                    </Grid>
+
+                </Grid>
+
+                        
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

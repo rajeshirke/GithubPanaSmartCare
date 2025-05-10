@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             x:Class="eWarranty.Views.Customer.UserProfile.PromotionPage"
+             BackgroundColor="{StaticResource contentBG}"
+             Title="{x:Static resource:AppResources.btnPromotion}"
+             x:Name="root">
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" RefreshColor="{StaticResource BlueColor}" Command="{Binding RefreshCommand}">           
+            <ScrollView>
+                <CollectionView   Grid.Row="0" ItemsSource="{Binding lstCampaignMasterResponses}" BackgroundColor="Transparent">  
+                    <CollectionView.EmptyViewTemplate>
+                        <DataTemplate>
+                            <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="{x:Static resource:AppResources.lblNoRecords}" HeightRequest="60" />                 
+                        </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                    <CollectionView.ItemTemplate>  
+                       <DataTemplate>  
+
+                           <Grid BackgroundColor="Transparent" Padding="5">
+                               <Grid.RowDefinitions>                               
+                                   <RowDefinition Height="Auto"/>
+                               </Grid.RowDefinitions>
+                              <contr:RoundedCornerView  VerticalOptions="Center" Grid.Row="0"    BorderColor="{StaticResource BlueColor}" BorderWidth="2" RoundedCornerRadius="8" BackgroundColor="Transparent" >                             
+                                    <Frame                           
+                                       Padding="5" HasShadow="False"
+                                       IsClippedToBounds="True"                                                         
+                                       BackgroundColor="Transparent" >  
+                                        <Grid RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="8*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid VerticalOptions="CenterAndExpand"  
+                                             Padding="5"  Grid.Column="0"
+                                             HorizontalOptions="FillAndExpand"  
+                                             BackgroundColor="Transparent">  
+                                            <Grid.RowDefinitions>  
+                                                <RowDefinition Height="Auto"/>  
+                                                <RowDefinition Height="Auto"/>  
+                                                <RowDefinition Height="auto"/>  
+                                            </Grid.RowDefinitions>
+                                    
+                                            <Label Padding="0,0,0,5" Grid.Row="0" Text="{Binding Name}" 
+                                                   LineBreakMode="TailTruncation" MaxLines="2" Style="{StaticResource MyTitleLabel}" HorizontalOptions="FillAndExpand"/>
+                                       
+                                            <BoxView Grid.Row="1" Color="LightGray"  
+                                                HorizontalOptions="FillAndExpand"  
+                                                HeightRequest="1"/>  
+                                            <Grid Grid.Row="2"  
+                                               BackgroundColor="Transparent"  >  
+                                                <Grid.ColumnDefinitions>  
+                                                    <ColumnDefinition Width="Auto" />  
+                                                    <ColumnDefinition />  
+                                                </Grid.ColumnDefinitions>  
+                                                <Label Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation" MaxLines="2" HorizontalOptions="FillAndExpand">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>                                                        
+                                                                    <Span Text="{Binding Description}" Style="{StaticResource MyTitleLabel}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                    </Label> 
+                                                 <Label Grid.Row="1" Grid.Column="0" LineBreakMode="WordWrap" Style="{StaticResource MyTitleLabel}"  >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>                                                        
+                                                                    <Span Text="{Binding CampaignStartDate,StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyTitleLabel}"/>
+                                                                    <Span Text=" - " Style="{StaticResource MyTitleLabel}"/>                                                        
+                                                                    <Span Text="{Binding CampaignExpiryDate,StringFormat='{0:MMM dd, yyyy}'}"  Style="{StaticResource MyTitleLabel}"/>
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                    </Label>
+                                                 <Label Grid.Row="2" Grid.Column="0" LineBreakMode="WordWrap" IsVisible="{Binding IsPromotionVisible}" Style="{StaticResource MyValueLabel}" HorizontalOptions="FillAndExpand">
+                                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="{x:Static resource:AppResources.lblPromoCode}" Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                            <Span Text="{Binding Code}" Style="{StaticResource MyValueLabel}" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                </Label>
+                                            </Grid>  
+                                        </Grid>
+                                            <Grid Grid.Column="1" HorizontalOptions="End" VerticalOptions="FillAndExpand" IsVisible="{Binding IsRegButtonVisible}">
+                                            <BoxView Color="{StaticResource BlueColor}" />
+                                            <Label Padding="5" HorizontalOptions="CenterAndExpand" Text="{x:Static resource:AppResources.lblRegister}" Grid.Row="0" VerticalOptions="CenterAndExpand" Style="{StaticResource LabelMediumWhite}"/>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding BindingContext.RegisterCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"
+                                                    NumberOfTapsRequired="1"
+                                                    />
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                        </Grid>
+                        
+                            <!--<StackLayout Orientation="Horizontal">
+                                
+                            </StackLayout>-->  
+                                </Frame>    
+                              </contr:RoundedCornerView>
+
+                            </Grid>
+                         
+                       </DataTemplate>  
+                   </CollectionView.ItemTemplate>  
+                </CollectionView> 
+
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

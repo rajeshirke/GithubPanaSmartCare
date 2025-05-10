@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.InquiryView.SurveyListPage"
+               BackgroundColor="{x:StaticResource contentBG}"
+              xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty"
+               Title="Chat History" FlowDirection="{Binding flowDirection}" x:Name="root">
+    <ContentPage.Content>
+         <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+             <ListView x:Name="lstFollowup" Margin="5" Grid.Row="0" RowHeight="100"  ItemsSource="{Binding ChatHistory}"  HasUnevenRows="True"  SeparatorVisibility="None"  BackgroundColor="White">  
+                
+                 <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                         
+                           
+                           <contr:RoundedCornerView Margin="10,5,10,5" BackgroundColor="White" BorderColor="LightGray" BorderWidth="1"  RoundedCornerRadius="8"  >
+                               <Grid Padding="10,5,10,5" VerticalOptions="Center">
+                                   <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                         <RowDefinition Height="auto"/>
+                                         <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                       
+                                    </Grid.RowDefinitions>
+                                 
+                               
+                               
+                                  
+                               
+                                   <Label Grid.Row="0"  Style="{StaticResource MyTitleLabel}" >
+                                       <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Date: " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding AttendedOn, StringFormat='{0:MMM dd, yyyy}'}"  Style="{StaticResource EnteryTitleLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                   </Label>
+                                   
+                                   <Label Grid.Row="1" Text="Message:" Style="{StaticResource MyTitleLabel}" >
+                                     
+                                   </Label>
+                                  
+                                   <Label Grid.Row="2" Text="{Binding Message}"  Style="{StaticResource MyTitleLabel}" >
+                                       
+                                   </Label>
+                                  
+                                 </Grid>
+                               </contr:RoundedCornerView>
+                           
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView> 
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

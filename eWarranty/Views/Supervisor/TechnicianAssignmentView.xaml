@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    xmlns:converters="clr-namespace:eWarranty.Converters"
+    x:Class="eWarranty.Views.Supervisor.TechnicianAssignmentView"
+    BackgroundColor="{StaticResource contentBG}"
+    xmlns:lang="clr-namespace:eWarranty.Hepler"
+    xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+    Title="Technician Assignment"
+    x:Name="root">
+    <ContentPage.Content>
+        <ScrollView>
+            <AbsoluteLayout>
+                <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>                    
+                    </Grid.RowDefinitions>
+            
+                    <Grid Grid.Row="0" Padding="5,10,5,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>                                          
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/> 
+                            </Grid.RowDefinitions>
+                   
+                            <cards:SfCardView Grid.Row="0" CornerRadius="15" HeightRequest="100" BackgroundColor="{StaticResource YellowColorShade}">
+                                <Grid Padding="5" BackgroundColor="{StaticResource YellowColorShade}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>                                
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" RowSpacing="0" >
+                                        <contr:RoundedCornerView Grid.Row="0">
+                                                 <Grid Padding="5" BackgroundColor="{StaticResource YellowColorShade}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Label Grid.Row="0" LineBreakMode="WordWrap">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Service Request Details" Style="{StaticResource MyTitleLabel}"/>                                        
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Style="{StaticResource SimpleLabelBlack}" Grid.Row="1" LineBreakMode="TailTruncation" MaxLines="1">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Service Request No" Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text="{Binding ServiceRequestResponceSupervisors.ServiceRequestNumber}" Style="{StaticResource MyValueLabel}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Style="{StaticResource SimpleLabelBlack}" Grid.Row="2" LineBreakMode="TailTruncation" MaxLines="1">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Preferred DateTime" Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text="{Binding ServiceRequestResponceSupervisors.CustomerSrpreferredDateTime,StringFormat='{0:MMM, dd yyyy hh:mm tt}'}" Style="{StaticResource MyValueLabel}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>                                                      
+
+                                                </Grid>
+                                            </contr:RoundedCornerView>                            
+                                    </Grid>
+                                </Grid>
+                            </cards:SfCardView>
+                            <cards:SfCardView Grid.Row="1" CornerRadius="15" HeightRequest="80" BackgroundColor="{StaticResource YellowColorShade1}">
+                                <Grid Padding="5" BackgroundColor="{StaticResource YellowColorShade1}" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                     <!--<Label Grid.Row="0" LineBreakMode="WordWrap" Text="Select Available Time Slot" Style="{StaticResource MyTitleLabel}"/>-->
+                                        
+                                    <Grid RowSpacing="0" Grid.Row="1" Margin="5,0,5,0" Padding="{OnPlatform iOS='-2,-2,-2,5',Android='0,5,0,5'}" BackgroundColor="{StaticResource YellowColorShade1}">                 
+                                            <contr:TitleDropdownView
+                                                    Title="Select Available Time Slot"
+                                                    Placeholder="Select Time Slot" PlaceholderColor="{StaticResource PlcGray}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    PickerItemsSource="{Binding AvailableTimeSlots}"
+                                                    ItemDisplayBinding="Title" SelectedItem="{Binding SelectedTimeSlot}"
+                                                    Command="{Binding SelectTimeCommand}"  />
+
+                                    </Grid>
+                                    <!--<contr:RoundedCornerView Grid.Row="1" HeightRequest="42">
+                                        <Grid Grid.Row="0" Margin="{OnPlatform Android='5,5,5,0'}" Padding="{OnPlatform iOS='-2,-2,-2,5',Android='8,0,8,0'}" RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                                <contr:TitleDropdownView
+                                                    Placeholder="Select Time Slot" PlaceholderColor="{StaticResource PlcGray}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    PickerItemsSource="{Binding AvailableTimeSlots}"
+                                                    ItemDisplayBinding="Title" SelectedItem="{Binding SelectedTimeSlot}"
+                                                    Command="{Binding SelectTimeCommand}" />
+                                            </Grid>
+                                            <Grid Grid.Row="1" Padding="5,0">
+                                                <BoxView Grid.Row="0" BackgroundColor="{StaticResource LightGray}" VerticalOptions="Start"/>
+                                            </Grid>
+                                        </Grid>
+                                    </contr:RoundedCornerView>-->
+                                </Grid>
+                            </cards:SfCardView> 
+                            <cards:SfCardView Grid.Row="2" CornerRadius="15" HeightRequest="{OnPlatform iOS='400', Android='300'}">
+                                <Grid Grid.Row="0" RowSpacing="0" BackgroundColor="AliceBlue">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/> 
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" LineBreakMode="WordWrap" Padding="5" Margin="2">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Technicians" Style="{StaticResource MyTitleLabel}"/>                                        
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <ScrollView Grid.Row="1" BackgroundColor="{StaticResource YellowColorShade2}">
+                                             <Grid>        
+                                                 <Grid.RowDefinitions>
+                                                     <RowDefinition Height="auto"/>
+                                                     <RowDefinition Height="auto"/>
+                                                 </Grid.RowDefinitions>                    
+                                                <CollectionView Grid.Row="0"
+                                                                ItemsSource="{Binding Technicians}"
+                                                                EmptyView="NA"
+                                                                x:Name="CollectionView1"
+                                                                SelectionMode="Single">
+                                                    <CollectionView.EmptyViewTemplate>
+                                                            <DataTemplate>
+                                                                <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start"
+                                                                        FontSize="15"  Style="{StaticResource LabelLargeBlack}"
+                                                                        Text="No Technicians Available" HeightRequest="60" />                 
+                                                            </DataTemplate>
+                                                      </CollectionView.EmptyViewTemplate>
+                                                    <CollectionView.ItemTemplate>  
+                                                        <DataTemplate>                
+                                                            <SwipeView>                
+                                                                <Grid Padding="2,0,2,0">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="*"/>
+                                                                    </Grid.RowDefinitions>
+                                                                    <!--<contr:RoundedCornerView BorderColor="Silver" WidthRequest="1" RoundedCornerRadius="4"
+                                                                    Grid.Row="0" BackgroundColor="White">-->
+                                                                    <Grid Grid.Row="0" Padding="2">
+                                                                        <VisualStateManager.VisualStateGroups>
+                                                                            <VisualStateGroup Name="CommonStates">
+                                                                                <VisualState Name="Normal" />
+                                                                                <VisualState Name="Selected">
+                                                                                    <VisualState.Setters>
+                                                                                        <Setter Property="BackgroundColor" Value="#badbf8" />
+                                                                                    </VisualState.Setters>
+                                                                                </VisualState>
+                                                                                <VisualState Name="UnSelected">
+                                                                                    <VisualState.Setters>
+                                                                                        <Setter Property="BackgroundColor" Value="#FFFFFF" />
+                                                                                    </VisualState.Setters>
+                                                                                </VisualState>
+                                                                            </VisualStateGroup>
+                                                                        </VisualStateManager.VisualStateGroups>
+
+                                                                        <Grid.RowDefinitions>
+                                                                            <RowDefinition Height="auto"/>                                                                            
+                                                                            <RowDefinition Height="1"/>
+                                                                        </Grid.RowDefinitions>
+                                                                        
+                                                                        <Grid Grid.Row="0" Padding="5">
+
+                                                                            <!--<Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="0.8*"/>
+                                                                                <ColumnDefinition Width="4*"/>
+                                                                                <ColumnDefinition Width="6.5*"/>
+                                                                            </Grid.ColumnDefinitions>-->
+
+                                                                            <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="1*"/>
+                                                                                <ColumnDefinition Width="9*"/>                                                                                
+                                                                            </Grid.ColumnDefinitions>
+
+                                                                            <Image Grid.Column="0" Source="technician.png" HeightRequest="25" WidthRequest="25"  />
+
+
+                                                                            <Label Grid.Column="1" MaxLines="1" LineBreakMode="TailTruncation"  HorizontalOptions="StartAndExpand" Style="{StaticResource MyTitleLabel}" >
+                                                                                <Label.FormattedText>
+                                                                                    <FormattedString>
+                                                                                            <Span Text="{Binding FirstName}" Style="{StaticResource MyValueLabel}" />
+                                                                                            <Span Text=" " />
+                                                                                            <Span Text="{Binding LastName}" Style="{StaticResource MyValueLabel}" />
+                                                                                    </FormattedString>
+                                                                                </Label.FormattedText>
+                                                                            </Label>
+
+                                                                            <!--<Label HorizontalOptions="StartAndExpand" Style="{StaticResource SimpleLabelBlack}" Grid.Column="2" LineBreakMode="TailTruncation" MaxLines="1">
+                                                                                <Label.FormattedText>
+                                                                                    <FormattedString>
+                                                                                        <Span Text="Aval. DateTime" Style="{StaticResource MyTitleLabel}" FontSize="13"/>
+                                                                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}" />
+                                                                                        <Span Text="{Binding AvailableTime}" Style="{StaticResource MyValueLabel}" FontSize="13"/>
+                                                                                    </FormattedString>
+                                                                                </Label.FormattedText>
+                                                                            </Label>-->
+                                                    
+                                                                        </Grid>
+
+                                                                        <BoxView Grid.Row="1" BackgroundColor="Black"/>
+
+                                                                        <Grid.GestureRecognizers>
+                                                                            <TapGestureRecognizer
+                                                                                Command="{Binding BindingContext.SelectTechnicianCommand, Source={x:Reference Name=root}}"
+                                                                                CommandParameter="{Binding .}"
+                                                                                Tapped="TapGestureRecognizer_Tapped" />
+                                                                        </Grid.GestureRecognizers>
+                                                   
+                                                                    </Grid>
+                                                                <!--</contr:RoundedCornerView>-->
+                                                                </Grid>
+
+                                                            </SwipeView>                           
+                                                        </DataTemplate>
+                                                    </CollectionView.ItemTemplate>
+                                                </CollectionView>
+                                             </Grid>
+                                        </ScrollView>                     
+                                    </Grid>
+                            </cards:SfCardView>
+
+                            <contr:RoundedCornerView HeightRequest="50" Grid.Row="3" >
+                                <Grid Grid.Row="0" Padding="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>                                
+                                    </Grid.RowDefinitions>
+
+                                    <Button Grid.Row="0" Text="Assign" Style="{StaticResource ButtonBlueStyle}" Command="{Binding AssignTechnicianCommand}"/>
+                                    <!--BindingContext.AssignTechnicianCommand, Source={x:Reference Name=root}}" CommandParameter="{Binding .}-->                 
+                                </Grid>
+                            </contr:RoundedCornerView>
+                     
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <!--<contr:LoaderAnimView
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="{OnPlatform iOS='0.5, 0.5, 1, 1',Android='0.5,0.5,-1,-1'}"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand"/>-->
+            </AbsoluteLayout> 
+        </ScrollView>       
+    </ContentPage.Content>
+</ContentPage>

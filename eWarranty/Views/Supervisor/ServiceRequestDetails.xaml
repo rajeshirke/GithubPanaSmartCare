@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Supervisor.ServiceRequestDetails"
+    BackgroundColor="{StaticResource contentBG}"
+    xmlns:lang="clr-namespace:eWarranty.Hepler"
+    xmlns:resource="clr-namespace:eWarranty.Resx"
+    Title="Service Request Details"
+    x:Name="root">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid Padding="5" VerticalOptions="FillAndExpand"
+                  RowSpacing="0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>                    
+                </Grid.RowDefinitions>
+            <Frame Grid.Row="0" BorderColor="{StaticResource borderColor}" Style="{StaticResource FrameStyle}" BackgroundColor="{StaticResource YellowColorShade}">
+                <Grid Grid.Row="0" Padding="10,0,10,0" BackgroundColor="{StaticResource YellowColorShade}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>                       
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="{StaticResource YellowColorShade}">
+                        <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>                                           
+                    </Grid.RowDefinitions>
+                        <contr:RoundedCornerView Grid.Row="0" BackgroundColor="{StaticResource YellowColorShade}">
+                            <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Customer Details" Grid.Row="0" Style="{StaticResource LabelLargeBlack}" />
+
+                            <BoxView Grid.Row="1" BackgroundColor="Black"/>
+
+                            <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Customer Name" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding CustName}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Location" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding Location}"  Style="{StaticResource MyValueLabel}"/>                                        
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="4" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Request Date" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding RequestDate,StringFormat='{0:MMM ,dd yyyy}'}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="5" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Request Type" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding RequestType}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Row="6" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Customer Preferred Date/Time" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding CustPreferredDateTime,StringFormat='{0:MMM, dd yyyy hh:mm:tt}'}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            </Grid>
+                        </contr:RoundedCornerView>                     
+
+                    </Grid>
+
+                    <Grid Grid.Row="1" BackgroundColor="{StaticResource YellowColorShade}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>                                               
+                    </Grid.RowDefinitions>
+                        <contr:RoundedCornerView Grid.Row="0" BackgroundColor="{StaticResource YellowColorShade}">
+                            <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Product Details" Grid.Row="0" Style="{StaticResource LabelLargeBlack}" />
+
+                            <BoxView Grid.Row="1" BackgroundColor="Black"/>
+
+                            <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Model Number" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding ModelNumber}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Serial Number" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding SerialNumber}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="4" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Product Category" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding ProductCategory}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="5" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Model Warranty" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding ModelWarranty}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label Grid.Row="6" LineBreakMode="WordWrap" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Purchase Date" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding PurchaseDate,StringFormat='{0:MMM, dd yyyy}'}"  Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            </Grid>
+                        </contr:RoundedCornerView>
+                      
+
+                    </Grid>
+
+                </Grid>
+
+            </Frame>
+            </Grid>
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="{OnPlatform iOS='0.5, 0.5, 1, 1',Android='0.5,0.5,-1,-1'}"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>     
+    </ContentPage.Content>
+</ContentPage>

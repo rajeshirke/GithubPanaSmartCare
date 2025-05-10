@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.AddServicesRequestPage"
+             Title="{x:Static resource:AppResources.lblServiceCenter}" FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="White"
+             xmlns:fontawesome="clr-namespace:eWarranty.Models"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+            <Grid Padding="20,20,20,30" >
+                <Grid.RowSpacing>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="25" Android="20"/>
+                </Grid.RowSpacing>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+               
+               <contr:TitledEntryView Grid.Row="0" IsEnabled="False" Title="{x:Static resource:AppResources.lblProductModelNumber}" Placeholder="{x:Static resource:AppResources.lblProductModelNumber}"  Text="{Binding ProductName}" />
+
+                <contr:TitledEntryView Grid.Row="1"  IsEnabled="False" Title="{x:Static resource:AppResources.lblServiceCenter}" Placeholder="{x:Static resource:AppResources.lblServiceCenter}"  Text="{Binding ServiceCenterName}" />
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                            
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Product Malfunction"  Style="{StaticResource MyTitleLabel}"  VerticalTextAlignment="Center"/>
+                    <contr:RoundedCornerView Grid.Row="1"  BorderColor="#DADADA" BorderWidth="1" RoundedCornerRadius="4">
+                        <Editor HeightRequest="100" Text="{Binding ServiceRequest.CustomerRemark}"  BackgroundColor="White"   Placeholder="{x:Static resource:AppResources.lblPleaseenterdescription}" Style="{StaticResource EditorTxtValues}" VerticalOptions="Start"  />
+                    </contr:RoundedCornerView>                    
+                </Grid>
+
+                 <!--<contr:TitleDropdownView Grid.Row="3" Title="{x:Static resource:AppResources.lblServiceRequestType}" Placeholder="{x:Static resource:AppResources.lblServiceRequestType}" PickerItemsSource="{Binding ServiceRequestTyps}" ItemDisplayBinding="Title"  SelectedItem="{Binding ServiceRequestType}" Command="{Binding ServiceRequestTypeCommand}" />-->
+                 
+                <contr:TitleDropdownView Grid.Row="3" Title="{x:Static resource:AppResources.lblServiceLocation}" PickerItemsSource="{Binding ServiceRequestLocationTyps}" ItemDisplayBinding="Title"  SelectedItem="{Binding ServiceRequestLocationType}" Command="{Binding ServiceRequestLocationTypeCommand}" />
+
+                <Label Text="{x:Static resource:AppResources.lblVisitchargesareapplicable}" Margin="0,-10,0,0" FontSize="10" VerticalTextAlignment="Start" VerticalOptions="Start" Grid.Row="4" IsVisible="{Binding HomeDesc}" Style="{StaticResource MyValueLabel}"/>
+              
+                <!--<contr:TitledEntryWithIcon Grid.Row="5" Title="{x:Static resource:AppResources.lblUploadProductPhoto}"  ImageSource="camera.png" Placeholder="{x:Static resource:AppResources.lblUploadProductPhoto}"  Text="{Binding InvoiceFile}" Command="{Binding UploadProductCommand}"/>-->
+
+                <Grid RowDefinitions="auto,auto" Grid.Row="5" RowSpacing="0">
+                    <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resource:AppResources.lblUploadProductPhoto}"
+                                      Style="{StaticResource EnteryTitleLabel}" />
+                                
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Grid Grid.Row="1" RowSpacing="0"  BackgroundColor="Transparent" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"/>                  
+                            <ColumnDefinition Width="1*"/>                  
+                        </Grid.ColumnDefinitions>
+                                        
+                            <contr:ImageEntry   Grid.Row="0" Grid.Column="0" Style="{StaticResource EnteryTxtValues}"
+                                                HeightRequest="50"
+                                                Placeholder="{x:Static resource:AppResources.lblUploadProductPhoto}" 
+                                                Text="{Binding InvoiceFile}" VerticalTextAlignment="Center"/>
+                        <!--<Image  Source="camera" Grid.Row="0" Grid.Column="1"
+                                HeightRequest="15" WidthRequest="15" Aspect="AspectFit"
+                                HorizontalOptions="End" VerticalOptions="Center" > 
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Command="{Binding UploadInvoiceCommand}" />
+                            </Image.GestureRecognizers>
+                        </Image>-->
+                        <Label  Grid.Column="1" Grid.Row="0"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                Text="{x:Static fontawesome:Solid.Camera}"
+                                TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                FontSize="20"  >
+                            <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding UploadProductCommand}"
+                                NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                    </Grid>
+                    <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UploadInvoiceCommand}" NumberOfTapsRequired="1"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+
+                 
+              <Button Grid.Row="8" HeightRequest="40" Command="{Binding SelectAddressCommand}" Text="{x:Static resource:AppResources.lblProceed}" Style="{StaticResource ButtonBlueStyle}"/>
+            </Grid>
+              </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

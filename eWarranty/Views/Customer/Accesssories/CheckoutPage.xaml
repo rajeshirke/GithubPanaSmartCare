@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage    xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="eWarranty.Views.Customer.Accesssories.CheckoutPage"
+                FlowDirection="{Binding flowDirection}"
+                xmlns:contr="clr-namespace:eWarranty.Controls"
+                xmlns:resource="clr-namespace:eWarranty.Resx"
+                BackgroundColor="{StaticResource contentBG}"
+                xmlns:lang="clr-namespace:eWarranty.Hepler"
+                xmlns:sync="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+                xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+                x:Name="root" Title="{x:Static resource:AppResources.titleShoppingCart}">
+   
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid  Padding="5" VerticalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All" BackgroundColor="{StaticResource contentBG}" >
+               
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>                               
+                </Grid.RowDefinitions>
+      
+                <Grid Grid.Row="0" BackgroundColor="Transparent" Padding="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+            
+                    <CollectionView x:Name="listView" Grid.Row="0"  ItemsSource="{Binding SelectedProducts}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HeightRequest="120" Margin="5" Padding="5" RowSpacing="0" BackgroundColor="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Padding="0" ColumnSpacing="0" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.4*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding ProdcuImageUrl}" Aspect="AspectFit" VerticalOptions="Center" HorizontalOptions="Center" />
+                                        <Grid Grid.Column="1" Padding="0" RowSpacing="0" Margin='{OnPlatform Default="12,0,0,0", Android="16,0,0,0"}'>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />                                            
+                                            </Grid.RowDefinitions>
+                                            <Label Text="{Binding ProductClassificationName}"
+                                                    Grid.Row="0" HorizontalTextAlignment="Start"
+                                                    Style="{StaticResource LabelLargeBlack}"
+                                                    MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label Text="{Binding Name}" Grid.Row="1"
+                                                    HorizontalTextAlignment="Start"
+                                                    Style="{StaticResource LabelLargeBlack}"
+                                                    MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label Grid.Row="2" Style="{StaticResource MyValueLabel}" Padding="5">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}" />
+                                                        <Span Text=" " Style="{StaticResource MyValueLabel}" />
+                                                        <Span Text="{Binding ProdcuPrice,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}"/>                                                         
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Grid Grid.Row="3" VerticalOptions="End" HeightRequest="{OnPlatform iOS='50',Android='100'}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="6*"/>   
+                                                    <ColumnDefinition Width="5*"/>                                           
+                                                </Grid.ColumnDefinitions>
+                                                <cards:SfCardView BorderColor="{StaticResource GrayColor}" BorderWidth="0.5" Margin="{OnPlatform iOS='0,10,0,0'}" CornerRadius="5"
+                                                                    BackgroundColor="{StaticResource WhiteColor}" BorderThickness="1" VerticalOptions="EndAndExpand"
+                                                                    HasShadow="True" Grid.Column="0" HeightRequest="{OnPlatform iOS='50',Android='100'}">
+                                                    <Grid HorizontalOptions="CenterAndExpand" Padding="5" HeightRequest="{OnPlatform iOS='50',Android='100'}">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="3*"/>
+                                                            <ColumnDefinition Width="4*"/>
+                                                            <ColumnDefinition Width="3*"/>                                                    
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image Source="plus" Grid.Column="2"
+                                                                WidthRequest="{OnPlatform iOS='20' ,Android='25'}"
+                                                                HeightRequest="{OnPlatform iOS='20' ,Android='25'}"
+                                                                Aspect="AspectFit" HorizontalOptions="Start">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.plusCommand, Source={x:Reference Name=root}}"
+                                                                    NumberOfTapsRequired="1"
+                                                                    CommandParameter="{Binding AccessoryMasterId}"
+                                                                    />
+                                                                </Image.GestureRecognizers>
+                                                        </Image>
+                                                        <Label Text="{Binding CartCount}"  Grid.Column="1" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MyTitleLabel}"/>
+                                                        <Image Source="minus" Grid.Column="0"
+                                                                WidthRequest="{OnPlatform iOS='20' ,Android='25'}"
+                                                                HeightRequest="{OnPlatform iOS='20' ,Android='25'}"
+                                                                Aspect="AspectFit" HorizontalOptions="Start">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.minusCommand, Source={x:Reference Name=root}}"
+                                                                    NumberOfTapsRequired="1"
+                                                                    CommandParameter="{Binding AccessoryMasterId}"
+                                                                    />
+                                                            </Image.GestureRecognizers>
+                                                        </Image>                                            
+                                                    </Grid>   
+                                                </cards:SfCardView>
+                                                                               
+                                                    <Image Margin="0,0,5,0" Source="trashcan" Grid.Column="1"
+                                                        WidthRequest="{OnPlatform iOS='25' ,Android='25'}"
+                                                        HeightRequest="{OnPlatform iOS='25' ,Android='25'}"
+                                                        Aspect="AspectFit"
+                                                        HorizontalOptions="EndAndExpand">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                            Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference Name=root}}"
+                                                            NumberOfTapsRequired="1"
+                                                            CommandParameter="{Binding AccessoryMasterId}" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>                                   
+
+                                        </Grid>
+                                    
+                                    </Grid>
+                                    <BoxView x:Name="boxView" BackgroundColor="{StaticResource GrayColor}" HeightRequest="1" Grid.Row="1"/>
+                                </Grid>
+
+                            </DataTemplate>                    
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Label Grid.Row="1" HorizontalOptions="End" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resource:AppResources.lblTotalAmount}" Style="{StaticResource MyTitleLabel}"/>
+                                <Span Text="{Binding CurrencyCode}" Style="{StaticResource MyValueLabel}" />
+                                <Span Text=" " Style="{StaticResource MyValueLabel}" />
+                                <Span Text="{Binding TotalAmount,StringFormat='{0:F2}'}" FontSize="18" FontAttributes="Bold" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}" />                           
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Text="{x:Static resource:AppResources.lblCheckout}" Grid.Row="2"
+                            Style="{StaticResource ButtonBlueStyle}"  Command="{Binding NextCommand}"/>
+                </Grid>
+
+            </Grid>
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>

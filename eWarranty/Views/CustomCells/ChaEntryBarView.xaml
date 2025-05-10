@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.CustomCells.ChaEntryBarView"
+              xmlns:contr="clr-namespace:eWarranty.Controls" xmlns:resource="clr-namespace:eWarranty.Resx" >
+    <ContentView.Content>
+        <Grid x:Name="MessageControls" RowSpacing="1" ColumnSpacing="2" Padding="5"
+          BackgroundColor="#EFEFF4"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=MessagesListView, Property=Height,Factor=.91,Constant=0}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=MessagesListView, Property=Height,Factor=.09,Constant=0}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Entry x:Name="chatTextInput" Keyboard="Chat" Grid.Column="0" HeightRequest="25" Placeholder="Message" Text="{Binding OutGoingText}"></Entry>
+      <Image Grid.Column="1" Source="camera.png" WidthRequest="30"  />
+      <Button Grid.Column="2" Text="Send" Command="{Binding SendCommand}" Clicked="Button_Clicked"></Button>
+    </Grid>
+    </ContentView.Content>
+</ContentView>

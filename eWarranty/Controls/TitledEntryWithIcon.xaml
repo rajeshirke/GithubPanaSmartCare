@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Controls.TitledEntryWithIcon"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             xmlns:fontawesome="clr-namespace:eWarranty.Models"
+             xmlns:lang="clr-namespace:eWarranty.Hepler">
+    <ContentView.Content>
+          <Grid RowSpacing="0" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" x:Name="LabelTitle" Text="{Binding Title}"  Style="{StaticResource MyTitleLabel}" VerticalTextAlignment="End" />
+                <Grid Grid.Row="1" VerticalOptions="Center" RowSpacing="0"  BackgroundColor="Transparent" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout IsEnabled="{Binding IsEnabledView}" Grid.Row="0" Grid.Column="0">
+                    <contr:ImageEntry  VerticalOptions="End" IsReadOnly="{Binding IsEnabledView}"  x:Name="EntryContent"  Text="{Binding Text}"
+                                        Placeholder="{Binding Placeholder}"
+                                        Style="{StaticResource EnteryTxtValues}" BackgroundColor="White"
+                                        VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                    </StackLayout>
+                    <!--<Image x:Name="imgicon" BackgroundColor="White" Grid.Column="1" Source="{Binding ImageSource}" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>-->
+                    <Label x:Name="imgicon" Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Center" 
+                        Text="{Binding ImageSource}" Margin="0,0,2,0"
+                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                        FontSize="20" >
+                        <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped"
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                </Grid>
+            
+        </Grid>
+    </ContentView.Content>
+</ContentView>

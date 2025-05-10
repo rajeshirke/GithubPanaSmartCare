@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+   
+
+    <Color x:Key="LightRadioButtonColor">whitesmoke</Color>
+    <Color x:Key="DarkRadioButtonColor">white</Color>
+
+    <ControlTemplate x:Key="ThemeRadioTemplate">
+        <Frame
+            Padding="0"
+            BackgroundColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                                Light={StaticResource LightRadioButtonColor}}"
+            BorderColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                            Light={StaticResource LightRadioButtonColor}}"
+            HasShadow="False"
+            HeightRequest="30"
+            HorizontalOptions="Start"
+            VerticalOptions="Start"
+            WidthRequest="180">
+            <Grid Margin="4" WidthRequest="80">
+                <Grid
+                    HeightRequest="20"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    WidthRequest="20">
+                    <Ellipse
+                        Fill="White"
+                        HeightRequest="18"
+                        HorizontalOptions="Center"
+                        Stroke="#2E2545"
+                        StrokeThickness="1"
+                        VerticalOptions="Center"
+                        WidthRequest="18" />
+                    <Ellipse
+                        x:Name="Check"
+                        BackgroundColor="Transparent"
+                        Fill="{StaticResource BlueColor}"
+                        HeightRequest="10"
+                        HorizontalOptions="Center"
+                        Stroke="{StaticResource BlueColor}"
+                        StrokeThickness="0"
+                        VerticalOptions="Center"
+                        WidthRequest="10" />
+                </Grid>
+                <!-- This enables us to put in dynamic content -->
+                <ContentPresenter />
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter Property="BorderColor" Value="{StaticResource BlueColor}" />
+                                <Setter TargetName="Check" Property="Opacity" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter Property="BorderColor" Value="#F3F2F1" />
+                                <Setter TargetName="Check" Property="Opacity" Value="0" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Frame>
+    </ControlTemplate>
+            
+
+</ResourceDictionary>

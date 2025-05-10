@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.InquiryView.SurveyPage"
+               xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty" Title="{x:Static resource:AppResources.menuSurvey}"
+              xmlns:converters="clr-namespace:eWarranty.Converters">
+    <ContentPage.Content>
+       
+            <StackLayout>
+                 <Label Grid.Row="0" IsVisible="{Binding SurverySubmited}" BackgroundColor="#FCF4E1" HorizontalTextAlignment="Center" FontSize="20"  Style="{StaticResource EnteryLabelValues}" Text="{x:Static resource:AppResources.msgYouhavealreadyparticipatedinsurvey}"/>
+           
+        <Grid Padding="10,0,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="auto"/>
+                
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+         
+            <CollectionView Grid.Row="0" IsVisible="{Binding SurverySubmited, Converter={converters:InverseBoolConverter}}" ItemsSource="{Binding SurveyModels}" Margin="0,10,0,0">
+                 <CollectionView.ItemTemplate>  
+                   <DataTemplate>
+                       <Grid HeightRequest="90">
+                           <Grid.RowDefinitions>
+                               <RowDefinition Height="auto"/>
+                               <RowDefinition Height="auto"/>
+                           </Grid.RowDefinitions>
+                            <Label Grid.Row="0" HorizontalTextAlignment="Start" Text="{Binding QuestionText}" Style="{StaticResource DescLabel}"  />
+                             <contr:RattingBar x:Name="customRattingBar" HorizontalOptions="Start" Grid.Row="1"   ImageWidth="25" ImageHeight="25"     Command="{Binding rattingBarCommand}" SelectedStarValue="{ Binding SurveyRating}"   FillStarImage="fillstar" EmptyStarImage="emptystar"   />
+
+                       </Grid>
+                       </DataTemplate>
+                     </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Grid Grid.Row="1" IsVisible="{Binding SurverySubmited, Converter={converters:InverseBoolConverter}}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                        <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Label Text="{x:Static resource:AppResources.lblEnterOtherMessage}" Grid.Row="0" Style="{StaticResource DescLabel}" />
+                  <contr:RoundedCornerView HeightRequest="100" Grid.Row="1" RoundedCornerRadius="8" BorderColor="Silver" BorderWidth="1" IsVisible="{Binding SurverySubmited, Converter={converters:InverseBoolConverter}}">
+                  <Editor  Placeholder="{x:Static resource:AppResources.lblEnterOtherMessage}" Text="{Binding Othermessage}" TextColor="Black" BackgroundColor="White"/>
+            </contr:RoundedCornerView>
+            </Grid>
+          
+            <Grid Grid.Row="2"  IsVisible="{Binding SurverySubmited, Converter={converters:InverseBoolConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="4*"/>
+                     <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                 <Button Grid.Column="1" Command="{Binding SubmitCommand}" Text="{x:Static resource:AppResources.lblSubmit}" Style="{StaticResource ButtonBlueStyle}" />
+                
+
+            </Grid>
+          
+        </Grid>
+                </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

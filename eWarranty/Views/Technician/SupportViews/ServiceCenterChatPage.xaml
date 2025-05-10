@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage    xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="eWarranty.Views.Technician.SupportViews.ServiceCenterChatPage"
+                xmlns:contr="clr-namespace:eWarranty.Controls"
+                xmlns:viewCell="clr-namespace:eWarranty.Views.CustomCells"
+                xmlns:helper="clr-namespace:eWarranty.Views.CustomCells" BackgroundColor="{StaticResource LighterGray}"
+                xmlns:lang="clr-namespace:eWarranty.Hepler"
+                Title="Chat">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helper:ChatDataTemplateSelector x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource WhiteColor}">          
+            <ScrollView  BackgroundColor="{StaticResource WhiteColor}">
+                <Grid HeightRequest="500" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <ListView x:Name="MessagesListView" Grid.Row="0" BackgroundColor="{StaticResource WhiteColor}"
+                            ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                            ItemsSource="{Binding Messages}"
+                            HasUnevenRows="True" 
+                            ItemSelected="MyListView_OnItemSelected"
+                            ItemTapped="MyListView_OnItemTapped"
+                            SeparatorVisibility="None" >
+
+                    </ListView>
+            
+                    <Grid x:Name="MessageControls" Grid.Row="1" RowSpacing="1" ColumnSpacing="2" Padding="5"
+                            BackgroundColor="{StaticResource LighterGray}"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand" >
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry x:Name="txtMsge" Style="{StaticResource EnteryTxtValues}"
+                               Grid.Column="0" HeightRequest="25" Placeholder="Message"
+                               BackgroundColor="White" Text="{Binding OutGoingText}"/>
+                        <Image Grid.Column="1" Margin="5" Source="camera.png" WidthRequest="25" HeightRequest="25">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding FileCommand}"
+                                    NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <ImageButton Margin="5" BackgroundColor="Transparent" HeightRequest="25" WidthRequest="25"
+                                     Grid.Column="2" 
+                                     Source="send" Command="{Binding SendCommand}" />
+                    </Grid>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

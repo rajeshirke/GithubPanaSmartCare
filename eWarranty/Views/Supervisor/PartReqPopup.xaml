@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+    x:Class="eWarranty.Views.Supervisor.PartReqPopup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:card="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"    
+    BackgroundColor="#C0808080"
+    x:Name="Root">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <ScrollView>
+        <StackLayout Margin="10" Padding="5" VerticalOptions="Center" HorizontalOptions="Center">
+            <card:SfCardView CornerRadius="15" HasShadow="{OnPlatform iOS='false',Android='true'}" BackgroundColor="White" Padding="5" Margin="5">
+
+                <Grid Padding="2" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>     
+                    </Grid.RowDefinitions>
+                         
+                        <Grid  Padding="0,0,0,0">
+                            <Grid.Padding>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="Android">0,0,0,0</On>
+                                <On Platform="iOS">0,0,0,0</On>
+                            </OnPlatform>
+                            </Grid.Padding>
+                            <Grid.RowDefinitions>                                
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>                        
+                            </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                <Image x:Name="CancelImg" HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="Start">
+                                       <Image.Source>
+                                            <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                                Glyph="{x:Static fontawesome:Solid.Window_Close}"
+                                                                Color="{StaticResource BlueColor}"/>
+                                        </Image.Source>
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="TapGestureRecognizer_Tapped_1"
+                                            NumberOfTapsRequired="1"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>       
+                            <Grid Padding="2" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="300"/>
+                                    <RowDefinition Height="auto"/>                           
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>                                                 
+                                    </Grid.RowDefinitions>
+                                         
+                                    <Grid Grid.Row="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>                                                    
+                                        </Grid.RowDefinitions>
+                       
+                                        <contr:RoundedCornerView Grid.Row="0" RoundedCornerRadius="10">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>                                                           
+                                                </Grid.RowDefinitions> 
+                                                <Grid Grid.Row="0" Padding="5">                                                       
+                                            
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/> 
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label  Style="{StaticResource LabelLargeBlack}" Grid.Row="0" LineBreakMode="WordWrap" HorizontalTextAlignment="Start">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Part Number" Style="{StaticResource MyTitleLabel}"  />
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />
+                                                                <Span Text="{Binding PartReqDetails.PartRequestNumber}" Style="{StaticResource MyValueLabel}" />                                                  
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>     
+
+                                                    <Label  Grid.Row="1" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start">
+                                                        <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Requested By" Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text="{Binding PartReqDetails.TechnicianPersonName}" Style="{StaticResource MyValueLabel}" />                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="2" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start">
+                                                        <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Requested Quantities" Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text="{Binding PartReqDetails.RequestedPartQuantity}" Style="{StaticResource MyValueLabel}" />                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>                                                                                                       
+                                                    <Label Grid.Row="3" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start">
+                                                        <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Request Date" Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text="{Binding PartReqDetails.RequestDate,StringFormat='{0:MMM, dd yyyy}'}" Style="{StaticResource MyValueLabel}" />                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                            
+                                                    <Label Grid.Row="4" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start" 
+                                                            LineBreakMode="TailTruncation" MaxLines="1" Style="{StaticResource SimpleLabelBlack}">
+                                                        <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Request Type" Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />
+                                                            <Span Text="{Binding PartReqDetails.TypeName}" Style="{StaticResource MyValueLabel}" />                                                  
+                                                        </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+
+                                                    <Grid Grid.Row="5">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>                                                           
+                                                        </Grid.RowDefinitions> 
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="3.5*"/>
+                                                            <ColumnDefinition Width="6.5*"/>                                                                                                           
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start" 
+                                                            LineBreakMode="TailTruncation" MaxLines="1" Style="{StaticResource SimpleLabelBlack}">
+                                                            <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Request Status" Style="{StaticResource MyTitleLabel}"  />
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}"  />                                                                                                                  
+                                                            </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    <contr:RoundedCornerView Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                                        <Grid Padding="5" BackgroundColor="White">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                            </Grid.RowDefinitions>
+                                                                <Grid Grid.Row="1" Margin="{OnPlatform Android='5,0,5,15'}" Padding="{OnPlatform iOS='-2,-2,-2,5',Android='0,5,0,5'}" BackgroundColor="White">                 
+                                                                    <contr:TitleDropdownView                                                    
+                                                                            Placeholder="Select Status" PlaceholderColor="{StaticResource PlcGray}"
+                                                                            HorizontalOptions="StartAndExpand"
+                                                                            PickerItemsSource="{Binding PartReqStatusTypes}"
+                                                                            ItemDisplayBinding="Title" SelectedItem="{Binding SelectedPartReqStatusType}"
+                                                                            Command="{Binding PartStatusCommand}"  />
+
+                                                                </Grid>
+                                                            <!--<contr:RoundedCornerView Grid.Row="0" HeightRequest="42" >
+                                                                <Grid  RowSpacing="0">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="auto"/>
+                                                                        <RowDefinition Height="1"/>
+                                                                    </Grid.RowDefinitions>
+
+                                                                    <Grid Grid.Row="0" Padding="5,0,0,5">
+                                                                        <contr:TitleDropdownView Placeholder="Select Status" PlaceholderColor="{StaticResource PlcGray}"
+                                                                                                    HorizontalOptions="StartAndExpand"
+                                                                                                    PickerItemsSource="{Binding PartReqStatusTypes}"
+                                                                                                    ItemDisplayBinding="Title" SelectedItem="{Binding SelectedPartReqStatusType}"
+                                                                                                    Command="{Binding PartStatusCommand}" />
+                                                                    </Grid>
+                                                                    <Grid Grid.Row="1" Padding="5,0">
+                                                                        <BoxView Grid.Row="0" BackgroundColor="{StaticResource LightGray}" VerticalOptions="Start"/>
+                                                                    </Grid>
+                                                                </Grid>
+                                                            </contr:RoundedCornerView>-->
+                                                        </Grid>
+                                                    </contr:RoundedCornerView>  
+                                                </Grid>
+
+                                                  
+                                                </Grid>                                                    
+                                            </Grid>
+                                        </contr:RoundedCornerView>                                  
+                                      
+                                    </Grid>
+                                </Grid>
+
+                                <Grid Grid.Row="1" HeightRequest="45">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Column="0"  Text="Save" Command="{Binding UpdatePartRequest}"
+                                            Style="{StaticResource ButtonBlueStyle}"/>
+
+
+                                    <!--<contr:RoundedCornerView Grid.Column="0" BorderColor="{StaticResource BlueColor}" BorderWidth="1" RoundedCornerRadius="10" BackgroundColor="{StaticResource TransparentColor}">
+                                        <Grid BackgroundColor="{StaticResource BlueColor}" VerticalOptions="FillAndExpand">
+                                            <Label Text="Save" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center"  Style="{StaticResource LabelMediumWhite}" />
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding UpdatePartRequest}"                                                    
+                                                    NumberOfTapsRequired="1" />
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </contr:RoundedCornerView>-->
+
+                                    <Button Grid.Column="1" Text="Cancel" Command="{Binding CancelCommand}"
+                                            Style="{StaticResource ButtonPinkStyle}"/>
+
+                                    <!--<contr:RoundedCornerView Grid.Column="1" BorderColor="{StaticResource PinkColor}" BorderWidth="1" RoundedCornerRadius="10" BackgroundColor="{StaticResource TransparentColor}">
+                                        <Grid BackgroundColor="{StaticResource PinkColor}" VerticalOptions="FillAndExpand">
+                                            <Label Text="Cancel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" Style="{StaticResource LabelMediumWhite}" />
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding CancelCommand}"
+                                                    NumberOfTapsRequired="1" />
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </contr:RoundedCornerView>-->                                       
+                                </Grid>
+                        
+                            </Grid>
+                    
+                        </Grid>
+                    </Grid>
+
+            </card:SfCardView>
+
+                    
+        </StackLayout>
+
+        <!--<AbsoluteLayout VerticalOptions="CenterAndExpand">
+            <Grid VerticalOptions="CenterAndExpand">
+
+            </Grid>
+        </AbsoluteLayout>-->
+
+    </ScrollView>
+</pages:PopupPage>

@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eWarranty.Views.Supervisor.SupDashboardTile"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    xmlns:local="clr-namespace:eWarranty"
+    xmlns:lang="clr-namespace:eWarranty.Hepler"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+    xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms"             
+    x:Name="root"
+    Title="CIAA">
+    <ContentPage.Content>
+        <Grid>
+            <AbsoluteLayout >
+                <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+                <Grid Padding="10" VerticalOptions="FillAndExpand"
+                      RowSpacing="0" Margin="10"
+                      AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                      AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>                    
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Padding="5,0,0,0" Style="{StaticResource LabelMediumBlack}"  HorizontalOptions="EndAndExpand"
+                                Text="{Binding SelectedDate, StringFormat='{0:MMM dd, yyyy}'}"
+                                HorizontalTextAlignment="Center" VerticalTextAlignment="Center">                       
+                        </Label>
+                        <Label HorizontalTextAlignment="Start"  Grid.Row="0" HorizontalOptions="StartAndExpand">
+                            <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Person.FirstName}" Style="{StaticResource LabelLargeBlack}"/>
+                                <Span Text=" "/>
+                                <Span Text="{Binding Person.LastName}" Style="{StaticResource LabelLargeBlack}"/>
+                            </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+
+                    <Grid Grid.Row="1" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                             <RowDefinition Height="150"/>
+                             <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Padding="5" Grid.Row="0" Grid.Column="0">
+                            <Grid HeightRequest="120" BackgroundColor="Transparent" Padding="2,0,2,0" IsClippedToBounds="True">
+                                                                         
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> 
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout  Orientation="Vertical" Margin="5">
+
+                                        <Frame BorderColor="{StaticResource BlueColor}" BackgroundColor="{StaticResource WhiteColor}" Style="{StaticResource FrameStyle}" HeightRequest="50">                                            
+                                                       
+                                            <Image Source="dbaddsr" HeightRequest="40" WidthRequest="40" IsOpaque="True"
+                                                    Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Label Text="Service Requests" HorizontalOptions="CenterAndExpand"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                MaxLines="2" LineBreakMode="TailTruncation">
+                                                <Label.FontSize>
+                                                    <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                                </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                        
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding ServicesCommand}"
+                                    NumberOfTapsRequired="1" />
+                            </Grid.GestureRecognizers>
+                        </Grid> 
+
+                        <!--<contr:RoundedCornerView HeightRequest="120" WidthRequest="50" Margin="15" x:Name="AssignedJobs" Grid.Column="0" Grid.Row="0" Shadow="True" ShadowRadius="8"    RoundedCornerRadius="8" BackgroundColor="{StaticResource contentBG}" > 
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                   <RowDefinition Height="7*"/>
+                                   <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="dbaddsr" Aspect="AspectFit"
+                                                   HorizontalOptions="Center" HeightRequest="50"
+                                                   VerticalOptions="CenterAndExpand" />
+                                <Label Grid.Row="1" Text="Service Requests" HorizontalOptions="CenterAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                   MaxLines="1" LineBreakMode="TailTruncation"/>
+                            </Grid>
+                            <contr:RoundedCornerView.GestureRecognizers>
+                                <TapGestureRecognizer                                    
+                                        Command="{Binding ServicesCommand}"
+                                        NumberOfTapsRequired="1" />
+                              </contr:RoundedCornerView.GestureRecognizers>
+                        </contr:RoundedCornerView>-->
+
+                        <Grid Padding="5" Grid.Row="0" Grid.Column="1">
+                            <Grid HeightRequest="120" BackgroundColor="Transparent" Padding="2,0,2,0" IsClippedToBounds="True">
+                                                                         
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> 
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout  Orientation="Vertical" Margin="5">
+
+                                        <Frame BorderColor="{StaticResource BlueColor}" BackgroundColor="{StaticResource WhiteColor}" Style="{StaticResource FrameStyle}" HeightRequest="50">                                            
+                                                       
+                                            <Image Source="amcicon" HeightRequest="40" WidthRequest="40" IsOpaque="True"
+                                                    Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Label Text="AMC Requests" HorizontalOptions="CenterAndExpand"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                MaxLines="2" LineBreakMode="TailTruncation">
+                                                <Label.FontSize>
+                                                    <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                                </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                        
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding AMCReqCommand}"
+                                    NumberOfTapsRequired="1" />
+                            </Grid.GestureRecognizers>
+                        </Grid> 
+
+                        <!--<contr:RoundedCornerView HeightRequest="120"
+                                                WidthRequest="50" Margin="15" Grid.Column="1" Grid.Row="0" Shadow="True" ShadowRadius="8"  RoundedCornerRadius="8" BackgroundColor="{StaticResource contentBG}" >
+                           <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="7*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="amcicon" Aspect="AspectFit"
+                                                   HorizontalOptions="Center" HeightRequest="50"
+                                                   VerticalOptions="CenterAndExpand" />
+                               <Label Grid.Row="1" Margin="5,0,5,0" Text="AMC Requests" HorizontalOptions="CenterAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                   MaxLines="1" LineBreakMode="TailTruncation"/>
+                  
+                            </Grid>
+                            <contr:RoundedCornerView.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Command="{Binding AMCReqCommand}"
+                                        NumberOfTapsRequired="1" />
+                            </contr:RoundedCornerView.GestureRecognizers>
+                        </contr:RoundedCornerView>-->
+
+
+                         <Grid Padding="5" Grid.Row="1" Grid.Column="0">
+                            <Grid HeightRequest="120" BackgroundColor="Transparent" Padding="2,0,2,0" IsClippedToBounds="True">
+                                                                         
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> 
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout  Orientation="Vertical" Margin="5">
+
+                                        <Frame BorderColor="{StaticResource BlueColor}" BackgroundColor="{StaticResource WhiteColor}" Style="{StaticResource FrameStyle}" HeightRequest="50">                                            
+                                                       
+                                            <Image Source="shoppingcart" HeightRequest="40" WidthRequest="40" IsOpaque="True"
+                                                    Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Label Text="Accessory Requests" HorizontalOptions="CenterAndExpand"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                MaxLines="2" LineBreakMode="TailTruncation">
+                                                <Label.FontSize>
+                                                    <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                                </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                        
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding AccessoryReqCommand}"
+                                    NumberOfTapsRequired="1" />
+                            </Grid.GestureRecognizers>
+                        </Grid> 
+
+                        <!--<contr:RoundedCornerView HeightRequest="120"
+                                                WidthRequest="50" Margin="15" Grid.Column="0" Grid.Row="1"  Shadow="True" ShadowRadius="8"   RoundedCornerRadius="8" BackgroundColor="{StaticResource contentBG}" >
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="7*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="shoppingcart" Aspect="AspectFit"
+                                                   HorizontalOptions="Center" HeightRequest="50"
+                                                   VerticalOptions="CenterAndExpand"   />
+                                <Label Grid.Row="1" Text="Accessory Requests" HorizontalOptions="CenterAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                   MaxLines="1" LineBreakMode="TailTruncation"/>
+                            </Grid>
+                            <contr:RoundedCornerView.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding AccessoryReqCommand}"
+                                            NumberOfTapsRequired="1" />
+                              </contr:RoundedCornerView.GestureRecognizers>
+                        </contr:RoundedCornerView>-->
+
+                         <Grid Padding="5" Grid.Row="1" Grid.Column="1">
+                            <Grid HeightRequest="120" BackgroundColor="Transparent" Padding="2,0,2,0" IsClippedToBounds="True">
+                                                                         
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> 
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout  Orientation="Vertical" Margin="5">
+
+                                        <Frame BorderColor="{StaticResource BlueColor}" BackgroundColor="{StaticResource WhiteColor}" Style="{StaticResource FrameStyle}" HeightRequest="50">                                            
+                                                       
+                                            <Image Source="partstockdashboard" HeightRequest="40" WidthRequest="40" IsOpaque="True"
+                                                    Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Label Text="Part Requests" HorizontalOptions="CenterAndExpand"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                MaxLines="2" LineBreakMode="TailTruncation">
+                                                <Label.FontSize>
+                                                    <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                                </Label.FontSize>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                                        
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding PartStockReqCommand}"
+                                    NumberOfTapsRequired="1" />
+                            </Grid.GestureRecognizers>
+                        </Grid> 
+
+                        <!--<contr:RoundedCornerView HeightRequest="120"
+                                                WidthRequest="50" Margin="15" Grid.Column="1" Grid.Row="1"  Shadow="True" ShadowRadius="8"   RoundedCornerRadius="8" BackgroundColor="{StaticResource contentBG}" >
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                     <RowDefinition Height="7*"/>
+                                     <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Source="partstockdashboard" Aspect="AspectFit"
+                                                   HorizontalOptions="Center" HeightRequest="50"
+                                                   VerticalOptions="CenterAndExpand" />
+                                <Label Grid.Row="1"  Text="Part Requests" HorizontalOptions="CenterAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                   MaxLines="1" LineBreakMode="TailTruncation"/>
+                            </Grid>
+                            <contr:RoundedCornerView.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding PartStockReqCommand}"
+                                            NumberOfTapsRequired="1" />
+                              </contr:RoundedCornerView.GestureRecognizers>
+                        </contr:RoundedCornerView>-->
+                 
+                    </Grid>
+                </Grid>
+
+                <!--<contr:LoaderAnimView
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+            </AbsoluteLayout>
+
+            <!--<radialMenu:SfRadialMenu x:Name="radialMenu" 
+                                 EnableCenterButtonAnimation="True"
+                                 CenterButtonBorderColor="{StaticResource BlackColor}"
+                                 CenterButtonBackgroundColor="{StaticResource BlueColor}"
+                                 CenterButtonBorderThickness="5" RimColor="{StaticResource LighterGray}"
+                                 CenterButtonRadius="30" CenterButtonText="Quick"
+                                 CenterButtonBackFontFamily="LeagueSpartan-SemiBold"
+                                 CenterButtonFontSize="15" CenterButtonFontAttributes="Bold"
+                                 SelectionColor="{StaticResource LightGray}"
+                                 StartAngle="50">
+
+                <radialMenu:SfRadialMenu.Items>
+
+                    <radialMenu:SfRadialMenuItem FontSize="8" Image="myjob" Command="{Binding MyjobsCommand}" Text="" FontFamily="calibribold" Margin="5"/>
+                    <radialMenu:SfRadialMenuItem FontSize="8" Image="servicemanual" Command="{Binding ServiceManualCommand}" Text="" FontFamily="calibribold" Margin="5"/>
+                    <radialMenu:SfRadialMenuItem FontSize="8" Image="infotips" Command="{Binding TipsAndFAQPCommand}" Text="" FontFamily="calibribold" Margin="5"/>
+                    <radialMenu:SfRadialMenuItem FontSize="8" Image="faq" Command="{Binding FAQCommand}" Text="" FontFamily="calibribold" Margin="5"/>
+                    <radialMenu:SfRadialMenuItem FontSize="8" Image="queries" Command="{Binding MyQueriesCommand}" Text="" FontFamily="calibribold" Margin="5"/>                
+
+
+                </radialMenu:SfRadialMenu.Items>
+
+            </radialMenu:SfRadialMenu>-->
+        </Grid> 
+    </ContentPage.Content>
+</ContentPage>

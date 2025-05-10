@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.SubViews.InvoiceDetailsView"
+             BackgroundColor="White"  xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}"
+             xmlns:converters="clr-namespace:eWarranty.Converters">
+    <ContentView.Content>
+        <ScrollView>
+        <Grid Padding="10,20,10,10">
+             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+             <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Invoice Details" Grid.Column="0" VerticalTextAlignment="Center"  FontAttributes="Bold" Style="{StaticResource MyTitleLabel}"/>
+                <!--<Image Source="download" WidthRequest="25" Aspect="AspectFit" Grid.Column="1" HorizontalOptions="End" >
+                     <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding DownloadCommand}"
+                                    NumberOfTapsRequired="1" />
+                      </Image.GestureRecognizers>
+                </Image>-->
+            </Grid>
+
+             <BoxView Grid.Row="1" BackgroundColor="#687089"/>
+            <Label Grid.Row="2" Text="No Invoice Generated yet" HorizontalTextAlignment="Center" IsVisible="{Binding NoInvoice}" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+            <Grid Grid.Row="2"  IsVisible="{Binding NoInvoice, Converter={converters:InverseBoolConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+               <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold"  >
+                        <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Invoice Number :"  />
+                                                    <Span Text="{Binding InvoiceResponse.InvoiceNumber}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+                   <Label Grid.Row="1"  Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" >
+                       <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Date :"  />
+                                                    <Span Text="{Binding InvoiceResponse.InvoiceDate, StringFormat='{0:MMM dd, yyyy}'}"  />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+               </Grid>
+             <Grid Grid.Row="1"  RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                 <RowDefinition Height="1"/>
+                 <RowDefinition Height="2"/>
+                 <RowDefinition Height="auto"/>
+                
+            </Grid.RowDefinitions>
+           
+            <CollectionView Grid.Row="0" ItemsSource="{Binding InvoiceResponse.InvoiceLineItems}" HeightRequest="{Binding RowHeight}"  >
+                    <CollectionView.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                       <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                   </Grid.ColumnDefinitions>
+                            <Label Text="Name" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Start" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+                            <Label Text="Quantity" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+                            <Label Text="Rate" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="End" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+                              <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="{StaticResource borderColor}"/>
+                        </Grid>
+                    </CollectionView.Header>
+                     <CollectionView.ItemTemplate>  
+                           <DataTemplate>
+                               <Grid>
+                                   <Grid.ColumnDefinitions>
+                                     <ColumnDefinition Width="4*"/>
+                                         <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                   </Grid.ColumnDefinitions>
+                                   <Label Grid.Column="0" Text="{Binding ItemName}" HorizontalTextAlignment="Start" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+                                   <Label Grid.Column="1" Text="{Binding ItemQuantity}" HorizontalTextAlignment="Center" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" />
+                                    <Label Grid.Column="2" LineBreakMode="WordWrap"  HorizontalTextAlignment="End" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="12" FontAttributes="Bold" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding CurrencyCode}" FontSize="10"/>
+                                                                <Span Text=" " FontSize="10"/>
+                                                                <Span Text="{Binding ItemPrice}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                   </Label>
+                               </Grid>
+                           </DataTemplate>
+                     </CollectionView.ItemTemplate>
+
+                </CollectionView>
+               
+            
+            
+            
+            <BoxView Grid.Row="1" BackgroundColor="{StaticResource separatorline}"/>
+               <Grid Grid.Row="3">
+                   <Grid.RowDefinitions>
+                       <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                   </Grid.RowDefinitions>
+                   <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                   </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Grid.Row="0" HorizontalOptions="End" > <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Net Amount: "  />
+                                                    <Span Text="{Binding InvoiceResponse.NetAmount}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+                    <Label Grid.Column="0" Grid.Row="1" > <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="PaymentMode: "  />
+                                                    <Span Text="{Binding InvoiceResponse.PaymentModeName}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+                   <Label Grid.Column="1" Grid.Row="1" HorizontalOptions="End"> <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Paid On : "  />
+                                                    <Span Text="{Binding InvoiceResponse.FullPaymentDate}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+               </Grid>
+                   </Grid>
+        </Grid>
+        </Grid>
+       </ScrollView>
+    </ContentView.Content>
+</ContentView>

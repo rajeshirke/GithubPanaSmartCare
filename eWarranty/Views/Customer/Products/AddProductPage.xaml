@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.Products.AddProductPage"
+             Title="{x:Static resource:AppResources.titleRegister}"
+             FlowDirection="{Binding flowDirection}"              
+             BackgroundColor="{StaticResource contentBG}"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:dm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+             xmlns:lang="clr-namespace:eWarranty.Hepler"
+             xmlns:local="clr-namespace:eWarranty.Converters"
+             xmlns:Con="clr-namespace:eWarranty.Converters"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             xmlns:fontawesome="clr-namespace:eWarranty.Models"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms">
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Name="MenuItem1" Order="Primary"  Icon="productinfo.png" Text="Item 1" Priority="0" Command="{Binding ModelNoInfoCommand}" />-->
+         <!--<ToolbarItem Name="MenuItem1" Order="Primary" Icon="refresh.png"  Priority="0" Command="{Binding RefreshProductCommand}" />-->
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>       
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+                   
+            <Grid  VerticalOptions="FillAndExpand"  RowSpacing="0" Margin="10" >             
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>               
+                </Grid.RowDefinitions>
+      
+                <ScrollView Grid.Row="0" Margin="5">      
+                    <Frame BorderColor="White" Style="{StaticResource FrameStyle}" BackgroundColor="White" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>                                
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Padding="20" RowSpacing="20" BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>  
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>                                        
+                                    </Grid.RowDefinitions>
+                                    <!--<Label Grid.Row="0" Text="{x:Static resource:AppResources.lblModelNumber}" Style="{StaticResource EnteryTitleLabel}"/>-->
+
+                                    <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblModelNumber}" Style="{StaticResource EnteryTitleLabel}" />
+                                                <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Grid Grid.Row="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="1"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="9*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--<contr:ImageEntry ReturnType="Next"
+                                                          Placeholder="{x:Static resource:AppResources.plcModelNumber}"
+                                                          Grid.Column="0" Grid.Row="0" Text="{Binding ModelNo}"
+                                                          VerticalOptions="FillAndExpand"
+                                                          HorizontalOptions="FillAndExpand"
+                                                          TextChanged="ImageEntry_TextChanged"
+                                                          Completed="ImageEntry_Completed_1"
+                                                          Style="{StaticResource EnteryTxtValues}"
+                                                          BackgroundColor="White">
+                            
+                                        </contr:ImageEntry>-->
+                                        
+                                        <autocomplete:SfAutoComplete
+                                            x:Name="autoComplete"
+                                            Grid.Column="0" Grid.Row="0"                                            
+                                            AutoCompleteMode="SuggestAppend"
+                                            DisplayMemberPath="ModelName"
+                                            Watermark="{x:Static resource:AppResources.plcModelNumber}"
+                                            WatermarkColor="{StaticResource PlcGray}"
+                                            HeightRequest="40"
+                                            TextColor="{StaticResource GrayShade}"
+                                            FontFamily="calibribold"
+                                            DropDownItemFontFamily="calibribold"
+                                            FontAttributes="Bold"
+                                            TextSize="{OnPlatform iOS='15',Android='14'}"
+                                            ShowBorder="False"
+                                            DataSource="{Binding AllmodelNumbers}"
+                                            FocusChanged="autoComplete_FocusChanged"
+                                            ValueChanged="autoComplete_ValueChanged"/>
+
+                                        <!--<Image Source="baricon" Grid.Column="1" Grid.Row="0"  HeightRequest="25" WidthRequest="25" HorizontalOptions="End"
+                                                VerticalOptions="Center" Margin="0,10,0,0" > 
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Tapped="TapGestureRecognizer_Tapped_2"
+                                                        NumberOfTapsRequired="1"
+                                                        Command="{Binding ModelNoCommand}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>-->
+
+                                        <Label  Grid.Column="1" Grid.Row="0"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                                Text="{x:Static fontawesome:Solid.Barcode}"
+                                                TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                FontSize="20"  >
+                                            <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TapGestureRecognizer_Tapped_2"
+                                                Command="{Binding ModelNoCommand}"
+                                                NumberOfTapsRequired="1" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <!--<Grid Grid.Column="1" Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                    <ColumnDefinition Width="auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="0"  HeightRequest="25" WidthRequest="25" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,5,0" > 
+                                                <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                                Command="{Binding ModelsPopupCommand}" />
+                                                    </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="baricon" Grid.Column="1"  HeightRequest="25" WidthRequest="25" HorizontalOptions="End"
+                                                VerticalOptions="Center" Margin="0,10,0,0" > 
+                                                <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                                Command="{Binding ModelNoCommand}" />
+                                                    </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>-->
+                        
+                                        <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>                       
+                                    </Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                                Command="{Binding ModelsPopupCommand}"
+                                                NumberOfTapsRequired="1" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                                <Grid Grid.Row="1" RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>                                        
+                                    </Grid.RowDefinitions>
+                                    <!--<Label Grid.Row="0" Text="{x:Static resource:AppResources.lblSerialNumber}"  Style="{StaticResource EnteryTitleLabel}" VerticalTextAlignment="End" />-->
+                                    <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblSerialNumber}" Style="{StaticResource EnteryTitleLabel}" />
+                                                <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Grid Grid.Row="1" RowSpacing="0"  BackgroundColor="Transparent" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="1"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="9*"/>                  
+                                            <ColumnDefinition Width="1*"/>                  
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <contr:ImageEntry PlaceholderColor="{StaticResource PlcGray}"   VerticalOptions="End" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" 
+                                                        Text="{Binding SerialNo}" x:Name="txtSerialNo" Placeholder="{x:Static resource:AppResources.plcSerialNumber}"
+                                                        Style="{StaticResource EnteryTxtValues}"  BackgroundColor="White"  VerticalTextAlignment="Center"
+                                                        HorizontalTextAlignment="Start"  />
+                                        <!--<Image  Source="baricon" Grid.Row="0" Grid.Column="1"
+                                                HeightRequest="25" WidthRequest="25" Aspect="AspectFit"
+                                                HorizontalOptions="End" VerticalOptions="Center" > 
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                        Command="{Binding SerialNoCommand}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>-->
+                                        <Label  Grid.Row="0" Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                                Text="{x:Static fontawesome:Solid.Barcode}"
+                                                TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                FontSize="20"  >
+                                            <Label.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding SerialNoCommand}"
+                                                NumberOfTapsRequired="1" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <BoxView  Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="2" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/> 
+                                    </Grid.RowDefinitions>
+                                    
+                                    
+                                    <Grid RowDefinitions="auto,auto" Grid.Row="0" RowSpacing="0">
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblPurchaseDate}" Style="{StaticResource EnteryTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                    <contr:TitledDateTimePicker Grid.Row="1" SDate="{x:Static sys:DateTime.Now}" SelectedDate="{Binding SelectedDate}" Command="{Binding DateSlectCommand}" ItemTapped="TitledDateTimePicker_ItemTapped" />
+
+                                    </Grid>
+                
+                                    
+
+                                    <Grid RowDefinitions="auto,auto,1" Grid.Row="1" RowSpacing="0">
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Invoice Number" Style="{StaticResource MyTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <contr:ImageEntry Grid.Row="1" Style="{StaticResource EnteryTxtValues}" HeightRequest="50"
+                                                           Placeholder="{x:Static resource:AppResources.plcInvoiceNumber}"
+                                                          Text="{Binding PurchaseInvoiceNumber}" VerticalTextAlignment="Center" />
+
+                                        <BoxView Grid.Row="2"  BackgroundColor="#DADADA" VerticalOptions="Start"/>
+
+
+                                    </Grid>
+
+                                    <Grid RowDefinitions="auto,auto" Grid.Row="2" RowSpacing="0">
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblPurchaseInvoice}" Style="{StaticResource EnteryTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Grid Grid.Row="1" RowSpacing="0"  BackgroundColor="Transparent" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="9*"/>                  
+                                                <ColumnDefinition Width="1*"/>                  
+                                            </Grid.ColumnDefinitions>
+                                        
+                                             <contr:ImageEntry Grid.Row="0" Grid.Column="0" Style="{StaticResource EnteryTxtValues}" HeightRequest="50"
+                                                               Placeholder="{x:Static resource:AppResources.plcUploadPurchaseInvoice}"
+                                                               Text="{Binding InvoiceFile}" VerticalTextAlignment="Center"/>
+                                            <!--<Image  Source="camera" Grid.Row="0" Grid.Column="1"
+                                                    HeightRequest="15" WidthRequest="15" Aspect="AspectFit"
+                                                    HorizontalOptions="End" VerticalOptions="Center" > 
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                            Command="{Binding UploadInvoiceCommand}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>-->
+                                            <Label  Grid.Column="1" Grid.Row="0"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                                    Text="{x:Static fontawesome:Solid.Camera}"
+                                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                    FontSize="20"  >
+                                                <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding UploadInvoiceCommand}"
+                                                    NumberOfTapsRequired="1" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                        </Grid>
+                                    <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding UploadInvoiceCommand}" NumberOfTapsRequired="1"/>
+                                    </Grid.GestureRecognizers>
+                                    </Grid>
+
+                                    <Grid RowDefinitions="auto,auto,1" Grid.Row="3" RowSpacing="0">
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Product Image" Style="{StaticResource EnteryTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Grid Grid.Row="1" RowSpacing="0"  BackgroundColor="Transparent" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="9*"/>                  
+                                                <ColumnDefinition Width="1*"/>                  
+                                            </Grid.ColumnDefinitions>
+                                        
+                                             <contr:ImageEntry Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource EnteryTxtValues}"
+                                                               Placeholder="Upload Product Image" HeightRequest="50"
+                                                               Text="{Binding ProductImageFile}" />
+                                            <!--<Image  Source="camera" Grid.Row="0" Grid.Column="1"
+                                                    HeightRequest="15" WidthRequest="20" Aspect="AspectFit"
+                                                    HorizontalOptions="End" VerticalOptions="Center" > 
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                            Command="{Binding UploadProductCommand}" />
+                                                </Image.GestureRecognizers>
+                                            </Image>-->
+                                             <Label  Grid.Column="1" Grid.Row="0"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                                    Text="{x:Static fontawesome:Solid.Camera}"
+                                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                    FontSize="20"  >
+                                                <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                     Command="{Binding UploadProductCommand}"
+                                                    NumberOfTapsRequired="1" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                        </Grid>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding UploadProductCommand}" NumberOfTapsRequired="1"/>
+                                        </Grid.GestureRecognizers>
+                                    </Grid>
+
+                                    <Grid RowDefinitions="auto,auto,1" Grid.Row="4" RowSpacing="0">
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblCountryofpurchase}" Style="{StaticResource EnteryTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Grid Grid.Row="1" RowSpacing="0"  BackgroundColor="Transparent" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="9*"/>                  
+                                                <ColumnDefinition Width="1*"/>                  
+                                            </Grid.ColumnDefinitions>
+                                        
+                                            <contr:ImageEntry Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource EnteryTxtValues}"
+                                                               Placeholder="Select Country" HeightRequest="50"
+                                                               Text="{Binding SelectCountry.Title}" />
+                                            <Label     Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                                        Text="{x:Static fontawesome:Solid.Caret_Down}"
+                                                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                            FontSize="20"  >
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                            Command="{Binding CountryChangeCommand}"
+                                                            NumberOfTapsRequired="1" />
+                                                </Label.GestureRecognizers>
+                                            </Label> 
+                                            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                        </Grid>
+
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CountryChangeCommand}" NumberOfTapsRequired="1"/>
+                                    </Grid.GestureRecognizers>
+                                    </Grid>
+                                                                   
+                                    
+                                    <Label Grid.Row="5" x:Name="lblmsg" IsVisible="false" Text="{x:Static resource:AppResources.lblMessage}" Style="{StaticResource LabelMediumRed}" />
+
+                                    <Grid Grid.Row="6" IsVisible="{Binding DealerRequried}" RowSpacing="0">
+                                        <Grid.RowDefinitions>
+
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="1"/>
+
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Dealer Details" Style="{StaticResource EnteryTitleLabel}" />
+                                                    <Span Text="*" Style="{StaticResource MyTitleLabel}" TextColor="{StaticResource RedColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <contr:ImageEntry Grid.Row="1" VerticalTextAlignment="Start" Placeholder="Name and Address of the Dealer"  Text="{Binding DealerName}"
+                                                 HeightRequest="50"   PlaceholderColor="{StaticResource PlcGray}" Style="{StaticResource EnteryTxtValues}"/>
+
+                                        <BoxView Grid.Row="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                        
+                                    </Grid>
+                                    <Button Grid.Row="8" Margin="10" Command="{Binding AddProductCommand}" Text="{x:Static resource:AppResources.btnSave}"  Style="{StaticResource ButtonBlueStyle}" />
+                               
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </ScrollView>
+            </Grid>
+
+            <!--<contr:LoaderAnimView             
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 0.5"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+
+            <!--AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"-->
+        </AbsoluteLayout>     
+   </ContentPage.Content>
+</ContentPage>

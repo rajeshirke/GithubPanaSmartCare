@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  x:Class="eWarranty.Views.Customer.InquiryView.FeedBackPage"
+             BackgroundColor="{x:StaticResource contentBG}"
+              xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty"
+               Title="{x:Static resource:AppResources.lblFeedback}" FlowDirection="{Binding flowDirection}" x:Name="root">
+    <ContentPage.Content>
+        <Grid Padding="10,20,10,10" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                 <RowDefinition Height="10"/>
+                  <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" HeightRequest="200">
+                <Label Text="{Binding QuestionName}" TextColor="{StaticResource BlueColor}" Style="{StaticResource DescLabel}"/>
+            </Grid>
+            <Grid Grid.Row="1" HeightRequest="30" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                      
+                    <Label Grid.Column="0" BackgroundColor="{Binding Color1}" TextColor="{Binding textColor1}"  Grid.Row="0"  Text="1" Style="{StaticResource MyTitleLabel}"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer1_Tapped"
+                                NumberOfTapsRequired="1"
+                                CommandParameter="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+              
+                    <Label BackgroundColor="{Binding Color2}"  Grid.Column="1" Text="2" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor2}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer1_Tapped"                               
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                     <Label BackgroundColor="{Binding Color3}"  Grid.Column="2" Text="3" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor3}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                      Tapped="TapGestureRecognizer1_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                      <Label BackgroundColor="{Binding Color4}"  Grid.Column="3" Text="4" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor4}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                           <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                     Tapped="TapGestureRecognizer1_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                 <Label BackgroundColor="{Binding Color5}"  Grid.Column="4" Text="5" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor5}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                      <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer1_Tapped"
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                     <Label BackgroundColor="{Binding Color6}"  Grid.Column="5" Text="6" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor6}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer1_Tapped"
+                                NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                     <Label BackgroundColor="{Binding Color7}" Grid.Column="6" Text="7" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor7}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer1_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                 <Label BackgroundColor="{Binding Color8}"  Grid.Column="7" Text="8" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor8}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                      <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer1_Tapped"
+                                NumberOfTapsRequired="1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                     <Label BackgroundColor="{Binding Color9}"  Grid.Column="8" Text="9" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor9}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                      Tapped="TapGestureRecognizer1_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                     <Label BackgroundColor="{Binding Color10}"  Grid.Column="9" Text="10" Style="{StaticResource MyTitleLabel}" TextColor="{Binding textColor10}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                     Tapped="TapGestureRecognizer1_Tapped"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+              
+               
+            </Grid>
+            
+            <Grid Grid.Row="2" HeightRequest="100" Padding="0,20,0,0">
+               
+                 <contr:RoundedCornerView  RoundedCornerRadius="8" BorderColor="Silver" BorderWidth="1">
+                  <Editor Placeholder="{x:Static resource:AppResources.lblEnterComments}" Text="{Binding OtherMessage}" Style="{StaticResource EnteryTxtValues}"/>
+            </contr:RoundedCornerView>
+            </Grid>
+            <Grid Grid.Row="3">
+                <!--<CollectionView ItemsSource="{Binding StarRatings}" SelectionMode="Multiple" SelectedItems="{Binding SelectedStarRatings}" >
+                     <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10">
+                                   <Label  Text="{Binding .}" Style="{StaticResource MyTitleLabel}" TextColor="Green" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="25"/>
+              
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Command="{Binding SubmitCommand}"
+                        CommandParameter="1"  Text="{x:Static resource:AppResources.lblSubmit}"
+                        Style="{StaticResource ButtonBlueStyle}" />
+                <Button Grid.Column="2" Command="{Binding BackCommand}"
+                        Text="{x:Static resource:AppResources.lblCancel}"
+                        Style="{StaticResource ButtonPinkStyle}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

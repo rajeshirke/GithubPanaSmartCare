@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="eWarranty.Views.Account.RegSuccessView"
+    BackgroundColor="{StaticResource contentBG}">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowDefinitions="150,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                 <PanCake:PancakeView Grid.Row="0" Grid.RowSpan="3" CornerRadius="0,0,55,55" >
+                         <Image  Source="Main" Aspect="AspectFill" />
+                 </PanCake:PancakeView>
+
+                <Label x:Name="LblWelcome" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="5"                       
+                       TextColor="{StaticResource BlueColor}" Style="{StaticResource MyTitleLabel}"  >
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="18" Android="18"/>
+                    </Label.FontSize>
+                </Label>
+
+                <!-- Bottom buttons-->
+                <!--<Grid Grid.Row="9" Padding="{OnPlatform Android='0,0,0,20'}" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Button Grid.Row="0" Text="Explore Now" Style="{StaticResource ButtonBlueStyle}"
+                            Margin="10,0" HeightRequest="42" CornerRadius="20" Clicked="Button_Clicked"
+                            HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+                    
+                </Grid>-->
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--Text="Thank you for your patience while registering.&#10; Your account setup is complete. &#10;Get started now and explore everything our app has to offer!"-->

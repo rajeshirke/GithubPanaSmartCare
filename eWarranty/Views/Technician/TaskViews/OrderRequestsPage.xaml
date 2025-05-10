@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Technician.TaskViews.OrderRequestsPage"
+    Title="Order Requests"
+    x:Name="TechnicianOrderRequests"
+    >
+    
+    <ContentPage.Content>
+         <ScrollView>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                 <RowDefinition Height="auto"/> 
+            </Grid.RowDefinitions>
+             <contr:RoundedCornerView Grid.Row="0"  BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+             
+                  <Grid BackgroundColor="White">
+                 <ListView RowHeight="40"   BackgroundColor="Transparent"  ItemsSource="{Binding accessoryOrderDetailResponses}"  HasUnevenRows="True"  SeparatorVisibility="None" >  
+               <ListView.RowHeight>
+                                            <OnPlatform x:TypeArguments="x:Int32" iOS="160" Android="50"/>
+                                         </ListView.RowHeight>
+                 <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                           <Grid >
+                          <contr:RoundedCornerView Grid.Row="0" BorderColor="LightGray" BorderWidth="1"   RoundedCornerRadius="5" BackgroundColor="white" VerticalOptions="Center" >
+                              <Grid RowSpacing="0" Padding="5">
+                                  <Grid.RowDefinitions>
+                                      <RowDefinition Height="auto"/>
+                                       <RowDefinition Height="auto"/>
+                                       <RowDefinition Height="auto"/> 
+                                  </Grid.RowDefinitions>
+
+                             <Grid Grid.Row="0" RowSpacing="0" Padding="5" >                                 
+
+                               <Label  Grid.Row="0" HorizontalTextAlignment="Start" Style="{StaticResource MyValueLabel}">
+                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Order No: "  />
+                                                            <Span Text="{Binding OrderDetail.OrderDetailNo}" TextColor="black" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                  </Label>
+
+                                  <Label  Grid.Row="1" HorizontalTextAlignment="Start" Style="{StaticResource MyValueLabel}">
+                                    <Label.FormattedText>
+                                                        <FormattedString>
+                                                            <Span Text="Request No: "  />
+                                                           <Span Text="{Binding SerialNumber}" TextColor="black" />
+                                                        </FormattedString>
+                                                    </Label.FormattedText>
+                                                  </Label>
+
+                                   <Label   Grid.Row="2"  Style="{StaticResource MyValueLabel}">
+                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Ordered Date: "  />
+                                                                <Span Text="{Binding DeliveredOn}" TextColor="Black" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                  </Label>
+
+                                  <Label   Grid.Row="3"  Style="{StaticResource MyValueLabel}">
+                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Status: "  />
+                                                                <Span Text="{Binding OrderDetail.OrderStatusName}" TextColor="Black" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                  </Label>
+
+                                 <Label Text="Shipping Address" Style="{StaticResource MyValueLabel}" Grid.Row="4"/>
+                    <Label Text="{Binding DeliveryAddressFull}" Style="{StaticResource MyValueLabel}"  TextColor="Black"  Grid.Row="5"/>
+<!--<Button Grid.Row="6" Command="{Binding Source={x:Reference TechnicianOrderRequests},Path=BindingContext.AdressdirectionCommand}" CommandParameter="{Binding .}"  Text="AddressMap"/>-->
+                                  <!--<Button Grid.Row="6" x:Name="TechnicianOrderRequests" BackgroundColor="DimGray" HeightRequest="25" WidthRequest="25" Command="{Binding Path=BindingContext.AdressdirectionCommand, Source={x:Reference TechnicianOrderRequests}}" CommandParameter="{Binding .}"/>-->
+                                 
+                             </Grid>
+
+                              <Grid Padding="0,0,0,0" Grid.Row="1">
+                              <Grid.RowDefinitions>
+                                   <RowDefinition Height="*"/>
+                               </Grid.RowDefinitions>
+                               <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="4*"/>
+                                   <ColumnDefinition Width="6*"/>
+                               </Grid.ColumnDefinitions>
+
+                                   <contr:RoundedCornerView Grid.Column="0" Grid.Row="0" BorderColor="Transparent" BorderWidth="1"  BackgroundColor="white"  >
+                                   <Image Source="{Binding AccessoryImageUrl}" Aspect="AspectFit" HeightRequest="80"/>
+
+                               </contr:RoundedCornerView>
+                             
+                               <Grid Grid.Column="1" Grid.Row="0" Padding="10,5,0,10" BackgroundColor="White">
+                                      <Grid.RowDefinitions>
+                                          <RowDefinition Height="auto"/>
+                                          <RowDefinition Height="auto"/>
+                                           <RowDefinition Height="auto"/>
+                                          <RowDefinition Height="auto"/>
+                                      </Grid.RowDefinitions>
+                                   <Grid.ColumnDefinitions>
+                                       <ColumnDefinition Width="auto" />
+                                   </Grid.ColumnDefinitions>
+                                   
+                                   <Image Grid.Row="0" Grid.Column="1" Source="directioniconblue" Aspect="AspectFit"  WidthRequest="40" HorizontalOptions="End">
+                         <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                   Command="{Binding Source={x:Reference TechnicianOrderRequests},Path=BindingContext.AdressdirectionCommand}" CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                        </Image>
+                                      <Label Text="{Binding AccessoryName}" Grid.Row="0" HorizontalTextAlignment="Start" Style="{StaticResource MyValueLabel}"/>
+                                         <Label Grid.Row="1" Style="{StaticResource MyValueLabel}">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Quantity: "  />
+                                                    <Span Text="{Binding OrderDetail.Quantity}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   <Label Grid.Row="2" Style="{StaticResource MyValueLabel}">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="PKR "  TextColor="{StaticResource BlueColor}"/>
+                                                    <Span Text="{Binding Price,StringFormat='{0:F2}'}" TextColor="{StaticResource BlueColor}"/>
+                                                     
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   <Label Grid.Row="3" Style="{StaticResource MyValueLabel}">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Total Amount:  "  TextColor="{StaticResource BlueColor}"/>
+                                                    <Span Text="{Binding OrderDetail.TotalAmount,StringFormat='{0:F2}'}" TextColor="{StaticResource BlueColor}"/>
+                                                     
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+
+                                   </Grid>
+                               </Grid>
+                                   </Grid>
+                           </contr:RoundedCornerView>
+                                   </Grid>
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView>
+                      </Grid>
+                </contr:RoundedCornerView>
+           
+        </Grid>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

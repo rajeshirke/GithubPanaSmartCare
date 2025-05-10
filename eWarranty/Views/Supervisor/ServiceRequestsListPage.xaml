@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Supervisor.ServiceRequestsListPage"
+    BackgroundColor="{StaticResource contentBG}"
+    xmlns:lang="clr-namespace:eWarranty.Hepler"
+    xmlns:resource="clr-namespace:eWarranty.Resx"
+    xmlns:converters="clr-namespace:eWarranty.Converters"
+    Title="Service Requests"
+    x:Name="root">
+    <ContentPage.Content>
+       <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Row="0" HasShadow="{OnPlatform iOS='false',Android='true'}" BorderColor="#E6F1FF" CornerRadius="20" HeightRequest="20" BackgroundColor="White" Margin="10">
+
+                    <SearchBar BackgroundColor="Transparent" Style="{StaticResource SearchStyle}"
+                                Placeholder="Search Products" TextChanged="SearchBar_TextChanged"/>
+
+                </Frame>
+
+                <Grid Grid.Row="1" Padding="15,0,15,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <CollectionView  x:Name="clServiceReqList" Grid.Row="0" ItemsSource="{Binding Services}"   BackgroundColor="Transparent"  EmptyView="NA">  
+                        <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+
+                               <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="{x:Static resource:AppResources.lblNoServiceRequest}" HeightRequest="60" />           
+      
+                            </DataTemplate>
+                        </CollectionView.EmptyViewTemplate>
+                        <CollectionView.ItemTemplate>  
+                            <DataTemplate>  
+                                <Grid Padding="5,0,5,0">
+                                   <Grid.RowDefinitions>
+                                       <RowDefinition Height="1"/>
+                                       <RowDefinition Height="auto"/>
+                                       <RowDefinition Height="1"/>
+                                   </Grid.RowDefinitions>
+                                    <Frame  VerticalOptions="Center" Grid.Row="1"    BorderColor="AliceBlue" Style="{StaticResource FrameStyle}">
+                                        <Frame.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="{StaticResource BlueColor}"
+                                                                Offset="0.1" />
+                                                <GradientStop Color="{StaticResource Pinkshade1}"
+                                                                Offset="0.7" />
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                        <Grid  VerticalOptions="FillAndExpand" Padding="0,8,0,8" BackgroundColor="Transparent">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="40"/>                                                                                
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Margin="10,0,10,0" Text="{Binding ProductClassificationName}" Style="{StaticResource LabelLargeWhite}" HorizontalTextAlignment="Start"/>
+                                               <Grid  Padding="10,5,10,5" Grid.Row="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                             
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label Grid.Row="0" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Request No : " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding ServiceRequestNumber}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                           
+                                                    <Label Grid.Row="1" LineBreakMode="WordWrap">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Request Date : " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding CreationDate, StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Model Number" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding ProductModelNumber}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Customer Name" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding CustomerPersonName}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="4" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Technician" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding AssignedTechnician}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="5" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Status" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding ServiceRequestStatusName}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label Grid.Row="6" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Type" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding ServiceRequestTypeName}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                     <Label Grid.Row="7" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Location" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                                <Span Text="{Binding ServiceLocationTypeName}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                          
+                                                </Grid>
+
+                                            <Grid Grid.Row="2" Margin="10,5,10,0" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5*"/>
+                                                    <ColumnDefinition Width="5*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Button Grid.Column="0"
+                                                        Style="{StaticResource ButtonBrickRedStyle}" IsVisible="{Binding IsVisibleAssignTechnician}"
+                                                    Text="Assign"
+                                                    Command="{Binding BindingContext.AssignTechCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"/>
+                                                
+                                                <!--<contr:RoundedCornerView  Grid.Column="0" IsVisible="{Binding IsVisibleAssignTechnician}" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                    <Grid BackgroundColor="{StaticResource BlueColor}">
+                                                        <Label Text="Assign Technician" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                        <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.AssignTechCommand, Source={x:Reference Name=root}}"
+                                                                    CommandParameter="{Binding .}"
+                                                                    NumberOfTapsRequired="1"  />
+                                                        </Grid.GestureRecognizers>
+                                                    </Grid>
+                                                </contr:RoundedCornerView>-->
+
+                                                <Button Grid.Column="0" Style="{StaticResource ButtonBrickRedStyle}" IsVisible="{Binding IsVisibleUpdateStatus}"
+                                                    Text="Update Status"
+                                                    Command="{Binding BindingContext.UpdateStatusCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"/>
+
+                                                <!--<contr:RoundedCornerView IsVisible="{Binding IsVisibleUpdateStatus}" Grid.Column="0" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                    <Grid BackgroundColor="{StaticResource BlueColor}">
+                                                        <Label Text="Update Status" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                        <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.UpdateStatusCommand, Source={x:Reference Name=root}}"
+                                                                    CommandParameter="{Binding .}"
+                                                                    NumberOfTapsRequired="1"  />
+                                                        </Grid.GestureRecognizers>
+                                                    </Grid>
+                                                </contr:RoundedCornerView>-->
+
+                                                <Button Grid.Column="1" Style="{StaticResource ButtonBrickRedStyle}"
+                                                    Text="{x:Static resource:AppResources.btnDetails}"
+                                                    Command="{Binding BindingContext.ServiceDetailsCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"/>
+
+                                                <!--<contr:RoundedCornerView Grid.Column="1" BorderColor="#EA1D24" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                                    <Grid BackgroundColor="#EA1D24">
+                                                        <Label Text="{x:Static resource:AppResources.btnDetails}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource LabelMediumWhite}" FontSize="16"/>
+                                                        <Grid.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding BindingContext.ServiceDetailsCommand, Source={x:Reference Name=root}}"
+                                                                CommandParameter="{Binding .}"
+                                                                NumberOfTapsRequired="1"  />
+                                                        </Grid.GestureRecognizers>
+                                                    </Grid>
+                                                </contr:RoundedCornerView>-->                                       
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                           </DataTemplate>  
+                       </CollectionView.ItemTemplate>  
+                    </CollectionView> 
+                </Grid>
+            </Grid>
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout> 
+    </ContentPage.Content>
+</ContentPage>

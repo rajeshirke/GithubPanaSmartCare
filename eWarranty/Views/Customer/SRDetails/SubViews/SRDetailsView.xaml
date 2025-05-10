@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.SubViews.SRDetailsView"
+             BackgroundColor="White"  xmlns:contr="clr-namespace:eWarranty.Controls"
+             FlowDirection="{Binding flowDirection}"
+             xmlns:conv="clr-namespace:eWarranty.Converters"
+             xmlns:fontawesome="clr-namespace:eWarranty.Models"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+       <ContentView.Resources>
+        <ResourceDictionary>
+           
+              <conv:StringToBoolenConverter x:Key="StringNullOrEmptyBoolConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <ScrollView>            
+            <Grid   RowSpacing="10" Padding="10,10,10,10" VerticalOptions="FillAndExpand"
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>             
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                   
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" LineBreakMode="WordWrap" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{x:Static resource:AppResources.lblRequestType}" Style="{StaticResource MyTitleLabel}"/>
+                                <Span Text="  " Style="{StaticResource MyTitleLabel}"/>
+                                <Span Text="{Binding serviceRequest.ServiceRequestTypeName}"  Style="{StaticResource MyValueLabel}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Grid.Row="1" Text="Product Malfunction" Style="{StaticResource MyTitleLabel}" />
+                
+                    <Label Grid.Row="2"  Margin="10,0,0,0" Text="{Binding CustRemarks}" Style="{StaticResource MyValueLabel}" BackgroundColor="White"  />
+                    
+                </Grid>
+
+                <Frame Grid.Row="1" IsVisible="{Binding HomeServices}" HeightRequest="{OnPlatform Android='55',iOS='60'}" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="#E5FFED">
+                    <Grid  HeightRequest="70" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="130"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{x:Static resource:AppResources.lblPreferredDatetime}" Style="{StaticResource MyTitleLabel}"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <DatePicker IsEnabled="False" x:Name="dPicker" Margin="20,0,0,0" Style="{StaticResource MyValueLabel}" Format="dd MMM yyyy" VerticalOptions="End" Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="3"  MinimumDate="{x:Static sys:DateTime.Today}"  Date="{Binding SDDate}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Property="TextColor" Value="Black" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </DatePicker>
+                        <TimePicker IsEnabled="False" TextColor="Black" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0"  Format="hh mm tt"   Time="{Binding SDTimeSpan}" Style="{StaticResource MyValueLabel}" VerticalOptions="End" >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled">
+                                        <VisualState.Setters>
+                                            <Setter Property="TextColor" Value="Black" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </TimePicker>
+                        <BoxView Grid.Row="2" Grid.Column="0" BackgroundColor="#DADADA" Margin="20,0,0,0" />
+                        <BoxView Grid.Row="2" Grid.Column="1"  BackgroundColor="#DADADA" Margin="5,0,0,0" />
+                        <!--<Button Grid.Row="1" WidthRequest="100" Grid.Column="2" Command="{Binding SaveCommand}"  Text="{x:Static resource:AppResources.btnReschedule}" Style="{StaticResource ButtonBlueStyle}"  HorizontalOptions="End" Padding="0" />-->
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Row="2" IsVisible="{Binding HomeServices}" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="#E5FFED">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblAddress}" Style="{StaticResource MyTitleLabel}" FontAttributes="Bold"/>
+                        <!--<contr:RoundedCornerView Grid.Row="1" Margin="20,0,0,0" BackgroundColor="Transparent">                
+                            
+                        </contr:RoundedCornerView>-->
+                        <Label Grid.Row="1" Margin="20,0,0,0" Style="{StaticResource MyValueLabel}" FontSize="16" Text="{Binding ClientAddress}">
+                       
+                        </Label>
+                    </Grid>
+                </Frame>
+                
+                <Frame Grid.Row="3" Style="{StaticResource FrameStyle}" BorderColor="AliceBlue" BackgroundColor="#E5FFF0">
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>                   
+
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label  Grid.Column="0" Text="{x:Static resource:AppResources.lblServiceCenterDetails}" Style="{StaticResource MyTitleLabel}"
+                                    VerticalTextAlignment="Center" HorizontalOptions="Start" MaxLines="1" LineBreakMode="TailTruncation"/>
+
+                            <Image Grid.Column="1" Aspect="AspectFit" WidthRequest="30" HorizontalOptions="End">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="{StaticResource FontAwesomeSolid}"
+                                        Size="20"
+                                        Glyph="{x:Static fontawesome:Solid.Phone}"
+                                        Color="{StaticResource BlueColor}">
+                                        </FontImageSource>
+                                </Image.Source>
+                                        
+                               
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding CallServiceCentorCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                            <Image Grid.Column="2" Aspect="AspectFit"  WidthRequest="30" HorizontalOptions="End">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="{StaticResource FontAwesomeSolid}"
+                                        Size="20"
+                                        Glyph="{x:Static fontawesome:Solid.Location_Arrow}"
+                                        Color="{StaticResource BlueColor}">
+
+                                        </FontImageSource>
+                                </Image.Source>
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding directionCommand}"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+              
+                            <Grid  VerticalOptions="Center" Grid.Row="1" >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>                                       
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Margin="20,0,10,0" Text="{Binding serviceRequest.Name}" Style="{StaticResource MyValueLabel}"    HorizontalTextAlignment="Start"  />
+                                <!--<contr:RoundedCornerView Margin="10,0,10,0"  Grid.Row="1" BackgroundColor="Transparent" RoundedCornerRadius="5">
+                                </contr:RoundedCornerView>-->
+                                    <Grid  Padding="10,0,10,0" Grid.Row="1" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>                                             
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Row="0" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>                                                                
+                                                    <Span Text="{Binding serviceRequest.StreetAddress}"  Style="{StaticResource MyValueLabel}"   />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                          
+                                           
+                                        <Label Grid.Row="1" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}">
+                                            <Label.FormattedText>
+                                                <FormattedString>                                                                
+                                                    <Span Text="{Binding serviceRequest.CityName}"  Style="{StaticResource MyValueLabel}"    />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Grid.Row="2" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblWorkingHours}" Style="{StaticResource MyValueLabel}" FontAttributes="Bold"/>
+                                                    <Span Text="{Binding serviceRequest.WorkingHoursStart, StringFormat='{0:h:mm}'}"  Style="{StaticResource MyValueLabel}"   />
+                                                    <Span Text="-"/>
+                                                    <Span Text="{Binding serviceRequest.WorkingHoursEnd, StringFormat='{0:h:mm}'}" Style="{StaticResource MyValueLabel}"   />
+                                                          
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                          
+                                    </Grid>
+                                  
+                                 
+                            </Grid>
+
+                    </Grid>
+                </Frame>
+               
+                <Grid Grid.Row="4" IsVisible="false">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblServiceCenterComments}" TextColor="#555555"  Style="{StaticResource EnteryTitleLabel}"/>
+                    <contr:RoundedCornerView Grid.Row="1"  BorderColor="#D4D7D9" BorderWidth="1">
+                    <Label  Text="{Binding TechnicianComments}" Style="{StaticResource EnteryTxtValues}" BackgroundColor="White" TextColor="#707070" FontSize="16" FontAttributes="Bold"/>
+                        </contr:RoundedCornerView>
+                </Grid>
+
+                <Grid Grid.Row="5" HorizontalOptions="Center" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Margin="0,0,0,10" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Center" Text="Product Image" VerticalOptions="Center" />
+
+                    <Image Grid.Row="1" Source="{Binding SRProductImage}" IsOpaque="True" Aspect="AspectFill"/>
+
+                </Grid>
+
+                <!--<Grid Grid.Row="5" RowSpacing="0" >                
+                    <Grid Grid.Row="0" HorizontalOptions="Center" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                                       
+                        <Image Grid.Row="0" Source="{Binding SRProductImage}"  Aspect="AspectFill"/>
+
+
+                    </Grid>
+                    
+                </Grid>-->         
+            </Grid>                         
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

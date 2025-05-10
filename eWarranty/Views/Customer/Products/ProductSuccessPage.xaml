@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.Products.ProductSuccessPage"
+             BackgroundColor="White" FlowDirection="{Binding flowDirection}">
+     <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled ="False" IconOverride="backarrow.png" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Image Source="relax.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                   Aspect="AspectFit" Grid.Row="0"/>
+            <Label FontFamily="RobotoMedium" FontSize="35" Text="Product registration done &#x1f642;!" Style="{StaticResource EnteryLabelValues}"
+                   Grid.Row="1" HorizontalTextAlignment="Center" TextColor="Black"/>
+            <Label Grid.Row="2" FontFamily="RobotoMedium" FontSize="20"
+                   Text="Please sit back and relax, while we verify the Product details, &#10; you shall receive the confirmation within 24 hours."
+                   HorizontalTextAlignment="Center" Style="{StaticResource EnteryLabelValues}" />
+            
+        </Grid>
+            <Grid Grid.Row="1" BackgroundColor="White" >
+               
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                
+                <Button Margin="30,0,30,0" x:Name="btnBack" Grid.Row="1" Command="{Binding SaveCommand}"
+                        Text="{x:Static resource:AppResources.lblGotoMyProducts}" Clicked="Back_Clicked" Style="{StaticResource ButtonBlueStyle}"/>
+            </Grid>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.Accesssories.AccesssoriesPage" Title="{x:Static resource:AppResources.titleAccessories}" FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+               xmlns:lang="clr-namespace:eWarranty.Hepler"  xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+             xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms" xmlns:card="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" x:Name="root" >
+
+    <AbsoluteLayout>
+        <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+        <Grid Padding="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>                         
+            </Grid.RowDefinitions>
+
+            <Frame Margin="10,10,10,0" Grid.Row="0" 
+                             BorderColor="{StaticResource borderColor}"
+                             Style="{StaticResource FrameStyle}">
+                <Grid RowSpacing="{OnPlatform Android='5', iOS='5'}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>                        
+                        <RowDefinition Height="auto"/>              
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="0,5,0,0">
+                        <SearchBar x:Name="sbAccessories" 
+                                   TextChanged="sbAccessories_TextChanged"
+                                   Grid.Row="0"
+                                   Placeholder="{x:Static resource:AppResources.plcSearchAccessories}"
+                                   SearchCommand="{Binding SearchProductCommand}"
+                                   SearchCommandParameter="{Binding .}"
+                                   Style="{StaticResource SearchStyle}" />
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="5,0,5,0" Padding="8,0,8,0" BackgroundColor="White">                 
+                         <contr:TitleDropdownView 
+                                    Title="{x:Static resource:AppResources.lblSelectSeller}"
+                                    Placeholder="{x:Static resource:AppResources.lblSelectSeller}"
+                                    PickerItemsSource="{Binding SellerDropdown}"
+                                    ItemDisplayBinding="Title"
+                                    SelectedItem="{Binding SelectedSeller}"
+                                    Command="{Binding SellerCommand}" />
+
+                     
+                    </Grid>
+
+                     <Grid Grid.Row="2" Margin="5">
+                        <Button
+                            
+                            Text="{x:Static resource:AppResources.lblSearch}"
+                            Style="{StaticResource ButtonBlueStyle}"
+                            Command="{Binding SearchAccessoriesCommand}"/>
+                    </Grid>
+                </Grid>
+
+            </Frame>            
+
+            <Grid Grid.Row="1" Padding="5,0,5,0">
+                <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="{x:Static resource:AppResources.lblNoaccessoriesavailable}" HeightRequest="60" IsVisible="{Binding IsAccessoryAvailable}" />          
+            </Grid>
+
+            <Grid Grid.Row="2" Padding="5,0,5,0" >
+                <syncfusion:SfListView ItemsSource="{Binding AccessoriesList}"
+                                       SelectionMode="None" 
+                                       Grid.Row="0">
+                    <syncfusion:SfListView.ItemSize>
+                        <OnIdiom x:TypeArguments="x:Double"
+                            Phone="250"
+                            Tablet="300"
+                            Desktop="300"/>
+                    </syncfusion:SfListView.ItemSize>
+                    <syncfusion:SfListView.LayoutManager>
+                        <syncfusion:GridLayout>
+                            <syncfusion:GridLayout.SpanCount>
+                                <OnIdiom x:TypeArguments="x:Int32"
+                                    Phone="2"
+                                    Tablet="3"
+                                    Desktop="3"
+                                    Default="3"/>
+                            </syncfusion:GridLayout.SpanCount>
+                        </syncfusion:GridLayout>
+                    </syncfusion:SfListView.LayoutManager>
+                    <syncfusion:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame  Style="{StaticResource FrameStyle}" Margin="5">
+                                <Grid Padding="0" ColumnSpacing="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding ProdcuImageUrl}" Aspect="AspectFit" BackgroundColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                                    <Grid Grid.Row="1" RowSpacing="5" HorizontalOptions="Start" Margin="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                                Grid.Row="0" Style="{StaticResource LabelLargeBlack}">
+                                        </Label>
+                                        <Label Grid.Row="1" LineBreakMode="TailTruncation">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding CurrencyCode}" Style="{StaticResource MyValueLabel}" />
+                                                    <Span Text=" " Style="{StaticResource MyValueLabel}" />
+                                                    <Span Text="{Binding ProdcuPrice,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                            <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblStock}" Style="{StaticResource MyTitleLabel}" />
+                                                    <Span Text=" " Style="{StaticResource MyValueLabel}"/>
+                                                    <Span Text="{Binding StockStatus}" Style="{StaticResource MyValueLabel}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblDeliveredIn}" Style="{StaticResource MyTitleLabel}" />
+                                                    <Span Text="{Binding DeliveryDays}" Style="{StaticResource MyValueLabel}"/>
+                                                    <Span Text=" " Style="{StaticResource MyValueLabel}" />
+                                                    <Span Text="{x:Static resource:AppResources.lblDays}" Style="{StaticResource MyValueLabel}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label> 
+                                    </Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding BindingContext.ProductsCommand, Source={x:Reference Name=root}}"
+                                            NumberOfTapsRequired="1"
+                                            CommandParameter="{Binding AccessoryMasterId}" />
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </syncfusion:SfListView.ItemTemplate>
+                </syncfusion:SfListView>
+            </Grid>
+            
+        </Grid>
+        <!--<contr:LoaderAnimView
+            AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+    </AbsoluteLayout>
+        
+</ContentPage>
+

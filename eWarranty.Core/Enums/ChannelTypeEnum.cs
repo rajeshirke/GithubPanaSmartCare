@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace eWarranty.Core.Enums
+{
+    public enum ChannelTypeEnum
+    {
+        sms = 1,
+        email,
+        whatsapp,
+        appnotification,
+        Banner
+    }
+}

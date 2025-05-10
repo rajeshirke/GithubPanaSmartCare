@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Account.SingUpProfileUpdatePage"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource WhiteColor}"
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+              xmlns:dm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+              xmlns:lang="clr-namespace:eWarranty.Hepler"
+              xmlns:local="clr-namespace:eWarranty.Converters"
+              xmlns:resource="clr-namespace:eWarranty.Resx"
+              xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+              xmlns:Con="clr-namespace:eWarranty.Converters"
+              Title="{x:Static resource:AppResources.titleUpdateProfile}">
+     <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled ="False" IconOverride="backarrow.png"
+                             />
+    </Shell.BackButtonBehavior>
+     <!--<ContentPage.ToolbarItems>
+          <ToolbarItem Name="MenuItem1" Order="Primary" Icon="location" Text="Item 1" Priority="0" Command="{Binding PickAddressCommand}" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="5,0,5,0" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" WidthRequest="100"
+                            HorizontalOptions="Start" Command="{Binding SkipCommand}"
+                            Text="{x:Static resource:AppResources.lblSkip}" Style="{StaticResource ButtonPinkStyle}"  />                
+                </Grid>
+
+                <Grid Grid.Row="1" Padding="5,0,5,0" Margin="20,0,20,0"  RowSpacing="0">
+                    <!--<Grid.RowSpacing>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="10" Android="2"/>
+                    </Grid.RowSpacing>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <contr:TitledEntryView Grid.Row="0" Placeholder="{x:Static resource:AppResources.lblFullName}"
+                                           Text="{Binding Name}" IsEnabled="False" />
+                
+                    <Grid Grid.Row="2" VerticalOptions="Center" RowSpacing="0"  BackgroundColor="Transparent" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0"  Grid.Column="0" IsEnabled="False">
+                                <contr:ImageEntry   VerticalOptions="End" 
+                                            Text="{Binding SelectNationality.Title}"
+                                            Placeholder="Nationality"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" />
+                            </StackLayout>
+                            <!--<Image Grid.Row="0" Grid.Column="1" BackgroundColor="White"  Source="dropdown" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Command="{Binding NationalityChangeCommand}"
+                                        NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                            </Image>-->
+
+                             <Label  Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                    Text="{x:Static fontawesome:Solid.Caret_Down}"
+                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                    FontSize="20"  >
+                                <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding NationalityChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>
+                            </Label> 
+
+                            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                    </Grid>
+
+                    <contr:TitleDropdownView IsVisible="false" Grid.Row="3" Margin="0,10,0,0" Placeholder="Primary Language"
+                                             PickerItemsSource="{Binding Languages}" ItemDisplayBinding="Title"
+                                             SelectedItem="{Binding SelectedLanguageType}" Command="{Binding LonguageChangeCommand}" />
+
+                    <Grid Grid.Row="5" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Address" TextColor="{StaticResource BlueColor}" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start" />
+                        <!--<Image  BackgroundColor="White" Grid.Column="1"  Source="location" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                        Command="{Binding PickAddressCommand}"
+                                        NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>-->
+                    </Grid>
+
+                    <Grid Grid.Row="6" VerticalOptions="FillAndExpand" RowSpacing="10"  Margin="0,0,0,0"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" VerticalOptions="Center" RowSpacing="0"  BackgroundColor="Transparent" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" IsEnabled="False">
+                                    <contr:ImageEntry   VerticalOptions="End" 
+                                                Text="{Binding SelectCountry.Title}"
+                                                Placeholder="Select Country"
+                                                Style="{StaticResource EnteryTxtValues}" 
+                                                BackgroundColor="White"  VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--<Image Grid.Row="0" Grid.Column="1" BackgroundColor="White"  Source="dropdown" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding CountryChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>-->
+                            <Label  Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                    Text="{x:Static fontawesome:Solid.Caret_Down}"
+                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                    FontSize="20"  >
+                                <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding CountryChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>
+                            </Label> 
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" VerticalOptions="Center" RowSpacing="0"  BackgroundColor="Transparent" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" IsEnabled="False">
+                                    <contr:ImageEntry   VerticalOptions="End" 
+                                                Text="{Binding SelectCity.Title}"
+                                                Placeholder="Select City"
+                                                Style="{StaticResource EnteryTxtValues}" 
+                                                BackgroundColor="White"  VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--<Image Grid.Row="0" Grid.Column="1" BackgroundColor="White"  Source="dropdown" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding CityChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>-->
+                            <Label  Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                    Text="{x:Static fontawesome:Solid.Caret_Down}"
+                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                    FontSize="20"  >
+                                <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding CityChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>
+                            </Label> 
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2" VerticalOptions="Center" RowSpacing="0"  BackgroundColor="Transparent" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" Grid.Column="0" IsEnabled="False">
+                                    <contr:ImageEntry   VerticalOptions="End" 
+                                                Text="{Binding SelectArea.Title}"
+                                                Placeholder="Select Area"
+                                                Style="{StaticResource EnteryTxtValues}" 
+                                                BackgroundColor="White"  VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <!--<Image  BackgroundColor="White" Grid.Row="0" Grid.Column="1" Source="dropdown" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0" HeightRequest="20" WidthRequest="20">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding AreaChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>-->
+
+                            <Label  Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                                    Text="{x:Static fontawesome:Solid.Caret_Down}"
+                                    TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                    FontSize="20"  >
+                                <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding AreaChangeCommand}"
+                                            NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>
+                            </Label> 
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <!--<Grid Grid.Row="2"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryArea"
+                                            Text="{Binding Area}"
+                                            Placeholder="{x:Static resource:AppResources.lblArea}"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" Completed="entryArea_Completed" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>-->
+
+                        <Grid Grid.Row="3"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryApartmentNo"
+                                            Text="{Binding ApartmentNumber}"
+                                            Placeholder="{x:Static resource:AppResources.lblApartmentHuseNo}"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" Completed="entryApartmentNo_Completed" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryBuildingVillaName"
+                                            Placeholder="{x:Static resource:AppResources.lblBuildingVillaName}"
+                                            Text="{Binding BuildingName}"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" Completed="entryBuildingVillaName_Completed" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                         <Grid Grid.Row="5"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryStreet"
+                                            Placeholder="{x:Static resource:AppResources.lblStreet}"  Text="{Binding Street}"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" Completed="entryStreet_Completed" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="6"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryState"
+                                            Placeholder="{x:Static resource:AppResources.lblState}"  Text="{Binding State}"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" Completed="entryState_Completed" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                        <Grid Grid.Row="7"  RowSpacing="0"  BackgroundColor="Transparent" >
+                          
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            
+                            <StackLayout Grid.Row="0" >
+                                <contr:ImageEntry   x:Name="entryPostalcode"
+                                            Placeholder="{x:Static resource:AppResources.plcPostalcode}"  Text="{Binding NewPostalCode}"
+                                            Keyboard="Numeric"
+                                            Style="{StaticResource EnteryTxtValues}" 
+                                            BackgroundColor="White"  VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start" />
+                            </StackLayout>
+                                
+                            <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                        </Grid>
+
+                    <!--<contr:TitledEntryView Grid.Row="3" Placeholder="{x:Static resource:AppResources.lblApartmentHuseNo}"
+                                           Text="{Binding ApartmentNumber}"  />
+
+                    <contr:TitledEntryView Grid.Row="4"  Placeholder="{x:Static resource:AppResources.lblBuildingVillaName}"
+                                           Text="{Binding BuildingName}"
+                                 />-->
+
+                    <!--<contr:TitledEntryView Grid.Row="5"  Placeholder="{x:Static resource:AppResources.lblStreet}"  Text="{Binding Street}"
+                                 />-->
+                    <!--<contr:TitledEntryView Grid.Row="3" Placeholder="{x:Static resource:AppResources.lblArea}"  Text="{Binding Area}"
+                                 />
+                    <contr:TitledEntryView Grid.Row="4" Placeholder="{x:Static resource:AppResources.lblCity}"  Text="{Binding City}"
+                                 />-->
+                    <!--<contr:TitledEntryView Grid.Row="6" Placeholder="{x:Static resource:AppResources.lblState}"  Text="{Binding State}"
+                                 />                    
+
+                    <contr:TitledEntryView Grid.Row="7" Placeholder="{x:Static resource:AppResources.plcPostalcode}"  Text="{Binding NewPostalCode}" EntryKeyboard="Numeric"
+                                 />-->
+
+                    <Grid Grid.Row="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Button Grid.Row="0" WidthRequest="100"
+                                HorizontalOptions="End" Command="{Binding ProfileUpdateCommand}"
+                                Text="{x:Static resource:AppResources.btnUpdate}" Style="{StaticResource ButtonBlueStyle}" />
+                        
+                    </Grid>
+                
+            </Grid>
+    
+                
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

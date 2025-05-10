@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Technician.SparePartsViews.SparePartsPage"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             xmlns:local="clr-namespace:eWarranty"
+             xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:card="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+             BackgroundColor="{StaticResource contentBG}"
+             Title="Spare Parts" x:Name="root">
+      <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary"  Icon="noteadd.png" Priority="0" Command="{Binding AddNewCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="50" />-->
+                <RowDefinition Height="auto" />                
+            </Grid.RowDefinitions>
+             <!--<Grid Grid.Row="0" BackgroundColor="White">
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                     <ColumnDefinition Width="1"/>
+                     <ColumnDefinition Width="5*"/>
+z
+                </Grid.ColumnDefinitions>
+                <BoxView x:Name="tab1"  BackgroundColor="Gray" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" />
+                <Grid Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand">
+                   
+                    <Label Text="Allocated(Buffer)" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                     <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="gvTab1_Tapped"
+                                Command="{Binding TechTabSelectedCommand}" />
+                      </Grid.GestureRecognizers>
+                </Grid>
+                <BoxView BackgroundColor="LightGray" Grid.Column="1" HeightRequest="1" Grid.Row="0" Grid.RowSpan="2"/>
+                <BoxView  x:Name="tab2" BackgroundColor="#F4F6FA" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" />
+               
+                <Grid Grid.Column="2" Grid.Row="0" VerticalOptions="FillAndExpand">
+                    <Label Text="Available(SC)" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                     <Grid.GestureRecognizers>
+                             <TapGestureRecognizer
+                                 Tapped="gvTab2_Tapped"
+                                 Command="{Binding SCTabSelectedCommand}" />
+                      </Grid.GestureRecognizers>
+                </Grid>
+                
+            </Grid>-->
+
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+                <card:SfCardView Padding="5" CornerRadius="10" BackgroundColor="{StaticResource WhiteColor}" Grid.Row="0" >
+                    <SearchBar Placeholder="Find Part"  Style="{StaticResource SearchStyle}"
+                           SearchButtonPressed="SearchBar_SearchButtonPressed" TextChanged="SearchBar_TextChanged" />
+                </card:SfCardView>
+                
+                <Label Grid.Row="1" IsVisible="{Binding IsAddPartLabelVisible}"
+                        Padding="5,0,0,0" Text="Swipe right to add part for the service"
+                        TextColor="{StaticResource BlueColor}" Style="{StaticResource MyTitleLabel}">
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="15" Android="16"/>
+                    </Label.FontSize>   
+                </Label>
+
+                <Frame  Grid.Row="2" Style="{StaticResource FrameStyle}" BackgroundColor="{StaticResource WhiteColor}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Padding="5,0,5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                                        
+                            <Grid Grid.Row="0" VerticalOptions="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="4*" />
+                                </Grid.ColumnDefinitions>
+                            
+                                <Label  Text="Part No" Grid.Column="0"
+                                        HorizontalOptions="StartAndExpand"
+                                        Style="{StaticResource MyTitleLabel}"                                                    
+                                        MaxLines="1" LineBreakMode="TailTruncation"/>
+                                <Label  Text="Rate" 
+                                        Grid.Column="1" HorizontalOptions="StartAndExpand"
+                                        Style="{StaticResource MyTitleLabel}"                                                    
+                                        MaxLines="1" LineBreakMode="TailTruncation"/>
+                                          
+                            </Grid>
+                    
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <CollectionView x:Name="collectionView" ItemsSource="{Binding SpareParts}"
+                                     EmptyView="No Parts Available." >
+                               <CollectionView.EmptyViewTemplate>
+                                    <DataTemplate>
+                                        <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"
+                                                Style="{StaticResource MyTitleLabel}" Text="No Parts Available." HeightRequest="60" />                 
+                                    </DataTemplate>
+                                </CollectionView.EmptyViewTemplate>
+                                <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <SwipeView BackgroundColor="Transparent">
+                                        <SwipeView.LeftItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Add Part"
+                                                           IsVisible="{Binding IsVisibleSwipeRight}"
+                                                           BackgroundColor="{StaticResource BlueColor}"
+                                                           Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.AddPartCommand}"
+                                                           CommandParameter="{Binding}" />
+                                                <!--<SwipeItem Text="Hand over to SC"
+                                                  
+                                                           BackgroundColor="{StaticResource BlueColor}"
+                                                           Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.SelectedCommand}"
+                                                           CommandParameter="{Binding}" />-->
+                                        
+                                            </SwipeItems>
+                                        </SwipeView.LeftItems>
+                                        <Grid Padding="5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>                                    
+                                            </Grid.RowDefinitions>
+                                            <!--<Frame  Style="{StaticResource FrameStyle}" BackgroundColor="{StaticResource WhiteColor}">
+                                                
+                                            </Frame>-->
+                                            <Grid  RowDefinitions="auto,1">                               
+                                                <Grid Grid.Row="0" >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="6*" />
+                                                        <ColumnDefinition Width="4*" />
+                                                    </Grid.ColumnDefinitions>
+                            
+                                                    <Label  Grid.Column="0"
+                                                            Text="{Binding PartNumber}"
+                                                            Style="{StaticResource MyValueLabel}" 
+                                                            HorizontalOptions="StartAndExpand"                                                                                                          
+                                                            MaxLines="1" LineBreakMode="TailTruncation"/>
+                                                
+                                                    <Label   Grid.Column="1" HorizontalOptions="Start" MaxLines="1" LineBreakMode="TailTruncation">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                    <Span Text="{Binding CurrencyCode}"  Style="{StaticResource MyValueLabel}"/>
+                                                                    <Span Text=" " />                                                            
+                                                                    <Span Text="{Binding Cost,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                          
+                                                </Grid>
+                                                <Grid Grid.Row="1" VerticalOptions="Center">
+                                                    <BoxView BackgroundColor="Gray"/>
+                                          
+                                                </Grid>                                        
+                                            </Grid> 
+                                                                          
+                                        </Grid>
+                                    </SwipeView>
+                                </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Grid>
+
+                    </Grid>
+                    
+                </Frame>                        
+
+                
+            </Grid>
+        </Grid>
+            <!--<contr:LoaderAnimView
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

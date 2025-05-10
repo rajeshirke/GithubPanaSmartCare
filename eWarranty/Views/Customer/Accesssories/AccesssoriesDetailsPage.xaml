@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.Accesssories.AccesssoriesDetailsPage"
+             Title="{x:Static resource:AppResources.titleAccessoryDetails}"
+             FlowDirection="{Binding flowDirection}" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+             xmlns:lang="clr-namespace:eWarranty.Hepler" x:Name="root">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" IconImageSource="cart.png" Text="Item 1" Priority="0" Command="{Binding CartCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid   Padding="5" VerticalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All" BackgroundColor="{StaticResource contentBG}"  >                
+                <Grid.RowDefinitions>
+                   <RowDefinition Height="10*"/>
+                   <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid  Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="180"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Frame Margin="0,0,0,0" Grid.Row="0" Style="{StaticResource FrameStyle}"  BackgroundColor="White">                                  
+                        <Grid Padding="10" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="9*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <CarouselView ItemsSource="{Binding ProductImages}" x:Name="cvBanners"
+                                          Grid.Row="0" Grid.RowSpan="2" VerticalOptions="FillAndExpand"
+                                          IndicatorView="indicatorview">
+
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid VerticalOptions="FillAndExpand">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid  Grid.Row="0" VerticalOptions="FillAndExpand">
+                                                <Image Grid.Row="0" Source="{Binding .}" Aspect="AspectFit"
+                                                       VerticalOptions="FillAndExpand"/>                                           
+
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+                            <IndicatorView
+                                Grid.Row="1" Padding="5"
+                                HorizontalOptions="CenterAndExpand"
+                                x:Name="indicatorview"
+                                IndicatorColor="LightGray"
+                                IndicatorSize="10"
+                                IndicatorsShape="Circle"
+                                SelectedIndicatorColor="#687089" />
+                        </Grid>
+                    </Frame>
+                    <Frame Margin="0" Grid.Row="1" BorderColor="{StaticResource borderColor}" Style="{StaticResource FrameStyle}">
+                                  
+                        <Grid Padding="10" BackgroundColor="White" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding SelectedItem.Name}" Style="{StaticResource LabelLargeBlack}" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center"/>
+                        <Label Text="{Binding SelectedItem.ProductClassificationName}" Grid.Row="1" Grid.Column="0"
+                               HorizontalTextAlignment="Start" Style="{StaticResource LabelLargeBlack}" />
+
+                        <Label Grid.Row="1"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resource:AppResources.lblSeller}"  Style="{StaticResource MyTitleLabel}" />
+                                    <Span Text="{Binding SelectedItem.ServiceCenterName}" Style="{StaticResource MyValueLabel}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                       <Label Grid.Row="3" Grid.Column="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}" />
+                                    <Span Text=" " />
+                                    <Span Text="{Binding SelectedItem.ProdcuPrice}" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="2" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resource:AppResources.lblDeliveredIn}" Style="{StaticResource MyTitleLabel}" />
+                                    <Span Text="{Binding SelectedItem.DeliveryDays}" Style="{StaticResource MyValueLabel}"   />
+                                    <Span Text=" " Style="{StaticResource MyValueLabel}" />
+                                    <Span Text="{x:Static resource:AppResources.lblDays}" Style="{StaticResource MyValueLabel}"   />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label Grid.Row="3" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resource:AppResources.lblPaymentMode}" Style="{StaticResource MyTitleLabel}" />
+                                    <Span Text="{x:Static resource:AppResources.lblCOD}" Style="{StaticResource MyValueLabel}"   />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                       
+                       
+                        </Grid>
+                    </Frame>
+
+                    <Frame Margin="0" Grid.Row="3" BorderColor="{StaticResource borderColor}" Style="{StaticResource FrameStyle}">                                  
+                  
+                        <Grid  Padding="5"  BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                           <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblDescription}" Style="{StaticResource LabelLargeBlack}" />
+                           <Label Text="{Binding Description}" MaxLines="{Binding MaxLines}" LineBreakMode="WordWrap" Grid.Row="1" Style="{StaticResource MyValueLabel}"/>
+                           <Label Padding="10,0,0,0" Text="{x:Static resource:AppResources.lblMore}" Grid.Row="2" TextColor="{StaticResource BlueColor}" VerticalOptions="End" HorizontalOptions="End" Style="{StaticResource MyValueLabel}" IsVisible="{Binding IsShowmoreVisible}">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding ShowMoreDetailsCommand}"/>
+                                </Label.GestureRecognizers>
+                           </Label>
+                        </Grid>
+                  </Frame>
+            
+                </Grid>
+                <Grid Grid.Row="1" Padding="5" Margin="5" VerticalOptions="EndAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" Grid.Row="0"  Text="{x:Static resource:AppResources.lblAddtocart}" Style="{StaticResource ButtonPinkStyle}"  Command="{Binding CheckOutCommand}"/>
+                        <Button Grid.Column="0" Grid.Row="0"  Text="{x:Static resource:AppResources.lblBuyNow}" Style="{StaticResource ButtonBlueStyle}" Command="{Binding BuynowCommand}"/>
+                </Grid>
+          </Grid>
+
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>          
+  </ScrollView>
+</ContentPage>

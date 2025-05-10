@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.AccessoriesView.AccessoriesDetailsPage"
+              xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty"
+              xmlns:lang="clr-namespace:eWarranty.Hepler"
+              xmlns:resource="clr-namespace:eWarranty.Resx"
+              Title="Product Delevery">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Image Source="defaultprod" Aspect="AspectFill"/>
+            </Grid>
+            <contr:RoundedCornerView Grid.Row="1" RoundedCornerRadius="4" BorderColor="LightGray" BorderWidth="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                     <ColumnDefinition Width="1"/>
+                     <ColumnDefinition Width="5*"/>
+                     
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Cust Call"  Grid.Column="0" HorizontalOptions="End" FontSize="10" VerticalTextAlignment="Center" />
+                    <Image Source="call" Grid.Column="1" HorizontalOptions="Start" WidthRequest="20"/>
+                    <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                  Tapped="TapGestureRecognizer_Tapped_1"
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+                </Grid>
+                <BoxView Grid.Column="1" BackgroundColor="LightGray"/>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Cust Location" Grid.Column="0" HorizontalOptions="End" FontSize="10" VerticalTextAlignment="Center"/>
+                    <Image Source="gps" Grid.Column="1" HorizontalOptions="Start" WidthRequest="20"/>
+                     <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                  Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+                </Grid>
+                
+            </contr:RoundedCornerView>
+             <Grid Grid.Row="2" RowSpacing="20" Padding="10">
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                 </Grid.RowDefinitions>
+                 <Grid Grid.Row="0">
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                     </Grid.RowDefinitions>
+                     <Label Text="Product Name:" Grid.Row="0" TextColor="{StaticResource inputTitle}"/>
+                      <Label Text="Headphones with mic" Grid.Row="1"/>
+                 </Grid>
+                 <Grid Grid.Row="1">
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                     </Grid.RowDefinitions>
+                     <Label Text="Customer Name:" Grid.Row="0" TextColor="{StaticResource inputTitle}"/>
+                      <Label Text="Kumar Adabala" Grid.Row="1"/>
+                 </Grid>
+                 <Grid Grid.Row="2">
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                     </Grid.RowDefinitions>
+                     <Label Text="Ordered Date:" Grid.Row="0" TextColor="{StaticResource inputTitle}"/>
+                      <Label Text="10/02/2020" Grid.Row="1"/>
+                 </Grid>
+             </Grid>
+             <Grid Grid.Row="3" Padding="10">
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="5*"/>
+                      <ColumnDefinition Width="5*"/>
+                 </Grid.ColumnDefinitions>
+                 <Button Text="Delivered" Grid.Column="0"/>
+                 <Button Text="Hand over to SC" Grid.Column="1"/>
+             </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

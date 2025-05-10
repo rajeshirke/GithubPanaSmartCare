@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.InquiryView.FeedBackSuccessPage"
+             Title="{x:Static resource:AppResources.lblSuccess}" BackgroundColor="White" FlowDirection="{Binding flowDirection}">
+     <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled ="False" IconOverride="backarrow.png" />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        
+            <Grid Grid.Row="0" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="successicon.png" Aspect="AspectFit" Grid.Row="0"/>
+                <Label Text="Great!!!"
+                       Style="{StaticResource LabelLargeBlack}"
+                       Grid.Row="1" HorizontalTextAlignment="Center"/>
+                <Label x:Name="lblMsg" Grid.Row="2" Text=""  HorizontalTextAlignment="Center"
+                       Style="{StaticResource MyTitleLabel}" LineBreakMode="WordWrap"/>
+            
+            </Grid>
+            <Grid Grid.Row="1" BackgroundColor="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                
+                <Button x:Name="Button1" Margin="30,0,30,0" Grid.Row="1" Clicked="Button_Clicked"
+                        Text="{x:Static resource:AppResources.btnGotohome}"
+                        Style="{StaticResource ButtonBlueStyle}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,178 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <BuildWithMSBuildOnMono>true</BuildWithMSBuildOnMono>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2662" />
+    <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="3.0.0-beta5" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2337" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+    <PackageReference Include="dotMorten.Xamarin.Forms.AutoSuggestBox" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="4.1.0" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.3.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRadialMenu" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="19.4.0.56" />
+    <PackageReference Include="XF.Material" Version="1.8.0" />
+    <PackageReference Include="Xam.Plugin.Iconize" Version="3.5.0.129" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="19.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="19.4.0.55" />
+    <PackageReference Include="Xamanimation" Version="1.3.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="19.4.0.56" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="19.4.0.56" />
+    <PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
+    <PackageReference Include="Shiny.Notifications" Version="2.0.0.2639" />
+    <PackageReference Include="Plugin.LocalNotification" Version="5.2.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="1.4.2" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="5.0.0.2662" />
+    <PackageReference Include="MR.Gestures" Version="3.0.0" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="19.4.0.56" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Converters\" />
+    <Folder Include="DataServices\" />
+    <Folder Include="DependencyServices\" />
+    <Folder Include="Hepler\" />
+    <Folder Include="Models\" />
+    <Folder Include="ServiceLayer\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\Technician\" />
+    <Folder Include="Views\Technician\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="MultilingualResources\" />
+    <Folder Include="Resx\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="ViewModels\Account\" />
+    <Folder Include="Views\Customer\Accesssories\" />
+    <Folder Include="ViewModels\Customer\SRDetails\" />
+    <Folder Include="Views\Customer\CommonPages\" />
+    <Folder Include="ViewModels\Customer\CommonPages\" />
+    <Folder Include="Views\Customer\SRDetails\SubViews\" />
+    <Folder Include="ViewModels\Customer\SRDetails\SubViews\" />
+    <Folder Include="Views\ServiceCentorView\" />
+    <Folder Include="ViewModels\ServiceCentor\" />
+    <Folder Include="Views\Customer\AMCRequest\" />
+    <Folder Include="ViewModels\Customer\AMCRequest\" />
+    <Folder Include="ViewModels\Customer\Accesssories\" />
+    <Folder Include="Views\Customer\DashBoardView\" />
+    <Folder Include="ViewModels\Customer\ProfileView\" />
+    <Folder Include="Styles\" />
+    <Folder Include="UIEffects\" />
+    <Folder Include="Views\Customer\InquiryView\" />
+    <Folder Include="ViewModels\Customer\Inquiry\" />
+    <Folder Include="ViewModels\Technician\TasksView\" />
+    <Folder Include="Views\Technician\TaskViews\" />
+    <Folder Include="Views\Technician\SparePartsViews\" />
+    <Folder Include="ViewModels\Technician\SparePartsView\" />
+    <Folder Include="Views\Technician\AccessoriesView\" />
+    <Folder Include="ViewModels\Technician\AccessoriesView\" />
+    <Folder Include="Views\Technician\SupportViews\" />
+    <Folder Include="ViewModels\Technician\SupportViews\" />
+    <Folder Include="Behaviors\" />
+    <Folder Include="Views\CustomCells\" />
+    <Folder Include="Controls\Templates\" />
+    <Folder Include="Views\Technician\ServiceCenterView\" />
+    <Folder Include="ViewModels\Technician\ServiceCenterView\" />
+    <Folder Include="Views\Technician\ProfileViews\" />
+    <Folder Include="Views\Technician\FAQViews\" />
+    <Folder Include="ViewModels\Technician\FAQViews\" />
+    <Folder Include="Views\AppOnBoard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Customer\AboutUsPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\SEGOEUI.TTF" />
+    <EmbeddedResource Include="Fonts\segoemediacentersemibold.ttf" />
+    <EmbeddedResource Include="Fonts\calibribold.ttf" />
+    <EmbeddedResource Include="Fonts\Fonarto.ttf" />
+    <EmbeddedResource Include="Fonts\Gloria.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resx\AppResources.hi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.hi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\Customer\AboutUsPage.xaml.cs" />
+    <Compile Remove="Views\Technician\TaskViews\TaskSchedulePage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resx\AppResources.hi.Designer.cs">
+      <DependentUpon>AppResources.hi.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resx\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\ServiceCentorView\ServiceCentorsPage.xaml.cs">
+      <DependentUpon>ServiceCentorsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\Global.xml" />
+    <None Remove="Fonts\SEGOEUI.TTF" />
+    <None Remove="Fonts\segoe-media-center-semibold.ttf" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Microsoft.CSharp" />
+    <None Remove="Syncfusion.Xamarin.Buttons" />
+    <None Remove="Syncfusion.Xamarin.SfBusyIndicator" />
+    <None Remove="Syncfusion.Xamarin.Cards" />
+    <None Remove="Syncfusion.Xamarin.SfComboBox" />
+    <None Remove="Syncfusion.Xamarin.Core" />
+    <None Remove="Syncfusion.Xamarin.SfRadialMenu" />
+    <None Remove="Syncfusion.Xamarin.Expander" />
+    <None Remove="Syncfusion.Xamarin.SfListView" />
+    <None Remove="Syncfusion.Xamarin.SfProgressBar" />
+    <None Remove="Syncfusion.Xamarin.SfAutoComplete" />
+    <None Remove="Xamarin.Build.Download" />
+    <None Remove="Fonts\calibribold.ttf" />
+    <None Remove="Shiny.Notifications" />
+    <None Remove="Xamarin.Forms.PancakeView" />
+    <None Remove="Xamarin.Forms.Visual.Material" />
+    <None Remove="Fonts\Fonarto.ttf" />
+    <None Remove="Fonts\Gloria.ttf" />
+    <None Remove="Fonts\Roboto-Medium.ttf" />
+    <None Remove="MR.Gestures" />
+    <None Remove="Views\AppOnBoard\" />
+    <None Remove="Syncfusion.Xamarin.SfCarousel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eWarranty.Core\eWarranty.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Products.AddProductPage" Title="Register" FlowDirection="{Binding flowDirection}"
+              >
+ 
+    <ContentPage.Content>
+        <!--<Grid  VerticalOptions="FillAndExpand"  RowSpacing="0" BackgroundColor="White" Margin="10" >
+             
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+               
+            </Grid.RowDefinitions>
+      
+        <ScrollView Grid.Row="0"  BackgroundColor="Transparent">
+
+      
+       <contr:RoundedCornerView BorderColor="White" BorderWidth="2" RoundedCornerRadius="8" BackgroundColor="Transparent" >
+           <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="20" RowSpacing="20" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                       <RowDefinition Height="auto"/>
+                    
+                     <RowDefinition Height="10"/>
+                     <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                    <contr:TitleDropdownView Grid.Row="0" PickerItemsSource="{Binding CategorySource}" ItemDisplayBinding="Title" Title="Category" SelectedItem="{Binding SelectedCategory}" Command="{Binding CategoryChangeCommand}" />
+                  <Picker Grid.Row="0"  ItemDisplayBinding="{Binding Title}" ItemsSource="{Binding CategorySource}" />
+                 <contr:TitleDropdownView Grid.Row="0" Title="Product Category" PickerItemsSource="{Binding CategorySource}" ItemDisplayBinding="Title" Placeholder="Select Category"  SelectedItem="{Binding SelectedCategory}" Command="{Binding CategoryChangeCommand}" />
+
+               <contr:TitledEntryView Grid.Row="1" Title="Model Name" Placeholder="Product Name"  Text="{Binding ProductName}"
+                                PlaceholderColor="Gray"/>
+               <dm:AutoSuggestBox PlaceholderText="Search" WidthRequest="200" Grid.Row="2"
+                TextChanged="AutoSuggestBox_TextChanged"
+                QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Model Number" Style="{StaticResource EnteryTitleLabel}"/>
+                    <Grid Grid.Row="1">
+                         <Grid.RowDefinitions>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="1"/>
+                 </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <contr:ImageEntry  Placeholder="Model Number" Grid.Column="0" Grid.Row="0" Text="{Binding ModelNo}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Style="{StaticResource EnteryTxtValues}"  BackgroundColor="White">
+                            
+                        </contr:ImageEntry>
+
+                        <Grid Grid.Column="1" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                 <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="geocircle" Grid.Column="0"  HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,5,0" > 
+                            <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                           Command="{Binding ModelsPopupCommand}" />
+                              </Image.GestureRecognizers>
+                        </Image>
+                             <Image Source="Serialno" Grid.Column="1"  HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,5,0" > 
+                            <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                           Command="{Binding ModelNoCommand}" />
+                              </Image.GestureRecognizers>
+                        </Image>
+                        </Grid>
+                        
+                        <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                       
+                    </Grid>
+                     <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                           Command="{Binding ModelsPopupCommand}"
+                                            NumberOfTapsRequired="1" />
+                              </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Grid.Row="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Model Number" Style="{StaticResource EnteryTitleLabel}"/>
+                     <StackLayout x:Name="slAutoSuggestBox" Grid.Row="1"></StackLayout>
+                    <BoxView  Grid.Row="2">
+                        <BoxView.BackgroundColor>
+                             <OnPlatform x:TypeArguments="Color"
+                                 Android="#ECECEC"                 
+                                 iOS="Transparent">
+                             </OnPlatform>
+                         </BoxView.BackgroundColor>
+                        </BoxView>
+                </Grid>
+                <Label Text="OR" Grid.Row="1" FontSize="10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"  />
+                <contr:TitledEntryWithIcon Grid.Row="2" Padding="0,0,0,0" VerticalOptions="Start"  IsEnabledView="False" Placeholder="Scan Model Number"  Text="{Binding ModelNo}" ImageSource="Serialno" Command="{Binding ModelNoCommand}"
+                                PlaceholderColor="Gray"/>
+                    <Grid Grid.Row="3" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                         <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Serial Number" Style="{StaticResource EnteryTitleLabel}"/>
+                     <StackLayout x:Name="slAutoSuggestBoxSR" Grid.Row="1"></StackLayout>
+                </Grid>
+               <Label Text="OR" Grid.Row="4" FontSize="10" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <contr:TitledEntryWithIcon VerticalOptions="Start" Padding="0,0,0,0"  Grid.Row="1" Title="Serial Number" Placeholder="Serial Number"  Text="{Binding SerialNo}" ImageSource="Serialno" Command="{Binding SerialNoCommand}"
+                                PlaceholderColor="Gray"/>
+                <contr:TitledEntryWithIcon Grid.Row="2" Title="Model Number" Placeholder="Model Number"  Text="{Binding ModelNo}" ImageSource="Serialno" Command="{Binding SerialNoCommand}"
+                                PlaceholderColor="Gray"/>
+                <contr:TitledEntryView Grid.Row="3" Title="Serial Number" Placeholder="Serial Number"  Text="{Binding SerialNo}"
+                                PlaceholderColor="Gray"/>
+
+                  
+                  <contr:TitledDateTimePicker Grid.Row="2" Title="Purchase Date" SDate="{x:Static sys:DateTime.Now}" SelectedDate="{Binding SelectedDate}" Command="{Binding DateSlectCommand}" ItemTapped="TitledDateTimePicker_ItemTapped" />
+                
+                  <contr:TitledEntryView Grid.Row="3" Title="Invoice Number" Placeholder="Invoice Number"  Text="{Binding PurchaseInvoiceNumber}"
+                                PlaceholderColor="Gray"/>
+                <contr:TitledEntryWithIcon Grid.Row="4" Title="Upload Invoice"  ImageSource="camera" Placeholder="Upload Invoice Receipt"  Text="{Binding InvoiceFile}" Command="{Binding UploadInvoiceCommand}"
+                                PlaceholderColor="Gray"/>
+                <contr:TitledEntryWithIcon Grid.Row="5" Title="Product Label Upload"  ImageSource="camera" Placeholder="Upload Product Image"  Text="{Binding ProductImageFile}" Command="{Binding UploadProductCommand}"
+                                PlaceholderColor="Gray"/>
+
+                 <contr:TitledEntryWithIcon Grid.Row="7" Title="Select Warranty Card"  ImageSource="camera" Placeholder="Upload warranty card"  Text="{Binding WarrantyInvoice}" Command="{Binding UploadWarrantyInvoiceCommand}"
+                                PlaceholderColor="Gray"/>
+
+               <contr:TitleDropdownView Grid.Row="8" PickerItemsSource="{Binding CategorySource}" ItemDisplayBinding="Title" Title="Select Warranty Type" Placeholder="Warranty Type" SelectedItem="{Binding SelectedCategory}" Command="{Binding CategoryChangeCommand}" />
+                 <contr:TitleDropdownView Grid.Row="10" Title="Country of purchase" PickerItemsSource="{Binding AllCountries}" ItemDisplayBinding="Title" Placeholder="Select Country"  SelectedItem="{Binding SelectCountry}" Command="{Binding CountryChangeCommand}" />
+                 <contr:TitledEntryWithIcon Grid.Row="6" IsEnabledView="False" Title="Country of purchase"  ImageSource="dropdown" Placeholder="Country of purchase"  Text="{Binding SelectCountry.Title}" Command="{Binding CountryChangeCommand}"
+                                PlaceholderColor="Gray"/>
+                <Label Grid.Row="7" x:Name="lblmsg" IsVisible="false" TextColor="Red" FontAttributes="Bold" Text="Your model number not existing. So please enter dealer details."  />
+                <Grid Grid.Row="8" IsVisible="{Binding ModelNumberValide}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                          <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                     <contr:TitledEntryView Grid.Row="0" Title="Dealer Name" Placeholder="Dealer Name"  Text="{Binding DealerName}"
+                                PlaceholderColor="Gray"/>
+                    <contr:TitledEntryView Grid.Row="1" Title="Dealer Address" Placeholder="Dealer Address"  Text="{Binding DealerAddress}"
+                                PlaceholderColor="Gray"/>
+                    
+                </Grid>
+              <Button Grid.Row="10" Command="{Binding AddProductCommand}" Text="Save" BackgroundColor="#687089" TextColor="White" />
+                               
+            </Grid>
+             </Grid>
+        </contr:RoundedCornerView>
+              </ScrollView>
+            </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

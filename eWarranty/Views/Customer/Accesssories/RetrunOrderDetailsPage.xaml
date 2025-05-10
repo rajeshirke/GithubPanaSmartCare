@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Accesssories.RetrunOrderDetailsPage"
+              Title="{x:Static resource:AppResources.titleReturnProduct}" FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}" xmlns:resource="clr-namespace:eWarranty.Resx"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" x:Name="root">
+    <ContentPage.Content>
+         <Grid  VerticalOptions="FillAndExpand" RowSpacing="0" BackgroundColor="{StaticResource contentBG}"  >
+                
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+               <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+              <Grid  Padding="10" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                 <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>               
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0,0,0,0" Grid.Row="0"  BackgroundColor="White">                                  
+                  <contr:RoundedCornerView Grid.Row="0" Padding="0,10,0,3" BorderColor="LightGray" BorderWidth="1"   RoundedCornerRadius="5" BackgroundColor="white" VerticalOptions="Center" >
+                              <Grid Padding="5">
+                                  <Grid.RowDefinitions>
+                                      <RowDefinition Height="auto"/>
+                                         <RowDefinition Height="auto"/>
+                                  </Grid.RowDefinitions>
+                                 <Grid Grid.Row="0">
+                                     <Grid.ColumnDefinitions>
+                                         <ColumnDefinition Width="7*"/>
+                                          <ColumnDefinition Width="3*"/>
+                                     </Grid.ColumnDefinitions>
+                                    <Label  Grid.Column="0" HorizontalTextAlignment="Start" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblOrderno}" Style="{StaticResource MyTitleLabel}" />
+                                                <Span Text="{Binding OrderResponses.OrderDetailNo}" Style="{StaticResource MyValueLabel}" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                 </Grid>
+                              <Grid Padding="0,0,0,0" Grid.Row="1">
+                              <Grid.RowDefinitions>
+                                   <RowDefinition Height="*"/>
+                               </Grid.RowDefinitions>
+                               <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="3*"/>
+                                   <ColumnDefinition Width="7*"/>
+                               </Grid.ColumnDefinitions>
+
+                                   <contr:RoundedCornerView Grid.Column="0" Grid.Row="0" BorderColor="Transparent" BorderWidth="1"  BackgroundColor="white"  >
+                                   <Image Source="{Binding OrderResponses.ProdcuImageUrl}" Aspect="AspectFit"/>
+
+                               </contr:RoundedCornerView>
+                             
+                               <Grid Grid.Column="1" Grid.Row="0" Padding="10,5,0,10" BackgroundColor="White">
+                                      <Grid.RowDefinitions>
+                                          <RowDefinition Height="auto"/>
+                                          <RowDefinition Height="auto"/>
+                                           <RowDefinition Height="auto"/>
+                                          
+                                          <RowDefinition Height="*"/>
+                                      </Grid.RowDefinitions>
+
+                                        <Label Text="{Binding OrderResponses.AccessoryName}" Grid.Row="0" HorizontalTextAlignment="Start" Style="{StaticResource MyTitleLabel}"/>
+                                        <Label   Grid.Row="1" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblStatus}" Style="{StaticResource MyTitleLabel}" />
+                                                    <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                    <Span Text="{Binding OrderResponses.OrderStatusName}" TextColor="green" Style="{StaticResource MyValueLabel}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                      <Label Grid.Row="2">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblQuantity}" Style="{StaticResource MyTitleLabel}" />
+                                                    <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                    <Span Text="{Binding OrderResponses.Quantity}" Style="{StaticResource MyValueLabel}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   <Label Grid.Row="3" >
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding OrderResponses.CurrencyCode}"  Style="{StaticResource MyTitleLabel}"/>
+                                                    <Span Text=" " />
+                                                    <Span Text="{Binding OrderResponses.Price,StringFormat='{0:F2}'}" FontAttributes="Bold" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}"/>                                                     
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                
+                                   
+                                   </Grid>
+                                  
+                            
+                                
+                               </Grid>
+                                   </Grid>
+                           </contr:RoundedCornerView>                         
+            </Grid>
+           
+
+                    <contr:RoundedCornerView Margin="0" Grid.Row="1"
+                                             BorderColor="{StaticResource borderColor}"
+                                             BorderWidth="2"  RoundedCornerRadius="5">
+                  
+                        <Grid  Padding="10"  BackgroundColor="White">
+                           <Grid.RowDefinitions>
+                               <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="*"/>
+                           </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{x:Static resource:AppResources.lblRemark}" Style="{StaticResource LabelLargeBlack}" />
+                            <BoxView Grid.Row="1" BackgroundColor="{StaticResource borderColor}"/>
+                            <Editor BackgroundColor="White" Text="{Binding Description}" Placeholder="{x:Static resource:AppResources.lblRemark}" Grid.Row="2" Style="{StaticResource EditorTxtValues}"/>
+                
+                        </Grid>
+                  </contr:RoundedCornerView>
+            
+            </Grid>
+            <Grid Grid.Row="1" Padding="20,0,20,10"  BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Grid.ColumnSpan="2"  Text="{x:Static resource:AppResources.lblReturn}" Style="{StaticResource ButtonBlueStyle}" Command="{Binding SaveCommand}"/>                    
+            </Grid>
+        </Grid>
+  
+    </ContentPage.Content>
+</ContentPage>

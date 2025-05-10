@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Controls.TitleDropdownView"
+             xmlns:effects="clr-namespace:eWarranty.UIEffects" xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+             xmlns:contr="clr-namespace:eWarranty.Controls" x:Name="x_this">
+    <ContentView.Content>
+         <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Style="{StaticResource EnteryTitleLabel}" x:Name="LabelTitle" Text="{Binding Title}"/> 
+            <Grid Grid.Row="1" RowSpacing="0" VerticalOptions="Start"  BackgroundColor="Transparent" >
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="9*"/>
+                      <ColumnDefinition Width="1*"/>                     
+                  </Grid.ColumnDefinitions>
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="1"/>
+                 </Grid.RowDefinitions>
+                  <Picker Grid.Row="0" WidthRequest="1000000" HorizontalOptions="StartAndExpand" x:Name="dropdown"
+                            BackgroundColor="Transparent" HeightRequest="40" 
+                            ItemsSource="{Binding PickerItemsSource}" ItemDisplayBinding="{Binding Title}"
+                            SelectedItem="{Binding SelectedItem, Mode=OneWay}"
+                            SelectedIndexChanged="dropdown_SelectedIndexChanged"                                     
+                            Style="{StaticResource EnteryTxtValues}"
+                            TitleColor="{StaticResource PlcGray}"  >
+                        <!--Title="{Binding Placeholder}"-->
+                     
+                    </Picker>
+                  <!--<Image Grid.Row="0" Grid.Column="1" Source="dropdown" Aspect="AspectFit" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  HeightRequest="20" WidthRequest="20">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Image.GestureRecognizers>
+                 </Image>-->
+
+                <Label  Grid.Row="0" Grid.Column="1"  HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,2,0"
+                        Text="{x:Static fontawesome:Solid.Caret_Down}"
+                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                        FontSize="20"  >
+                    <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped"
+                                NumberOfTapsRequired="1" />
+                    </Label.GestureRecognizers>
+                </Label> 
+                 <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+              </Grid>
+          
+            
+                       
+        </Grid>
+    </ContentView.Content>
+</ContentView>

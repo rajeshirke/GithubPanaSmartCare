@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <resheader name="resmimetype">
+      <value>text/microsoft-resx</value>
+   </resheader>
+   <resheader name="version">
+      <value>2.0</value>
+   </resheader>
+   <resheader name="reader">
+      <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+   </resheader>
+   <resheader name="writer">
+      <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+   </resheader>
+   <data name="LoginPageTitle" xml:space="preserve">
+        <value>Welcome to eWarranty</value>
+    </data>
+   <data name="lblBack" xml:space="preserve">
+        <value>&lt; Back</value>
+    </data>
+   <data name="lblNext" xml:space="preserve">
+        <value>Next</value>
+    </data>
+   <data name="lblSubmit" xml:space="preserve">
+        <value>Submit</value>
+    </data>
+   <data name="lblSave" xml:space="preserve">
+        <value>Save</value>
+    </data>
+   <data name="lblCancel" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+   <data name="lblSignin" xml:space="preserve">
+        <value>Sign In</value>
+    </data>
+   <data name="lblSignUp" xml:space="preserve">
+        <value>Sign Up</value>
+    </data>
+   <data name="lblUserName" xml:space="preserve">
+        <value>User Name</value>
+    </data>
+   <data name="lblPassword" xml:space="preserve">
+        <value>Password</value>
+    </data>
+   <data name="lblEmail" xml:space="preserve">
+        <value>Email Id</value>
+    </data>
+   <data name="lblForgotPassword" xml:space="preserve">
+        <value>Forgot Password?</value>
+    </data>
+   <data name="lbltitelForgotPassword" xml:space="preserve">
+        <value>Forgot Password</value>
+    </data>
+   <data name="lblMsgEmailErrorForgotPassword" xml:space="preserve">
+        <value>Please enter email id.</value>
+    </data>
+   <data name="lblMsgEmailValidErrorForgotPassword" xml:space="preserve">
+        <value>Please enter valide email id.</value>
+    </data>
+   <data name="lblName" xml:space="preserve">
+        <value>Name</value>
+    </data>
+   <data name="lblContactNumber" xml:space="preserve">
+        <value>Contact Number</value>
+    </data>
+   <data name="lblErrorName" xml:space="preserve">
+        <value>Please enter name.</value>
+    </data>
+   <data name="lblErrorEmail" xml:space="preserve">
+        <value>Please enter email.</value>
+    </data>
+   <data name="lblErrorValidEmail" xml:space="preserve">
+        <value>Your email id is invalid.</value>
+    </data>
+   <data name="lblErrorContactNumber" xml:space="preserve">
+        <value>Please enter conatct number.</value>
+    </data>
+   <data name="lblErrorTitle" xml:space="preserve">
+        <value>Error.</value>
+    </data>
+   <data name="lblOk" xml:space="preserve">
+        <value>Ok</value>
+    </data>
+   <data name="inquery" xml:space="preserve">
+        <value>Your inquiry has been submitted successfully</value>
+    </data>
+   <data name="servererror" xml:space="preserve">
+        <value>Server Not Responding</value>
+    </data>
+   <data name="lblValidMobileNo" xml:space="preserve">
+        <value>Please enter valide mobile number.</value>
+    </data>
+   <!--Customer DashBoard-->
+   <data name="titlePanasonicSmartCare" xml:space="preserve">
+        <value>Panasonic Smart Care</value>
+    </data>
+   <data name="btnMyProducts" xml:space="preserve">
+    <value>My Products</value>
+    </data>
+   <data name="btnRegisterProduct" xml:space="preserve">
+    <value>Register Product</value>
+    </data>
+   <data name="btnTrackService" xml:space="preserve">
+    <value>Track Service</value>
+    </data>
+   <data name="btnServiceCenter" xml:space="preserve">
+        <value>Service Center</value>
+    </data>
+   <data name="btnSmartAssistant" xml:space="preserve">
+        <value>Smart Assistant</value>
+    </data>
+   <data name="btnHome" xml:space="preserve">
+        <value>Home</value>
+    </data>
+   <data name="btnPromotion" xml:space="preserve">
+        <value>Promotion</value>
+    </data>
+   <data name="btnSurvey" xml:space="preserve">
+        <value>Survey</value>
+    </data>
+   <data name="btnAccessories" xml:space="preserve">
+        <value>Accessories</value>
+    </data>
+   <data name="btnSettings" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+   <!--Technician Dashboard-->
+   <data name="btnAssignedJobs" xml:space="preserve">
+        <value>Assigned Jobs</value>
+    </data>
+   <data name="titlePendingJobs" xml:space="preserve">
+        <value>Pending Jobs</value>
+    </data>
+   <data name="menuMyJobs" xml:space="preserve">
+        <value>My Jobs</value>
+    </data>
+   <data name="menuPartRequests" xml:space="preserve">
+        <value>Part Requests</value>
+    </data>
+   <data name="menuPartStock" xml:space="preserve">
+        <value>Part Stock</value>
+    </data>
+   <data name="menuChat" xml:space="preserve">
+        <value>Chat</value>
+    </data>
+   <data name="menuServiceManuals" xml:space="preserve">
+        <value>Service Manuals</value>
+    </data>
+   <data name="menuTips" xml:space="preserve">
+        <value>Tips</value>
+    </data>
+   <data name="menuFAQ" xml:space="preserve">
+        <value>FAQ</value>
+    </data>
+   <data name="menuMyQueries" xml:space="preserve">
+        <value>My Queries</value>
+    </data>
+   <data name="menuMyOrders" xml:space="preserve">
+        <value>My Orders</value>
+    </data>
+   <!--Dashboard left side menu-->
+   <data name="menuProducts" xml:space="preserve">
+        <value>Products</value>
+    </data>
+   <data name="menuServicesHistory" xml:space="preserve">
+        <value>Services History</value>
+    </data>
+   <data name="menuChatHistory" xml:space="preserve">
+        <value>Chat History</value>
+    </data>
+   <data name="menuSurvey" xml:space="preserve">
+        <value>Survey</value>
+    </data>
+   <data name="menuTermsandConditions" xml:space="preserve">
+        <value>Terms &amp; Conditions</value>
+    </data>
+   <data name="menuServiceCenter" xml:space="preserve">
+        <value>Service Center</value>
+    </data>
+   <data name="menuMyAccount" xml:space="preserve">
+        <value>My Account</value>
+    </data>
+   <data name="menuLogout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+   <data name="menuBuyAMC" xml:space="preserve">
+        <value>Buy AMC</value>
+    </data>
+   <!--My Products-->
+   <data name="titleProducts" xml:space="preserve">
+        <value>Products</value>
+    </data>
+   <data name="plcSearchModelNumber" xml:space="preserve">
+        <value>Search Model Number</value>
+    </data>
+   <data name="lblNoProducts" xml:space="preserve">
+        <value>No Products</value>
+    </data>
+   <data name="lblModelNo" xml:space="preserve">
+        <value>Model No : </value>
+    </data>
+   <data name="lblSerialNo" xml:space="preserve">
+        <value>Serial No  : </value>
+    </data>
+   <data name="lblWarranty" xml:space="preserve">
+        <value>Warranty  : </value>
+    </data>
+   <data name="lblExpiresIn" xml:space="preserve">
+        <value>Expires In : </value>
+    </data>
+   <data name="btnDetails" xml:space="preserve">
+        <value>Details</value>
+    </data>
+   <!--Service Center Screen-->
+   <data name="lblNearByServiceCenters" xml:space="preserve">
+        <value>Near By Service Centers</value>
+    </data>
+   <data name="plcFindLocation" xml:space="preserve">
+        <value>Find Location</value>
+    </data>
+   <data name="lblLandmark" xml:space="preserve">
+        <value>Landmark : </value>
+    </data>
+   <data name="lblCityName" xml:space="preserve">
+        <value>City Name : </value>
+    </data>
+   <data name="lblWorkingHours" xml:space="preserve">
+        <value>Working Hours: </value>
+    </data>
+   <data name="lblDistnace" xml:space="preserve">
+        <value>Distance : </value>
+    </data>
+   <data name="lblLocatewithin50kilometers" xml:space="preserve">
+        <value>Locate within 50 kilometers</value>
+    </data>
+   <!--Product Details-->
+   <data name="titleProductDetails" xml:space="preserve">
+        <value>Product Details</value>
+    </data>
+   <data name="lblPurchasedon" xml:space="preserve">
+        <value>Purchased on : </value>
+    </data>
+   <data name="lblRegisteredon" xml:space="preserve">
+        <value>Registered on : </value>
+    </data>
+   <data name="lblWarrantyInformation" xml:space="preserve">
+        <value>Warranty Information</value>
+    </data>
+   <data name="lblWarrantyType" xml:space="preserve">
+        <value>Warranty Type</value>
+    </data>
+   <data name="lblExpiredon" xml:space="preserve">
+        <value>Expired on</value>
+    </data>
+   <data name="lblDealerInformation" xml:space="preserve">
+        <value>Dealer Information</value>
+    </data>
+   <data name="lblDealerName" xml:space="preserve">
+        <value>Dealer Name</value>
+    </data>
+   <data name="lblDealerLocation" xml:space="preserve">
+        <value>Dealer Location</value>
+    </data>
+   <data name="lblCountryofpurchase" xml:space="preserve">
+        <value>Country of purchase</value>
+    </data>
+   <data name="lblInvoiceNumber" xml:space="preserve">
+        <value>Invoice Number</value>
+    </data>
+   <data name="btnServiceRequest" xml:space="preserve">
+        <value>Service Request</value>
+    </data>
+   <data name="lblProductLabel" xml:space="preserve">
+        <value>Product Label</value>
+    </data>
+   <data name="lblPurchaseInvoice" xml:space="preserve">
+        <value>Purchase Invoice</value>
+    </data>
+   <data name="lblTermsandConditions" xml:space="preserve">
+        <value>Terms &amp; Conditions</value>
+    </data>
+   <!--Register Product-->
+   <data name="titleRegister" xml:space="preserve">
+        <value>Register</value>
+    </data>
+   <data name="lblModelNumber" xml:space="preserve">
+        <value>Model Number</value>
+    </data>
+   <data name="plcModelNumber" xml:space="preserve">
+        <value>Model Number</value>
+    </data>
+   <data name="lblSerialNumber" xml:space="preserve">
+        <value>Serial Number</value>
+    </data>
+   <data name="plcSerialNumber" xml:space="preserve">
+        <value>Serial Number</value>
+    </data>
+   <data name="lblPurchaseDate" xml:space="preserve">
+        <value>Purchase Date</value>
+    </data>
+   <data name="plcInvoiceNumber" xml:space="preserve">
+        <value>Invoice Number</value>
+    </data>
+   <data name="lblPurchaseInvoice" xml:space="preserve">
+        <value>Purchase Invoice</value>
+    </data>
+   <data name="plcUploadPurchaseInvoice" xml:space="preserve">
+        <value>Upload Purchase Invoice</value>
+    </data>
+   <data name="lblProductLabel" xml:space="preserve">
+        <value>Product Label</value>
+    </data>
+   <data name="plcUploadProductLabel" xml:space="preserve">
+        <value>Upload Product Label</value>
+    </data>
+   <data name="lblCountryofpurchase" xml:space="preserve">
+        <value>Country of purchase</value>
+    </data>
+   <data name="plcCountryofpurchase" xml:space="preserve">
+        <value>Country of purchase</value>
+    </data>
+   <data name="lblMessage" xml:space="preserve">
+        <value>Your model number does not exists. So please enter dealer details.</value>
+    </data>
+   <data name="lblDealerName" xml:space="preserve">
+        <value>Dealer Name</value>
+    </data>
+   <data name="lblDealerLocation" xml:space="preserve">
+        <value>Dealer Location</value>
+    </data>
+   <data name="btnSave" xml:space="preserve">
+        <value>Save</value>
+    </data>
+   <!--Open Service Request-->
+   <data name="lblOpenServiceRequest" xml:space="preserve">
+        <value>Open Service Request</value>
+    </data>
+   <data name="lblNoServiceRequest" xml:space="preserve">
+        <value>No Service Request</value>
+    </data>
+   <data name="lblReqNo" xml:space="preserve">
+        <value>Req No : </value>
+    </data>
+   <data name="lblDate" xml:space="preserve">
+        <value>Date : </value>
+    </data>
+   <data name="lblRemark" xml:space="preserve">
+        <value>Remark </value>
+    </data>
+   <!--  <data name="lblStatus" xml:space="preserve">
+        <value>Status : </value>
+    </data>-->
+   <data name="lblFeedback" xml:space="preserve">
+        <value>Feedback</value>
+    </data>
+   <data name="btnFollowup" xml:space="preserve">
+        <value>Follow-up</value>
+    </data>
+   <data name="plcFollowupmessage" xml:space="preserve">
+        <value>Follow-up message</value>
+    </data>
+   <!--SR Details-->
+   <data name="lblProductRemarks" xml:space="preserve">
+        <value>Product Remarks</value>
+    </data>
+   <data name="plcRemarks" xml:space="preserve">
+        <value>Remarks</value>
+    </data>
+   <data name="lblPreferredDatetime" xml:space="preserve">
+        <value>Preferred Date &amp; time</value>
+    </data>
+   <data name="btnReschedule" xml:space="preserve">
+        <value>Reschedule</value>
+    </data>
+   <data name="lblAddress" xml:space="preserve">
+        <value>Address</value>
+    </data>
+   <data name="lblServiceCenterDetails" xml:space="preserve">
+        <value>Service Center Details</value>
+    </data>
+   <data name="lblAddressdetail" xml:space="preserve">
+        <value>Address: </value>
+    </data>
+   <data name="lblLandmark" xml:space="preserve">
+        <value>Landmark : </value>
+    </data>
+   <data name="lblCity" xml:space="preserve">
+        <value>City : </value>
+    </data>
+    <data name="lblCitynew" xml:space="preserve">
+        <value>City</value>
+    </data>
+     <data name="plcCity" xml:space="preserve">
+        <value>City</value>
+    </data>
+
+     <data name="lblAddnewproduct" xml:space="preserve">
+        <value>Add a new product</value>
+    </data>
+
+   <data name="lblWorkingHours" xml:space="preserve">
+        <value>Working Hours: </value>
+    </data>
+   <data name="lblServiceCenterComments" xml:space="preserve">
+        <value>Service Center Comments</value>
+    </data>
+   <!--SREditDetails Page-->
+   <data name="lblSymptom" xml:space="preserve">
+        <value>Symptom</value>
+    </data>
+   <data name="titleDetails" xml:space="preserve">
+        <value>Details</value>
+    </data>
+   <data name="lblRequestNo" xml:space="preserve">
+        <value>Request No : </value>
+    </data>
+   <data name="lblRequestDate" xml:space="preserve">
+        <value>Request Date : </value>
+    </data>
+   <data name="lblRequestStatus" xml:space="preserve">
+        <value>Request Status : </value>
+    </data>
+   <data name="lblRequestType" xml:space="preserve">
+        <value>Request Type:</value>
+    </data>
+   <!--Product Details Sub View-->
+   <data name="lblProductDetails" xml:space="preserve">
+        <value>Product Details</value>
+    </data>
+   <data name="lblDealerAddress" xml:space="preserve">
+        <value>Dealer Address</value>
+    </data>
+   <!--ServiceCentorsPage-->
+   <data name="titleFindServiceCenter" xml:space="preserve">
+        <value>Find Service Center</value>
+    </data>
+   <data name="lblNotFound" xml:space="preserve">
+        <value>Not Found</value>
+    </data>
+   <!--ChatBotViewPage-->
+   <data name="titleSmartAssistant" xml:space="preserve">
+        <value>Smart Assistant</value>
+    </data>
+   <data name="lblPanasonicSmartAssistant" xml:space="preserve">
+        <value>CIAA Smart Assistant</value>
+    </data>
+   <data name="lblWelcomeMessage" xml:space="preserve">
+        <value>Welcome to CIAA Smart Assistant! We are delighted to help you! Are you a?</value>
+    </data>
+   <!--MyProfile-->
+   <data name="titleMyProfile" xml:space="preserve">
+        <value>My Profile</value>
+    </data>
+   <data name="lblEdit" xml:space="preserve">
+        <value>Edit</value>
+    </data>
+   <data name="lblMobNo" xml:space="preserve">
+        <value>M.</value>
+    </data>
+   <data name="titleUpdateProfile" xml:space="preserve">
+        <value>Update Profile</value>
+    </data>
+   <data name="btnManageAddress" xml:space="preserve">
+        <value>Manage Address</value>
+    </data>
+   <data name="btnChangePassword" xml:space="preserve">
+        <value>Change Password</value>
+    </data>
+   <data name="btnLanguage" xml:space="preserve">
+        <value>English</value>
+    </data>
+   <data name="btnLogout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+   <!--Update Profile-->
+   <data name="titleUpdateProfile" xml:space="preserve">
+        <value>Update Profile</value>
+    </data>
+   <data name="lblName" xml:space="preserve">
+        <value>Name</value>
+    </data>
+   <data name="btnUpdate" xml:space="preserve">
+        <value>Update</value>
+    </data>
+   <data name="btnCancel" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+   <data name="lblAlternateNumber" xml:space="preserve">
+        <value>Alternate Number</value>
+    </data>
+   <data name="lblPrimaryLanguage" xml:space="preserve">
+        <value>Primary Language</value>
+    </data>
+   <!--Addresses-->
+   <data name="titleAddresses" xml:space="preserve">
+        <value>Addresses</value>
+    </data>
+   <data name="menuAdd" xml:space="preserve">
+        <value>Add</value>
+    </data>
+   <data name="lblStreet" xml:space="preserve">
+        <value>Street</value>
+    </data>
+   <data name="lblState" xml:space="preserve">
+        <value>State </value>
+    </data>
+   <data name="lblCountry" xml:space="preserve">
+        <value>Country</value>
+    </data>
+   <data name="titleNewaddress" xml:space="preserve">
+        <value>New Address</value>
+    </data>
+   <data name="plcApartment/Houseno" xml:space="preserve">
+        <value>Apartment/House no.</value>
+    </data>
+   <data name="plcBuilding/Villaname" xml:space="preserve">
+        <value>Building/Villaname</value>
+    </data>
+   <data name="plcArea" xml:space="preserve">
+        <value>Area</value>
+    </data>
+   <data name="plcPostalcode" xml:space="preserve">
+        <value>Postal Code </value>
+    </data>
+   <data name="opIsprimary" xml:space="preserve">
+        <value>Is primary</value>
+    </data>
+   <data name="btnAddNewAddress" xml:space="preserve">
+        <value>Add new address</value>
+    </data>
+   <data name="titlePickyouraddress" xml:space="preserve">
+        <value>Pick your address</value>
+    </data>
+   <data name="btnPickAddress" xml:space="preserve">
+        <value>Pick address</value>
+    </data>
+   <data name="btnBack" xml:space="preserve">
+        <value>Back</value>
+    </data>
+   <!--Change Password-->
+   <data name="titleChangePassword" xml:space="preserve">
+        <value>Change Password</value>
+    </data>
+   <data name="lblCurrentPassword" xml:space="preserve">
+        <value>Current Password</value>
+    </data>
+   <data name="lblNewPassword" xml:space="preserve">
+        <value>New Password</value>
+    </data>
+   <data name="lblReconfirmPassword" xml:space="preserve">
+        <value>Re-confirm Password</value>
+    </data>
+   <!--Accessories-->
+   <data name="titleAccessories" xml:space="preserve">
+        <value>Accessories</value>
+    </data>
+   <data name="plcSearchAccessories" xml:space="preserve">
+        <value>Search Accessories</value>
+    </data>
+   <data name="titleAccessoryDetails" xml:space="preserve">
+        <value>Accessory Details</value>
+    </data>
+   <data name="lblDays" xml:space="preserve">
+        <value>Days</value>
+    </data>
+   <data name="lblDescription" xml:space="preserve">
+        <value>Description</value>
+    </data>
+   <data name="btnAddtocart" xml:space="preserve">
+        <value>Add to cart</value>
+    </data>
+   <data name="titleCart" xml:space="preserve">
+        <value>Cart</value>
+    </data>
+   <data name="btnContinue" xml:space="preserve">
+        <value>Continue</value>
+    </data>
+   <data name="btnCheckout" xml:space="preserve">
+        <value>Checkout</value>
+    </data>
+   <data name="lblPromoCode" xml:space="preserve">
+        <value>Promo Code</value>
+    </data>
+   <data name="btnApply" xml:space="preserve">
+        <value>Apply</value>
+    </data>
+   <data name="lblDeliverto" xml:space="preserve">
+        <value>Deliver to</value>
+    </data>
+   <data name="lblOrderSummary" xml:space="preserve">
+        <value>Order Summary</value>
+    </data>
+   <data name="lblSubTotal" xml:space="preserve">
+        <value>Sub total</value>
+    </data>
+   <data name="lbldiscount" xml:space="preserve">
+        <value>Discount</value>
+    </data>
+   <data name="lblshippingfee" xml:space="preserve">
+        <value>shipping fee</value>
+    </data>
+   <data name="lblTax" xml:space="preserve">
+        <value>Taxes</value>
+    </data>
+   <data name="lblTaxRate" xml:space="preserve">
+        <value>Tax Rate</value>
+    </data>
+   <data name="lblTaxDetails" xml:space="preserve">
+        <value>Tax Details</value>
+    </data>
+   <data name="lblTaxAmount" xml:space="preserve">
+        <value>Tax Amount</value>
+    </data>
+   <data name="lbltotalinclusivetax" xml:space="preserve">
+        <value>Total(inclusive tax)</value>
+    </data>
+   <data name="lblOrderSuccessMsg" xml:space="preserve">
+        <value>Thank you for your purchase! Your order has been received and is now being processed.</value>
+    </data>
+   <data name="btnGotoorder" xml:space="preserve">
+        <value>Go to order</value>
+    </data>
+   <data name="lblPromocodeapplied" xml:space="preserve">
+        <value>Promo code applied</value>
+    </data>
+   <data name="btnBuyNow" xml:space="preserve">
+        <value>Buy now</value>
+    </data>
+   <data name="btnGotohome" xml:space="preserve">
+        <value>Go to home</value>
+    </data>
+   <!--Dialogues-->
+   <data name="lblLogoutmessage" xml:space="preserve">
+        <value>Are you sure you want to logout?</value>
+    </data>
+   <!--MyOrders-->
+   <data name="titleMyOrders" xml:space="preserve">
+        <value>My Orders</value>
+    </data>
+   <data name="lblOrderon" xml:space="preserve">
+        <value>Order on</value>
+    </data>
+   <data name="lblPlacedon" xml:space="preserve">
+        <value>Placed on</value>
+    </data>
+   <data name="lblQuantity" xml:space="preserve">
+        <value>Quantity</value>
+    </data>
+   <data name="lblperitem" xml:space="preserve">
+        <value>per item</value>
+    </data>
+   <data name="btnReturnOrder" xml:space="preserve">
+        <value>Return Order</value>
+    </data>
+   <data name="lblStatus" xml:space="preserve">
+        <value>Status</value>
+    </data>
+   <data name="btnViewDetails" xml:space="preserve">
+        <value>View Details</value>
+    </data>
+   <!--Update Password-->
+   <data name="titleUpdatePassword" xml:space="preserve">
+        <value>Update Password</value>
+    </data>
+   <data name="lblFullName" xml:space="preserve">
+        <value>Full Name</value>
+    </data>
+   <data name="lblEmailorMobileNo" xml:space="preserve">
+        <value>Email or mobile number</value>
+    </data>
+   <data name="btnGetOTP" xml:space="preserve">
+        <value>Get OTP</value>
+    </data>
+   <data name="lblWelcometo" xml:space="preserve">
+        <value>Welcome to</value>
+    </data>
+   <data name="lblPanasonic" xml:space="preserve">
+        <value>Panasonic</value>
+    </data>
+   <data name="lblDashboard" xml:space="preserve">
+        <value>Dashboard</value>
+    </data>
+   <!--Login API-->
+   <data name="lblUsernotexist" xml:space="preserve">
+        <value>Invalid login attempt.User with the entered details does not exists</value>
+    </data>
+   <data name="lblCorrectUserNamePassword" xml:space="preserve">
+        <value>Please enter correct username and password</value>
+    </data>
+   <data name="lblAlreadyRegistered" xml:space="preserve">
+        <value>Email already registered, Please try to login</value>
+    </data>
+   <data name="lblMobileAlreadyRegistered" xml:space="preserve">
+        <value>Mobile number already registered, Please try to login</value>
+    </data>
+   <data name="lblOTP" xml:space="preserve">
+        <value>Your Panasonic Smart Care Mobile App OTP is {1234}.This OTP is valid for 3 minutes only</value>
+    </data>
+   <data name="lblOTPMessage" xml:space="preserve">
+        <value>OTP has been sent to entered Email or Mobile</value>
+    </data>
+   <data name="lblEmailMobNotExists" xml:space="preserve">
+        <value>User with this email or mobile does not exists!</value>
+    </data>
+   <data name="lblIncorrectPassword" xml:space="preserve">
+        <value>Entered current password is incorrect</value>
+    </data>
+   <data name="lblPasswordChangedSuccesfully" xml:space="preserve">
+        <value>Password changed successfully.</value>
+    </data>
+   <data name="lblFailedtochangepassword." xml:space="preserve">
+        <value>Failed to change password.</value>
+    </data>
+   <data name="lblEnterPassword" xml:space="preserve">
+        <value>Please enter password.</value>
+    </data>
+   <data name="lblEnterNewPassword" xml:space="preserve">
+        <value>Password should not be less than 8 or greater than 12 characters</value>
+    </data>
+   <data name="lblConfirmPassword" xml:space="preserve">
+        <value>Please confirm entered password.</value>
+    </data>
+   <data name="lblPasswordNotMatch" xml:space="preserve">
+        <value>The password and confirmation password do not match</value>
+    </data>
+   <data name="lblAPIError" xml:space="preserve">
+        <value>API Error</value>
+    </data>
+   <data name="lblEnteremailormobileno" xml:space="preserve">
+        <value>Please enter email or mobile number</value>
+    </data>
+   <data name="lblRememberMyPassword" xml:space="preserve">
+        <value>Remember my password</value>
+    </data>
+   <data name="lblNotyetregistered" xml:space="preserve">
+        <value>Not yet registered?</value>
+    </data>
+   <data name="lblRegisternow" xml:space="preserve">
+        <value>Register now</value>
+    </data>
+   <data name="lblCheckEnteredEmailMob" xml:space="preserve">
+        <value>Please check entered email/mobile and password.</value>
+    </data>
+   <data name="lblSelectCountry" xml:space="preserve">
+        <value>Select Country</value>
+    </data>
+   <data name="lblErrorEmptyPassword" xml:space="preserve">
+        <value>Password should not be empty</value>
+    </data>
+   <data name="lblErrorLowerCaseLetter" xml:space="preserve">
+        <value>Password should contain At least one lower case letter</value>
+    </data>
+   <data name="lblErrorUpperCaseLetter" xml:space="preserve">
+        <value>Password should contain At least one upper case letter</value>
+    </data>
+   <data name="lblErrorMoreCharacter" xml:space="preserve">
+        <value>Password should not be less than 8 or greater than 12 characters</value>
+    </data>
+   <data name="lblErrorNumericValue" xml:space="preserve">
+        <value>Password should contain At least one numeric value</value>
+    </data>
+   <data name="lblErrorSpecialCharacter" xml:space="preserve">
+        <value>Password should contain At least one special case characters</value>
+    </data>
+   <data name="lblEnterOTP" xml:space="preserve">
+        <value>Please Enter OTP.</value>
+    </data>
+   <data name="lblNewOTP" xml:space="preserve">
+        <value>New OTP Sent.</value>
+    </data>
+   <data name="lblErrorGPS" xml:space="preserve">
+        <value>Your gps location is not accurate</value>
+    </data>
+   <data name="lblCartEmpty" xml:space="preserve">
+        <value>Your cart is empty.</value>
+    </data>
+   <data name="lblEnterPromoCode" xml:space="preserve">
+        <value>Please enter promoCode.</value>
+    </data>
+   <data name="lblValidPromoCode" xml:space="preserve">
+        <value>Promo code not valid.</value>
+    </data>
+   <data name="lblSelectTandC" xml:space="preserve">
+        <value>Please select terms and conditions</value>
+    </data>
+   <data name="lblSeller" xml:space="preserve">
+        <value>Seller :  </value>
+    </data>
+   <data name="lblPKR" xml:space="preserve">
+        <value>PKR </value>
+    </data>
+   <data name="lblDeliveredIn" xml:space="preserve">
+        <value>Delivery in : </value>
+    </data>
+   <data name="lblPaymentMode" xml:space="preserve">
+        <value>Payment Mode : </value>
+    </data>
+   <data name="lblCOD" xml:space="preserve">
+        <value>COD</value>
+    </data>
+   <data name="lblAddtocart" xml:space="preserve">
+        <value>Add to cart</value>
+    </data>
+   <data name="lblBuyNow" xml:space="preserve">
+        <value>Buy Now</value>
+    </data>
+   <data name="lblStandbysetrequest" xml:space="preserve">
+        <value>Stand by set request</value>
+    </data>
+   <data name="lblMore" xml:space="preserve">
+        <value>more</value>
+    </data>
+   <data name="lblRate" xml:space="preserve">
+        <value>Rate</value>
+    </data>
+   <data name="lblPleaseenterdescription" xml:space="preserve">
+        <value>Please enter description</value>
+    </data>
+   <data name="lblErrorSelectServiceCenter" xml:space="preserve">
+        <value>Please select Service Center</value>
+    </data>
+   <data name="lblErrorSelectAMCType" xml:space="preserve">
+        <value>Please select amc type.</value>
+    </data>
+   <data name="lblSelectServiceCentor" xml:space="preserve">
+        <value>Service Center</value>
+    </data>
+   <data name="titleAMCRequest" xml:space="preserve">
+        <value>AMC Request</value>
+    </data>
+   <data name="lblServiceCenter" xml:space="preserve">
+        <value>Service Center</value>
+    </data>
+   <data name="lblOnlyService" xml:space="preserve">
+        <value>Only service</value>
+    </data>
+   <data name="lblPartsandService" xml:space="preserve">
+        <value>Parts and Service</value>
+    </data>
+   <data name="lblAMCType" xml:space="preserve">
+        <value>AMC Type</value>
+    </data>
+   <data name="lblMonths" xml:space="preserve">
+        <value>Months</value>
+    </data>
+   <data name="lblAED" xml:space="preserve">
+        <value>AED</value>
+    </data>
+   <data name="lblApply" xml:space="preserve">
+        <value>Apply</value>
+    </data>
+   <data name="lblSendRequest" xml:space="preserve">
+        <value>Send Request</value>
+    </data>
+   <data name="lblSelectSeller" xml:space="preserve">
+        <value>Select Seller</value>
+    </data>
+   <data name="lblNoaccessoriesavailable" xml:space="preserve">
+        <value>No accessories available</value>
+    </data>
+   <data name="lblStock" xml:space="preserve">
+        <value>Stock :</value>
+    </data>
+   <data name="titleShoppingCart" xml:space="preserve">
+        <value>Shopping Cart</value>
+    </data>
+   <data name="lblTotalAmount" xml:space="preserve">
+        <value>Total Amount : </value>
+    </data>
+   <data name="lblCheckout" xml:space="preserve">
+        <value>Checkout</value>
+    </data>
+   <data name="lblOrderSummary" xml:space="preserve">
+        <value>Order Summary:</value>
+    </data>
+   <data name="lblInclusivetax" xml:space="preserve">
+        <value>(Inclusive tax)</value>
+    </data>
+   <data name="lblPlaceOrder" xml:space="preserve">
+        <value>Place Order</value>
+    </data>
+   <data name="lblNoRecords" xml:space="preserve">
+        <value>No Records</value>
+    </data>
+   <data name="lblOrderno" xml:space="preserve">
+        <value>Order no: </value>
+    </data>
+   <data name="titleOrderDetails" xml:space="preserve">
+        <value>Order Details</value>
+    </data>
+   <data name="lblReturnFullOrder" xml:space="preserve">
+        <value>Return Full Order</value>
+    </data>
+   <data name="lblShippingAddress" xml:space="preserve">
+        <value>Shipping Address:</value>
+    </data>
+   <data name="lblTotal" xml:space="preserve">
+        <value>Total</value>
+    </data>
+   <data name="titleReturnProduct" xml:space="preserve">
+        <value>Return Product</value>
+    </data>
+   <data name="lblReturn" xml:space="preserve">
+        <value>Return</value>
+    </data>
+   <data name="titlePickyouraddress" xml:space="preserve">
+        <value>Pick your address</value>
+    </data>
+   <data name="lblPickAddress" xml:space="preserve">
+        <value>Pick Address</value>
+    </data>
+   <data name="lblContinue" xml:space="preserve">
+        <value>Continue</value>
+    </data>
+   <data name="titleAMCRequestHistory" xml:space="preserve">
+        <value>AMC Request History</value>
+    </data>
+   <data name="lblAMCTypeNm" xml:space="preserve">
+        <value>AMC Type : </value>
+    </data>
+   <data name="lblProductName" xml:space="preserve">
+        <value>Product Name : </value>
+    </data>
+   <data name="lblByproceedingyouagreetothe" xml:space="preserve">
+        <value>By proceeding you agree to the </value>
+    </data>
+   <data name="lblTermsofservice" xml:space="preserve">
+        <value>Terms of service</value>
+    </data>
+   <data name="lblPrivacypolicy" xml:space="preserve">
+        <value>Privacy Policy</value>
+    </data>
+   <data name="lblProceed" xml:space="preserve">
+        <value>Proceed</value>
+    </data>
+   <data name="lblAlreadyhaveanAccount" xml:space="preserve">
+        <value>Already have an Account?</value>
+    </data>
+   <data name="lblPrimaryAddress" xml:space="preserve">
+        <value>Primary Address</value>
+    </data>
+   <data name="lblApartmentHuseNo" xml:space="preserve">
+        <value>Apartment / House No</value>
+    </data>
+   <data name="lblBuildingVillaName" xml:space="preserve">
+        <value>Building / Villa Name</value>
+    </data>
+   <data name="lblArea" xml:space="preserve">
+        <value>Area</value>
+    </data>
+   <data name="lblSkip" xml:space="preserve">
+        <value>Skip</value>
+    </data>
+   <data name="lblVerifyRegistration" xml:space="preserve">
+        <value>Verify Registration</value>
+    </data>
+   <data name="lblverify" xml:space="preserve">
+        <value>verify</value>
+    </data>
+   <data name="lblErrorNotReceivedOTP" xml:space="preserve">
+        <value>Didn't receive an OTP.</value>
+    </data>
+   <data name="lblResend" xml:space="preserve">
+        <value>Resend</value>
+    </data>
+   <data name="lblAgreed" xml:space="preserve">
+        <value>Agreed</value>
+    </data>
+   <data name="lblUpdateAddress" xml:space="preserve">
+        <value>Your primary address is updated.</value>
+    </data>
+   <data name="lblEnterBuildingName" xml:space="preserve">
+        <value>Please enter building name.</value>
+    </data>
+   <data name="lblEnterArea" xml:space="preserve">
+        <value>Please enter area.</value>
+    </data>
+   <data name="lblEnterCity" xml:space="preserve">
+        <value>Please enter city.</value>
+    </data>
+   <data name="lblEnterState" xml:space="preserve">
+        <value>Please enter state.</value>
+    </data>
+   <data name="lblEnterComments" xml:space="preserve">
+        <value>Please enter your comments.</value>
+    </data>
+   <data name="lblEnterOtherMessage" xml:space="preserve">
+        <value>Please enter other message.</value>
+    </data>
+   <data name="lblEnterModelNumber" xml:space="preserve">
+        <value>Please enter model number.</value>
+    </data>
+   <data name="lblEnterSerialNumber" xml:space="preserve">
+        <value>Please enter serial number.</value>
+    </data>
+   <data name="lblSelectPurchaseDate" xml:space="preserve">
+        <value>Please select purchase Date.</value>
+    </data>
+   <data name="lblErrorSelectCountry" xml:space="preserve">
+        <value>Please select Country.</value>
+    </data>
+   <data name="lblErrorUploadPurchanseInvoice" xml:space="preserve">
+        <value>Please upload purchase invoice</value>
+    </data>
+   <data name="lblErrorEnterDealerName" xml:space="preserve">
+        <value>Please enter Dealer Name.</value>
+    </data>
+   <data name="lblErrorEnterDealerAddress" xml:space="preserve">
+        <value>Please enter Dealer Address.</value>
+    </data>
+   <data name="lblPhotoUpload" xml:space="preserve">
+        <value>Photo Upload</value>
+    </data>
+   <data name="lblTakePhoto" xml:space="preserve">
+        <value>Take Photo</value>
+    </data>
+   <data name="lblGallery" xml:space="preserve">
+        <value>Gallery</value>
+    </data>
+   <data name="lblErrorCameranotsupported" xml:space="preserve">
+        <value>Camera not supported</value>
+    </data>
+   <data name="lblError" xml:space="preserve">
+        <value>Error</value>
+    </data>
+   <data name="lblConfirmation" xml:space="preserve">
+        <value>Confirmation</value>
+    </data>
+   <data name="lblDoYouWantToDelete" xml:space="preserve">
+        <value>Are you sure want to delete?</value>
+    </data>
+   <data name="lblProductDetailsDeleted" xml:space="preserve">
+        <value>Product Details has been deleted.</value>
+    </data>
+   <data name="lblSuccess" xml:space="preserve">
+        <value>Success</value>
+    </data>
+   <data name="lblWarrantycarddownloaded" xml:space="preserve">
+        <value>Warranty card downloaded.</value>
+    </data>
+   <data name="lblYourwarrantycardnotyetready" xml:space="preserve">
+        <value>Your warranty card not yet ready.</value>
+    </data>
+   <data name="lblPleaseEnterNewPassword" xml:space="preserve">
+        <value>Please enter new password.</value>
+    </data>
+   <data name="lblEnterFollowupMsg" xml:space="preserve">
+        <value>Please enter Follow-up message.</value>
+    </data>
+   <data name="lblYes" xml:space="preserve">
+        <value>Yes</value>
+    </data>
+   <data name="lblNo" xml:space="preserve">
+        <value>No</value>
+    </data>
+   <data name="lblUpdated" xml:space="preserve">
+        <value>Updated.</value>
+    </data>
+   <data name="lblNotWorking" xml:space="preserve">
+        <value>Not Working</value>
+    </data>
+   <data name="lblPartiallyworking" xml:space="preserve">
+        <value>Partially working</value>
+    </data>
+   <data name="lblWorkingbutotherissues" xml:space="preserve">
+        <value>Working but other issues</value>
+    </data>
+   <data name="lblPleaseselectdate" xml:space="preserve">
+        <value>Please select date.</value>
+    </data>
+   <data name="lblPleaseselecttime" xml:space="preserve">
+        <value>Please select time.</value>
+    </data>
+   <data name="lblServicerequestupdatedSuccessfully" xml:space="preserve">
+        <value>Service request updated Successfully</value>
+    </data>
+   <data name="lblServiceRequestClosed" xml:space="preserve">
+        <value>Service Request Closed</value>
+    </data>
+   <data name="lblErrorCheckInternet" xml:space="preserve">
+        <value>Please check your internet connection</value>
+    </data>
+   <data name="lblErrorAlert" xml:space="preserve">
+        <value>Alert!</value>
+    </data>
+   <data name="lblProductRegSuccessMsg" xml:space="preserve">
+        <value>Thank you for Product Registraton. You will receive the confirmation within 24 hrs. </value>
+    </data>
+   <data name="lblCongratulations" xml:space="preserve">
+        <value>Congratulations</value>
+    </data>
+   <data name="lblGotoMyProducts" xml:space="preserve">
+        <value>Go to My Products</value>
+    </data>
+   <data name="lblSRDetails" xml:space="preserve">
+        <value>SR Details</value>
+    </data>
+   <data name="lblFollowUp" xml:space="preserve">
+        <value>Follow-Up</value>
+    </data>
+   <data name="lblPleaseContactAdmin" xml:space="preserve">
+        <value>Please Contact Admin.</value>
+    </data>
+   <data name="lblProductModelNumber" xml:space="preserve">
+        <value>Product Model Number</value>
+    </data>
+   <data name="lblServiceRequestType" xml:space="preserve">
+        <value>Service Request Type</value>
+    </data>
+   <data name="lblServiceLocation" xml:space="preserve">
+        <value>Service Location</value>
+    </data>
+   <data name="lblVisitchargesareapplicable" xml:space="preserve">
+        <value>( Visit charges are applicable )</value>
+    </data>
+   <data name="lblUploadProductPhoto" xml:space="preserve">
+        <value>Upload Product Photo</value>
+    </data>
+   <data name="lblPleaseselectservicerequesttype" xml:space="preserve">
+        <value>Please select service request type.</value>
+    </data>
+   <data name="lblPleaseenteralternatenumber" xml:space="preserve">
+        <value>Please enter alternate number.</value>
+    </data>
+   <data name="lblPleaseselectaddresstosubmit" xml:space="preserve">
+        <value>Please select address to submit.</value>
+    </data>
+   <data name="lblAMCRequestMessage" xml:space="preserve">
+        <value>Thank you for the AMC request, You will receive the AMC service card with in 24 Hrs, If not please contact.</value>
+    </data>
+   <data name="lblGotoAMCHistory" xml:space="preserve">
+        <value>Go to AMC History</value>
+    </data>
+   <data name="msgAddressupdated" xml:space="preserve">
+        <value>Address updated</value>
+    </data>
+   <data name="msgAddresscreated" xml:space="preserve">
+        <value>Address created</value>
+    </data>
+   <data name="msgAMCRequestcreatedsuccessfully" xml:space="preserve">
+        <value>AMC Request created successfully</value>
+    </data>
+   <data name="msgYourinquirysubmittedsuccessfully" xml:space="preserve">
+        <value>Your inquiry submitted successfully</value>
+    </data>
+   <data name="msgFeedbacksubmittedSuccessfully" xml:space="preserve">
+        <value>Feedback submitted Successfully</value>
+    </data>
+   <data name="msgInvalidloginattempt" xml:space="preserve">
+        <value>Invalid login attempt.User with the entered details does not exists.</value>
+    </data>
+   <data name="msgYourpasswordisincorrect" xml:space="preserve">
+        <value>Your password is incorrect</value>
+    </data>
+   <data name="msgUpdatetheapp" xml:space="preserve">
+        <value>Please update the App to the latest version</value>
+   </data>
+   <data name="msgPleaseentercorrectusernameandpassword" xml:space="preserve">
+        <value>Please enter correct username and password</value>
+    </data>
+   <data name="msgEmailalreadyregistered" xml:space="preserve">
+        <value>Email already registered, Please try to login</value>
+    </data>
+   <data name="msgMobilenumberalreadyregistered" xml:space="preserve">
+        <value>Mobile number already registered, Please try to login</value>
+    </data>
+   <data name="msgInvalidusername" xml:space="preserve">
+        <value>Invalid username</value>
+    </data>
+   <data name="msgUserwiththeentereddetailsdoesnotexists" xml:space="preserve">
+        <value>User with the entered details does not exists.</value>
+    </data>
+   <data name="msgOTPhasbeensenttoenteredEmailorMobile" xml:space="preserve">
+        <value>OTP has been sent to entered Email or Mobile</value>
+    </data>
+   <data name="msgEnteredcurrentpasswordisincorrect" xml:space="preserve">
+        <value>Entered current password is incorrect</value>
+    </data>
+   <data name="msgPasswordchangedsuccessfully" xml:space="preserve">
+        <value>Password changed successfully.</value>
+    </data>
+   <data name="msgFailedtochangepassword" xml:space="preserve">
+        <value>Failed to change password.</value>
+    </data>
+   <data name="msgNewOTPCreated" xml:space="preserve">
+        <value>New OTP Created/Sent</value>
+    </data>
+   <data name="msgOrderplacedsuccessfully" xml:space="preserve">
+        <value>Order placed successfully.</value>
+    </data>
+   <data name="msgOrderreturnrequestsubmittedsuccessfully" xml:space="preserve">
+        <value>Order return request submitted successfully.</value>
+    </data>
+   <data name="msgFullOrderreturnrequestubmittedsuccessfully" xml:space="preserve">
+        <value>Full Order return request submitted successfully.</value>
+    </data>
+   <data name="msgSparepartrequestsubmitted" xml:space="preserve">
+        <value>Spare part request submitted</value>
+    </data>
+   <data name="msgProfileupdatedsuccessfully" xml:space="preserve">
+        <value>Profile updated successfully</value>
+    </data>
+   <data name="msgProductisalreadyregistered" xml:space="preserve">
+        <value>Product with this model and serial number is already registered</value>
+    </data>
+   <data name="msgProductregisteredsuccessfully" xml:space="preserve">
+        <value>Product registered successfully</value>
+    </data>
+   <data name="msgProductnotsaved" xml:space="preserve">
+        <value>Product not saved</value>
+    </data>
+   <data name="msgThankyoufortakingpartinsurvey" xml:space="preserve">
+        <value>Thank you for taking part in survey</value>
+    </data>
+   <data name="msgServicerequestupdatedSuccessfully" xml:space="preserve">
+        <value>Service request updated Successfully</value>
+    </data>
+   <data name="msgPromocodeAppliedSuccessfully" xml:space="preserve">
+        <value>Promo code Applied Successfully</value>
+    </data>
+   <data name="msgErrorinapplyingPromoCode" xml:space="preserve">
+        <value>Error in applying PromoCode</value>
+    </data>
+   <data name="msgStandbysetrequestalreadyexists" xml:space="preserve">
+        <value>Standby set request already exists</value>
+    </data>
+   <data name="msgStandbysetrequestcreatedsuccessfully" xml:space="preserve">
+        <value>Standby set request created successfully</value>
+    </data>
+   <data name="msgInvoicegeneratedsuccesfully" xml:space="preserve">
+        <value>Invoice generated succesfully</value>
+    </data>
+   <data name="msgYouhavealreadyparticipatedinsurvey" xml:space="preserve">
+        <value>You have already participated in survey</value>
+    </data>
+   <data name="msgNopromotionavailable" xml:space="preserve">
+        <value>No promotion available!</value>
+    </data>
+   <data name="msgparticipatinginsurvey" xml:space="preserve">
+        <value>Thank you for participating in survey.</value>
+    </data>
+   <data name="msgInquiry" xml:space="preserve">
+        <value>Thank you for your inquiry, our team will respond you soon.</value>
+    </data>
+   <data name="msgNotedQuery" xml:space="preserve">
+        <value>Thank you! We have noted your query. One of our service representatives will contact you shortly.</value>
+    </data>
+   <data name="msgThankyouforyourfeedback" xml:space="preserve">
+        <value>Thank you for your feedback.</value>
+    </data>
+   <data name="msgAMCrequestsentsuccessfully" xml:space="preserve">
+        <value>AMC request sent successfully.</value>
+    </data>
+   <data name="msgOrderreturnedsuccessfully" xml:space="preserve">
+        <value>Order returned successfully</value>
+    </data>
+   <data name="lblHello" xml:space="preserve">
+        <value>Hello </value>
+    </data>
+   <data name="msgLocationNotProvide" xml:space="preserve">
+        <value>We will not provide service in this location.</value>
+    </data>
+   <data name="lblErrorEnableGPS" xml:space="preserve">
+        <value>GPS location finding failed. Please enable GPS.</value>
+    </data>
+   <data name="msgServicerequestisalreadyinprogress" xml:space="preserve">
+        <value>Service request is already in progress.</value>
+    </data>
+   <data name="lblGotoServiceRequests" xml:space="preserve">
+        <value>Go to Service Requests</value>
+    </data>
+   <data name="titleIwilltakemyproducttoservicecenter" xml:space="preserve">
+        <value>I will take my product to service center</value>
+    </data>
+   <data name="titleIPreferHomeService" xml:space="preserve">
+        <value>I Prefer Home Service</value>
+    </data>
+   <data name="lblErrorIncorrectToken" xml:space="preserve">
+        <value>The entered token is incorrect.</value>
+    </data>
+   <data name="lblErrorFailedReturnOrder" xml:space="preserve">
+        <value>Failed to return order.</value>
+    </data>
+   <data name="lblOthers" xml:space="preserve">
+        <value>Others</value>
+    </data>
+   <data name="lblEnteryourqueryrequest" xml:space="preserve">
+        <value>Thank you! Please enter your query/request.</value>
+    </data>
+   <data name="lblPleaseEnteryourqueryrequest" xml:space="preserve">
+        <value>Please enter your query/request here.</value>
+    </data>
+   <data name="lblThankYouForVIsitingUs" xml:space="preserve">
+        <value>Thank you for visiting us!</value>
+    </data>
+   <data name="lblPleaseTellUsMoreInDetail" xml:space="preserve">
+        <value>Please tell us more in detail.</value>
+    </data>
+   <data name="titleNotifications" xml:space="preserve">
+        <value>Notifications</value>
+    </data>
+   <data name="lblNoNotifications" xml:space="preserve">
+        <value>No Notifications</value>
+    </data>
+   <data name="lblDomestic" xml:space="preserve">
+        <value>Domestic</value>
+    </data>
+   <data name="lblExtended" xml:space="preserve">
+        <value>Extended</value>
+    </data>
+   <data name="lblInternational" xml:space="preserve">
+        <value>International</value>
+    </data>
+   <data name="lblOutwarranty" xml:space="preserve">
+        <value>Out of warranty</value>
+    </data>
+   <data name="lblAwaitingconfirmation" xml:space="preserve">
+        <value>Awaiting confirmation</value>
+    </data>
+   <data name="lblAll" xml:space="preserve">
+        <value>All</value>
+    </data>
+   <data name="lblCurrency" xml:space="preserve">
+        <value>Currency</value>
+    </data>
+   <data name="lblSearch" xml:space="preserve">
+        <value>Search</value>
+    </data>
+   <data name="lblTrack" xml:space="preserve">
+        <value>Track my order</value>
+    </data>
+   <data name="lblOrderTracking" xml:space="preserve">
+        <value>Order Tracking</value>
+    </data>
+   <data name="lblCostEstimation" xml:space="preserve">
+        <value>Cost Estimation</value>
+    </data>
+   <data name="lblNoCostEstimation" xml:space="preserve">
+        <value>No Cost Estimation</value>
+    </data>
+   <data name="lblEstimationDate" xml:space="preserve">
+        <value>Estimation Date: </value>
+    </data>
+   <data name="lblApprovalDate" xml:space="preserve">
+        <value>Approval Date: </value>
+    </data>
+   <data name="lblEstimationStatus" xml:space="preserve">
+        <value>Status: </value>
+    </data>
+   <data name="lblView" xml:space="preserve">
+        <value>View</value>
+    </data>
+   <data name="lblGoToProducts" xml:space="preserve">
+        <value>Go To Products</value>
+    </data>
+   <data name="lblPostalCode" xml:space="preserve">
+        <value>Postal Code</value>
+    </data>
+   <data name="lblOTPVerificationMsg" xml:space="preserve">
+        <value>OTP sent to </value>
+    </data>
+   <data name="SparePartSuccessMsg" xml:space="preserve">
+        <value>Part request for service submitted successfully.</value>
+    </data>
+   <data name="lblNumOfYear" xml:space="preserve">
+        <value>NOY: </value>
+    </data>
+   <data name="lblNumOfYear1" xml:space="preserve">
+        <value>NOY2: </value>
+    </data>
+   <data name="lblRequestDate" xml:space="preserve">
+        <value>Request Date : </value>
+    </data>
+   <data name="lblContractDuration" xml:space="preserve">
+        <value>Contract Duration : </value>
+    </data>
+   
+   <data name="lblCustName" xml:space="preserve">
+        <value>Customer Name : </value>
+    </data>
+   <data name="lblDiscountAmount" xml:space="preserve">
+        <value>Discount</value>
+    </data>
+   <data name="lblTaxName" xml:space="preserve">
+        <value>Tax Name</value>
+    </data>
+
+    <data name="ErrorMsgMobilenumberisnotavailable" xml:space="preserve">
+        <value>Mobile number is not available</value>
+    </data>
+
+   
+
+    <!--10.10.2021-->
+    <data name="lblServiceCharges" xml:space="preserve">
+        <value>Service Charges</value>
+    </data>
+
+    <data name="lblPartCharges" xml:space="preserve">
+        <value>Part Charges</value>
+    </data>
+
+    <data name="lblPartNumber" xml:space="preserve">
+        <value>Part Number</value>
+    </data>
+
+     <data name="lblApproved" xml:space="preserve">
+        <value>Approved</value>
+    </data>
+
+     <data name="lblPending" xml:space="preserve">
+        <value>Pending</value>
+    </data>
+
+    <data name="lblAMCTypeNotAvailable" xml:space="preserve">
+        <value>AMC Type Not Available</value>
+    </data>
+
+    <data name="lblqty" xml:space="preserve">
+        <value>Qty</value>
+    </data>
+
+    <data name="lblRepair" xml:space="preserve">
+        <value>Repair</value>
+    </data>
+
+     <data name="lblPromoCodeDiscount" xml:space="preserve">
+        <value>Promo Discount</value>
+    </data>
+
+    <data name="lblTitle" xml:space="preserve">
+        <value>Title</value>
+    </data>
+
+     <data name="lblCreationDate" xml:space="preserve">
+        <value>Creation Date</value>
+    </data>
+
+    <data name="lblAnnouncementDate" xml:space="preserve">
+        <value>Announcement Date</value>
+    </data>
+
+    <data name="lblStartDate" xml:space="preserve">
+        <value>Start Date</value>
+    </data>
+
+    <data name="lblExpiryDate" xml:space="preserve">
+        <value>Expiry Date</value>
+    </data>
+
+    <data name="lblOTPVerificationMsg" xml:space="preserve">
+        <value>Verified Successfully.</value>
+    </data>
+
+    <data name="lblRegister" xml:space="preserve">
+        <value>Register</value>
+    </data>
+
+    <data name="msgCheckInternetConnectivity" xml:space="preserve">
+        <value>Please check your internet connection.</value>
+    </data>
+
+    <!--Technician Translations-->
+   
+
+</root>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.SRDetails.SREditDetailsPage"
+             Title="{x:Static resource:AppResources.btnDetails}"
+             BackgroundColor="{StaticResource contentBG}"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             FlowDirection="{Binding flowDirection}">
+    
+     <ContentPage.ToolbarItems>
+       
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+
+            <Grid RowSpacing="0" Padding="2" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            
+            <Grid Grid.Row="0" BackgroundColor="{StaticResource contentBG}">
+
+               <contr:RoundedCornerView  Margin="5" Grid.Row="0"
+                                         BorderColor="{StaticResource borderColor}" BorderWidth="2"
+                                         RoundedCornerRadius="5" Shadow="True" BackgroundColor="{StaticResource WhiteColor}">
+                   <Grid Padding="10" BackgroundColor="{StaticResource WhiteColor}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3.5*"/>
+                        <ColumnDefinition Width="6.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--<Label Text="{x:Static resource:AppResources.lblRequestNo}" Style="{StaticResource MyTitleLabel}"  Grid.Column="0" Grid.Row="0" />
+                    <Label Text="{Binding serviceRequest.ServiceRequestNumber}" Style="{StaticResource MyValueLabel}" Grid.Column="1" Grid.Row="0"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblRequestDate}" Style="{StaticResource MyTitleLabel}"  Grid.Column="0" Grid.Row="1"/>
+                    <Label  Text="{Binding serviceRequest.CreationDate, StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyValueLabel}"   Grid.Column="1" Grid.Row="1"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblRequestStatus}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="{Binding serviceRequest.CustServiceRequestStatusName}" LineBreakMode="TailTruncation" MaxLines="1" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="2"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblModelNo}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="3"/>
+                    <Label Text="{Binding serviceRequest.ProductModel.ModelNumber}" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="3"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblSerialNo}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="4"/>
+                    <Label Text="{Binding serviceRequest.ProductModel.SerialNumber}" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="4"/>-->
+
+                    <Label Text="{x:Static resource:AppResources.lblRequestNo}" Style="{StaticResource MyTitleLabel}"  Grid.Column="0" Grid.Row="0" />
+                    <Label Text="{Binding serviceRequestNew.ServiceRequestNumber}" Style="{StaticResource MyValueLabel}" Grid.Column="1" Grid.Row="0"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblRequestDate}" Style="{StaticResource MyTitleLabel}"  Grid.Column="0" Grid.Row="1"/>
+                    <Label  Text="{Binding serviceRequestNew.CreationDate, StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyValueLabel}"   Grid.Column="1" Grid.Row="1"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblRequestStatus}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="{Binding serviceRequestNew.CustServiceRequestStatusName}" LineBreakMode="TailTruncation" MaxLines="1" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="2"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblModelNo}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="3"/>
+                    <Label Text="{Binding serviceRequestNew.ModelNumber}" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="3"/>
+
+                    <Label Text="{x:Static resource:AppResources.lblSerialNo}" Style="{StaticResource MyTitleLabel}" Grid.Column="0" Grid.Row="4"/>
+                    <Label Text="{Binding serviceRequestNew.SerialNumber}" Style="{StaticResource MyValueLabel}"    Grid.Column="1" Grid.Row="4"/>
+
+                   
+                </Grid>
+               </contr:RoundedCornerView>
+                
+            </Grid>
+           
+
+            <contr:RoundedCornerView Grid.Row="1"  BorderColor="#D4D7D9" BorderWidth="1"  BackgroundColor="white" RoundedCornerRadius="4">
+                <contr:SegmentedControl  x:Name="segment" 
+                                         ItemSelected="{Binding SelectedTabOption}"
+                                        SelectedItemChangedCommand="{Binding AddProductCommand}"
+                                     SelectedItemChanged="segment_SelectedItemChanged"
+                                    BackgroundColor="White"
+                                    ItemsSource="{Binding TabOptions}"
+                                    SelectionIndicator="IsSelected">                     
+                            <contr:SegmentedControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="1"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" VerticalOptions="FillAndExpand" 
+                                                        HorizontalOptions="FillAndExpand" >
+                                      
+                                            <Label Margin="20,10" 
+                                                    Text="{Binding Name}" 
+													Style="{StaticResource MyValueLabel}"                                                              
+                                                    HorizontalOptions="CenterAndExpand">
+                                                <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="15" Android="17"/>
+                                                    </Label.FontSize>
+                                   
+                                                <Label.Triggers>
+                                                    <DataTrigger TargetType="Label"
+                                                                        Binding="{Binding IsSelected}"
+                                                                        Value="True" >
+                                                        <Setter Property="FontAttributes" Value="Bold" />
+                                                        <Setter Property="TextColor" Value="#000000" />
+                                                        <Setter Property="FontSize" Value="15"/>
+                                                        <Setter Property="FontFamily" Value="calibribold"/>
+                                                    </DataTrigger>
+                                                </Label.Triggers>
+                                            </Label>                                               
+                                        </StackLayout>
+
+                                        <BoxView BackgroundColor="#D4D7D9" Grid.Column="1" WidthRequest="1"/>
+                                        <Grid.Triggers>
+                                            <DataTrigger TargetType="Grid"
+                                                            Binding="{Binding IsSelected}"
+                                                            Value="False">
+                                                <Setter Property="BackgroundColor" Value="#EEF1F7" />
+                                            </DataTrigger>
+                                        </Grid.Triggers>
+                                    </Grid>
+                            </DataTemplate>
+                        </contr:SegmentedControl.ItemTemplate>
+                </contr:SegmentedControl>
+                    </contr:RoundedCornerView>
+            <StackLayout x:Name="slSubContent" Grid.Row="2"  VerticalOptions="StartAndExpand" BackgroundColor="White" >
+
+            </StackLayout>
+           
+        </Grid>
+
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

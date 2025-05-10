@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.AMCRequest.AMCReqSuccessPage"
+             Title="{x:Static resource:AppResources.lblSuccess}" BackgroundColor="{StaticResource LighterGray}" FlowDirection="{Binding flowDirection}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        
+            <Grid Grid.Row="0" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="successicon.png" Aspect="AspectFit" Grid.Row="0"/>
+                <Label Text="{x:Static resource:AppResources.lblCongratulations}" Grid.Row="1" HorizontalTextAlignment="Center" Style="{StaticResource LabelLargeBlack}"/>
+                <Label Grid.Row="2" Text="{x:Static resource:AppResources.lblAMCRequestMessage}"  HorizontalTextAlignment="Center" Style="{StaticResource MyTitleLabel}"/>
+            
+            </Grid>
+            <Grid Grid.Row="1" BackgroundColor="White" >
+               
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                
+                <Button Margin="30,0,30,0" Grid.Row="1"
+                        Text="{x:Static resource:AppResources.lblGotoAMCHistory}"
+                        Style="{StaticResource ButtonBlueStyle}"
+                        Clicked="Button_Clicked" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

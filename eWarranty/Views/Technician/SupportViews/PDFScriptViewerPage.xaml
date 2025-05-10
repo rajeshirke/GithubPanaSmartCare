@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.SupportViews.PDFScriptViewerPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="webViewContainer" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <WebView x:Name="webView" BindingContext="{x:Reference webViewContainer}" WidthRequest="{Binding Width}" HeightRequest="{Binding Height}"/>
+</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

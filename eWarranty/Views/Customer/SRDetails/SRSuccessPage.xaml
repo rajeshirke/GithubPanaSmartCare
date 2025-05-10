@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.SRDetails.SRSuccessPage" Title="{x:Static resource:AppResources.lblSuccess}"
+             BackgroundColor="{StaticResource contentBG}"
+              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             FlowDirection="{Binding flowDirection}">
+      <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled ="False" IconOverride="backarrow.png"
+                             />
+    </Shell.BackButtonBehavior>
+    <ContentPage.Content>
+
+          <Grid >
+            <Grid.RowDefinitions>
+                
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+       
+        <Grid Grid.Row="0" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+             <Image Source="successicon.png" Aspect="AspectFit" Grid.Row="0"/>
+            <Label Text="{x:Static resource:AppResources.lblCongratulations}" Grid.Row="1" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"  Style="{StaticResource LabelLargeBlack}" />
+             <Label x:Name="lblfrenceNo" Grid.Row="2"  HorizontalTextAlignment="Center" LineBreakMode="WordWrap" Style="{StaticResource MyTitleLabel}" />
+            
+        </Grid>
+            <Grid Grid.Row="1">
+               
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                
+                <Button Margin="30,0,30,0" Grid.Row="1" Command="{Binding SaveCommand}" Text="{x:Static resource:AppResources.lblGotoServiceRequests}" Clicked="Back_Clicked" Style="{StaticResource ButtonBlueStyle}"/>
+            </Grid>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

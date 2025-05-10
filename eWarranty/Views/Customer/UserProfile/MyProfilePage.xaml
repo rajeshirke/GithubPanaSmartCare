@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.UserProfile.MyProfilePage" Title="My Profile"  FlowDirection="{Binding flowDirection}"
+             xmlns:contr="clr-namespace:eWarranty.Controls"  BackgroundColor="#667EEA"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+          xmlns:resource="clr-namespace:eWarranty.Resx"
+ >
+  <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary"  Text="" Priority="0" />
+    </ContentPage.ToolbarItems>
+    <ScrollView BackgroundColor="White">
+        <Grid BackgroundColor="White" VerticalOptions="FillAndExpand" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                 <RowDefinition Height="7*"/>
+                 
+            </Grid.RowDefinitions>
+          <Grid Grid.Row="0" BackgroundColor="Silver">
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="130"/>
+                  <RowDefinition Height="*"/>
+             
+                
+              </Grid.RowDefinitions>
+              <Grid Grid.Row="0" Padding="0,10,0,0">
+                  <Grid.RowDefinitions>
+                      <RowDefinition Height="80"/>
+                      <RowDefinition Height="20"/>
+                  </Grid.RowDefinitions>
+              
+              <ci:CircleImage x:Name="PhotoImage" Source="{Binding UserPic}" Grid.Row="0" Grid.RowSpan="2" 
+       WidthRequest="100"   Aspect="AspectFill"
+       HeightRequest="100"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+       
+    </ci:CircleImage>
+                   <Label Text="Edit" Grid.Row="1" TextColor="Gray" HorizontalTextAlignment="Center"/>
+                    <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="TapGestureRecognizer_Tapped_2"
+                             
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+            </Grid>
+              
+               <Grid Grid.Row="1" Padding="10,0,10,0"  >
+                  <Grid.RowDefinitions>
+                      <RowDefinition Height="auto"/>
+                       <RowDefinition Height="auto"/>
+                       <RowDefinition Height="auto"/>
+                  </Grid.RowDefinitions>
+                   
+                   <Label Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" Style="{StaticResource MyValueLabel}" >
+                       <!--<Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="" FontAttributes="Bold" TextColor="White"  Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding Name}" FontAttributes="Bold" TextColor="White"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>-->
+                                                   </Label>
+                  <Label Text="{Binding Email}" Grid.Row="1" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" Style="{StaticResource MyValueLabel}">
+                       <!--<Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="" FontAttributes="Bold" TextColor="White"  Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding Email}" FontAttributes="Bold" TextColor="White"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>-->
+                                                   </Label>
+                    <Label Text="{Binding MobileNumber}" Grid.Row="2" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center" Style="{StaticResource MyValueLabel}">
+                       <!--<Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="" FontAttributes="Bold" TextColor="White"  Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding MobileNumber}"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>-->
+                                                   </Label>
+                        </Grid>
+              <!--<Button Text="Change" Grid.Row="1"/>-->
+          </Grid>
+            <!--<Grid Grid.Row="1" Padding="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                     <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                   <contr:TitledEntryView Grid.Row="0" Title="Name" Placeholder="Full Name"  Text="{Binding Name}"
+                                PlaceholderColor="Gray"/>
+                 <contr:TitledEntryView Grid.Row="1" Title="Alternate Number" Placeholder="Alternate Number"  Text="{Binding AlternateNumber}"
+                                PlaceholderColor="Gray"/>
+                <Button Command="{Binding UpdateCommand}" Grid.Row="2" Text="Update" Style="{StaticResource ButtonPinkStyle}" WidthRequest="100" HorizontalOptions="End" Padding="0,0,10,0"/>
+            </Grid>-->
+          <Grid Grid.Row="1" Padding="10,10,10,0" RowSpacing="20">
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="auto"/>
+                   <RowDefinition Height="auto"/>
+                   <RowDefinition Height="auto"/>
+                   <RowDefinition Height="auto"/>
+                   <RowDefinition Height="auto"/>
+                   <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+                <contr:RoundedCornerView  RoundedCornerRadius="5" BorderColor="LightGray" Grid.Row="0" BackgroundColor="#f6f6f6" VerticalOptions="Center" HeightRequest="60" >
+                      <contr:RoundedCornerView.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="50"/>
+                                         </contr:RoundedCornerView.HeightRequest>
+                  <Grid>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="40"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Padding="10,0,0,0"  Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="16" FontAttributes="Bold" Text="Update Profile"  Grid.Column="0" VerticalOptions="Center"/>
+                  <Image x:Name="imgUpdateProfile" Source="arrowred" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer_Tapped_1"
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+                  </Grid>
+              </contr:RoundedCornerView>
+               <contr:RoundedCornerView  RoundedCornerRadius="5" BorderColor="LightGray" Grid.Row="1" BackgroundColor="#f6f6f6" VerticalOptions="Center"  >
+                     <contr:RoundedCornerView.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="50"/>
+                                         </contr:RoundedCornerView.HeightRequest>
+                  <Grid>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="40"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Padding="10,0,0,0" Text="Update Address" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="16" FontAttributes="Bold" Grid.Column="0" VerticalOptions="Center"/>
+                  <Image Source="arrowred" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
+                       <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding AddressCommand}" />
+                      </Grid.GestureRecognizers>
+                      </Grid>
+              </contr:RoundedCornerView>
+              <contr:RoundedCornerView  RoundedCornerRadius="5" BorderColor="LightGray" Grid.Row="2" BackgroundColor="#f6f6f6" VerticalOptions="Center"  >
+                  <contr:RoundedCornerView.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="50"/>
+                                         </contr:RoundedCornerView.HeightRequest>
+                  <Grid>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="40"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Padding="10,0,0,0"  Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="16" FontAttributes="Bold" Text="Change Password"  Grid.Column="0" VerticalOptions="Center"/>
+                  <Image Source="arrowred" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="ChnageTapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+                  </Grid>
+              </contr:RoundedCornerView>
+              <contr:RoundedCornerView  RoundedCornerRadius="5" BorderColor="LightGray" Grid.Row="3" BackgroundColor="#f6f6f6" VerticalOptions="Center"  >
+                  <contr:RoundedCornerView.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="50"/>
+                                         </contr:RoundedCornerView.HeightRequest>
+                  <Grid>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="40"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Padding="10,0,0,0" x:Name="lblLong" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="16" FontAttributes="Bold" Text="{Binding SelectedLanguage.LongName}"  Grid.Column="0" VerticalOptions="Center"/>
+                  <Image Source="arrowred" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Grid.GestureRecognizers>
+                  </Grid>
+              </contr:RoundedCornerView>
+             
+               
+             
+               
+              
+               <contr:RoundedCornerView  RoundedCornerRadius="5" BorderColor="LightGray" Grid.Row="4" BackgroundColor="#f6f6f6" VerticalOptions="Center"  >
+                   <contr:RoundedCornerView.HeightRequest>
+                                            <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="50"/>
+                                         </contr:RoundedCornerView.HeightRequest>
+                  <Grid>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="40"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Padding="10,0,0,0" Text="Logout" Style="{StaticResource EnteryTitleLabel}" TextColor="#707070" FontSize="16" FontAttributes="Bold" Grid.Column="0" VerticalOptions="Center"/>
+                  <Image Source="logout" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End"/>
+                       <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding LogoutCommand}" />
+                      </Grid.GestureRecognizers>
+                  </Grid>
+                  
+              </contr:RoundedCornerView>
+          </Grid>
+             <Picker x:Name="pkLong" IsVisible="false" ItemsSource="{Binding languages}" ItemDisplayBinding="{Binding LongName}" SelectedIndexChanged="Picker_SelectedIndexChanged" ios:Picker.UpdateMode="WhenFinished" SelectedItem="{Binding SelectedLanguage}"/>
+       
+        </Grid>
+        </ScrollView>
+</ContentPage>

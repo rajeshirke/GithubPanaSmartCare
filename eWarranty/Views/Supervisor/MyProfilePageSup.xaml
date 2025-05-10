@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    FlowDirection="{Binding flowDirection}"
+    xmlns:resource="clr-namespace:eWarranty.Resx"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+     xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"   
+    Title="My Profile"
+    x:Class="eWarranty.Views.Supervisor.MyProfilePageSup">
+     <ScrollView BackgroundColor="White">
+        <AbsoluteLayout Padding="-5" VerticalOptions="FillAndExpand">
+                <BoxView Style="{StaticResource CardBlueStyle}"
+                    AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+                <Grid VerticalOptions="FillAndExpand"
+                      RowSpacing="0" 
+                      AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                      AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="3*"/>                 
+                    </Grid.RowDefinitions>
+
+                    <Grid     VerticalOptions="FillAndExpand"
+                              RowSpacing="0" Padding="5" Margin="10"
+                              AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                              AbsoluteLayout.LayoutFlags="All">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>                 
+                        </Grid.RowDefinitions>
+                        <border:SfBorder HasShadow="True" BorderThickness="2" BorderWidth="2" BackgroundColor="{StaticResource WhiteColor}"
+                                             CornerRadius="15"  Margin="10" Grid.Row="0" BorderColor="{StaticResource LightGray}">
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Padding="10,0">
+                                <Frame  Grid.Row="0" BorderColor="White" VerticalOptions="Start" HeightRequest="190" HasShadow="False"
+                                        CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True">
+                                    <Image Source="headerbg" Aspect="AspectFill" Opacity="0.5"/>
+                                </Frame>
+                                 <Frame Grid.Row="1" Margin="0,-90,0,0" BorderColor="White" HorizontalOptions="Center"
+                                        WidthRequest="110" HeightRequest="{OnPlatform iOS='100', Android='80'}"
+                                        HasShadow="False" CornerRadius="{OnPlatform iOS='55', Android='60'}"
+                                        Padding="0" IsClippedToBounds="True">
+                                    <ci:CircleImage x:Name="PhotoImage"
+                                                    Source="userdashbaord" Grid.Row="0" Grid.RowSpan="2" 
+                                                    WidthRequest="100"   Aspect="AspectFill"
+                                                    HeightRequest="100"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center">
+                                        <ci:CircleImage.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Tapped="TapGestureRecognizer_Tapped_2"                             
+                                                NumberOfTapsRequired="1" />
+                                        </ci:CircleImage.GestureRecognizers>
+                                    </ci:CircleImage>
+                                        <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="TapGestureRecognizer_Tapped_2"                             
+                                                NumberOfTapsRequired="1" />
+                                        </Frame.GestureRecognizers>
+                                </Frame>
+                                <Label Text="{x:Static resource:AppResources.lblEdit}" Grid.Row="1"
+                                       Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End"
+                                       Margin="{OnPlatform iOS='0,0,110,0',Android='0,0,80,0'}" >
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped="TapGestureRecognizer_Tapped_2"                             
+                                            NumberOfTapsRequired="1" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                  
+                                <Grid Grid.Row="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                    
+                                    <Label Grid.Row="0" Text="{Binding Name}" HorizontalTextAlignment="Center" Style="{StaticResource MyTitleLabel}" />
+                      
+                                    <Label Style="{StaticResource MyTitleLabel}" Grid.Row="1" LineBreakMode="WordWrap" HorizontalTextAlignment="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>                                                  
+                                                <Span Text="{Binding Email}" Style="{StaticResource MyTitleLabel}" />                                                  
+                                            </FormattedString>
+                                            </Label.FormattedText>
+                                    </Label>
+                    
+                                    <Label Style="{StaticResource MyTitleLabel}" Grid.Row="2" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" IsVisible="{Binding IsVisibleMobNo}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblMobNo}" Style="{StaticResource MyTitleLabel}" />
+                                                <Span Text="{Binding MobileNumber}" Style="{StaticResource MyTitleLabel}" />                                                  
+                                            </FormattedString>
+                                            </Label.FormattedText>
+                                    </Label>
+                                </Grid>              
+                
+                            </Grid>
+                                
+                        </border:SfBorder>
+                      
+
+                        <border:SfBorder HasShadow="True" BorderThickness="2" BorderWidth="2" BackgroundColor="{StaticResource WhiteColor}"
+                                             CornerRadius="15"  Margin="10" Grid.Row="1" BorderColor="{StaticResource LightGray}">
+                            <Grid Grid.Row="1" Padding="0" Background="white"  Margin="0" RowSpacing="0" ColumnSpacing="0" >
+              
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />                
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                  
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <!--<Image Source="menuuser.png" HeightRequest="24" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="24"/>-->
+                                 <Label  HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,5,0"
+                                        Text="{x:Static fontawesome:Solid.User}"
+                                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                        FontSize="20"  >
+                                
+                                </Label> 
+                    
+                                <Label  Text="{x:Static resource:AppResources.titleUpdateProfile}" VerticalOptions="Center" VerticalTextAlignment="Center"   Style="{StaticResource MyTitleLabel}" />
+                            </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                               Tapped="TapGestureRecognizer_Tapped_1"
+                                                NumberOfTapsRequired="1" />
+                                  </Grid.GestureRecognizers>
+                              </Grid>
+
+             
+
+                          <Grid Grid.Row="1">
+                  
+                  
+                              <StackLayout Orientation="Horizontal" Padding="10">
+                                <!--<Image Source="Password.png" HeightRequest="24" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="24"/>-->
+                                  <Label  HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,5,0"
+                                        Text="{x:Static fontawesome:Solid.Key}"
+                                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                        FontSize="20"  >
+                                
+                                </Label> 
+                    
+                                <Label  Text="{x:Static resource:AppResources.btnChangePassword}" VerticalOptions="Center" VerticalTextAlignment="Center"   Style="{StaticResource MyTitleLabel}" />
+                            </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                               Tapped="TapGestureRecognizer_Tapped"
+                                                NumberOfTapsRequired="1" />
+                                  </Grid.GestureRecognizers>
+                              </Grid>
+
+           
+                          <Grid Grid.Row="2">
+                  
+                               <StackLayout Orientation="Horizontal" Padding="10">
+                                <!--<Image Source="signout.png" HeightRequest="24" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="24"/>-->
+                                    <Label  HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,5,0"
+                                        Text="{x:Static fontawesome:Solid.Sign_Out_Alt}"
+                                        TextColor="{StaticResource BlueColor}" FontFamily="{StaticResource FontAwesomeSolid}" 
+                                        FontSize="20"  >
+                                
+                                </Label>
+                    
+                                <Label  Text="{x:Static resource:AppResources.btnLogout}" VerticalOptions="Center" VerticalTextAlignment="Center"   Style="{StaticResource MyTitleLabel}" />
+                            </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                               Command="{Binding LogoutCommand}" />
+                                  </Grid.GestureRecognizers>
+                              </Grid>
+
+                      </Grid>
+                        </border:SfBorder>
+
+                
+       
+                    </Grid>
+             
+       
+                </Grid>
+        </AbsoluteLayout>            
+    </ScrollView>
+</ContentPage>

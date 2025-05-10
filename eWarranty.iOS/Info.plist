@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>12.4</string>
+	<key>CFBundleDisplayName</key>
+	<string>MCG CIAA</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mastcgroup.ciaa</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.31</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleName</key>
+	<string>Ciaa</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to the camera to take product photos.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs access to the photo gallery for picking product photos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to the photo gallery for picking product photos.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This allows us to use your location to provide your near by service centre.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This allows us to use your location to provide your near by service centre </string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>One of the highlighted features of Panasonic smart care mobile app is to help the customer to track the nearest authorized service centre location through mobile app to get his product repaired.  This will benefit the customers to reach the right place for quality and guaranteed service from Panasonic authorized service centres. </string>
+	<key>NSContactsUsageDescription</key>
+	<string>This key is required if your app uses APIs that access the users contacts.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This key is required if your app uses APIs that access the users calendar data.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This key is required if your app uses APIs that access the devices microphone.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This key is required if your app uses APIs that access the users media library.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>This key is required if your app uses APIs that send user data to Siri.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This key is required if your app uses the devices Bluetooth interface.</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<string>No</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FontAwesome5BrandsRegular.otf</string>
+		<string>FontAwesome5Regular.otf</string>
+		<string>FontAwesome5Solid.otf</string>
+	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This allows us to use your location to provide your near by service centre.</string>
+</dict>
+</plist>

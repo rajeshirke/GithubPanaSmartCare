@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Technician.TaskViews.PaymentSuccessfulPage"
+             BackgroundColor="{x:StaticResource contentBG}"
+             Title="Payment Success">
+      <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled ="False" IconOverride="backarrow.png"
+                             />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                 <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        
+            <Grid Grid.Row="0" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="successicon"
+                       Aspect="AspectFit" Grid.Row="0"/>
+                <Label Text="Great!"
+                       Grid.Row="1" HorizontalTextAlignment="Center"
+                       Style="{StaticResource LabelLargeBlack}"/>
+                <Label Grid.Row="2"
+                       Text="Payment collected successfully."
+                       Style="{StaticResource MyTitleLabel}"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap"/>
+            </Grid>
+            <Grid Grid.Row="1">
+               
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                
+                <Button Margin="30,0,30,0" Grid.Row="1" Clicked="Button_Clicked" Text="Go to Home" FontSize="20"
+                        Style="{StaticResource ButtonBlueStyle}" TextColor="White"  />
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

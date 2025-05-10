@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.DashBoardView.EWMasterDetailPage" xmlns:pages="clr-namespace:eWarranty.Views.Customer.DashBoardView" BackgroundColor="Transparent" NavigationPage.HasNavigationBar="False" >
+    <MasterDetailPage.Master>
+        <pages:EWMasterDetailPageMaster x:Name="MasterPage" BackgroundColor="{StaticResource backgroungColor}" NavigationPage.HasNavigationBar="False" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:EWTabbedPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.SubViews.PartRequestView"
+               BackgroundColor="White"  xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}">
+    <ContentView.Content>
+       <Grid Padding="10,20,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Part Request Details" Grid.Column="0" VerticalTextAlignment="Center" TextColor="{StaticResource lblTitle}" FontAttributes="Bold"/>
+                <!--<Image Source="noteaddcolor.png" Aspect="AspectFit" Grid.Column="1" HorizontalOptions="End" >
+                     <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding AddNewFollowupCommand}"
+                                    NumberOfTapsRequired="1" />
+                      </Image.GestureRecognizers>
+                </Image>-->
+            </Grid>
+            <BoxView Grid.Row="1" BackgroundColor="{StaticResource separatorline}"/>
+             <ListView x:Name="lstFollowup" Margin="5" Grid.Row="2" ItemsSource="{Binding SpareParts}"  HasUnevenRows="True"  SeparatorVisibility="None"  BackgroundColor="White">  
+                 
+                 <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                           <Grid >
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="1"/>
+                                   <RowDefinition Height="*"/>
+                                   <RowDefinition Height="1"/>
+                               </Grid.RowDefinitions>
+                           
+                           <contr:RoundedCornerView Grid.Row="1" BorderColor="LightGray" BorderWidth="1"  BackgroundColor="white"  >
+                               <Grid VerticalOptions="Center" Padding="10,0,10,0">
+                                   <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                         <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                   <Grid.ColumnDefinitions>
+                                       <ColumnDefinitionCollection>
+                                           <ColumnDefinition Width="5*"/>
+                                            <ColumnDefinition Width="5*"/>
+                                       </ColumnDefinitionCollection>
+                                   </Grid.ColumnDefinitions>
+                               
+                               
+                                   <Label Grid.Row="0" Grid.Column="0" Text="Part Name:" TextColor="Black" FontAttributes="Bold"/>
+                                   <Label Grid.Row="0" Grid.Column="1" Text="{Binding PartNumber}" HorizontalTextAlignment="Start" />
+
+                                 
+                                   <Label Grid.Row="1" Grid.Column="0" Text="Price:" TextColor="Black" FontAttributes="Bold"/>
+                                   <Label Grid.Row="1" Grid.Column="1"  HorizontalTextAlignment="Start" >
+                                        <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="AED" FontSize="10" />
+                                                    <Span Text="{Binding Cost}" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                   </Label>
+                                   
+                               
+                                   </Grid>
+                               </contr:RoundedCornerView>
+                               </Grid>
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView> 
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

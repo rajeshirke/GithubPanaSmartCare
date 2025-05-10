@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Technician.AccessoriesView.AccessoriesHistoryPage"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             xmlns:local="clr-namespace:eWarranty"
+             xmlns:lang="clr-namespace:eWarranty.Hepler"
+             xmlns:resource="clr-namespace:eWarranty.Resx"             
+             x:Name="Root"
+             Title="Product Search">
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+            <Grid  VerticalOptions="FillAndExpand"  RowSpacing="0" >
+               
+                <Grid.RowDefinitions>                   
+                    <RowDefinition Height="auto"/>     
+                    <RowDefinition Height="*"/>               
+                </Grid.RowDefinitions>
+                <contr:RoundedCornerView  Margin="5" x:Name="AssignedJobs"
+                                          Grid.Row="0" Shadow="True" ShadowRadius="5"
+                                          RoundedCornerRadius="5" >
+                    <Grid Padding="8" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="auto"/>                                          
+                        </Grid.RowDefinitions>
+                        <Entry Margin="2"   Text="{Binding CustName}" Style="{StaticResource EnteryTxtValues}"   Grid.Row="0" Placeholder="Customer Name" />
+                        <BoxView Margin="2" Grid.Row="1" BackgroundColor="{StaticResource GrayColor}" VerticalOptions="Start"  />
+                        <Entry Margin="2"   Text="{Binding ModelNumber}" Style="{StaticResource EnteryTxtValues}"   Grid.Row="2" Placeholder="Model Number" />
+                        <BoxView Margin="2" Grid.Row="3" BackgroundColor="{StaticResource GrayColor}" VerticalOptions="Start"  />
+                        <Entry Margin="2"   Text="{Binding SerialNumber}" Style="{StaticResource EnteryTxtValues}"   Grid.Row="4" Placeholder="Serial Number" />
+                        <BoxView Margin="2" Grid.Row="5" BackgroundColor="{StaticResource GrayColor}" VerticalOptions="Start"  />
+                        <Grid  Grid.Row="6" Padding="5,5,5,0" Margin="5,0,5,0">
+                            <Button HeightRequest="40" Grid.Row="0" CornerRadius="3" Text="{x:Static resource:AppResources.lblSearch}" Style="{StaticResource ButtonBlueStyle}" Command="{Binding SearchProductCommand}"/>
+                        </Grid>
+                    </Grid>
+
+                </contr:RoundedCornerView>
+
+                <Grid Grid.Row="1"  BackgroundColor="Transparent" Padding="5,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <CollectionView   Grid.Row="0" ItemsSource="{Binding ProductModels}" BackgroundColor="Transparent" EmptyView="No Product">  
+                        <CollectionView.EmptyViewTemplate>
+                            <DataTemplate>
+                                <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource LabelMediumWhite}" Text="{x:Static resource:AppResources.lblNoProducts}" HeightRequest="60" />      
+                            </DataTemplate>
+                        </CollectionView.EmptyViewTemplate>
+                        <CollectionView.ItemTemplate>  
+                            <DataTemplate>
+
+                                <Grid BackgroundColor="Transparent" Padding="5,0,5,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <contr:RoundedCornerView  VerticalOptions="Center" Grid.Row="1"    BorderColor="{StaticResource borderColor}" BorderWidth="1" RoundedCornerRadius="5" BackgroundColor="Transparent" >
+                                        <Grid BackgroundColor="White" VerticalOptions="FillAndExpand" Padding="0,8,0,8" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>   
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Margin="5,0,2,0" Text="{Binding ProductClassification}"
+                                                    TextColor="{StaticResource NavigationPrimary}" Style="{StaticResource LabelLargeBlue}"
+                                                    HorizontalTextAlignment="Start"/>
+                                            <contr:RoundedCornerView Margin="5,0,2,0" Grid.Row="1">
+                                                <Grid Grid.Row="1" BackgroundColor="White">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="3*"/>
+                                                            <ColumnDefinition Width="7*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Image Grid.Row="0" Source="{Binding ModelImageURL}" HeightRequest="40" Aspect="AspectFit" Grid.Column="0"/>
+                                                        <Grid Grid.Row="0" Grid.Column="1" Padding="5">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>
+                                                                <RowDefinition Height="auto"/>                                              
+                                                            </Grid.RowDefinitions>                                             
+                                                            <Label Grid.Row="0" LineBreakMode="WordWrap"  HorizontalOptions="FillAndExpand">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblRegisteredon}" Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text="{Binding RegistrationDate, StringFormat='{0:MMM dd, yyyy}'}"      Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                            <Label Grid.Row="1" LineBreakMode="WordWrap" >
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblModelNo}" Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text="{Binding ModelNumber}"    Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                            <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                                                    <Label.FormattedText>
+                                                                        <FormattedString>
+                                                                            <Span Text="{x:Static resource:AppResources.lblSerialNo}" Style="{StaticResource MyTitleLabel}"/>
+                                                                            <Span Text="{Binding SerialNumber}"    Style="{StaticResource MyValueLabel}"/>
+                                                                        </FormattedString>
+                                                                    </Label.FormattedText>
+                                                                </Label>
+                                                            <Label Grid.Row="3" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalOptions="FillAndExpand">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblWarranty}" Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text="{Binding WarrantyTypeName}"     Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                            <Label Grid.Row="4" LineBreakMode="WordWrap" HorizontalOptions="FillAndExpand">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                            <Span Text="{x:Static resource:AppResources.lblExpiresIn}" Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text="{Binding ExpiresDays}"  BackgroundColor="#FCF4E1" TextColor="{Binding ExpiresDaysTextColor}"  Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                        </Grid>
+                                          
+                                                </Grid>                                     
+                                            </contr:RoundedCornerView>
+                                            <Grid Grid.Row="2" Padding="5">
+                                                <Label Grid.Row="0" LineBreakMode="TailTruncation" MaxLines="1"  HorizontalOptions="FillAndExpand">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{x:Static resource:AppResources.lblCustName}" Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text="{Binding CustomerName}"     Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                                <Label Grid.Row="1" LineBreakMode="TailTruncation" MaxLines="1" HorizontalOptions="FillAndExpand">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblContactNumber}" Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text=" : " Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text="{Binding ContactNumber}"     Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                </Label>
+                                                <Image Source="callicon"
+                                                    Grid.Row="1"                                                                                     
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="EndAndExpand"
+                                                    HeightRequest="20"
+                                                    WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                            Command="{Binding BindingContext.CallServiceCentorCommand, Source={x:Reference Name=Root}}"
+                                                            CommandParameter="{Binding .}"
+                                                            NumberOfTapsRequired="1"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>
+                                        </Grid>
+                                    </contr:RoundedCornerView>
+
+                                </Grid>
+                           </DataTemplate>  
+                       </CollectionView.ItemTemplate>  
+                    </CollectionView> 
+                </Grid>
+            </Grid>
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
+
+
+ 

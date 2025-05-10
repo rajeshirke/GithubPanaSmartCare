@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.CommonPages.AddAddressesPage"
+             Title="{x:Static resource:AppResources.titleNewaddress}" xmlns:fontawesome="clr-namespace:eWarranty.Models" BackgroundColor="White" xmlns:resource="clr-namespace:eWarranty.Resx"  xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="location" Text="Item 1" Priority="0" Command="{Binding PickAddressCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView>
+                <Grid Grid.Row="0" VerticalOptions="FillAndExpand" RowSpacing="10"  Margin="20,10,20,0" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <contr:TitledEntryView Grid.Row="0" Placeholder="{x:Static resource:AppResources.plcApartment_Houseno}"   Text="{Binding ApartmentNumber}"
+                                PlaceholderColor="Gray"/>
+
+                    <contr:TitledEntryView Grid.Row="1"  Placeholder="{x:Static resource:AppResources.plcBuilding_Villaname}"  Text="{Binding BuildingName}"
+                                PlaceholderColor="Gray"/>
+
+                    <contr:TitledEntryView Grid.Row="2"  Placeholder="{x:Static resource:AppResources.lblStreet}"  Text="{Binding Street}"
+                                PlaceholderColor="Gray"/>
+
+                    <contr:TitledEntryView Grid.Row="3" Placeholder="{x:Static resource:AppResources.plcArea}"  Text="{Binding Area}"
+                                PlaceholderColor="Gray"/>
+
+
+                    <contr:TitledEntryView Grid.Row="4" Placeholder="{x:Static resource:AppResources.lblCity}"  Text="{Binding City}"
+                                PlaceholderColor="Gray"/>
+
+                    <contr:TitledEntryView Grid.Row="5" Placeholder="{x:Static resource:AppResources.lblState}"  Text="{Binding State}"
+                                PlaceholderColor="Gray"/>
+
+                    <contr:TitledEntryWithIcon Grid.Row="6" IsEnabledView="True"  ImageSource="{x:Static fontawesome:Solid.Caret_Down}" Placeholder="{x:Static resource:AppResources.lblCountry}"  Text="{Binding SelectCountry.Title}" Command="{Binding CountryChangeCommand}"
+                                PlaceholderColor="LightGray"/>
+
+                    <contr:ExtendedEntry  FontAttributes="Bold" TextColor="#5b6b7a" Grid.Row="7" Placeholder="{x:Static resource:AppResources.lblPostalCode}"  Text="{Binding NewPostalCode}"  Keyboard="Numeric" FontSize="14"
+                                PlaceholderColor="#707070"/>
+                     
+
+                    <!--Commented by Vijayaraj-->
+
+                    <!--<contr:TitledEntryView Grid.Row="7" Placeholder="Postal Code"  Text="{Binding NewPostalCode}" EntryKeyboard="Numeric"
+                                    PlaceholderColor="Gray"/>-->
+                 
+                    <!--<contr:TitledEntryView Grid.Row="6"  Placeholder="Contact No"  Text="{Binding Addresses.PostalCode}"
+                                    PlaceholderColor="Gray"/>-->
+
+                
+                    <Grid Grid.Row="8" Padding="5" Margin="5,20,5,5" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{x:Static resource:AppResources.opIsprimary}" Grid.Column="0" Style="{StaticResource MyTitleLabel}" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+                        <Switch IsToggled="{Binding Addresses.IsPrimary}" Grid.Column="1" HorizontalOptions="End" ></Switch>
+                    </Grid>
+                
+                    <Button Text="{x:Static resource:AppResources.btnAddNewAddress}" Style="{StaticResource ButtonPinkStyle}"  BackgroundColor="#687089" TextColor="White" x:Name="btnFind" Grid.Row="10" Command="{Binding SaveAddressCommand}" />
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

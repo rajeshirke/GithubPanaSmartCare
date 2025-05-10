@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.TaskViews.EstimateTaskPage"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty"
+               xmlns:lang="clr-namespace:eWarranty.Hepler"
+              xmlns:converters="clr-namespace:eWarranty.Converters"
+             xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+             x:Name="root" BackgroundColor="{StaticResource LighterGray}"
+             Title="Job Estimation">
+     <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" IsEnabled="{Binding btnVisible}" Text="Add Part" Priority="0" Command="{Binding AddPartsCommand}" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <ScrollView>
+            <AbsoluteLayout>
+                <Grid   Padding="8"  BackgroundColor="{StaticResource contentBG}"
+                        VerticalOptions="FillAndExpand"
+                        RowSpacing="0"
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame  Grid.Row="0" Style="{StaticResource FrameStyle}" BackgroundColor="White" Margin="5">
+                        <Grid Padding="10"  BackgroundColor="White" >
+                            <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Service Cost" HorizontalOptions="Start" Style="{StaticResource LabelLargeBlack}" />
+                            <Label Grid.Row="0" HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Currency: "  Style="{StaticResource MyTitleLabel}"/>                                                                
+                                        <Span Text="{Binding CurrencyCode}" Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" VerticalTextAlignment="Center" Text="Service Request No" Style="{StaticResource MyTitleLabel}"/>
+                                    <Label Grid.Column="1" VerticalTextAlignment="Center">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" />                                                                
+                                                <Span Text="{Binding serviceRequest.ServiceRequestNumber}"  Style="{StaticResource MyValueLabel}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Grid>
+                            <Grid Grid.Row="3" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <!--<ColumnDefinition Width="1*"/>-->
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" VerticalTextAlignment="End" LineBreakMode="TailTruncation" MaxLines="1" Text="Service Charge :"
+                                        Style="{StaticResource MyTitleLabel}"  HorizontalTextAlignment="Start"   />
+                                <Grid Grid.Column="1" RowSpacing="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="45"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                        <contr:ImageEntry x:Name="SCCast" Grid.Row="0" BackgroundColor="White" Keyboard="Numeric"
+                                                HorizontalTextAlignment="End" VerticalTextAlignment="End"
+                                                Placeholder="Service Charge"  Text="{Binding SCCast}"
+                                                Style="{StaticResource EnteryTxtValues}" Unfocused="SCCast_Unfocused" />                                            
+                                        <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"  />
+                                </Grid> 
+                                    <!--<Label Grid.Column="2" TextColor="Gray" HorizontalTextAlignment="Start" VerticalTextAlignment="End" Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}" FontAttributes="Bold" />-->
+                
+                 
+                            </Grid>
+                            <Grid Grid.Row="4" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <!--<ColumnDefinition Width="1*"/>-->
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" VerticalTextAlignment="End"
+                                        Text="Inspection Charge :" LineBreakMode="TailTruncation" MaxLines="1"
+                                        Style="{StaticResource MyTitleLabel}"  HorizontalTextAlignment="Start"   />
+                                    <Grid Grid.Column="1" RowSpacing="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"/>
+                                                <RowDefinition Height="1"/>
+                                        </Grid.RowDefinitions>
+                                                <contr:ImageEntry Grid.Row="0" x:Name="ICCast"
+                                                        BackgroundColor="White" Keyboard="Numeric"
+                                                        HorizontalTextAlignment="End" VerticalTextAlignment="End"
+                                                        Placeholder="Inspection Charge"  Text="{Binding ICCast}"
+                                                        Style="{StaticResource EnteryTxtValues}"                                                     
+                                                        Unfocused="ICCast_Unfocused"
+                                                        />
+                                                <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start" />
+                                    </Grid>
+                  
+                    
+                                        <!--<Label Grid.Column="2"  TextColor="Gray" HorizontalTextAlignment="Start" VerticalTextAlignment="End" Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}"  FontAttributes="Bold"/>-->
+                
+                 
+                            </Grid>
+                            <Grid Grid.Row="5" >
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <!--<ColumnDefinition Width="1*"/>-->
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" VerticalTextAlignment="End"
+                                        Text="Transportation Charge :" LineBreakMode="TailTruncation" MaxLines="1"
+                                        Style="{StaticResource MyTitleLabel}"
+                                        HorizontalTextAlignment="Start"   />
+                                    <Grid Grid.Column="1" RowSpacing="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"/>
+                                                <RowDefinition Height="1"/>
+                                        </Grid.RowDefinitions>
+                                                <contr:ImageEntry Grid.Row="0"
+                                                        x:Name="TPCCast"
+                                                        HorizontalTextAlignment="End"
+                                                        VerticalTextAlignment="End"
+                                                        BackgroundColor="White" Keyboard="Numeric"
+                                                        Placeholder="Transportation Charge"
+                                                        Text="{Binding TPCCast}"
+                                                        Style="{StaticResource EnteryTxtValues}"                                                      
+                                                        Unfocused="TPCCast_Unfocused"/> <!--Text="{Binding TPCCast,StringFormat='{0:F2}'}"-->
+                                                <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start" />
+                                    </Grid>
+                                    <!--<Label Grid.Column="2"  TextColor="Gray" HorizontalTextAlignment="Start" VerticalTextAlignment="End" Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}"  FontAttributes="Bold"/>-->
+              
+                            </Grid>
+                                          
+                        </Grid>
+                    </Frame>
+
+                    <Frame  Grid.Row="1" Style="{StaticResource FrameStyle}" BackgroundColor="White" Margin="5">
+                        <Grid Padding="10"  BackgroundColor="White" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="auto"/>                                               
+                            </Grid.RowDefinitions>                                        
+                            <Grid Grid.Row="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="Part Cost" Style="{StaticResource LabelLargeBlack}" />
+                                <Button Grid.Column="1" HeightRequest="40" WidthRequest="100" Text="Add Parts" HorizontalOptions="End" Style="{StaticResource ButtonBlueStyle}" FontSize="12" Command="{Binding AddPartsCommand}"/>
+                            </Grid>                                          
+                            <ListView Grid.Row="2" ItemsSource="{Binding SpareParts}"  Header="" HeightRequest="100" BackgroundColor="White" HasUnevenRows="False" SeparatorColor="Transparent" >
+                                        <ListView.HeaderTemplate>  
+                                        <DataTemplate>  
+                                                <Grid Grid.Row="0" HeightRequest="25">
+                                                        <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="4*"/>
+                                                                <ColumnDefinition Width="30"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="3*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Label Text="Part No" Grid.Column="0" Style="{StaticResource MyTitleLabel}" />
+                                                            <Label Text="Qty" Grid.Column="1" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Center"/>
+                                                            <Label Text="Rate" Grid.Column="2" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End"/>
+                                                            <Label Text="Total" Grid.Column="3" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End"/>
+                               
+                                                </Grid>  
+                                        </DataTemplate>  
+                                        </ListView.HeaderTemplate> 
+                                            <ListView.ItemTemplate>  
+                                                <DataTemplate>  
+                                            <ViewCell>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="1.8*"/>
+                                                        <ColumnDefinition Width="3.2*"/>
+                                                        <ColumnDefinition Width="2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="{Binding PartNumber}" Grid.Column="0" LineBreakMode="TailTruncation" MaxLines="1" Style="{StaticResource MyValueLabel}" />
+                                                    <Label Text="{Binding Quantity}" Grid.Column="1" Style="{StaticResource MyValueLabel}"      HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding Cost,StringFormat='{0:00}'}" HorizontalTextAlignment="End" Grid.Column="2" Style="{StaticResource MyValueLabel}"      />
+                                                    <Label HorizontalOptions="End" HorizontalTextAlignment="End" Grid.Column="3" Style="{StaticResource MyValueLabel}" >
+                                                        <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{Binding TotalAmount,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}"/>                                                                       
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    <Image Grid.Column="4" VerticalOptions="Start" HorizontalOptions="End"  HeightRequest="20" WidthRequest="20">
+                                                        <Image.Source>
+                                                        <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" 
+                                                                Glyph="{x:Static fontawesome:Solid.Trash}"
+                                                                Color="{StaticResource BlueColor}" Size="20"/>
+                                                    </Image.Source>
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                Command="{Binding BindingContext.DeletePartsCommand, Source={x:Reference Name=root}}"
+                                                                CommandParameter="{Binding .}"
+                                                                NumberOfTapsRequired="1"
+                                                                />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Grid>
+                                            </ViewCell>  
+                                        </DataTemplate>  
+                                        </ListView.ItemTemplate> 
+                                    </ListView>             
+                        </Grid>
+                    </Frame>
+
+                    <!--<Frame Grid.Row="2" Style="{StaticResource FrameStyle}" BackgroundColor="White" Margin="5">
+                        <Grid Padding="10"  BackgroundColor="White" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>                                        
+                            <Grid Grid.Row="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Medium" Text="Discounts" Style="{StaticResource LabelLargeBlack}"  />
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                            <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="Promo Code :" Style="{StaticResource MyTitleLabel}"
+                                            HorizontalTextAlignment="Start" VerticalOptions="Center" VerticalTextAlignment="Start"  />
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"/>
+                                            <RowDefinition Height="auto"/>
+                                                            
+                                        </Grid.RowDefinitions>
+                                                        
+                                        <Grid Grid.Row="0" Grid.Column="0" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="1"/>
+                                            </Grid.RowDefinitions>
+                                                <contr:ImageEntry Placeholder="Promo Code" HeightRequest="40" HorizontalTextAlignment="Start"
+                                                        VerticalTextAlignment="Center" Grid.Row="0" Style="{StaticResource EnteryTxtValues}"
+                                                        Text="{Binding PromoCode}" TextChanged="Entry_TextChanged"
+                                                        VerticalOptions="Center" BackgroundColor="White"/>
+                                                <BoxView Grid.Row="1"  BackgroundColor="#DADADA" VerticalOptions="Start"/>
+        
+                                        </Grid>
+                                        <Button Text="Apply" HeightRequest="30" WidthRequest="80" Style="{StaticResource ButtonBlueStyle}" FontSize="12" Grid.Column="1" Grid.Row="0" Command="{Binding PromoCodeCommand}"/>
+                                        <Label Text="{Binding Promomsg}" TextColor="{Binding PromomsgColor}"  Grid.Row="1"
+                                                Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyTitleLabel}"/>
+
+                                    </Grid>
+                
+                            </Grid>
+                            <Grid Grid.Row="3" VerticalOptions="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"  Style="{StaticResource EnteryTitleLabel}" >
+                                        <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Promo Code Discount"  Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text="{Binding PercentDiscount}" Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text=" : "  Style="{StaticResource MyTitleLabel}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>                                    
+                                </Label>
+                                <Label Grid.Column="0" VerticalTextAlignment="End" Padding="0,0,0,3" Text="Promo Code Discount :" Style="{StaticResource MyValueLabel}"  HorizontalTextAlignment="Start"   />
+                                <Label Grid.Column="1"
+                                        Text="{Binding PromoDiscountAmount,StringFormat='{0:F2}'}" TextColor="Green"
+                                        HorizontalOptions="StartAndExpand" Style="{StaticResource MyTitleLabel}"/>
+                                <Label Grid.Column="2"
+                                        Text="{Binding PercentDiscount}" TextColor="Green"
+                                        HorizontalOptions="StartAndExpand" Style="{StaticResource MyTitleLabel}"/>
+                                <Label Grid.Column="2" Padding="0,0,0,2" TextColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="End" Text="{Binding CurrencyCode}" Style="{StaticResource MyTitleLabel}"  FontAttributes="Bold"/>                                
+                            </Grid>
+                            <Grid Grid.Row="5"  VerticalOptions="Center" Padding="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
+                                <Label Text="Discount Type" Grid.Column="0" Style="{StaticResource MyTitleLabel}" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                                <Switch x:Name="shtype" Grid.Column="1" IsToggled="{Binding DiscountType}" HorizontalOptions="End"   />
+                            </Grid>                                          
+                            <Grid Grid.Row="6" VerticalOptions="Center" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" VerticalTextAlignment="End" Padding="0,0,0,3"
+                                        Text="Discount Amount :" Style="{StaticResource MyTitleLabel}"
+                                        HorizontalTextAlignment="Start"   />
+                                <Grid Grid.Column="1" RowSpacing="0" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                        </Grid.RowDefinitions>
+                                        <contr:ImageEntry x:Name="DiscountAmount" Unfocused="DiscountAmount_Unfocused"
+                                            Grid.Row="0"  HeightRequest="40"  BackgroundColor="White"
+                                            Keyboard="Numeric"  HorizontalOptions="End" Placeholder="Disscount Amount"
+                                            Text="{Binding DiscountAmount}"    Style="{StaticResource EnteryTxtValues}"
+                                            HorizontalTextAlignment="End" VerticalOptions="End" VerticalTextAlignment="End"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                                </Grid>
+                                <Label x:Name="dtLabel" Grid.Column="2" Padding="0,0,0,2" TextColor="Green"
+                                        HorizontalTextAlignment="Start" VerticalTextAlignment="End" Style="{StaticResource MyTitleLabel}" />
+                            </Grid>
+                            <Grid x:Name="gdDiscountType" Grid.Row="7" VerticalOptions="Center" IsVisible="false">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="6*"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="4*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" VerticalTextAlignment="End" Padding="0,0,0,3" Text="Discount : " Style="{StaticResource MyTitleLabel}"  HorizontalTextAlignment="Start"   />
+                                <Label Grid.Column="2" Text="{Binding OtherDiscountAmount,StringFormat='{0:F2}'}"
+                                       TextColor="Green" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start"/>                                     
+                                <Label Grid.Column="1" Padding="0,0,0,2" TextColor="Green" HorizontalTextAlignment="End"
+                                        VerticalTextAlignment="End" Text="{Binding CurrencyCode}"
+                                        Style="{StaticResource MyTitleLabel}" />                
+                 
+                            </Grid>
+                            <Grid Grid.Row="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="6*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="1" Grid.Column="0" >
+                                        <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Taxes" Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text=" (" Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text="{Binding TaxRate}" Style="{StaticResource MyTitleLabel}"/>
+                                                <Span Text=" %)" Style="{StaticResource MyTitleLabel}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>                                    
+                                </Label>
+                                    <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalOptions="End" VerticalTextAlignment="End" FontAttributes="Bold">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                                <Span Text="{Binding TaxAmount,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Grid>            
+                        </Grid>
+                    </Frame>-->
+
+                    <Frame Grid.Row="3" Style="{StaticResource FrameStyle}" BackgroundColor="White" Margin="5">
+                        <Grid Padding="10"  BackgroundColor="White" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition Height="auto"/>
+                                               
+                        </Grid.RowDefinitions>
+                                        
+                        <Grid Grid.Row="0" HorizontalOptions="End">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="Total Amount: " Style="{StaticResource MyTitleLabel}"
+                                    HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                            <Label Grid.Column="2" Text="{Binding TotalAmount,StringFormat='{0:F2}'}"
+                                    Style="{StaticResource MyValueLabel}"
+                                    HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+                            <Label Grid.Column="1" Padding="0,0,0,2" HorizontalTextAlignment="Start"
+                                    VerticalTextAlignment="End" Text="{Binding CurrencyCode}"
+                                    Style="{StaticResource MyValueLabel}"/>
+                
+                        </Grid>
+                        <Grid Grid.Row="2" Padding="5"  >
+                            <!--<Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>-->
+
+                            <Button Grid.Row="0" WidthRequest="150"  Text="{Binding BtnEstimation}" TextColor="White" HorizontalOptions="CenterAndExpand"
+                                    Style="{StaticResource ButtonBlueStyle}" Command="{Binding SavedCommand}" /> <!--IsVisible="{Binding btnVisible}"-->
+                       
+                            <!--<Button Grid.Column="1" Text="Close Job" Style="{StaticResource ButtonPinkStyle}" TextColor="White" Command="{Binding JobCloseCommand}"  IsVisible="{Binding IsJobCloseVisible}"/>-->
+                        </Grid>
+                 
+                    </Grid>
+                    </Frame>
+                 
+                </Grid>
+                <!--<contr:LoaderAnimView
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+            </AbsoluteLayout>             
+      </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

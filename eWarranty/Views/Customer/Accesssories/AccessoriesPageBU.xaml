@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eWarranty.Views.Customer.Accesssories.AccessoriesPageBU"
+    Title="Accesssories" FlowDirection="{Binding flowDirection}"
+    xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+    xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:resource="clr-namespace:eWarranty.Resx" x:Name="root" >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" IconImageSource="cart.png" Text="Item 1" Priority="0" Command="{Binding CheckOutCommand}" />
+    </ContentPage.ToolbarItems>
+ 
+        <Grid Padding="5" BackgroundColor="{StaticResource contentBG}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Padding="5,0,5,0">
+                <SearchBar x:Name="sbAccessories" TextChanged="sbAccessories_TextChanged" Grid.Row="0" Placeholder="{x:Static resource:AppResources.plcSearchAccessories}" SearchCommand="{Binding SearchProductCommand}" SearchCommandParameter="{Binding .}" BackgroundColor="White" TextColor="Black" />
+            </Grid>
+
+            <Grid Grid.Row="1" Padding="5,0,5,0">
+                 <Picker Grid.Row="0" HeightRequest="45" 
+                    Title="Select Location"                 
+                    BackgroundColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"                                                                                                    
+                    SelectedIndexChanged="ServiceCenterLocation_SelectedIndexChanged"
+                    ItemsSource="{Binding ServiceCentors}"
+                    ItemDisplayBinding="{Binding Name}"
+                    x:Name="ServiceCenterLocation" />
+            </Grid>
+
+             <Grid Grid.Row="2" Padding="5,0,5,0">
+                <Button Grid.Row="0" HeightRequest="55" CornerRadius="10" Text="Search" Style="{StaticResource ButtonBlueStyle}" Command="{Binding SearchAccessoriesCommand}"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Padding="5,0,5,0">
+                <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="No accessories available" HeightRequest="60" IsVisible="{Binding IsAccessoryAvailable}" />          
+            </Grid>
+
+            <Grid Grid.Row="4" Padding="5,0,5,0">
+                <ListView x:Name="lstProducts" Margin="5" Grid.Row="0" RowHeight="200"  ItemsSource="{Binding Products}"  HasUnevenRows="True"  SeparatorVisibility="None"  BackgroundColor="Transparent">
+                    <ListView.RowHeight>
+                        <OnPlatform x:TypeArguments="x:Int32">
+                            <On Platform="iOS">200</On>
+                            <On Platform="Android">150</On>
+                        </OnPlatform>
+                    </ListView.RowHeight>                 
+                 <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                           <Grid Padding="0,5,0,5" BackgroundColor="Transparent">
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="auto"/>
+                               </Grid.RowDefinitions>
+                               <Grid.ColumnDefinitions>
+                                   <ColumnDefinition Width="5*"/>
+                                   <ColumnDefinition Width="5*"/>
+                               </Grid.ColumnDefinitions>                           
+                              <contr:RoundedCornerView IsVisible="{Binding LeftItem.IsVisible}"  Grid.Column="0" Padding="2" Grid.Row="0" BorderColor="LightGray" RoundedCornerRadius="10" BorderWidth="1"  BackgroundColor="white"  >
+                               <Grid Padding="10" BackgroundColor="White">
+                                      <Grid.RowDefinitions>
+                                          <RowDefinition Height="*"/>
+                                          <RowDefinition Height="auto"/>
+                                          <RowDefinition Height="auto"/>
+                                      </Grid.RowDefinitions>
+                                      <Image Source="{Binding LeftItem.ProdcuImageUrl}" Grid.Row="0" HeightRequest="80" Aspect="AspectFit"/>
+                                  
+                                      <Label Grid.Row="1" Text="{Binding LeftItem.Name}" Style="{StaticResource MyValueLabel}"/>
+                                      <Label Grid.Row="2" TextColor="{StaticResource BlueColor}" Style="{StaticResource MyValueLabel}">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="PKR "  />
+                                                    <Span Text="{Binding LeftItem.ProdcuPrice}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                             Command="{Binding BindingContext.ProductsCommand, Source={x:Reference Name=root}}"
+                                              NumberOfTapsRequired="1"
+                                             CommandParameter="{Binding LeftItem.AccessoryMasterId}"
+                                               />
+                                  </Grid.GestureRecognizers>
+                                   </Grid>
+                                  
+                               </contr:RoundedCornerView>
+                                 <contr:RoundedCornerView IsVisible="{Binding RigthItem.IsVisible}"  Padding="2" Grid.Column="1" Grid.Row="0" BorderColor="LightGray" BorderWidth="1" RoundedCornerRadius="10"  BackgroundColor="white"  >
+                               <Grid Padding="10" BackgroundColor="White">
+                                      <Grid.RowDefinitions>
+                                          <RowDefinition Height="*"/>
+                                          <RowDefinition Height="auto"/>
+                                           <RowDefinition Height="auto"/>
+                                      </Grid.RowDefinitions>
+                                      <Image Source="{Binding RigthItem.ProdcuImageUrl}" Grid.Row="0" Aspect="AspectFit"/>
+                                  
+                                      <Label Grid.Row="1" Text="{Binding RigthItem.Name}" Style="{StaticResource MyValueLabel}"/>
+                                      <Label Grid.Row="2" TextColor="{StaticResource BlueColor}" Style="{StaticResource MyValueLabel}">
+                                          <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="PKR "  />
+                                                    <Span Text="{Binding RigthItem.ProdcuPrice}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   </Grid>
+                                     <contr:RoundedCornerView.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                             Command="{Binding BindingContext.ProductsCommand, Source={x:Reference Name=root}}"
+                                          NumberOfTapsRequired="1"
+                                            CommandParameter="{Binding RigthItem.AccessoryMasterId}"
+                                              />
+                                  </contr:RoundedCornerView.GestureRecognizers>
+                               </contr:RoundedCornerView>
+                               
+                           </Grid>
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView> 
+            </Grid>
+
+            <Grid Grid.Row="5" Padding="5,0,5,0">
+                 <Grid.RowDefinitions>               
+                    <RowDefinition Height="150"/>                
+                </Grid.RowDefinitions>            
+                <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <CarouselView ItemsSource="{Binding BannersData}" x:Name="cvBanners" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="FillAndExpand" IndicatorView="indicatorview">
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid  Grid.Row="0" VerticalOptions="FillAndExpand">
+                                            <Image Grid.Row="0" Source="{Binding Imageurl}" Aspect="Fill" VerticalOptions="FillAndExpand"/>
+                                            <Label Grid.Row="0" Margin="0,0,0,10" Text="{Binding Title}" IsVisible="false" HorizontalTextAlignment="Center" VerticalOptions="End" VerticalTextAlignment="End" FontSize="Title" TextColor="White" />
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                        <IndicatorView Grid.Row="1"
+                            x:Name="indicatorview"
+                            IndicatorColor="LightGray"
+                            IndicatorSize="10"
+                            SelectedIndicatorColor="#687089" />
+                </Grid>
+            </Grid>
+
+
+
+        </Grid>
+
+</ContentPage>

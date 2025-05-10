@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Accesssories.MyOrderDetailsPage"
+               FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" xmlns:resource="clr-namespace:eWarranty.Resx" BackgroundColor="{StaticResource contentBG}"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" x:Name="root" Title="{x:Static resource:AppResources.titleOrderDetails}">
+    <ContentPage.Content>
+        <ScrollView>
+            <AbsoluteLayout>                
+                <Grid   Padding="5" VerticalOptions="FillAndExpand"
+                        RowSpacing="{OnPlatform Android='8' ,iOS='0'}"
+                        AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                        AbsoluteLayout.LayoutFlags="All">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <!--<RowDefinition Height="{Binding OrderDetailsLength}"/>-->
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Style="{StaticResource MyValueLabel}" IsVisible="{Binding IsReturnFullOrderVisible}"
+                            HorizontalOptions="End" TextColor="{StaticResource BlueColor}"
+                            Text="{x:Static resource:AppResources.lblReturnFullOrder}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding BindingContext.ReturnAllOrderCommand, Source={x:Reference Name=root}}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+            
+                    <contr:RoundedCornerView Grid.Row="1"  BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">             
+                        <Grid BackgroundColor="White" HeightRequest="{Binding OrderDetailsLength}">
+                            <CollectionView BackgroundColor="Transparent"  ItemsSource="{Binding OrderDetails}" HeightRequest="{Binding OrderDetailsLength}">               
+                                <CollectionView.ItemTemplate>  
+                                    <DataTemplate>                              
+                                        <Grid Padding="5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>                                   
+                                            </Grid.RowDefinitions>                       
+                           
+                                            <Grid Padding="5" Grid.Row="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="1"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Row="0" Padding="5, 5, 5, -20">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="6*"/>
+                                                        <ColumnDefinition Width="4*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label  Grid.Column="0" HorizontalOptions="StartAndExpand"
+                                                            LineBreakMode="TailTruncation" MaxLines="1"
+                                                            HorizontalTextAlignment="Start"                                                    
+                                                            HeightRequest="50">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{x:Static resource:AppResources.lblOrderno}" Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text="{Binding OrderDetailNo}"  Style="{StaticResource MyValueLabel}" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label  HorizontalTextAlignment="End" Grid.Column="1"  >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{x:Static resource:AppResources.lblStatus}" Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}" />
+                                                                <Span Text="{Binding OrderStatus}" TextColor="green" Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    </Grid>
+                                                <Grid Grid.Row="1" Padding="5">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="6*" />
+                                                            <ColumnDefinition Width="1*" />
+                                                            <ColumnDefinition Width="3*" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Label Grid.Row="0"
+                                                                Grid.Column="0"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                LineBreakMode="TailTruncation"
+                                                                MaxLines="1"
+                                                                Style="{StaticResource MyValueLabel}"  >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblSeller}" Style="{StaticResource MyTitleLabel}" />                                                    
+                                                                    <Span Text="{Binding ServiceCenterResponse.Name}" Style="{StaticResource MyValueLabel}" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="0"
+                                                                Grid.Column="2"
+                                                                HorizontalTextAlignment="Start"
+                                                                HorizontalOptions="StartAndExpand"
+                                                                LineBreakMode="TailTruncation" MaxLines="1"
+                                                                Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}"
+                                                                Text="{x:Static resource:AppResources.lblTrack}">
+                                                                <Label.GestureRecognizers>
+                                                                    <TapGestureRecognizer
+                                                                            Command="{Binding BindingContext.TrackOrderCommand, Source={x:Reference Name=root}}"
+                                                                            CommandParameter="{Binding .}"
+                                                                            NumberOfTapsRequired="1" />
+                                                                </Label.GestureRecognizers>
+                                                        </Label> 
+                                                        <Image Source="callicon"
+                                                                Grid.Row="0"
+                                                                Grid.Column="1"                                              
+                                                                HorizontalOptions="StartAndExpand"
+                                                                VerticalOptions="StartAndExpand"
+                                                                HeightRequest="25"
+                                                                WidthRequest="25">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.CallServiceCentorCommand, Source={x:Reference Name=root}}"
+                                                                    CommandParameter="{Binding .}"
+                                                                    NumberOfTapsRequired="1"/>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                    </Grid>
+                                                <Grid Padding="0,0,0,0" Grid.Row="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="{Binding OrderDetailsLength}"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="6*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <contr:RoundedCornerView Grid.Column="0"
+                                                                                Grid.Row="0"
+                                                                                BorderColor="Transparent"
+                                                                                BorderWidth="1"
+                                                                                BackgroundColor="white"  >
+                                                        <Image Source="{Binding ProdcuImageUrl}"
+                                                                Aspect="AspectFit"
+                                                                HeightRequest="60"/>
+                                                    </contr:RoundedCornerView>                             
+                                                    <Grid Grid.Column="1" Grid.Row="0"
+                                                            Padding="10,5,0,0"
+                                                            BackgroundColor="White">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>
+                                                            <RowDefinition Height="auto"/>                                                                                                                                           
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label Text="{Binding AccessoryName}"
+                                                                Grid.Row="0"
+                                                                HorizontalTextAlignment="Start"
+                                                                Style="{StaticResource MyTitleLabel}"
+                                                                MaxLines="1"
+                                                                LineBreakMode="TailTruncation"/>
+                                                        <Label Grid.Row="1">
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{x:Static resource:AppResources.lblQuantity}" Style="{StaticResource MyTitleLabel}" />
+                                                                        <Span Text=": " Style="{StaticResource MyTitleLabel}" />
+                                                                        <Span Text="{Binding Quantity}" Style="{StaticResource MyValueLabel}"/>
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                        </Label>
+                                                        <Label Grid.Row="2" >
+                                                                <Label.FormattedText>
+                                                                    <FormattedString>
+                                                                        <Span Text="{Binding CurrencyCode}"  Style="{StaticResource MyTitleLabel}"/>
+                                                                        <Span Text=" " />
+                                                                        <Span Text="{Binding Price,StringFormat='{0:F2}'}" FontAttributes="Bold" Style="{StaticResource MyValueLabel}" TextColor="{StaticResource BlueColor}"/>                                                   
+                                                                    </FormattedString>
+                                                                </Label.FormattedText>
+                                                            </Label>
+                                                        <Label LineBreakMode="WordWrap" Grid.Row="3" >
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span Text="{x:Static resource:AppResources.lblPlacedon}" Style="{StaticResource MyTitleLabel}" />
+                                                                    <Span Text=": " Style="{StaticResource MyTitleLabel}" />
+                                                                    <Span Text="{Binding OrderDate, StringFormat='{0:MMM dd, yyyy}'}" Style="{StaticResource MyValueLabel}" />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>                                  
+                            
+                                                    </Grid>                                    
+                                                </Grid>
+                                                <Grid Grid.Row="3" Margin="5,0,0,0" HorizontalOptions="EndAndExpand">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="20"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Label  Grid.Row="0" 
+                                                            LineBreakMode="TailTruncation"
+                                                            MaxLines="1"
+                                                            HorizontalOptions="StartAndExpand"                                                
+                                                            IsVisible="{Binding IsReturnOrderVisible}"
+                                                            Style="{StaticResource MyValueLabel}"
+                                                            TextColor="{StaticResource BlueColor}"
+                                                            TextDecorations="Underline"
+                                                            Text="{x:Static resource:AppResources.btnReturnOrder}"> 
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer
+                                                                    Command="{Binding BindingContext.SelectedItemCommand, Source={x:Reference Name=root}}"
+                                                                    CommandParameter="{Binding .}"
+                                                                    NumberOfTapsRequired="1" />
+                                                        </Label.GestureRecognizers>
+                                                    </Label>      
+                                                </Grid>
+                                                <BoxView Grid.Row="4" HeightRequest="1" BackgroundColor="Gray" />                                
+                                            </Grid>
+                                    
+                                        </Grid>                                
+                                    </DataTemplate>  
+                                </CollectionView.ItemTemplate>  
+                            </CollectionView>
+                        </Grid>
+                    </contr:RoundedCornerView>
+
+                    <contr:RoundedCornerView Grid.Row="2"  BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+             
+                        <Grid Padding="8" BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{x:Static resource:AppResources.lblShippingAddress}" Grid.Row="0" Style="{StaticResource MyTitleLabel}"/>
+                            <Label Text="{Binding AddressString}" Grid.Row="1" Style="{StaticResource MyValueLabel}" />
+                        </Grid>
+                    </contr:RoundedCornerView>
+
+                    <contr:RoundedCornerView Grid.Row="3"  BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+             
+                        <Grid Padding="8" BackgroundColor="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>                    
+                        </Grid.RowDefinitions>
+                
+                            <Label Grid.Row="0"  HorizontalTextAlignment="Start" FontAttributes="Bold">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resource:AppResources.lblCustName}" Style="{StaticResource MyTitleLabel}"/>                            
+                                    <Span Text="{Binding CustName}"   Style="{StaticResource MyValueLabel}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Row="1"  HorizontalTextAlignment="Start" FontAttributes="Bold">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static resource:AppResources.lblContactNumber}" Style="{StaticResource MyTitleLabel}"/>
+                                    <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                    <Span Text="{Binding CustContactDetail}"   Style="{StaticResource MyValueLabel}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                         </contr:RoundedCornerView>
+
+                    <contr:RoundedCornerView Grid.Row="4"  BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+                        <Grid Padding="8" BackgroundColor="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{x:Static resource:AppResources.lblOrderSummary}" Grid.Row="0" Style="{StaticResource LabelLargeBlack}"/>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                  <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>                          
+                                <RowDefinition Height="1"/>
+                                  <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="6*"/>
+                                 <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0"  HorizontalTextAlignment="Start" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{x:Static resource:AppResources.lblPaymentMode}" Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text=" " Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text="{x:Static resource:AppResources.lblCOD}"   Style="{StaticResource MyValueLabel}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                            <Label Grid.Row="1" Grid.Column="0" Text="{x:Static resource:AppResources.lblSubTotal}" Style="{StaticResource MyTitleLabel}" />
+                            <Label Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text=" " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text="{Binding TotalAmount,StringFormat='{0:F2}'}"   Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                              <Label Grid.Row="2" Grid.Column="0" Text="{x:Static resource:AppResources.lbldiscount}" Style="{StaticResource MyTitleLabel}" />
+                             <Label Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text=" " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text="{Binding DiscountAmount,StringFormat='{0:F2}'}"   Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                             <Label Grid.Row="3" Grid.Column="0" Text="{x:Static resource:AppResources.lblshippingfee}" Style="{StaticResource MyTitleLabel}" />
+                             <Label Grid.Row="3" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text=" " />
+                                        <Span Text="{Binding ShippingFee,StringFormat='{0:F2}'}"   Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                             <Label Grid.Row="4" Grid.Column="0"  FontAttributes="Bold" >
+                                 <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static resource:AppResources.lblTax}" Style="{StaticResource MyTitleLabel}" />
+                                        <Span Text=" (" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding TaxRate}"  Style="{StaticResource MyTitleLabel}"/>
+                                            <Span Text=" %)" Style="{StaticResource MyTitleLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                                 <Label.GestureRecognizers>
+                                     <TapGestureRecognizer
+                                         Command="{Binding ShowTaxesCommand}" />
+                                 </Label.GestureRecognizers>
+                            </Label>
+
+                             <Label Grid.Row="4" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text=" " />
+                                        <Span Text="{Binding TaxAmount,StringFormat='{0:F2}'}"   Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <BoxView Grid.Row="5" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2"  BackgroundColor="Gray" />
+                   
+                             <Label Grid.Row="7" Grid.Column="0"  Style="{StaticResource EnteryTitleLabel}" >
+                                 <Label.FormattedText>
+                                        <FormattedString>
+                                        <Span Text="{x:Static resource:AppResources.lblTotal}" Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{x:Static resource:AppResources.lblInclusivetax}" Style="{StaticResource MyTitleLabel}" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>           
+                             <Label Grid.Row="7" Grid.Column="1" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{Binding CurrencyCode} " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text=" " Style="{StaticResource MyValueLabel}"/>
+                                        <Span Text="{Binding NetAmount,StringFormat='{0:F2}'}" Style="{StaticResource MyValueLabel}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                
+                    </Grid>            
+                    </contr:RoundedCornerView>          
+           
+                </Grid>
+            </AbsoluteLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

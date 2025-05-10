@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.AMCRequest.AMCRequestListPage"
+             x:Name="root"  xmlns:resource="clr-namespace:eWarranty.Resx"
+             Title="{x:Static resource:AppResources.titleAMCRequest}"
+             BackgroundColor="{StaticResource contentBG}"
+             xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="noteadd.png" Text="Item 1" Priority="0" Command="{Binding AddNewCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+
+            <Grid   
+                    VerticalOptions="FillAndExpand"
+                     Padding="5" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <CollectionView  x:Name="lstFollowup"
+                    Grid.Row="0" Margin="5"
+                    ItemsSource="{Binding AmcList}">
+                    <CollectionView.EmptyViewTemplate>
+                        <DataTemplate>
+                            <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" Style="{StaticResource LabelLargeBlack}" Text="{x:Static resource:AppResources.lblNoRecords}" HeightRequest="60" />                 
+                        </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                    <CollectionView.ItemTemplate>  
+                        <DataTemplate>
+                            <Grid RowDefinitions="1,Auto,1" Margin="5">
+                                <Frame  BackgroundColor="White"
+                                      Grid.Row="1" BorderColor="AliceBlue" Style="{StaticResource FrameStyle}" >
+                                    <Frame.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Color="{StaticResource BlueColor}"
+                                                                Offset="0.1" />
+                                                <GradientStop Color="{StaticResource Pinkshade1}"
+                                                                Offset="0.7" />
+                                            </LinearGradientBrush>
+                                        </Frame.Background>
+                                    <Grid Padding="8"  VerticalOptions="Center" BackgroundColor="Transparent" >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>                                        
+                                        </Grid.RowDefinitions>                                                                
+                                  
+                                        <Label Grid.Row="0" 
+                                                Text="{Binding ProductClassificationName}"
+                                                TextColor="{StaticResource WhiteColor}"
+                                                Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start"/>
+                                   
+                               
+                                        <Label Grid.Row="1" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblRequestDate}" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                    <Span Text="{Binding RequestedDate, StringFormat='{0:MMM dd, yyyy}'}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                   
+                                        <Label Grid.Row="2" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblModelNumber}" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                    <Span Text=" : "  Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                    <Span Text="{Binding ProductModelNumber}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="3" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblReqNo}" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                <Span Text="{Binding AmcRequestNumber}"  Style="{StaticResource MyValueLabel}" TextColor="White"/>                                            
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                        </Label>
+
+                                        <Label Grid.Row="4" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblRequestStatus}" Style="{StaticResource MyTitleLabel}" TextColor="White"/>
+                                                    <Span Text="{Binding AmcRequestStatusName}" TextColor="Red" FontAttributes="Bold"  Style="{StaticResource MyValueLabel}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>                                   
+
+                                        <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding BindingContext.AMCSelectedItemCommand, Source={x:Reference Name=root}}"
+                                                    CommandParameter="{Binding .}"
+                                                    NumberOfTapsRequired="1"
+                                                    />
+                                            </Grid.GestureRecognizers>
+                                    </Grid>
+
+                                </Frame>  
+                            </Grid>
+                    </DataTemplate>  
+                    </CollectionView.ItemTemplate>  
+                </CollectionView> 
+
+            </Grid>
+
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

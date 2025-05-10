@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.ServiceCentorView.ServiceLocationPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Name="root"      Title="Service Center" BackgroundColor="{StaticResource contentBG}"  xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary"  IconImageSource="directionicon" Priority="0" Clicked="MenuItem1_Clicked" />
+         <ToolbarItem Name="MenuItem1" Order="Primary"  IconImageSource="call" Priority="0" Clicked="MenuItem1_Clicked_1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+       <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <maps:Map x:Name="map" Grid.Row="0" Grid.RowSpan="2" MapType="Street"   IsShowingUser="True" MapClicked="map_MapClicked"
+            VerticalOptions="FillAndExpand"/>
+           <!--<contr:RoundedCornerView  Grid.Row="1" HeightRequest="100" Margin="10" RoundedCornerRadius="8" BorderColor="LightGray" BorderWidth="1" Shadow="True"  >
+            <Grid  RowSpacing="5"  Padding="10" >
+               <Grid.RowDefinitions>
+                   <RowDefinition Height="50"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="50"/>
+               </Grid.RowDefinitions>
+                <Grid Grid.Row="0" VerticalOptions="Center" HeightRequest="40">
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding currentLocation.MobileNumber}" Grid.Column="0" VerticalTextAlignment="Center"/>
+                    <Image Source="phonecall" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
+                <BoxView BackgroundColor="LightGray" Grid.Row="1"/>
+                 <Grid Grid.Row="2" VerticalOptions="Center" HeightRequest="40">
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Get Direction" Grid.Column="0" VerticalTextAlignment="Center"/>
+                    <Image Source="gps" Grid.Column="1" VerticalOptions="Center"/>
+                </Grid>
+            </Grid>
+               </contr:RoundedCornerView>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

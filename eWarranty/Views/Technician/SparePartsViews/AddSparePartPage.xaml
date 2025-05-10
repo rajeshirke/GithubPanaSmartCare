@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Technician.SparePartsViews.AddSparePartPage" xmlns:fontawesome="clr-namespace:eWarranty.Models" 
+             xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+             xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" Title="Spare Part">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid   Padding="10"
+                    VerticalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All">
+                <Frame Grid.Column="0"  Style="{StaticResource FrameStyle}">    
+                    <Grid RowSpacing="5" Padding="10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>                    
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Text="Model Number"
+                                    VerticalOptions="EndAndExpand"
+                                    VerticalTextAlignment="End"
+                                    Style="{StaticResource MyTitleLabel}"
+                                    />
+                            <contr:ImageEntry
+                                Margin="5,0,0,0"
+                                ReturnType="Next" x:Name="SearchPartNumber"
+                                Placeholder="Enter atleast 4 initials"
+                                PlaceholderColor="LightGray"  Grid.Column="0" Grid.Row="1"
+                                Text="{Binding ModelNumber}" VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand" TextChanged="SearchPartNumber_TextChanged"
+                                Style="{StaticResource EnteryTxtValues}"  BackgroundColor="White">
+                            
+                        </contr:ImageEntry>
+
+                        <Grid Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>                        
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0"
+                                    HeightRequest="20" WidthRequest="20"
+                                    HorizontalOptions="End" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" 
+                                            Glyph="{x:Static fontawesome:Solid.Search}"
+                                            Color="{StaticResource BlueColor}" Size="15"/>
+                                </Image.Source>
+                                <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Command="{Binding PartNoPopupCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>                             
+                        </Grid>
+                        
+                        <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                 
+                    </Grid>
+                        <contr:TitledEntryView Grid.Row="1"
+                                                Title="Part Number"
+                                                Placeholder="Part Number"
+                                                Text="{Binding SelectedPartNumber}"
+                                                IsEnabled="True"
+                                                PlaceholderColor="Gray"/>
+
+
+                        <contr:TitledEntryView Grid.Row="2"  Title="Quantity"
+                                                    Placeholder="Quantity" EntryKeyboard="Numeric"
+                                                    Text="{Binding SpareParts.RequestedPartQuantity}"
+                                                    PlaceholderColor="Gray"/>
+                        <Grid Grid.Row="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Description"  Style="{StaticResource EnteryTitleLabel}" VerticalTextAlignment="Center"/>
+                            <Editor Grid.Row="1" HeightRequest="100" Text="{Binding SpareParts.TechnicianRemark}"  BackgroundColor="White"   Placeholder="Description" Style="{StaticResource EnteryLabelValues}" VerticalOptions="Start" 
+                                                    />
+                            <BoxView Grid.Row="2" BackgroundColor="Gray"/>
+                        </Grid>
+                        <Button Text="Submit" Grid.Row="5" Command="{Binding PartRequestSaveCommand}" Style="{StaticResource ButtonBlueStyle}" />
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+
+        </AbsoluteLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

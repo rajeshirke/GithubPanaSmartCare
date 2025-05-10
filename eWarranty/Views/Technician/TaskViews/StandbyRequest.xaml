@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Technician.TaskViews.StandbyRequest"
+    
+    Title="Standby Set Request" >
+    <ContentPage.Content  >
+ <ScrollView>
+      <Grid   Padding="0,8,0,8"  >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                         <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Margin="10,0,10,0" Text="Service Request No:" TextColor="Black" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start"/>
+                                    <Label Grid.Row="1" Margin="10,0,10,0" Text="Product Details" TextColor="Black" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start"/>
+                                  <contr:RoundedCornerView Margin="10,0,10,0" Grid.Row="2" BorderColor="{StaticResource borderColor}" BorderWidth="2"  RoundedCornerRadius="5">
+                                      <Grid Grid.Row="1" Padding="0,10,10,10"  BackgroundColor="White">
+                                          <Grid.ColumnDefinitions>
+                                              <ColumnDefinition Width="3*"/>
+                                              <ColumnDefinition Width="1"/>
+                                              <ColumnDefinition Width="7*"/>
+                                          </Grid.ColumnDefinitions>
+                                          <Image Source="{Binding ProductModel.ModelImageURL}" HeightRequest="40" Aspect="AspectFit" Grid.Column="0"/>
+                                          <BoxView Grid.Column="1" BackgroundColor="LightGray" Margin="0,10,0,10"/>
+                                          <Grid Grid.Column="2" Padding="5" RowSpacing="10">
+                                          <Grid.RowDefinitions>
+                                              <RowDefinition Height="auto"/>
+                                              <RowDefinition Height="auto"/>
+                                              <RowDefinition Height="auto"/>
+                                              <RowDefinition Height="auto"/>
+                                          </Grid.RowDefinitions>
+                                              <Grid Grid.Row="0">
+                                                  <Grid.ColumnDefinitions>
+                                                      <ColumnDefinition Width="auto"/>
+                                                       <ColumnDefinition Width="*"/>
+                                                  </Grid.ColumnDefinitions>
+                                                  <Label Grid.Column="0" Text="Model No" Style="{StaticResource MyValueLabel}"/>
+                                                   <Label Grid.Column="1" >
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text=": " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding ProductModel.ModelNumber}" TextColor="Black"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                 </Label>
+                                              </Grid>
+                                              <Grid Grid.Row="1">
+                                                  <Grid.ColumnDefinitions>
+                                                      <ColumnDefinition Width="auto"/>
+                                                       <ColumnDefinition Width="*"/>
+                                                  </Grid.ColumnDefinitions>
+                                                  <Label Grid.Column="0" Text="Serial No" Style="{StaticResource MyValueLabel}"/>
+                                                   <Label Grid.Column="1" >
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text=": " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding ProductModel.SerialNumber}" TextColor="Black"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                 </Label>
+                                              </Grid>
+                                              <Grid Grid.Row="2">
+                                                  <Grid.ColumnDefinitions>
+                                                     <ColumnDefinition Width="auto"/>
+                                                       <ColumnDefinition Width="*"/>
+                                                  </Grid.ColumnDefinitions>
+                                                  <Label Grid.Column="0" Text="Purchased on" Style="{StaticResource MyValueLabel}"/>
+                                                  <Label Grid.Column="1" >
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text=": " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding ProductModel.PurchaseDate, StringFormat='{0:MMM dd, yyyy}'}" TextColor="Black"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                 </Label>
+                                              </Grid>
+                                              <Grid Grid.Row="3">
+                                                  <Grid.ColumnDefinitions>
+                                                      <ColumnDefinition Width="auto"/>
+                                                       <ColumnDefinition Width="*"/>
+                                                  </Grid.ColumnDefinitions>
+                                                  <Label Grid.Column="0" Text="Registered on" Style="{StaticResource MyValueLabel}"/>
+                                                  <Label Grid.Column="1" >
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text=": " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding ProductModel.RegistrationDate, StringFormat='{0:MMM dd, yyyy}'}" TextColor="Black"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                 </Label>
+                                              </Grid>
+                                            
+                                          
+                                              </Grid>
+                                          
+                                      </Grid>
+                                  </contr:RoundedCornerView>
+          <Grid Grid.Row="3">
+              <Label  Margin="10,0,10,0" Text="Remarks" TextColor="Black" Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="Start"/>
+          </Grid>
+                                  <contr:RoundedCornerView Margin="10,0,10,0" Grid.Row="4" BorderColor="{StaticResource borderColor}" BorderWidth="2" >
+                                      <Grid Padding="0"  BackgroundColor="White">
+                                          
+                                          <contr:ImageEntry  Grid.Row="0"  HeightRequest="60"  BackgroundColor="Transparent"   Placeholder="Remark"
+                                                             Style="{StaticResource EnteryTxtValues}"  VerticalOptions="Start" 
+                                                                FontSize="{Binding FontSize}"    Keyboard="Chat" />
+                                             <!--<BoxView Grid.Row="1" BackgroundColor="#B4B1B1" VerticalOptions="Start" HeightRequest="1" Margin="0" />-->  
+                                          </Grid>
+
+                  </contr:RoundedCornerView>
+
+          <Grid Grid.Row="5"  Padding="5"  HorizontalOptions="Center">
+                                          <Grid.RowDefinitions>
+                                              <RowDefinition Height="auto"/>
+                                              <RowDefinition Height="*"/>
+                                              
+                                          </Grid.RowDefinitions>
+                                              <Grid Grid.Row="0">
+                                                 
+                                       
+
+                                                 <Button Grid.Column="0" Padding="10" Command="{Binding SignInCommand}" Text="Create Request" Style="{StaticResource ButtonBlueStyle}" TextColor="White" FontAttributes="Bold"  FontSize="15" >
+                                                     <Button.WidthRequest>
+                                                <OnPlatform x:TypeArguments="x:Double">
+                                                                  <On Platform="iOS">250</On>
+                                                                  <On Platform="Android">190</On>
+                                                        </OnPlatform>
+                                            </Button.WidthRequest>
+                                                 </Button>
+                                                  <Button Grid.Column="1" Padding="10" Command="{Binding SignInCommand}" Text="Close Request" Style="{StaticResource ButtonBlueStyle}" TextColor="White" FontAttributes="Bold"  FontSize="15">
+                                                      <Button.WidthRequest>
+                                                <OnPlatform x:TypeArguments="x:Double">
+                                                                  <On Platform="iOS">250</On>
+                                                                  <On Platform="Android">190</On>
+                                                        </OnPlatform>
+                                            </Button.WidthRequest>
+                                                  </Button>
+                                              </Grid>
+                                </Grid>
+
+                             </Grid>
+          </ScrollView>               
+    </ContentPage.Content>
+</ContentPage>

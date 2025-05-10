@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popup:PopupPage
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+     CloseWhenBackgroundIsClicked="True"
+    xmlns:resource="clr-namespace:eWarranty.Resx"
+  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Products.ProductOptionsPage"
+    xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}" x:Name="root">
+    <popup:PopupPage.Content>
+         <Grid   Padding="50,10,50,10" VerticalOptions="Center" HeightRequest="150">
+        <contr:RoundedCornerView  RoundedCornerRadius="5" Padding="10,10,10,10" BackgroundColor="White" VerticalOptions="Start" BorderColor="Silver" BorderWidth="1">
+            <Grid Padding="20" RowSpacing="20" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+               <!--<contr:RoundedCornerView Grid.Row="0" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                           <Grid BackgroundColor="{StaticResource BlueColor}">
+                                           <Label Text="Service Request" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontSize="16" TextColor="White" FontAttributes="Bold" />
+                                           <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                  Tapped="TapOnServiceReq_Tapped"
+                                                        NumberOfTapsRequired="1" />
+                                          </Grid.GestureRecognizers>
+                                               </Grid>
+                                       </contr:RoundedCornerView>
+                <contr:RoundedCornerView Grid.Row="1" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                           <Grid BackgroundColor="{StaticResource BlueColor}">
+                                           <Label Text="AMC" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontSize="16" TextColor="White" FontAttributes="Bold" />
+                                           <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                 Tapped="TapAMC_Tapped"
+                                                   
+                                                        NumberOfTapsRequired="1" />
+                                          </Grid.GestureRecognizers>
+                                               </Grid>
+                                       </contr:RoundedCornerView>-->
+                <contr:RoundedCornerView Grid.Row="0" BorderColor="{StaticResource BlueColor}" IsEnabled="False" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                           <Grid BackgroundColor="{StaticResource BlueColor}">
+                                           <Label Text="Accessory" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontSize="16" TextColor="White" FontAttributes="Bold" />
+                                           <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="TapAccessory_Tapped"
+                                                        NumberOfTapsRequired="1" />
+                                          </Grid.GestureRecognizers>
+                                               </Grid>
+                                       </contr:RoundedCornerView>
+                <contr:RoundedCornerView Grid.Row="1" BorderColor="{StaticResource BlueColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                           <Grid BackgroundColor="{StaticResource BlueColor}">
+                                           <Label Text="Details" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontSize="16" TextColor="White" FontAttributes="Bold" />
+                                           <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                  Tapped="DetailsGestureRecognizer_Tapped"
+                                                        NumberOfTapsRequired="1" />
+                                          </Grid.GestureRecognizers>
+                                               </Grid>
+                                       </contr:RoundedCornerView>
+                <!--<contr:RoundedCornerView Grid.Row="2" BorderColor="#EA1D24" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent">
+                                           <Grid BackgroundColor="#EA1D24">
+                                           <Label Text="Delete" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontSize="16" TextColor="White" FontAttributes="Bold" />
+                                           <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Tapped="TapDelete_Tapped"
+                                                     NumberOfTapsRequired="1" />
+                                          </Grid.GestureRecognizers>
+                                               </Grid>
+                                       </contr:RoundedCornerView>-->
+            </Grid>
+        </contr:RoundedCornerView>
+            </Grid>
+    </popup:PopupPage.Content>
+</popup:PopupPage>

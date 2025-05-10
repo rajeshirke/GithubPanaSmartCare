@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eWarranty.Controls.LoaderAnimView"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    x:Name="loaderView"
+    HorizontalOptions="CenterAndExpand"
+    VerticalOptions="CenterAndExpand">
+    <ContentView.Content>
+        <!--<Label Text="Loading..."
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+            IsVisible="{Binding IsVisibles, Source={x:Reference loaderView}}"/>-->
+         <busyindicator:SfBusyIndicator           
+            x:Name="busyindicator"
+            VerticalOptions="CenterAndExpand"
+            AnimationType="Box" 
+            ViewBoxWidth = "50"                        
+            ViewBoxHeight="50"
+            FontAttributes="Bold"
+            FontFamily="calibribold"
+            TextColor="{StaticResource BlackColor}"
+            IsVisible="{Binding IsVisibles, Source={x:Reference loaderView}}"/>
+    </ContentView.Content>
+</ContentView>

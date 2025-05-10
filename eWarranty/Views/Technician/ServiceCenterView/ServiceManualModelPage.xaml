@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.ServiceCenterView.ServiceManualModelPage"
+              xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty" BackgroundColor="{StaticResource contentBG}"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" x:Name="root" Title="Service Manual">
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>                
+                </Grid.RowDefinitions>
+
+                <contr:RoundedCornerView   Grid.Row="0" BorderColor="{StaticResource borderColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="White" >
+                    <Grid Padding="2" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>                    
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Margin="5,0,5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>                    
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Model Number" Style="{StaticResource MyTitleLabel}"/>
+                        </Grid>
+                        <Grid Grid.Row="1" RowSpacing="0" BackgroundColor="White" Margin="5,0,5,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                 
+                            <contr:ImageEntry Margin="5,0,0,0"
+                                ReturnType="Next" 
+                                Placeholder="Model Number"
+                                Grid.Column="0" Grid.Row="0"
+                                Text="{Binding ModelNumber}" VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand" 
+                                Style="{StaticResource EnteryTxtValues}"  BackgroundColor="White">
+                            
+                            </contr:ImageEntry>
+                            <Grid Grid.Column="1" Grid.Row="0" HorizontalOptions="End">                    
+                                <Image Source="close.png" HeightRequest="30" WidthRequest="30"
+                                        HorizontalOptions="End" VerticalOptions="Center"> 
+                                    <Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                            Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>                             
+                            </Grid>
+                            <Grid Grid.Column="2" Grid.Row="0" HorizontalOptions="End">                    
+                                <Image Source="seachicon" HeightRequest="25" WidthRequest="25"
+                                        HorizontalOptions="End" VerticalOptions="Center"> 
+                                    <Image.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                            Command="{Binding SearchModelCommand}" />
+                                    </Image.GestureRecognizers>
+                                </Image>                             
+                            </Grid>
+                        
+                            <BoxView Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#DADADA" VerticalOptions="Start"/>
+                       
+                        </Grid>
+                    </Grid>
+                </contr:RoundedCornerView>
+                <Grid Grid.Row="1"  BackgroundColor="Transparent" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <CollectionView   Grid.Row="0" ItemsSource="{Binding ModelServiceManualResponse}" BackgroundColor="Transparent" EmptyView="No Records">  
+                    <CollectionView.EmptyViewTemplate>
+                        <DataTemplate>
+
+                            <Label  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="15"  Style="{StaticResource EnteryLabelValues}" Text="No Service Manuals" HeightRequest="60" />
+           
+      
+                        </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                    <CollectionView.ItemTemplate>  
+                       <DataTemplate>  
+
+                           <Grid HeightRequest="80" Padding="5,0,5,0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+                                <contr:RoundedCornerView  VerticalOptions="Center" Grid.Row="1"    BorderColor="{StaticResource borderColor}" BorderWidth="1"  RoundedCornerRadius="5" BackgroundColor="Transparent" >
+                                    <Grid BackgroundColor="White" VerticalOptions="FillAndExpand" Padding="5" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="9*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                             
+                                        <Grid  Grid.Column="0" VerticalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label LineBreakMode="TailTruncation" Grid.Row="0" Text="{Binding ModelNumber}"  Style="{StaticResource MyTitleLabel}" HorizontalOptions="Start"/>
+                                            <Label LineBreakMode="TailTruncation" Grid.Row="0" Text="{Binding PublishedDate}"  Style="{StaticResource MyTitleLabel}" HorizontalOptions="End"/>
+                                            <Label LineBreakMode="TailTruncation" Grid.Row="1" Text="{Binding ServiceManualNumber}"  Style="{StaticResource MyTitleLabel}"/>
+                                        </Grid>
+
+                                        <Image Source="arrowred" Grid.Column="1" HeightRequest="25" WidthRequest="25"
+                                               VerticalOptions="Center" HorizontalOptions="End"/>
+                                    </Grid>
+
+                                </contr:RoundedCornerView>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                            Command="{Binding BindingContext.SelectedItemCommand, Source={x:Reference Name=root}}"
+                                            CommandParameter="{Binding .}"
+                                            NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                               </Grid>
+                       </DataTemplate>  
+                   </CollectionView.ItemTemplate>  
+       </CollectionView> 
+            </Grid>
+
+            </Grid>
+
+            <!--<contr:LoaderAnimView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

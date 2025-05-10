@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.InquiryView.ChatBotHistoryPage"
+            BackgroundColor="{x:StaticResource LighterGray}" xmlns:resource="clr-namespace:eWarranty.Resx"
+            xmlns:contr="clr-namespace:eWarranty.Controls"
+            xmlns:local="clr-namespace:eWarranty"
+            xmlns:conv="clr-namespace:eWarranty.Converters"
+            xmlns:hrlper="clr-namespace:eWarranty.Hepler"
+            Title="{x:Static resource:AppResources.menuChatHistory}"
+            FlowDirection="{Binding flowDirection}" x:Name="root">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <hrlper:ChatTemplateSelector x:Key="MessageTemplateSelector"/>
+              <conv:StringToBoolenConverter x:Key="StringNullOrEmptyBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+        <Grid  Padding="0,10,0,0" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <CollectionView  x:Name="lstFollowup"  Grid.Row="0"  ItemsSource="{Binding ChatHistory}"   BackgroundColor="{StaticResource WhiteColor}">                  
+                <CollectionView.ItemTemplate>  
+                    <DataTemplate>
+                        <Grid Padding="10,0,10,5" BackgroundColor="{StaticResource WhiteColor}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <contr:RoundedCornerView  Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4" RoundedCornerRadius="4" BorderColor="LightGray" BorderWidth="1" BackgroundColor="White">
+                                <Grid Padding="5" BackgroundColor="{StaticResource WhiteColor}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start"  Text="You" Style="{StaticResource MyTitleLabel}" BackgroundColor="White"/>
+                                    <Label Grid.Row="0" Grid.Column="1"  Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End" FontSize="11" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding RequestedOn, StringFormat='{0:MMM dd, yyyy hh:mm tt}'}"  Style="{StaticResource MyValueLabel}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start"
+                                            Text="{Binding EnquiryMessage}" TextColor="{StaticResource NavigationPrimary}"
+                                            Style="{StaticResource MyValueLabel}" />
+                                   
+                                </Grid>
+                            </contr:RoundedCornerView>
+                                  
+                            <contr:RoundedCornerView Margin="0,20,0,30" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="4"  RoundedCornerRadius="4" BorderColor="LightGray" BorderWidth="1"
+                                                     BackgroundColor="{StaticResource WhiteColor}" IsVisible="{Binding EnquiryRespondMessage, Converter={StaticResource StringNullOrEmptyBoolConverter}}" >
+
+                                <Grid Padding="5" BackgroundColor="{StaticResource WhiteColor}" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start"  Text="Customer Care" Style="{StaticResource MyTitleLabel}" BackgroundColor="White" VerticalOptions="Center"/>
+                                    <Label Grid.Row="0" Grid.Column="1"  Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End" FontSize="11" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding ResolvedOn, StringFormat='{0:MMM dd, yyyy hh:mm tt}'}"
+                                                        Style="{StaticResource EnteryTitleLabel}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding EnquiryRespondMessage}" TextColor="#EA1D24"  Style="{StaticResource EnteryTitleLabel}" />                                   
+                                </Grid>
+
+                            </contr:RoundedCornerView>
+    
+                        </Grid>
+                    </DataTemplate>  
+                </CollectionView.ItemTemplate>  
+            </CollectionView> 
+
+        </Grid>           
+          
+    </ContentPage.Content>
+</ContentPage>

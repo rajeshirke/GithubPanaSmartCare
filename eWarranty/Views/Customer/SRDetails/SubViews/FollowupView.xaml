@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.SubViews.FollowupView"
+              BackgroundColor="#edede8" xmlns:fontawesome="clr-namespace:eWarranty.Models"
+             xmlns:contr="clr-namespace:eWarranty.Controls" xmlns:card="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" FlowDirection="{Binding flowDirection}">
+    <ContentView.Content>
+
+        
+             <Grid  Padding="5" VerticalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All">           
+                <ScrollView Grid.Row="0" BackgroundColor="#edede8">
+                    <Grid Padding="0,10,0,0">
+                        <Grid.RowDefinitions>
+                             <RowDefinition Height="{Binding RowHeight}"/>
+                             <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>         
+            
+                         <CollectionView x:Name="lstFollowup"   Grid.Row="0" ItemsSource="{Binding FollowUps}"   BackgroundColor="#edede8" >  
+                             <CollectionView.ItemTemplate>  
+                                   <DataTemplate>                        
+                                        <Grid >
+                                            <Frame Margin="{Binding Margin}" Style="{StaticResource FrameStyle}" BorderColor="{StaticResource BlueColor}" BackgroundColor="{Binding ChatColor}">
+                                                <Grid  IsClippedToBounds="True" >
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="auto"/>
+                                                        <RowDefinition Height="auto"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="6*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start"  Text="{Binding FromName}" Style="{StaticResource MyTitleLabel}"/>
+
+                                                    <Label Grid.Row="0" Grid.Column="1"  Style="{StaticResource MyTitleLabel}" HorizontalTextAlignment="End" FontSize="11" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding CreatedDatetime, StringFormat='{0:MMM dd, yyyy hh:mm tt}'}"  Style="{StaticResource EnteryTitleLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    
+                                                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Start" Text="{Binding MessageContent}" TextColor="{Binding DescTextColor}"  Style="{StaticResource EnteryTitleLabel}" />
+                                   
+                                                </Grid>
+                                            </Frame>                                
+                                        </Grid>                        
+                                   </DataTemplate>  
+                           </CollectionView.ItemTemplate>  
+                        </CollectionView>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9.5*"/>
+                                <ColumnDefinition Width=".5*"/>
+                            </Grid.ColumnDefinitions>
+                
+                            <card:SfCardView CornerRadius="15" Grid.Column="0" BorderColor="Silver" BackgroundColor="White" HeightRequest="100">
+                                <Editor Text="{Binding FollowupMsg}" Margin="5" Placeholder="{x:Static resource:AppResources.plcFollowupmessage}"
+                                        HeightRequest="100" Style="{StaticResource EnteryTxtValues}" />
+                            </card:SfCardView>
+                            <Image Grid.Column="1" HeightRequest="15" WidthRequest="15"  >
+                                 <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="{StaticResource FontAwesomeSolid}"
+                                        Size="20"
+                                        Glyph="{x:Static fontawesome:Solid.Arrow_Alt_Circle_Right}"
+                                        Color="{StaticResource BlueColor}">
+                                        </FontImageSource>
+                                </Image.Source>
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding AddNewFollowupCommand}"
+                                        NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+
+                    </Grid>
+                </ScrollView>
+            </Grid>
+            
+    </ContentView.Content>
+</ContentView>

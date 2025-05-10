@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.DashBoardPage"
+             Title="CIAA"
+             FlowDirection="{Binding flowDirection}"
+             xmlns:resource="clr-namespace:eWarranty.Resx"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+             xmlns:local="clr-namespace:eWarranty"
+             xmlns:lang="clr-namespace:eWarranty.Hepler"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"             
+             xmlns:converters="clr-namespace:eWarranty.Converters" xmlns:radialMenu="clr-namespace:Syncfusion.SfRadialMenu.XForms;assembly=Syncfusion.SfRadialMenu.XForms" 
+             x:Name="DashboardMaster" >
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="info.png" Text="dashbord" Command="{Binding UserNotificationsCommand}" Priority="0" />
+    </ContentPage.ToolbarItems>-->
+    <!--<Shell.TitleView>
+        <Image Source="topbg2.png" Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand" />
+    </Shell.TitleView>-->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="White" Offset="0.1" />
+            <GradientStop Color="White" Offset="0.6" />
+            <GradientStop Color="White" Offset="0.5" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid>
+        <AbsoluteLayout>
+              <BoxView Style="{StaticResource CardBlueStyle}" AbsoluteLayout.LayoutBounds="{Binding HomeCircle}"/>
+
+             <Grid VerticalOptions="FillAndExpand" RowSpacing="0" Padding="10">
+                <Grid.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        iOS="0,0,0,0"
+                                        Android="0,0,0,0" />
+                        </OnIdiom.Phone>
+                    </OnIdiom>
+                </Grid.Padding>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid  Grid.Row="0" Padding="20,5,20,5">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <!--<RowDefinition Height="2.5*" />-->
+                <RowDefinition Height="7.5*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Label x:Name="lblGreetings" Margin="0,0,5,0" HorizontalTextAlignment="Start" VerticalOptions="End"
+                                VerticalTextAlignment="End" FontSize="20" Style="{StaticResource MyTitleLabel}"  TextColor="{StaticResource BlackColor}" Opacity="100" FontAttributes="Bold">
+                        
+                </Label>
+                <!--<Label HorizontalTextAlignment="Start" VerticalOptions="Start"   FontAttributes="Bold">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static resource:AppResources.lblHello}"   Style="{StaticResource MenuTitleLabel}" TextColor="{StaticResource WhiteColor}" />
+                            <Span Text="{Binding Person.FirstName}"   Style="{StaticResource MenuTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                            <Span Text=" "/>
+                            <Span Text="{Binding Person.LastName}"   Style="{StaticResource MenuTitleLabel}" TextColor="{StaticResource WhiteColor}"/>
+                            
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>-->
+            </Grid>
+            <Grid Grid.Row="1" VerticalOptions="Start"  IsVisible="false">
+                <Grid Grid.Row="0"   >
+                    <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="9*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <CarouselView ItemsSource="{Binding BannersData}" x:Name="cvBanners" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="FillAndExpand" IndicatorView="indicatorview">
+
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid VerticalOptions="FillAndExpand">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid  Grid.Row="0" VerticalOptions="FillAndExpand">
+
+                                            <Image Grid.Row="0" Source="{Binding Imageurl}" Aspect="Fill" VerticalOptions="FillAndExpand"/>
+                                            <Label Grid.Row="0" Margin="0,0,0,10" Text="{Binding Title}" IsVisible="false" HorizontalTextAlignment="Center" VerticalOptions="End" VerticalTextAlignment="End" Style="{StaticResource MenuTitleLabel}" />
+
+
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                        <IndicatorView Grid.Row="1"
+                            x:Name="indicatorview"
+                            IndicatorColor="LightGray"
+                            IndicatorSize="10"
+                            SelectedIndicatorColor="#687089" />
+                    </Grid>
+                </Grid>
+
+
+            </Grid>
+
+            <Grid Grid.Row="1" Padding="20,0,20,0">
+                <CollectionView Grid.Row="0" ItemsSource="{Binding DashboarMasterTileList}"
+                                SelectedItem="{Binding }" BackgroundColor="Transparent"
+                                EmptyView="No Tiles"
+                                SelectionChangedCommand="{Binding SelectTileCommand}"
+                                SelectionChangedCommandParameter="{Binding .}">  
+                    <CollectionView.EmptyViewTemplate>
+                        <DataTemplate>
+                            <Label  HorizontalTextAlignment="Center" LineBreakMode="WordWrap" HorizontalOptions="CenterAndExpand"
+                                    VerticalTextAlignment="Center" FontSize="15"
+                                    Text="No tiles added at the moment!" HeightRequest="60" WidthRequest="80"/>
+                        </DataTemplate>
+                    </CollectionView.EmptyViewTemplate>
+                    <CollectionView.ItemsLayout>
+                         <GridItemsLayout Orientation="Vertical" Span="2"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>  
+                       <DataTemplate>
+
+                           <!--<Grid Padding="5">
+                                <contr:RoundedCornerView
+                                            Shadow="True"
+                                            ShadowRadius="3"
+                                            RoundedCornerRadius="8"
+                                            HeightRequest="120"
+                                            WidthRequest="50"
+                                            BackgroundColor="Transparent">
+                                    <Grid Padding="3,5,3,5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="7*"/>
+                                            <RowDefinition Height="3*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.Row="0" Source="{Binding Image1}" Aspect="AspectFit"
+                                               HorizontalOptions="Center" HeightRequest="50"
+                                               VerticalOptions="CenterAndExpand" />
+                                        <Label Grid.Row="1" Text="{Binding Label1}" HorizontalOptions="CenterAndExpand"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                               MaxLines="2" LineBreakMode="TailTruncation">
+                                             <Label.FontSize>
+                                                    <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                              </Label.FontSize>
+                                        </Label>
+
+                                    </Grid>
+                                    <contr:RoundedCornerView.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                                    Command="{Binding BindingContext.SelectTileCommand, Source={x:Reference DashboardMaster}}"
+                                                    CommandParameter="{Binding .}"
+                                                    NumberOfTapsRequired="1" />
+                                    </contr:RoundedCornerView.GestureRecognizers>
+                                </contr:RoundedCornerView>
+                           </Grid>-->
+
+                           <Grid Padding="5">
+                                <Grid BackgroundColor="Transparent" Padding="2,0,2,0" IsClippedToBounds="True">
+                                                                         
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/> 
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout  Orientation="Vertical" Margin="5">
+
+                                            <Frame BorderColor="{StaticResource BlueColor}" BackgroundColor="{StaticResource WhiteColor}" Style="{StaticResource FrameStyle}" HeightRequest="50">                                            
+                                                       
+                                                <Image Source="{Binding Image1}" HeightRequest="40" WidthRequest="40"
+                                                        Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            </Frame>
+                                            <Label Text="{Binding Label1}" HorizontalOptions="CenterAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Start" Style="{StaticResource MenuTitleLabel}"
+                                                   MaxLines="2" LineBreakMode="TailTruncation">
+                                                 <Label.FontSize>
+                                                        <OnPlatform x:TypeArguments="x:Double" iOS="14" Android="17"/>
+                                                  </Label.FontSize>
+                                            </Label>
+                                        </StackLayout>
+                                    </Grid>
+                                        
+                                <Grid.GestureRecognizers>
+                                   <TapGestureRecognizer
+                                        Command="{Binding BindingContext.SelectTileCommand, Source={x:Reference DashboardMaster}}"
+                                        CommandParameter="{Binding .}"
+                                        NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid> 
+
+                       </DataTemplate>  
+                    </CollectionView.ItemTemplate>  
+                </CollectionView>
+            </Grid>
+
+        </Grid>
+            </Grid>
+
+            <!--<contr:LoaderAnimView 
+            AbsoluteLayout.LayoutBounds="{OnPlatform iOS='0.5, 0.5, 1, 1',Android='0.5,0.5,-1,-1'}"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>-->
+
+        </AbsoluteLayout>
+
+        <!--<radialMenu:SfRadialMenu x:Name="radialMenu"
+                                 EnableCenterButtonAnimation="True"
+                                 CenterButtonBorderColor="{StaticResource BlackColor}"
+                                 CenterButtonBackgroundColor="{StaticResource BlueColor}"
+                                 CenterButtonBorderThickness="2" RimColor="{StaticResource LighterGray}"
+                                 CenterButtonRadius="30" CenterButtonText="Quick"
+                                 CenterButtonBackFontFamily="LeagueSpartan-SemiBold"
+                                 CenterButtonFontSize="15" CenterButtonFontAttributes="Bold"
+                                 SelectionColor="{StaticResource LightGray}"
+                                 StartAngle="50">
+
+            <radialMenu:SfRadialMenu.Items>
+
+                <radialMenu:SfRadialMenuItem FontSize="8" Image="SurveyBule" Command="{Binding SurveyPageCommand}" Text="{x:Static resource:AppResources.menuSurvey}" FontFamily="calibribold" Margin="5"/>
+                <radialMenu:SfRadialMenuItem FontSize="8" Image="infomenu.png" Command="{Binding TermsConditionsCommand}" Text="{x:Static resource:AppResources.menuTermsandConditions}" FontFamily="calibribold" Margin="5"/>
+                <radialMenu:SfRadialMenuItem FontSize="8" Image="SurveyBule" Command="{Binding OrdersCommand}" Text="{x:Static resource:AppResources.menuMyOrders}" FontFamily="calibribold" Margin="5"/>
+                <radialMenu:SfRadialMenuItem FontSize="8" Image="amcicon" Command="{Binding AmcListCommand}" Text="{x:Static resource:AppResources.menuBuyAMC}" FontFamily="calibribold" Margin="5"/>
+                <radialMenu:SfRadialMenuItem FontSize="8" Image="menuuser" Command="{Binding ChatHistoryCommand}" Text="{x:Static resource:AppResources.menuChatHistory}" FontFamily="calibribold" Margin="5"/>                
+
+
+            </radialMenu:SfRadialMenu.Items>
+
+        </radialMenu:SfRadialMenu>-->
+
+    </Grid>
+        
+   
+
+
+</ContentPage>

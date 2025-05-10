@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:eWarranty.Controls"
+    x:Class="eWarranty.Views.Account.AccountVerifiedSuccessPage">
+    <ContentPage.Content>
+       <Grid>
+            <!-- Background gradient -->
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="{StaticResource BlueColor}" Offset="0.0" />
+                    <GradientStop Color="#FFFFFF" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+
+                  <Label Text="Great!!!"
+                       FontSize="34"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       Style="{StaticResource LabelLargeWhite}"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10">
+                    <Label.Effects>
+                        <control:ShadowEffect />
+                    </Label.Effects>
+                </Label>
+
+                <!-- Circular check mark icon with shadow -->
+                <Frame  Padding="0" Style="{StaticResource FrameStyle}"
+                       HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="attachment.png"                           
+                           HorizontalOptions="Center"
+                           Margin="0,20,0,20"/>
+                </Frame>
+
+                <!-- Congratulations text with shadow -->
+              
+                <!-- Welcome message -->
+                <Label Text="Verified successfully !"
+                       FontSize="26"
+                       Style="{StaticResource LabelLargeBlack}"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,30">
+                    <Label.Effects>
+                        <control:ShadowEffect />
+                    </Label.Effects>
+                </Label>
+
+                <!-- Done button with rounded corners -->
+                <Button Text="Lets get started"
+                        CornerRadius="25"
+                        HeightRequest="50"
+                        WidthRequest="200"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource ButtonBlueStyle}"
+                        VerticalOptions="End"
+                        Clicked="Button_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:contr="clr-namespace:eWarranty.Controls"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup" xmlns:card="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+    x:Name="Root"
+    BackgroundColor="#C0808080"
+    x:Class="eWarranty.Views.Technician.SparePartsViews.AddPartsQuantityPopupPage">
+     <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+     <StackLayout  Margin="30" Padding="5" VerticalOptions="Center" HorizontalOptions="Center">
+         <card:SfCardView CornerRadius="15" HasShadow="{OnPlatform iOS='false',Android='true'}" Padding="5" Margin="5">
+             <Grid Padding="5" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>               
+            </Grid.RowDefinitions>
+                <Grid  Padding="0,0,0,0">
+                    <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">0,0,0,0</On>
+                        <On Platform="iOS">0,0,0,0</On>
+                    </OnPlatform>
+                    </Grid.Padding>
+                    <Grid.RowDefinitions>                                
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Image x:Name="CancelImg" Source="close.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Start">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>   
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="250"/>                                         
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" RowSpacing="0" Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="*"/>    
+                            </Grid.RowDefinitions>
+                            <Label Padding="10" Style="{StaticResource MyTitleLabel}" Grid.Row="0"  HorizontalTextAlignment="Start">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Part Nnumber: " Style="{StaticResource MyTitleLabel}"/>
+                                        <Span Text="{Binding PartsStockMaster.PartNumber}" Style="{StaticResource MyValueLabel}" />
+                                                  
+                                    </FormattedString>
+                                    </Label.FormattedText>
+                            </Label>
+                            <Label Padding="10,10,0,5"  Style="{StaticResource MyTitleLabel}" Text="Quantity" Grid.Row="1"  HorizontalTextAlignment="Start"/>
+                           <contr:ImageEntry Margin="10,0,10,0" x:Name="PartQty" Grid.Row="2"  HeightRequest="40" Text="{Binding PartQty}" BackgroundColor="Transparent" Placeholder="Enter quantity"  Style="{StaticResource EnteryTxtValues}"  VerticalOptions="Start" VerticalTextAlignment="Center"
+                                        MaxLength="40"  FontSize="{Binding FontSize}" HorizontalTextAlignment="Center" Keyboard="Numeric"
+                                        />
+                            <BoxView Margin="10,0,10,0"  Grid.Row="3" BackgroundColor="#B4B1B1" VerticalOptions="Start"/>
+                            <Button Margin="10,0,10,0"  x:Name="BtnAddQTy" Grid.Row="4" VerticalOptions="EndAndExpand" Text="Ok" Style="{StaticResource ButtonBlueStyle}" CornerRadius="5" Command="{Binding AddPartQtyCommand}"/>
+                        </Grid>
+
+                    </Grid>
+                    
+                </Grid>
+            </Grid>
+         </card:SfCardView>
+     </StackLayout>
+
+</pages:PopupPage>

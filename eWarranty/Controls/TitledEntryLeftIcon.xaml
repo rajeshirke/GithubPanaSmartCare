@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Controls.TitledEntryLeftIcon"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" >
+    <ContentView.Content>
+        <Grid RowSpacing="0" VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="LabelTitle" BackgroundColor="Yellow" Text="{Binding Title}" Style="{StaticResource EnteryTitleLabel}" VerticalTextAlignment="End"/>
+              <contr:RoundedCornerView Grid.Row="1" VerticalOptions="Center" BorderColor="LightGray" BorderWidth="1"  BackgroundColor="Transparent" RoundedCornerRadius="8">
+                  <Grid BackgroundColor="White">
+                  <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="auto"/>
+                      <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <contr:ImageEntry BackgroundColor="White" ImageHeight="30" ImageWidth="30" HeightRequest="40" Grid.Column="1"  x:Name="EntryContent" IsPassword="{Binding IsTextPassword}"  Text="{Binding Text}" Placeholder="{Binding Placeholder}"  VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"  HorizontalTextAlignment="Start"  FlowDirection="{Binding flowDirection}"
+                                PlaceholderColor="{Binding PlaceholderColor}" Style="{StaticResource EnteryTxtValues}" 
+                                />
+                  <Image x:Name="imgicon"  Grid.Column="0" Source="{Binding ImageSource}" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="30" >
+                       
+                 </Image>
+                      </Grid>
+              </contr:RoundedCornerView>
+            
+        </Grid>
+    </ContentView.Content>
+</ContentView>

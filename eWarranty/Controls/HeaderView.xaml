@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Controls.HeaderView">
+    <ContentView.Content>
+         <Grid HeightRequest="40"  BackgroundColor="Transparent" VerticalOptions="StartAndExpand" >
+                 <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="40"/>
+                     <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="40"/>
+                 </Grid.ColumnDefinitions>
+                 <Image  x:Name="btnMenu" WidthRequest="22" HeightRequest="22" Source="backicon" BackgroundColor="Transparent" Grid.Column="0" Aspect="AspectFit">
+                       <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="BackTapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Image.GestureRecognizers>
+                 </Image>
+                 <Label x:Name="LabelTitle" Text="{Binding Title}" Grid.Column="1" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" VerticalTextAlignment="Center" />
+                  <Image x:Name="imgRigth" WidthRequest="22" HeightRequest="22" Source="{Binding RightImageSource}" Aspect="AspectFit" BackgroundColor="Transparent" Grid.Column="2">
+                       <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                   Tapped="TapGestureRecognizer_Tapped"
+                                    NumberOfTapsRequired="1" />
+                      </Image.GestureRecognizers>
+                 </Image>
+                  <Grid.Padding>
+                                    <OnIdiom x:TypeArguments="Thickness">
+                                        <OnIdiom.Phone>
+                                            <OnPlatform x:TypeArguments="Thickness"
+                                                        iOS="10,30,10,0"
+                                                        Android="10,10,10,0" />
+                                        </OnIdiom.Phone>
+                                       
+                                    </OnIdiom>
+                  </Grid.Padding>
+             </Grid>
+    </ContentView.Content>
+</ContentView>

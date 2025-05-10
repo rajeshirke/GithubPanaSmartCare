@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="eWarranty.Views.Technician.TechMasterPage"      
+       xmlns:contr="clr-namespace:eWarranty.Controls"
+       xmlns:lang="clr-namespace:eWarranty.Hepler" Title="DashBoad"
+       xmlns:views="clr-namespace:eWarranty.Views.Technician"
+       xmlns:TaskViews="clr-namespace:eWarranty.Views.Technician.TaskViews"
+       xmlns:viewAcces="clr-namespace:eWarranty.Views.Technician.AccessoriesView"
+       xmlns:viewProfile="clr-namespace:eWarranty.Views.Technician.ProfileViews"
+       xmlns:SparePartsViews="clr-namespace:eWarranty.Views.Technician.SparePartsViews"
+       xmlns:ServiceCenterView="clr-namespace:eWarranty.Views.Technician.ServiceCenterView" xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+       FlyoutBackgroundColor="White"
+       FlyoutBackgroundImageAspect="AspectFill"
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       FlowDirection="{Binding flowDirection}">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="Transparent" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="{StaticResource Brownshade}" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="{StaticResource Brownshade}" />
+        </Style>
+         <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource NavigationPrimary}" />
+        </Style>
+        <Style x:Key="MonkeysShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource NavigationPrimary}" />
+        </Style>
+        <Style x:Key="ElephantsShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource NavigationPrimary}"/>
+        </Style>
+        <!--<Style x:Key="BearsShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource NavigationPrimary}" />
+        </Style>-->
+
+        <Style x:Key="BearsShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+          <Setter Property="Shell.BackgroundColor" Value="{StaticResource BlueColor}" />
+          <Setter Property="Shell.TitleColor" Value="{StaticResource WhiteColor}" />
+          <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource BlueColor}" />                    
+          <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Pinkshade1}" />
+          <Setter Property="Shell.Opacity" Value="100" />
+        </Style>
+        <Style x:Key="AboutShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource NavigationPrimary}" />
+        </Style>
+    </Shell.Resources>
+    <Shell.FlyoutHeader>
+         <!--<Grid HeightRequest="60">
+             <Grid.RowDefinitions>               
+                 <RowDefinition Height="40"/>
+             </Grid.RowDefinitions>             
+             <Label HorizontalTextAlignment="Center" Grid.Row="0" TextColor="{StaticResource NavigationPrimary}" FontAttributes="Bold">
+                  <Label.FormattedText>
+                    <FormattedString>
+                      <Span Text="{Binding Person.FirstName}" FontAttributes="Bold"/>
+                      <Span Text=" "/>
+                      <Span Text="{Binding Person.LastName}" FontAttributes="Bold"/>
+                    </FormattedString>
+                  </Label.FormattedText>
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="20"/>
+                    </Label.FontSize>
+             </Label>
+         </Grid>-->
+         <cards:SfCardView Grid.Row="0" Padding="0" CornerRadius="5,5,5,5">
+            <Grid VerticalOptions="FillAndExpand">                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>                    
+                </Grid.RowDefinitions>
+                <Image Source="headerbg" Grid.RowSpan="4" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" HeightRequest="200" Aspect="Fill" Opacity="0.3" />
+
+                <ci:CircleImage Grid.Row="0" Source="userdashbaord" WidthRequest="80"
+                                Aspect="AspectFill" Margin="0,6,0,0" HeightRequest="80" HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+
+                <Label HorizontalTextAlignment="Center" Grid.Row="1" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Person.FirstName}" Style="{StaticResource MenuTitleLabel}"/>
+                            <Span Text=" "/>
+                            <Span Text="{Binding Person.LastName}"  Style="{StaticResource MenuTitleLabel}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double" Android="20"/>
+                    </Label.FontSize>
+                </Label>
+
+                <Label VerticalTextAlignment="End" VerticalOptions="EndAndExpand" Grid.Row="2" Margin="5,0,5,0" Padding="5" Style="{StaticResource LabelMediumBlack}" LineBreakMode="WordWrap" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Version " Style="{StaticResource LabelMediumBlack}" />
+                            <Span Text="{Binding VersionNumber}" Style="{StaticResource MenuTitleLabel}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+            </Grid>
+        </cards:SfCardView>
+     </Shell.FlyoutHeader>
+  
+    <FlyoutItem Route="Customer" 
+                Title="DashBoard"                
+                FlyoutDisplayOptions="AsSingleItem">         
+         <Shell.ItemTemplate>
+            <DataTemplate>
+              
+                <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+                <StackLayout  Orientation="Horizontal">
+                    <Image Source="homemenu.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>            
+                    <Label Margin="5,0,0,0" Text="Dashboard" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}"  />
+                </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+
+            </StackLayout>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+         <ShellContent Route="DashBoard" 
+                      Style="{StaticResource BearsShell}"
+                      Title="Home"
+                      Icon="home"                       
+                      ContentTemplate="{DataTemplate views:TechDashBoardPage}" />
+        
+
+        <!--
+
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The code below demonstrates using these implicit conversion operators to simplify the visual hierarchy. Code that
+        relies on the implicit conversion operators will produce intellisense errors in the Visual Studio XAML editor. However,
+        this code is valid and does build.
+               
+        -->
+       
+        <ShellContent Route="JobTrack"
+                      Style="{StaticResource BearsShell}"
+                      Title="Job Track"                      
+                      Icon="myjobs.png"                      
+                      ContentTemplate="{DataTemplate TaskViews:TasksSchedulePage}"/>
+        <ShellContent Route="PartsSearch"
+                      Style="{StaticResource BearsShell}"
+                      Title="Parts Search"
+                      Icon="partrequests.png"
+                      ContentTemplate="{DataTemplate SparePartsViews:SparePartsPage}" />        
+        <ShellContent Route="Warranty"
+                      Style="{StaticResource BearsShell}"
+                      Title="Warranty"
+                      Icon="servicetips.png"
+                      ContentTemplate="{DataTemplate viewAcces:AccessoriesHistoryPage}" />
+        <ShellContent Route="Settings"
+                      Style="{StaticResource BearsShell}"
+                      Title="Settings"
+                      Icon="user.png"
+                      ContentTemplate="{DataTemplate viewProfile:MyProfilePage}" />
+    </FlyoutItem>
+
+    <!--#region-->
+
+    <MenuItem Text="MyJobs"  
+              Command="{Binding MyjobsCommand}">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+                    <StackLayout  Orientation="Horizontal">
+                        <Image Source="myjob.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>            
+                        <Label Margin="5,0,0,0" Text="My Jobs" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}"  />
+                    </StackLayout>
+                    <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+                </StackLayout>
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>
+
+    <!--<MenuItem Text="PartRequest"  
+              Command="{Binding PartRequestCommand}">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Horizontal"  >
+                    <Image Source="partrequests.png"  HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                    <Label  Text="Part Requests" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+                </StackLayout>
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>-->
+
+    <MenuItem Text="PartStock"  
+            Command="{Binding PartStockCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="partstockdashboard.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label Margin="5,0,0,0" Text="Part Stock" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}"/>
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+</MenuItem>
+
+    <!--<MenuItem Text="Chat"  
+            Command="{Binding ServiceCenterChatCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="leftsidechat.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Chat" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+</MenuItem>-->
+    
+    <!--<MenuItem Text="ServiceManual"  
+            Command="{Binding ServiceManualCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="techservicemanual.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Service Manuals" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+</MenuItem>-->
+    
+    <!--<MenuItem Text="Service Tips"  
+            Command="{Binding TipsAndFAQPCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="infotips.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Tips" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+</MenuItem>-->
+
+    <!--<MenuItem Text="FAQ"  
+              Command="{Binding FAQCommand}">
+        <Shell.MenuItemTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal"  >
+                    <Image Source="faq.png" Margin="5,0,0,0" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                    <Label  Text="FAQ" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+                </StackLayout>
+                     <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+                </StackLayout>
+            </DataTemplate>
+        </Shell.MenuItemTemplate>
+    </MenuItem>-->
+
+    <!--<MenuItem Text="My Queries"  
+            Command="{Binding MyQueriesCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+                <StackLayout Orientation="Horizontal"  >
+                    <Image Source="queries.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                    <Label  Text="My Queries" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+                </StackLayout>
+            <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    </MenuItem>-->
+
+    <!--<MenuItem Text="My Orders"  
+            Command="{Binding MyOrdersCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="techorders.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="My Orders" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    </MenuItem>-->
+
+    <MenuItem Text="Spare Part Requests"  
+            Command="{Binding SparePartRequestsCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="dbaddsr.png" HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Spare Part Requests" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    </MenuItem>
+
+    <!--<MenuItem Text="Settings"  
+            Command="{Binding SettingsCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="menuuser.png"  HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Settings" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    </MenuItem>-->
+    
+    <MenuItem Text="Logout" Command="{Binding LogoutCommand}">
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical" Padding="15" BackgroundColor="White">
+            <StackLayout Orientation="Horizontal"  >
+                <Image Source="signout.png"  HeightRequest="20" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="20"/>
+                    
+                <Label  Text="Logout" Margin="5,0,0,0" VerticalOptions="Center" VerticalTextAlignment="Center" Style="{StaticResource MenuTitleLabel}" />
+            </StackLayout>
+                <BoxView BackgroundColor="LightBlue" HeightRequest="1" Margin="0,15,0,0"/>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    </MenuItem>
+
+    <!--#endregion-->
+    
+
+</Shell>

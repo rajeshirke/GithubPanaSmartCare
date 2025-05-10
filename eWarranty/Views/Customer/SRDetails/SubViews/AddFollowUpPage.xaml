@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popup:PopupPage
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"  
+                 CloseWhenBackgroundIsClicked="True"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:resource="clr-namespace:eWarranty.Resx"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.SRDetails.SubViews.AddFollowUpPage"
+    xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}" >
+    <popup:PopupPage.Content>
+
+
+
+        <Grid   Padding="10">
+            <contr:RoundedCornerView  RoundedCornerRadius="5" Padding="10,150,10,10" BackgroundColor="White" VerticalOptions="Start" BorderColor="Silver" BorderWidth="1">
+                <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="FollowUp" Grid.Row="0"/>
+                <contr:RoundedCornerView Grid.Row="1" BorderColor="Silver" BorderWidth="1" BackgroundColor="WhiteSmoke" HeightRequest="100">
+                    <Editor Text="{Binding FollowupMsg}" Placeholder="{x:Static resource:AppResources.plcFollowupmessage}" HeightRequest="100" BackgroundColor="White" TextColor="#707070" FontSize="16" FontAttributes="Bold"/>
+                </contr:RoundedCornerView>
+                <Grid Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                         <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                     <Button Grid.Column="0"  Text="{x:Static resource:AppResources.lblCancel}" Style="{StaticResource ButtonBlueStyle}" Command="{Binding CloseCommand}"/>
+                    <Button Grid.Column="1" Text="{x:Static resource:AppResources.lblSubmit}" Style="{StaticResource ButtonPinkStyle}" Command="{Binding SaveCommand}"/>
+                </Grid>
+                </Grid>
+            </contr:RoundedCornerView>
+        </Grid>
+
+    </popup:PopupPage.Content>
+        
+</popup:PopupPage>

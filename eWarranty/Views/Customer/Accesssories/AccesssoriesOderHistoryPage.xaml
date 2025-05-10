@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Customer.Accesssories.AccesssoriesOderHistoryPage"
+               FlowDirection="{Binding flowDirection}"
+              xmlns:contr="clr-namespace:eWarranty.Controls" BackgroundColor="{StaticResource contentBG}"
+               xmlns:lang="clr-namespace:eWarranty.Hepler" xmlns:resource="clr-namespace:eWarranty.Resx"  x:Name="root" Title="{x:Static resource:AppResources.titleMyOrders}">
+    <ContentPage.Content>
+        <Grid>
+              <ListView x:Name="lstProducts" Margin="5" Grid.Row="0" RowHeight="190"  ItemsSource="{Binding SelectedProducts}"  HasUnevenRows="True"  SeparatorVisibility="None"  BackgroundColor="Transparent">  
+               
+                 <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                           <Grid>
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="*"/>
+                                   <RowDefinition Height="10"/>
+                               </Grid.RowDefinitions>
+                       
+                          <contr:RoundedCornerView Grid.Row="0" Padding="0,10,0,3" BorderColor="LightGray" BorderWidth="1"   RoundedCornerRadius="5" BackgroundColor="white" VerticalOptions="Center" >
+                              <Grid Padding="10">
+                                  <Grid.RowDefinitions>
+                                      <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                  </Grid.RowDefinitions>
+                                  <Grid Grid.Row="0">
+                                      <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="6*"/>
+                                           <ColumnDefinition Width="4*"/>
+                                      </Grid.ColumnDefinitions>
+                                      <Label Grid.Column="0" Style="{StaticResource MyValueLabel}">
+                                           <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Order: "  />
+                                                    <Span Text="NO3345345" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                      <Label Grid.Column="1" Text="View Details" HorizontalTextAlignment="End"/>
+                                  </Grid>
+                                  <Label Grid.Row="1" Style="{StaticResource MyValueLabel}">
+                                           <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Placed: "  />
+                                                    <Span Text=" Apr 01, 2021" />
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                      </Label>
+                                   <Grid Grid.Row="2" Padding="0,0,0,0">
+                                          <Grid.RowDefinitions>
+                                               <RowDefinition Height="*"/>
+                                           </Grid.RowDefinitions>
+                                           <Grid.ColumnDefinitions>
+                                               <ColumnDefinition Width="4*"/>
+                                               <ColumnDefinition Width="6*"/>
+                                           </Grid.ColumnDefinitions>
+
+                                               <contr:RoundedCornerView Grid.Column="0" Grid.Row="0" BorderColor="Transparent" BorderWidth="1"  BackgroundColor="white"  >
+                                               <Image Source="{Binding ProductImage}" Aspect="AspectFit"/>
+
+                                           </contr:RoundedCornerView>
+                             
+                                           <Grid Grid.Column="1" Grid.Row="0" Padding="10,5,0,10" BackgroundColor="White">
+                                                  <Grid.RowDefinitions>
+                                                      <RowDefinition Height="auto"/>
+                                                      <RowDefinition Height="auto"/>
+                                                       <RowDefinition Height="auto"/>
+                                                      <RowDefinition Height="*"/>
+                                                  </Grid.RowDefinitions>
+
+                                                  <Label Text="Category" Grid.Row="0" HorizontalTextAlignment="Start" Style="{StaticResource MyValueLabel}"/>
+                                                  <Label Text="{Binding ProductName}" Grid.Row="1" HorizontalTextAlignment="Start" Style="{StaticResource MyValueLabel}"/>
+                                               <Label Grid.Row="2" Style="{StaticResource MyValueLabel}">
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="PKR "  />
+                                                                <Span Text="20" />
+                                                                 <Span Text=" per item" FontSize="10" />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                  </Label>
+                                                <Label Grid.Row="3" Style="{StaticResource MyValueLabel}">
+                                                      <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Status: "  />
+                                                                <Span Text="Delivered" TextColor="Green" />
+                                                                
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                  </Label>
+                                                
+                                   
+                                   </Grid>
+                                  
+                            
+                                
+                               </Grid>
+
+                              </Grid>
+                           </contr:RoundedCornerView>
+                                   </Grid>
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView> 
+         
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

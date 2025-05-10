@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.CommonPages.PickAddressesPage"
+             Title="{x:Static resource:AppResources.titleAddresses}"
+          x:Name="root" xmlns:resource="clr-namespace:eWarranty.Resx"
+             BackgroundColor="{StaticResource contentBG}"  xmlns:contr="clr-namespace:eWarranty.Controls"
+             FlowDirection="{Binding flowDirection}">
+     <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1"  Order="Primary"  Text="Add" Priority="0" Command="{Binding AddNewAddressCommand}" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+         <Grid  Padding="10">
+             
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <CollectionView   Grid.Row="0" ItemsSource="{Binding Addresses}" SelectionMode="Single" SelectedItem="{Binding SelectedAddress}">
+               <CollectionView.Background>
+                   <LinearGradientBrush EndPoint="0,1">
+                        <!--<GradientStop Color="{StaticResource Pinkshade1}"
+                                        Offset="0.1" />
+                        <GradientStop Color="{StaticResource Pinkshade}"
+                                    Offset="1.0" />-->
+                     
+                        <GradientStop Color="{StaticResource BlueColor}"
+                                        Offset="0.1" />
+                        <GradientStop Color="{StaticResource Pinkshade1}"
+                                        Offset="0.7" />
+                                     
+                   </LinearGradientBrush>
+               </CollectionView.Background>
+               <CollectionView.ItemTemplate>  
+                   <DataTemplate>  
+                       <SwipeView BackgroundColor="#F5F5F5">
+                           <contr:RoundedCornerView  Margin="10,5,10,5" Grid.Row="0" BorderColor="LightGray" RoundedCornerRadius="8" BorderWidth="1"  BackgroundColor="{StaticResource WhiteColor}" >
+                               <Grid Padding="10,0,10,0" VerticalOptions="Center">
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="auto"/>
+                                   <RowDefinition Height="auto"/>
+                                   <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                                   <Grid Grid.Row="0">
+                                       <Grid.ColumnDefinitions>
+                                           <ColumnDefinition Width="8*"/>
+                                              <ColumnDefinition Width="2*"/>
+                                       </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" LineBreakMode="WordWrap" >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblAddress}" Style="{StaticResource MyTitleLabel}"/>
+                                                    <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                    <Span Text="{Binding ApartmentNumber}"  Style="{StaticResource EnteryLabelValues}" />
+                                                        <Span Text=","  Style="{StaticResource EnteryLabelValues}"/>
+                                                        <Span Text="{Binding FloorNumber}"  Style="{StaticResource EnteryLabelValues}"/>
+                                                        <Span Text="{Binding BuildingName}"  Style="{StaticResource EnteryLabelValues}"/>
+                                                                
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        
+                                   </Grid>
+                                   
+
+                                   <Label Grid.Row="1" LineBreakMode="WordWrap" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static resource:AppResources.lblStreet}" Style="{StaticResource MyTitleLabel}"/>
+                                                <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                <Span Text="{Binding Street}"  Style="{StaticResource EnteryLabelValues}"/>
+                                                <Span Text=", "  Style="{StaticResource MyValueLabel}"/>
+                                                <Span Text="{Binding Area}"  Style="{StaticResource EnteryLabelValues}"/>
+
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="2" LineBreakMode="WordWrap" >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                    <Span Text="{x:Static resource:AppResources.lblCity}" Style="{StaticResource MyTitleLabel}"/>                                                                
+                                                <Span Text="{Binding City}"  Style="{StaticResource EnteryLabelValues}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                   <Label Grid.Row="3" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{x:Static resource:AppResources.lblState}" Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text="{Binding State}"  Style="{StaticResource EnteryLabelValues}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                   </Label>
+                                    <Label Grid.Row="4" LineBreakMode="WordWrap" >
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{x:Static resource:AppResources.lblCountry}" Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text=": " Style="{StaticResource MyTitleLabel}"/>
+                                                                <Span Text="{Binding CountryName}"  Style="{StaticResource EnteryLabelValues}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                   </Label>
+                                 
+                                    
+                                  </Grid>
+                               
+                              </contr:RoundedCornerView>
+                      <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}" />
+                                     
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                            </SwipeView>
+                   </DataTemplate>  
+               </CollectionView.ItemTemplate>  
+   </CollectionView> 
+             <Button Grid.Row="1" Margin="10,0,10,0" HeightRequest="40" Text="{x:Static resource:AppResources.lblContinue}" IsEnabled="{Binding BtnHide}" Style="{StaticResource ButtonBlueStyle}" Clicked="Button_Clicked" />
+         </Grid>
+    </ContentPage.Content>
+</ContentPage>

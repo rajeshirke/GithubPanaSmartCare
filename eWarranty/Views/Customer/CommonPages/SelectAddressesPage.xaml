@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eWarranty.Views.Customer.CommonPages.SelectAddressesPage"
+             Title="{x:Static resource:AppResources.titleAddresses}"
+          x:Name="root" xmlns:resource="clr-namespace:eWarranty.Resx"
+             BackgroundColor="{StaticResource contentBG}"
+             xmlns:contr="clr-namespace:eWarranty.Controls" FlowDirection="{Binding flowDirection}">
+  <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="noteadd.png" Text="Item 1" Priority="0" Command="{Binding AddNewAddressCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+       
+         <Grid BackgroundColor="#EEF1F7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ListView   Grid.Row="0" RowHeight="150" ItemsSource="{Binding Addresses}" ItemSelected="ListView_ItemSelected"  HasUnevenRows="True"  SeparatorVisibility="None"  BackgroundColor="#EEF1F7">  
+               <ListView.ItemTemplate>  
+                   <DataTemplate>  
+                       <ViewCell>
+                           <contr:RoundedCornerView  Margin="10,5,10,5" Grid.Row="0" BorderColor="LightGray" BorderWidth="1"  BackgroundColor="white" >
+                               <Grid Padding="10,0,10,0" VerticalOptions="Center">
+                               <Grid.RowDefinitions>
+                                   <RowDefinition Height="auto"/>
+                                   <RowDefinition Height="auto"/>
+                                   <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                              
+                                   <Label Grid.Row="0" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Address : " Style="{StaticResource MyValueLabel}"/>
+                                                <Span Text="{Binding Area}"  Style="{StaticResource MyValueLabel}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="1" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Buliding Name : " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding BuildingName}"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                   </Label>
+                                   <Label Grid.Row="2" LineBreakMode="WordWrap" Style="{StaticResource MyValueLabel}">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="Balock and Flat No : " Style="{StaticResource MyValueLabel}"/>
+                                                                <Span Text="{Binding FloorNumber}"  Style="{StaticResource MyValueLabel}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                   </Label>
+                                   <StackLayout Grid.Row="3" IsEnabled="False" Orientation="Horizontal">
+                                       <Label Text="IsPrimary" Style="{StaticResource MyValueLabel}"/>
+                                    <Switch  IsToggled="{Binding IsPrimary}" />
+                                       </StackLayout>
+                                   
+                                  </Grid>
+                               
+                              </contr:RoundedCornerView>
+                       </ViewCell>  
+                   </DataTemplate>  
+               </ListView.ItemTemplate>  
+   </ListView> 
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

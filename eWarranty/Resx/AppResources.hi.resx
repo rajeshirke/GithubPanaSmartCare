@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+     <data name="LoginPageTitle" xml:space="preserve">
+        <value>वारंटी में आपका स्वागत है</value>
+    </data>
+    <data name="lblBack" xml:space="preserve">
+        <value>&lt; वापस</value>
+    </data>
+     <data name="lblNext" xml:space="preserve">
+        <value>आगे</value>
+    </data>
+     <data name="lblSubmit" xml:space="preserve">
+        <value>प्रस्तुत</value>
+    </data>
+    <data name="lblSave" xml:space="preserve">
+        <value>सहेजें</value>
+    </data>
+     <data name="lblCancel" xml:space="preserve">
+        <value>रद्द करना</value>
+    </data>
+     <data name="lblSignin" xml:space="preserve">
+        <value>साइन इन करें</value>
+    </data>
+     <data name="lblSignUp" xml:space="preserve">
+        <value>साइन अप करें</value>
+    </data>
+    <data name="lblUserName" xml:space="preserve">
+        <value>उपयोगकर्ता नाम</value>
+    </data>
+    <data name="lblPassword" xml:space="preserve">
+        <value>कुंजिका</value>
+    </data>
+     <data name="lblEmail" xml:space="preserve">
+        <value>ईमेल आईडी</value>
+    </data>
+     <data name="lblForgotPassword" xml:space="preserve">
+        <value>पासवर्ड भूल गए?</value>
+    </data>
+    <data name="lbltitelForgotPassword" xml:space="preserve">
+        <value>पासवर्ड भूल गए</value>
+        
+    </data>
+      <data name="lblMsgEmailErrorForgotPassword" xml:space="preserve">
+        <value>Please enter email id.</value>
+    </data>
+     <data name="lblMsgEmailValidErrorForgotPassword" xml:space="preserve">
+        <value>Please enter valide email id.</value>
+    </data>
+     <data name="inquery" xml:space="preserve">
+        <value>Your inquiry has been submitted successfully</value>
+    </data>
+</root>

@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <resheader name="resmimetype">
+      <value>text/microsoft-resx</value>
+   </resheader>
+   <resheader name="version">
+      <value>2.0</value>
+   </resheader>
+   <resheader name="reader">
+      <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+   </resheader>
+   <resheader name="writer">
+      <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+   </resheader>
+   <data name="LoginPageTitle" xml:space="preserve">
+        <value>تسجيل الدخول</value>
+    </data>
+   <data name="lblRequestDate" xml:space="preserve">
+        <value>تاريخ الطلب:</value>
+    </data>
+   <data name="lblBack" xml:space="preserve">
+        <value>عودة</value>
+    </data>
+   <data name="lblNext" xml:space="preserve">
+        <value>التالي</value>
+    </data>
+   <data name="lblSubmit" xml:space="preserve">
+        <value>إرسال</value>
+    </data>
+   <data name="lblSave" xml:space="preserve">
+        <value>حفظ</value>
+    </data>
+   <data name="lblCancel" xml:space="preserve">
+        <value>إلغاء</value>
+    </data>
+   <data name="lblSignin" xml:space="preserve">
+        <value>تسجيل الدخول</value> 
+    </data>
+   <data name="lblSignUp" xml:space="preserve">
+        <value>اشتراك</value>
+    </data>
+   <data name="lblUserName" xml:space="preserve">
+        <value>اسم االمستخدم</value>
+    </data>
+   <data name="lblPassword" xml:space="preserve">
+        <value>كلمة المرور</value>
+    </data>
+   <data name="lblEmail" xml:space="preserve">
+        <value>بريد إلكتروني</value> 
+    </data>
+   <data name="lblForgotPassword" xml:space="preserve">
+        <value>نسيت رقمك السري</value>
+    </data>
+   <data name="lbltitelForgotPassword" xml:space="preserve">
+        <value>نسيت رقمك السري</value>
+        </data>
+   <data name="lblName" xml:space="preserve">
+        <value>اسم</value>
+    </data>
+   <data name="lblContactNumber" xml:space="preserve">
+        <value>رقم الاتصال</value>
+    </data>
+   <data name="lblErrorName" xml:space="preserve">
+        <value>الرجاء إدخال الاسم.</value>
+    </data>
+   <data name="servererror" xml:space="preserve">
+        <value>الخادم لا يستجيب</value>
+    </data>
+   <data name="lblMsgEmailErrorForgotPassword" xml:space="preserve">
+        <value>الرجاء إدخال معرف البريد الإلكتروني.</value>
+    </data>
+   <data name="lblMsgEmailValidErrorForgotPassword" xml:space="preserve">
+        <value>الرجاء إدخال معرف البريد الإلكتروني صالح.</value>
+    </data>
+   <data name="inquery" xml:space="preserve">
+        <value>تم تقديم استفسارك بنجاح</value>
+    </data>
+   <data name="lblValidMobileNo" xml:space="preserve">
+        <value>الرجاء إدخال رقم هاتف محمول صحيح</value>
+    </data>
+   Customer DashBoard
+   <data name="titlePanasonicSmartCare" xml:space="preserve">
+        <value>العناية الذكية من باناسونيك</value>
+    </data>
+   <data name="btnMyProducts" xml:space="preserve">
+    <value>منتجاتي</value>
+    </data>
+   <data name="btnRegisterProduct" xml:space="preserve">
+    <value>تسجيل المنتج</value>
+    </data>
+   <data name="btnTrackService" xml:space="preserve">
+    <value>خدمة المسار</value>
+    </data>
+   <data name="btnServiceRequest" xml:space="preserve">
+        <value>طلب الخدمة</value>
+    </data>
+   <data name="btnServiceCenter" xml:space="preserve">
+        <value>مركز الخدمات</value>
+    </data>
+   <data name="btnSmartAssistant" xml:space="preserve">
+        <value>مساعد ذكي</value>
+    </data>
+   <data name="btnHome" xml:space="preserve">
+        <value>منزل</value>
+    </data>
+   <data name="btnPromotion" xml:space="preserve">
+        <value>ترقية </value>
+    </data>
+   <data name="btnSurvey" xml:space="preserve">
+        <value>استطلاع</value>
+    </data>
+   <data name="btnAccessories" xml:space="preserve">
+        <value>ملحقات</value>
+    </data>
+   <data name="btnSettings" xml:space="preserve">
+        <value>إعدادات</value>
+    </data>
+   Technician Dashboard
+   <data name="btnAssignedJobs" xml:space="preserve">
+        <value>Assigned Jobs</value>
+    </data>
+   <data name="titlePendingJobs" xml:space="preserve">
+        <value>Pending Jobs</value>
+    </data>
+   <data name="menuMyJobs" xml:space="preserve">
+        <value>My Jobs</value>
+    </data>
+   <data name="menuPartRequests" xml:space="preserve">
+        <value>Part Requests</value>
+    </data>
+   <data name="menuPartStock" xml:space="preserve">
+        <value>Part Stock</value>
+    </data>
+   <data name="menuChat" xml:space="preserve">
+        <value>Chat</value>
+    </data>
+   <data name="menuServiceManuals" xml:space="preserve">
+        <value>Service Manuals</value>
+    </data>
+   <data name="menuTips" xml:space="preserve">
+        <value>Tips</value>
+    </data>
+   <data name="menuFAQ" xml:space="preserve">
+        <value>FAQ</value>
+    </data>
+   <data name="menuMyQueries" xml:space="preserve">
+        <value>My Queries</value>
+    </data>
+   <data name="menuMyOrders" xml:space="preserve">
+        <value>طلباتي</value>
+    </data>
+   Dashboard left side menu
+   <data name="menuProducts" xml:space="preserve">
+        <value>منتجات</value>
+    </data>
+   <data name="menuServicesHistory" xml:space="preserve">
+        <value>تاريخ الخدمات</value>
+    </data>
+   <data name="menuChatHistory" xml:space="preserve">
+        <value>تاريخ الدردشة</value>
+    </data>
+   <data name="menuSurvey" xml:space="preserve">
+        <value>استطلاع</value>
+    </data>
+   <data name="menuTermsandConditions" xml:space="preserve">
+        <value>البنود و الظروف</value>
+    </data>
+   <data name="menuServiceCenter" xml:space="preserve">
+        <value>مركز الخدمات</value>
+    </data>
+   <data name="menuMyAccount" xml:space="preserve">
+        <value>حسابي</value>
+    </data>
+   <data name="menuLogout" xml:space="preserve">
+        <value>تسجيل خروج</value>
+    </data>
+   <data name="menuBuyAMC" xml:space="preserve">
+        <value>شراء AMC</value>
+    </data>
+   My Products
+   <data name="titleProducts" xml:space="preserve">
+        <value>منتجات</value>
+    </data>
+   <data name="plcSearchModelNumber" xml:space="preserve">
+        <value>ابحث عن رقم الموديل</value>
+    </data>
+   <data name="lblNoProducts" xml:space="preserve">
+        <value>لا توجد منتجات</value>
+    </data>
+   <data name="lblModelNo" xml:space="preserve">
+        <value>نموذج رقم :</value>
+    </data>
+   <data name="lblSerialNo" xml:space="preserve">
+        <value>الرقم التسلسلي  :</value>
+    </data>
+   <data name="lblWarranty" xml:space="preserve">
+        <value>ضمان  :</value>
+    </data>
+   <data name="lblExpiresIn" xml:space="preserve">
+        <value>ينتهي في :</value>
+    </data>
+   <data name="btnDetails" xml:space="preserve">
+        <value>تفاصيل</value>
+    </data>
+   Service Center Screen
+   <data name="lblNearByServiceCenters" xml:space="preserve">
+        <value>بالقرب من مراكز الخدمة</value>
+    </data>
+   <data name="lblDistnace" xml:space="preserve">
+        <value>مسافة : </value>
+    </data>
+   <data name="plcFindLocation" xml:space="preserve">
+        <value>البحث عن الموقع</value>
+    </data>
+   <data name="lblWorkingHours" xml:space="preserve">
+        <value>ساعات العمل</value>
+    </data>
+   <data name="lblLocatewithin50kilometers" xml:space="preserve">
+        <value>حدد الموقع في نطاق 50 كيلومترًا</value>
+    </data>
+   <data name="lblServiceCenterComments" xml:space="preserve">
+        <value>تعليقات مركز الخدمة</value>
+    </data>
+   Product Details
+   <data name="titleProductDetails" xml:space="preserve">
+        <value>تفاصيل المنتج</value>
+    </data>
+   <data name="lblPurchasedon" xml:space="preserve">
+        <value>تم شراؤها في : </value>
+    </data>
+   <data name="lblRegisteredon" xml:space="preserve">
+        <value>مسجلة في : </value>
+    </data>
+   <data name="lblWarrantyInformation" xml:space="preserve">
+        <value>معلومات الضمان</value>
+    </data>
+   <data name="lblWarrantyType" xml:space="preserve">
+        <value>نوع الضمان</value>
+    </data>
+   <data name="lblExpiredon" xml:space="preserve">
+        <value>تنتهي صلاحيته في</value>
+    </data>
+   <data name="lblDealerInformation" xml:space="preserve">
+        <value>معلومات البائع</value>
+    </data>
+   <data name="lblDealerName" xml:space="preserve">
+        <value>اسم البائع</value>
+    </data>
+   <data name="lblDealerAddress" xml:space="preserve">
+        <value>عنوان البائع</value>
+    </data>
+   <data name="lblDealerLocation" xml:space="preserve">
+        <value>موقع التاجر</value>
+    </data>
+   <data name="lblCountryofpurchase" xml:space="preserve">
+        <value>بلد الشراء</value>
+    </data>
+   <data name="lblInvoiceNumber" xml:space="preserve">
+        <value>رقم الفاتورة</value>
+    </data>
+   <data name="btnServiceRequest" xml:space="preserve">
+        <value>طلب الخدمة</value>
+    </data>
+   <data name="lblProductLabel" xml:space="preserve">
+        <value>ملصق المنتج</value>
+    </data>
+   <data name="lblTermsandConditions" xml:space="preserve">
+         <value>البنود و الظروف</value>
+    </data>
+   Register Product
+   <data name="titleRegister" xml:space="preserve">
+        <value>تسجيل المنتج</value>
+    </data>
+   <data name="lblModelNumber" xml:space="preserve">
+        <value>رقم الموديل</value>
+    </data>
+   <data name="plcModelNumber" xml:space="preserve">
+        <value>رقم الموديل</value>
+    </data>
+   <data name="lblSerialNumber" xml:space="preserve">
+        <value>رقم سري</value>
+    </data>
+   <data name="plcSerialNumber" xml:space="preserve">
+        <value>رقم سري</value>
+    </data>
+   <data name="lblPurchaseDate" xml:space="preserve">
+        <value>تاريخ الشراء</value>
+    </data>
+   <data name="plcInvoiceNumber" xml:space="preserve">
+        <value>رقم الفاتورة</value>
+    </data>
+   <data name="lblPurchaseInvoice" xml:space="preserve">
+        <value>فاتورة المنتج</value>
+    </data>
+   <data name="plcUploadPurchaseInvoice" xml:space="preserve">
+        <value>فاتورة الشراء</value>
+    </data>
+   <data name="lblProductLabel" xml:space="preserve">
+        <value>ملصق المنتج</value>
+    </data>
+   <data name="plcUploadProductLabel" xml:space="preserve">
+        <value>تحميل ملصق المنتج</value>
+    </data>
+   <data name="lblCountryofpurchase" xml:space="preserve">
+        <value>بلد الشراء</value>
+    </data>
+   <data name="plcCountryofpurchase" xml:space="preserve">
+        <value>بلد الشراء</value>
+    </data>
+   <data name="lblMessage" xml:space="preserve">
+        <value>رقم الطراز الخاص بك غير موجود. لذا يرجى إدخال تفاصيل البائع.</value>
+    </data>
+   <data name="lblDealerName" xml:space="preserve">
+        <value>اسم البائع</value>
+    </data>
+   <data name="lblDealerLocation" xml:space="preserve">
+        <value>موقع التاجر</value>
+    </data>
+   <data name="btnSave" xml:space="preserve">
+        <value>حفظ</value>
+    </data>
+   Open Service Request
+   <data name="lblOpenServiceRequest" xml:space="preserve">
+        <value>فتح طلب الخدمة</value>
+    </data>
+   <data name="lblNoServiceRequest" xml:space="preserve">
+        <value>لا يوجد طلب خدمة</value>
+    </data>
+   <data name="lblReqNo" xml:space="preserve">
+        <value>رقم الطلب:</value>
+    </data>
+   <data name="lblDate" xml:space="preserve">
+        <value>تاريخ :</value>
+    </data>
+   <data name="lblRemark" xml:space="preserve">
+        <value>ملاحظات</value>
+    </data>
+   <data name="lblStatus" xml:space="preserve">
+        <value>حالة :</value>
+    </data>
+   <data name="lblDetails" xml:space="preserve">
+        <value>تفاصيل</value>
+    </data>
+   <data name="lblFeedback" xml:space="preserve">
+        <value>تعليق</value>
+    </data>
+   <data name="btnFollowup" xml:space="preserve">
+        <value>متابعة</value>
+    </data>
+   <data name="plcFollowupmessage" xml:space="preserve">
+        <value>رسالة متابعة</value>
+    </data>
+   SR Details
+   <data name="btnSRDetails" xml:space="preserve">
+        <value>تفاصيل طلب الخدمة</value>
+    </data>
+   <data name="lblProductRemarks" xml:space="preserve">
+        <value>منتجات ملاحظات :</value>
+    </data>
+   <data name="plcRemarks" xml:space="preserve">
+        <value>ملاحظات</value>
+    </data>
+   <data name="lblPreferredDatetime" xml:space="preserve">
+        <value>التاريخ والوقت المفضلان</value>
+    </data>
+   <data name="btnReschedule" xml:space="preserve">
+        <value>إعادة الجدولة</value>
+    </data>
+   <data name="lblAddress" xml:space="preserve">
+        <value>عنوان</value>
+    </data>
+   <data name="lblServiceCenterDetails" xml:space="preserve">
+        <value>تفاصيل مركز الخدمة</value>
+    </data>
+   <data name="lblRequestNo" xml:space="preserve">
+        <value>رقم الطلب:</value>
+    </data>
+   <data name="lblLRequestDate" xml:space="preserve">
+        <value>تاريخ الطلب:</value>
+    </data>
+   <data name="lblRequestStatus" xml:space="preserve">
+        <value>حالة الطلب : </value>
+    </data>
+   <data name="lblWorkingHours" xml:space="preserve">
+        <value>ساعات العمل</value>
+    </data>
+   <data name="lblRequestType" xml:space="preserve">
+        <value>نوع الطلب:</value>
+    </data>
+   <data name="lblSymptom" xml:space="preserve">
+        <value>علامة </value>
+    </data>
+   Product Details Sub View
+   <data name="lblProductDetails" xml:space="preserve">
+        <value>تفاصيل المنتج</value>
+    </data>
+   <data name="lblDealerAddress" xml:space="preserve">
+        <value>عنوان البائع</value>
+    </data>
+   ServiceCentorsPage
+   <data name="titleFindServiceCenter" xml:space="preserve">
+        <value>ابحث عن مركز الخدمة</value>
+    </data>
+   <data name="lblNotFound" xml:space="preserve">
+        <value>غير موجود</value>
+    </data>
+   ChatBotViewPage
+   <data name="titleSmartAssistant" xml:space="preserve">
+        <value>مساعد ذكي</value>
+    </data>
+   <data name="lblPanasonicSmartAssistant" xml:space="preserve">
+        <value>مساعد باناسونيك الذكي</value>
+    </data>
+   <data name="lblWelcomeMessage" xml:space="preserve">
+        <value>مرحبًا بك في مساعد باناسونيك الذكي! نحن سعداء لمساعدتك! هل أنت؟</value>
+    </data>
+   MyProfile
+   <data name="titleMyProfile" xml:space="preserve">
+        <value>ملفي</value>
+    </data>
+   <data name="lblEdit" xml:space="preserve">
+        <value>التحرير</value>
+    </data>
+   <data name="lblMobNo" xml:space="preserve">
+        <value>رقم الهاتف المحمول</value>
+    </data>
+   <data name="titleUpdateProfile" xml:space="preserve">
+        <value>تحديث الملف</value>
+    </data>
+   <data name="btnManageAddress" xml:space="preserve">
+        <value>إدارة العنوان</value>
+    </data>
+   <data name="btnChangePassword" xml:space="preserve">
+        <value>تغيير كلمة المرور</value>
+    </data>
+   <data name="btnLanguage" xml:space="preserve">
+        <value>الإنجليزية</value>
+    </data>
+   <data name="btnLogout" xml:space="preserve">
+        <value>تسجيل خروج</value>
+    </data>
+   Update Profile
+   <data name="titleUpdateProfile" xml:space="preserve">
+        <value>تحديث الملف</value>
+    </data>
+   <data name="lblName" xml:space="preserve">
+        <value>اسم</value>
+    </data>
+   <data name="btnUpdate" xml:space="preserve">
+        <value>تحديث</value>
+    </data>
+   <data name="btnCancel" xml:space="preserve">
+        <value>إلغاء</value>
+    </data>
+   <data name="lblAlternateNumber" xml:space="preserve">
+        <value>رقم بديل</value>
+    </data>
+   <data name="lblCountry" xml:space="preserve">
+        <value>دولة</value>
+    </data>
+   <data name="lblPrimaryLanguage" xml:space="preserve">
+        <value>اللغة الأساسية</value>
+    </data>
+   Addresses
+   <data name="titleAddresses" xml:space="preserve">
+        <value>العنوان</value>
+    </data>
+   <data name="menuAdd" xml:space="preserve">
+        <value>يضيف</value>
+    </data>
+   <data name="lblStreet" xml:space="preserve">
+        <value>شارع</value>
+    </data>
+   <data name="lblCity" xml:space="preserve">
+        <value>مدينة</value>
+    </data>
+     <data name="plcCity" xml:space="preserve">
+        <value>مدينة</value>
+    </data>
+   <data name="lblState" xml:space="preserve">
+        <value>ولاية </value>
+    </data>
+   <data name="titleNewaddress" xml:space="preserve">
+        <value>عنوان جديد</value>
+    </data>
+   <data name="plcApartment/Houseno" xml:space="preserve">
+        <value>شقة / منزل لا.</value>
+    </data>
+   <data name="plcBuilding/Villaname" xml:space="preserve">
+        <value>اسم المبنى / الفيلا</value>
+    </data>
+   <data name="plcArea" xml:space="preserve">
+        <value>منطقة</value>
+    </data>
+   <data name="plcPostalcode" xml:space="preserve">
+        <value>رمز بريدي</value>
+    </data>
+   <data name="opIsprimary" xml:space="preserve">
+        <value>أساسي</value>
+    </data>
+   <data name="btnAddNewAddress" xml:space="preserve">
+        <value>أضف عنوان جديد</value>
+    </data>
+   <data name="titlePickyouraddress" xml:space="preserve">
+        <value>اختر عنوانك</value>
+    </data>
+   <data name="btnPickAddress" xml:space="preserve">
+        <value>اختر العنوان</value>
+    </data>
+   <data name="btnBack" xml:space="preserve">
+        <value>عودة</value>
+    </data>
+   Change Password
+   <data name="titleChangePassword" xml:space="preserve">
+        <value>تغيير كلمة المرور</value>
+    </data>
+   <data name="lblCurrentPassword" xml:space="preserve">
+        <value>كلمة المرور الحالية</value>
+    </data>
+   <data name="lblNewPassword" xml:space="preserve">
+        <value>كلمة المرور الجديدة</value>
+    </data>
+   <data name="lblReconfirmPassword" xml:space="preserve">
+        <value>أعد تأكيد كلمة المرور</value>
+    </data>
+   Accessories
+   <data name="titleAccessories" xml:space="preserve">
+        <value>ملحقات</value>
+    </data>
+   <data name="plcSearchAccessories" xml:space="preserve">
+        <value>بحث الملحقات</value>
+    </data>
+   <data name="titleAccessoryDetails" xml:space="preserve">
+        <value>تفاصيل الملحقات</value>
+    </data>
+   <data name="lblDays" xml:space="preserve">
+        <value>أيام</value>
+    </data>
+   <data name="lblDescription" xml:space="preserve">
+        <value>وصف</value>
+    </data>
+   <data name="btnAddtocart" xml:space="preserve">
+        <value>أضف إلى السلة</value>
+    </data>
+   <data name="titleCart" xml:space="preserve">
+        <value>عربة التسوق</value>
+    </data>
+   <data name="btnContinue" xml:space="preserve">
+        <value>استمر</value>
+    </data>
+   <data name="btnCheckout" xml:space="preserve">
+        <value>الدفع</value>
+    </data>
+   <data name="lblPromoCode" xml:space="preserve">
+        <value>رمز ترويجي</value>
+    </data>
+   <data name="btnApply" xml:space="preserve">
+        <value>تقديم</value>
+    </data>
+   <data name="lblDeliverto" xml:space="preserve">
+        <value>يسلم إلى</value>
+    </data>
+   <data name="lblOrderSummary" xml:space="preserve">
+        <value>ملخص الطلب</value>
+    </data>
+   <data name="lblSubTotal" xml:space="preserve">
+        <value>المجموع الفرعي</value>
+    </data>
+   <data name="lbldiscount" xml:space="preserve">
+        <value>خصم</value>
+    </data>
+   <data name="lblshippingfee" xml:space="preserve">
+        <value>رسوم الشحن</value>
+    </data>
+   <data name="lblTax" xml:space="preserve">
+        <value>ضريبة</value>
+    </data>
+   <data name="lblTaxRate" xml:space="preserve">
+        <value>معدل الضريبة</value>
+    </data>
+   <data name="lblTaxDetails" xml:space="preserve">
+        <value>التفاصيل الضريبية</value>
+    </data>
+   <data name="lblTaxAmount" xml:space="preserve">
+        <value>قيمة الضريبة</value>
+    </data>
+   <data name="lbltotalinclusivetax" xml:space="preserve">
+        <value>الإجمالي (شامل الضريبة)</value>
+    </data>
+   <data name="lblOrderSuccessMsg" xml:space="preserve">
+        <value>تم وضع الطلب بنجاح</value>
+    </data>
+   <data name="btnGotoorder" xml:space="preserve">
+        <value>اذهب إلى الطلبات</value>
+    </data>
+   <data name="lblPromocodeapplied" xml:space="preserve">
+        <value>تم تطبيق الرمز الترويجي</value>
+    </data>
+   <data name="btnBuyNow" xml:space="preserve">
+        <value>شراء</value>
+    </data>
+   <data name="btnGotohome" xml:space="preserve">
+        <value>الذهاب للصفحة الرئيسية </value>
+    </data>
+   Dialogues
+   <data name="lblLogoutmessage" xml:space="preserve">
+        <value>هل أنت متأكد أنك تريد تسجيل الخروج؟</value>
+    </data>
+   MyOrders
+   <data name="titleMyOrders" xml:space="preserve">
+        <value>طلباتي</value>
+    </data>
+   <data name="lblOrderon" xml:space="preserve">
+        <value>رقم الطلب</value>
+    </data>
+   <data name="lblPlacedon" xml:space="preserve">
+        <value>تاريخ الطلب</value>
+    </data>
+   <data name="lblQuantity" xml:space="preserve">
+        <value>كمية</value>
+    </data>
+   <data name="lblperitem" xml:space="preserve">
+        <value>لكل حبة</value>
+    </data>
+   <data name="btnReturnOrder" xml:space="preserve">
+        <value>أمر الإرجاع</value>
+    </data>
+   <data name="lblStatus" xml:space="preserve">
+        <value>الحالة</value>
+    </data>
+   <data name="btnViewDetails" xml:space="preserve">
+        <value>عرض التفاصيل</value>
+    </data>
+   <data name="titleUpdatePassword" xml:space="preserve">
+        <value>تطوير كلمة السر</value>
+    </data>
+   <data name="lblFullName" xml:space="preserve">
+        <value>الاسم بالكامل</value>
+    </data>
+   <data name="lblEmailorMobileNo" xml:space="preserve">
+        <value>البريد الإلكتروني أو رقم الهاتف</value>
+    </data>
+   <data name="btnGetOTP" xml:space="preserve">
+        <value>احصل على OTP</value>
+    </data>
+   <data name="lblWelcometo" xml:space="preserve">
+        <value>مرحبا بك في</value>
+    </data>
+   <data name="lblPanasonic" xml:space="preserve">
+        <value>باناسونيك</value>
+    </data>
+   <data name="lblDashboard" xml:space="preserve">
+        <value>لوحة القيادة</value>
+    </data>
+   Login API
+   <data name="lblUsernotexist" xml:space="preserve">
+        <value>محاولة تسجيل دخول غير صحيحة. المستخدم مع التفاصيل التي تم إدخالها غير موجود</value>
+    </data>
+   <data name="lblCorrectUserNamePassword" xml:space="preserve">
+        <value>الرجاء إدخال اسم المستخدم وكلمة المرور الصحيحين</value>
+    </data>
+   <data name="lblAlreadyRegistered" xml:space="preserve">
+        <value>البريد الإلكتروني مسجل بالفعل ، يرجى محاولة تسجيل الدخول</value>
+    </data>
+   <data name="lblMobileAlreadyRegistered" xml:space="preserve">
+        <value>رقم الهاتف المحمول مسجل بالفعل ، يرجى محاولة تسجيل الدخول</value>
+    </data>
+   <data name="lblOTP" xml:space="preserve">
+        <value>رقم OTP الخاص بتطبيق العناية الذكية من باناسونيك للهاتف المحمول هو {1234}. صالح لمدة 3 دقائق فقط</value>
+    </data>
+   <data name="lblOTPMessage" xml:space="preserve">
+        <value>تم إرسال OTP إلى البريد الإلكتروني أو الهاتف المحمول</value>
+    </data>
+   <data name="lblEmailMobNotExists" xml:space="preserve">
+        <value>المستخدم بهذا البريد الإلكتروني أو الهاتف المحمول غير موجود!</value>
+    </data>
+   <data name="lblIncorrectPassword" xml:space="preserve">
+        <value>أدخلت كلمة المرور الحالية غير صحيحة</value>
+    </data>
+   <data name="lblPasswordChangedSuccesfully" xml:space="preserve">
+        <value>تم تغيير الرقم السري بنجاح.</value>
+    </data>
+   <data name="lblFailedtochangepassword." xml:space="preserve">
+        <value>فشل تغيير كلمة المرور</value>
+    </data>
+   <data name="lblEnterPassword" xml:space="preserve">
+        <value>الرجاء إدخال كلمة المرور.</value>
+    </data>
+   <data name="lblEnterNewPassword" xml:space="preserve">
+        <value>يجب ألا تقل كلمة المرور الجديدة عن 8 أحرف أو تزيد عن 12 حرفًا</value>
+    </data>
+   <data name="lblConfirmPassword" xml:space="preserve">
+        <value>الرجاء إدخال تأكيد كلمة المرور</value>
+    </data>
+   <data name="lblPasswordNotMatch" xml:space="preserve">
+        <value>كلمة المرور وكلمة المرور التأكيدية غير متطابقتين</value>
+    </data>
+   <data name="lblAPIError" xml:space="preserve">
+        <value>خطأ API</value>
+    </data>
+   <data name="lblOk" xml:space="preserve">
+        <value>نعم</value>
+    </data>
+   <data name="lblEnteremailormobileno" xml:space="preserve">
+        <value>الرجاء إدخال البريد الإلكتروني أو رقم الهاتف المحمول</value>
+    </data>
+   <data name="lblRememberMyPassword" xml:space="preserve">
+        <value>تذكر كلمة المرور الخاصة بي</value>
+    </data>
+   <data name="lblNotyetregistered" xml:space="preserve">
+        <value>غير مسجل بعد؟</value>
+    </data>
+   <data name="lblRegisternow" xml:space="preserve">
+        <value>سجل الان</value>
+    </data>
+   <data name="lblCheckEnteredEmailMob" xml:space="preserve">
+        <value>يرجى التحقق من إدخال البريد الإلكتروني / الجوال وكلمة المرور.</value>
+    </data>
+   <data name="lblSelectCountry" xml:space="preserve">
+        <value>حدد الدولة</value>
+    </data>
+   <data name="lblErrorEmptyPassword" xml:space="preserve">
+        <value>يجب أن كلمة السر لا تكون فارغة</value>
+    </data>
+   <data name="lblErrorLowerCaseLetter" xml:space="preserve">
+        <value>يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل</value>
+    </data>
+   <data name="lblErrorUpperCaseLetter" xml:space="preserve">
+        <value>يجب أن تحتوي كلمة المرور على حرف واحد كبير على الأقل</value>
+    </data>
+   <data name="lblErrorMoreCharacter" xml:space="preserve">
+        <value>يجب ألا تقل كلمة المرور الجديدة عن 8 أحرف أو تزيد عن 12 حرفًا</value>
+    </data>
+   <data name="lblErrorNumericValue" xml:space="preserve">
+        <value>يجب أن تحتوي كلمة المرور على قيمة رقمية واحدة على الأقل</value>
+    </data>
+   <data name="lblErrorSpecialCharacter" xml:space="preserve">
+        <value>يجب أن تحتوي كلمة المرور على أحرف خاصة واحدة على الأقل</value>
+    </data>
+   <data name="lblEnterOTP" xml:space="preserve">
+        <value>الرجاء إدخال OTP.</value>
+    </data>
+   <data name="lblNewOTP" xml:space="preserve">
+        <value>تم إرسال OTP جديد</value>
+    </data>
+   <data name="lblErrorGPS" xml:space="preserve">
+        <value>موقع GPS الخاص بك غير دقيق</value>
+    </data>
+   <data name="lblCartEmpty" xml:space="preserve">
+        <value>عربة التسوق فارغة</value>
+    </data>
+   <data name="lblEnterPromoCode" xml:space="preserve">
+        <value>الرجاء إدخال الرمز الترويجي.</value>
+    </data>
+   <data name="lblValidPromoCode" xml:space="preserve">
+        <value>الرمز الترويجي غير صالح.</value>
+    </data>
+   <data name="lblSelectTandC" xml:space="preserve">
+        <value>الرجاء تحديد الشروط والأحكام</value>
+    </data>
+   <data name="lblSeller" xml:space="preserve">
+        <value>تاجر : </value>
+    </data>
+   <data name="lblPKR" xml:space="preserve">
+        <value>PKR </value>
+    </data>
+   <data name="lblDeliveredIn" xml:space="preserve">
+        <value>تسليمها في :</value>
+    </data>
+   <data name="lblPaymentMode" xml:space="preserve">
+        <value>طريقة الدفع :</value>
+    </data>
+   <data name="lblCOD" xml:space="preserve">
+        <value>الدفع عند الاستلام</value>
+    </data>
+   <data name="lblAddtocart" xml:space="preserve">
+        <value>أضف إلى السلة</value>
+    </data>
+   <data name="lblBuyNow" xml:space="preserve">
+        <value>اشتري الآن</value>
+    </data>
+   <data name="lblStandbysetrequest" xml:space="preserve">
+        <value>الاستعداد حسب الطلب</value>
+    </data>
+   <data name="lblMore" xml:space="preserve">
+        <value>أكثر</value>
+    </data>
+   <data name="lblRate" xml:space="preserve">
+        <value>معدل</value>
+    </data>
+   <data name="lblPleaseenterdescription" xml:space="preserve">
+        <value>الرجاء إدخال الوصف</value>
+    </data>
+   <data name="lblErrorSelectServiceCenter" xml:space="preserve">
+        <value>الرجاء تحديد مركز الخدمة</value>
+    </data>
+   <data name="lblErrorSelectAMCType" xml:space="preserve">
+        <value>الرجاء تحديد نوع amc.</value>
+    </data>
+   <data name="lblSelectServiceCentor" xml:space="preserve">
+        <value>حدد مركز الخدمة</value>
+    </data>
+   <data name="titleAMCRequest" xml:space="preserve">
+        <value>طلب AMC</value>
+    </data>
+   <data name="lblServiceCenter" xml:space="preserve">
+        <value>مركز خدمات</value>
+    </data>
+   <data name="lblOnlyService" xml:space="preserve">
+        <value>الخدمة فقط</value>
+    </data>
+   <data name="lblPartsandService" xml:space="preserve">
+        <value>قطع الغيار والخدمات</value>
+    </data>
+   <data name="lblAMCType" xml:space="preserve">
+        <value>نوع </value>
+    </data>
+   <data name="lblMonths" xml:space="preserve">
+        <value>شهور</value>
+    </data>
+   <data name="lblAED" xml:space="preserve">
+        <value>درهم إماراتي</value>
+    </data>
+   <data name="lblApply" xml:space="preserve">
+        <value>تقديم</value>
+    </data>
+   <data name="lblSendRequest" xml:space="preserve">
+        <value>ارسل طلب</value>
+    </data>
+   <data name="lblSelectSeller" xml:space="preserve">
+        <value>حدد البائع</value>
+    </data>
+   <data name="lblNoaccessoriesavailable" xml:space="preserve">
+        <value>لا توجد ملحقات متاحة</value>
+    </data>
+   <data name="lblStock" xml:space="preserve">
+        <value>المخزون :</value>
+    </data>
+   <data name="titleShoppingCart" xml:space="preserve">
+        <value>عربة التسوق</value>
+    </data>
+   <data name="lblTotalAmount" xml:space="preserve">
+        <value>المبلغ الإجمالي :</value>
+    </data>
+   <data name="lblCheckout" xml:space="preserve">
+        <value>الدفع</value>
+    </data>
+   <data name="lblOrderSummary" xml:space="preserve">
+        <value>ملخص الطلب:</value>
+    </data>
+   <data name="lblInclusivetax" xml:space="preserve">
+        <value>(شامل الضريبة)</value>
+    </data>
+   <data name="lblPlaceOrder" xml:space="preserve">
+        <value>مكان الامر</value>
+    </data>
+   <data name="lblNoRecords" xml:space="preserve">
+        <value>لا توجد سجلات</value>
+    </data>
+   <data name="lblOrderno" xml:space="preserve">
+        <value>رقم الأمر:</value>
+    </data>
+   <data name="titleOrderDetails" xml:space="preserve">
+        <value>تفاصيل الطلب</value>
+    </data>
+   <data name="lblReturnFullOrder" xml:space="preserve">
+        <value>إرجاع الطلب الكامل</value>
+    </data>
+   <data name="lblShippingAddress" xml:space="preserve">
+        <value>عنوان الشحن :</value>
+    </data>
+   <data name="lblTotal" xml:space="preserve">
+        <value>مجموع</value>
+    </data>
+   <data name="titleReturnProduct" xml:space="preserve">
+        <value>إرجاع المنتج</value>
+    </data>
+   <data name="lblReturn" xml:space="preserve">
+        <value>إرجاع</value>
+    </data>
+   <data name="titlePickyouraddress" xml:space="preserve">
+        <value>اختر عنوانك</value>
+    </data>
+   <data name="lblPickAddress" xml:space="preserve">
+        <value>اختر العنوان</value>
+    </data>
+   <data name="lblContinue" xml:space="preserve">
+        <value>يكمل</value>
+    </data>
+   <data name="titleAMCRequestHistory" xml:space="preserve">
+        <value>تاريخ طلب AMC</value>
+    </data>
+   <data name="lblAMCTypeNm" xml:space="preserve">
+        <value>اسم نوع : </value>
+    </data>
+   <data name="lblProductName" xml:space="preserve">
+        <value>اسم المنتج :</value>
+    </data>
+   <data name="lblByproceedingyouagreetothe" xml:space="preserve">
+        <value>بالمتابعة فإنك توافق على</value>
+    </data>
+   <data name="lblTermsofservice" xml:space="preserve">
+        <value>شروط الخدمة</value>
+    </data>
+   <data name="lblPrivacypolicy" xml:space="preserve">
+        <value>سياسة خاصة</value>
+    </data>
+   <data name="lblProceed" xml:space="preserve">
+        <value>تقدم</value>
+    </data>
+   <data name="lblAlreadyhaveanAccount" xml:space="preserve">
+        <value>هل لديك حساب؟</value>
+    </data>
+   <data name="lblPrimaryAddress" xml:space="preserve">
+        <value>العنوان الأساسي</value>
+    </data>
+   <data name="lblApartmentHuseNo" xml:space="preserve">
+        <value>رقم الشقة / المنزل</value>
+    </data>
+   <data name="lblBuildingVillaName" xml:space="preserve">
+        <value>اسم المبنى / الفيلا</value>
+    </data>
+   <data name="lblArea" xml:space="preserve">
+        <value>منطقة</value>
+    </data>
+   <data name="plcPostalcode" xml:space="preserve">
+        <value>رمز بريدي</value>
+    </data>
+   <data name="lblSkip" xml:space="preserve">
+        <value>يتخطى</value>
+    </data>
+   <data name="lblVerifyRegistration" xml:space="preserve">
+        <value>تحقق من التسجيل</value>
+    </data>
+   <data name="lblverify" xml:space="preserve">
+        <value>تحقق</value>
+    </data>
+   <data name="lblErrorNotReceivedOTP" xml:space="preserve">
+        <value>لم أتلق OTP.</value>
+    </data>
+   <data name="lblResend" xml:space="preserve">
+        <value>إعادة إرسال</value>
+    </data>
+   <data name="lblAgreed" xml:space="preserve">
+        <value>متفق عليه</value>
+    </data>
+   <data name="lblUpdateAddress" xml:space="preserve">
+        <value>تم تحديث عنوانك الأساسي.</value>
+    </data>
+   <data name="lblEnterBuildingName" xml:space="preserve">
+        <value>الرجاء إدخال اسم المبنى.</value>
+    </data>
+   <data name="lblEnterArea" xml:space="preserve">
+        <value>الرجاء إدخال المنطقة.</value>
+    </data>
+   <data name="lblEnterCity" xml:space="preserve">
+        <value>الرجاء إدخال مدينة.</value>
+    </data>
+   <data name="lblEnterState" xml:space="preserve">
+        <value>الرجاء إدخال الولاية.</value>
+    </data>
+   <data name="lblEnterComments" xml:space="preserve">
+        <value>الرجاء إدخال تعليقاتك.</value>
+    </data>
+   <data name="lblEnterOtherMessage" xml:space="preserve">
+        <value>الرجاء إدخال رسالة أخرى.</value>
+    </data>
+   <data name="lblEnterModelNumber" xml:space="preserve">
+        <value>الرجاء إدخال رقم الطراز.</value>
+    </data>
+   <data name="lblEnterSerialNumber" xml:space="preserve">
+        <value>الرجاء إدخال الرقم التسلسلي.</value>
+    </data>
+   <data name="lblSelectPurchaseDate" xml:space="preserve">
+        <value>الرجاء تحديد تاريخ الشراء.</value>
+    </data>
+   <data name="lblErrorSelectCountry" xml:space="preserve">
+        <value>رجاء قم بإختيار دوله.</value>
+    </data>
+   <data name="lblErrorUploadPurchanseInvoice" xml:space="preserve">
+        <value>يرجى تحميل فاتورة الشراء</value>
+    </data>
+   <data name="lblErrorEnterDealerName" xml:space="preserve">
+        <value>الرجاء إدخال اسم التاجر.</value>
+    </data>
+   <data name="lblErrorEnterDealerAddress" xml:space="preserve">
+        <value>الرجاء إدخال عنوان التاجر.</value>
+    </data>
+   <data name="lblPhotoUpload" xml:space="preserve">
+        <value>حمل الصورة</value>
+    </data>
+   <data name="lblTakePhoto" xml:space="preserve">
+        <value>انقر فوق الصورة</value>
+    </data>
+   <data name="lblGallery" xml:space="preserve">
+        <value>صالة عرض</value>
+    </data>
+   <data name="lblErrorCameranotsupported" xml:space="preserve">
+        <value>الكاميرا غير مدعوم</value>
+    </data>
+   <data name="lblError" xml:space="preserve">
+        <value>خطأ</value>
+    </data>
+   <data name="lblConfirmation" xml:space="preserve">
+        <value>تأكيد</value>
+    </data>
+   <data name="lblDoYouWantToDelete" xml:space="preserve">
+        <value>هل أنت متأكد أنك تريد حذف؟</value>
+    </data>
+   <data name="lblProductDetailsDeleted" xml:space="preserve">
+        <value>تم حذف تفاصيل المنتج.</value>
+    </data>
+   <data name="lblSuccess" xml:space="preserve">
+        <value>نجاح</value>
+    </data>
+   <data name="lblWarrantycarddownloaded" xml:space="preserve">
+        <value>تم تنزيل بطاقة الضمان.</value>
+    </data>
+   <data name="lblYourwarrantycardnotyetready" xml:space="preserve">
+        <value>بطاقة الضمان الخاصة بك ليست جاهزة بعد.</value>
+    </data>
+   <data name="lblPleaseEnterNewPassword" xml:space="preserve">
+        <value>الرجاء إدخال كلمة المرور الجديدة.</value>
+    </data>
+   <data name="lblEnterFollowupMsg" xml:space="preserve">
+        <value>الرجاء إدخال رسالة متابعة.</value>
+    </data>
+   <data name="lblYes" xml:space="preserve">
+        <value>نعم</value>
+    </data>
+   <data name="lblNo" xml:space="preserve">
+        <value>لا</value>
+    </data>
+   <data name="lblUpdated" xml:space="preserve">
+        <value>محدث</value>
+    </data>
+   <data name="lblNotWorking" xml:space="preserve">
+        <value>لا يعمل</value>
+    </data>
+   <data name="lblPartiallyworking" xml:space="preserve">
+        <value>تعمل جزئيا</value>
+    </data>
+   <data name="lblWorkingbutotherissues" xml:space="preserve">
+        <value>إنه يعمل ولكن قضايا أخرى</value>
+    </data>
+   <data name="lblPleaseselectdate" xml:space="preserve">
+        <value>الرجاء تحديد التاريخ.</value>
+    </data>
+   <data name="lblPleaseselecttime" xml:space="preserve">
+        <value>الرجاء تحديد الوقت.</value>
+    </data>
+   <data name="lblServicerequestupdatedSuccessfully" xml:space="preserve">
+        <value>تم تحديث طلب الخدمة بنجاح</value>
+    </data>
+   <data name="lblServiceRequestClosed" xml:space="preserve">
+        <value>تم إغلاق طلب الخدمة</value>
+    </data>
+   <data name="lblErrorCheckInternet" xml:space="preserve">
+        <value>الرجاء التحقق من اتصال الانترنت الخاص بك</value>
+    </data>
+   <data name="lblErrorAlert" xml:space="preserve">
+        <value>تحذير!</value>
+    </data>
+   <data name="lblProductRegSuccessMsg" xml:space="preserve">
+        <value>شكرا لك على تسجيل المنتج. ستتلقى تأكيدًا في غضون 24 ساعة.</value>
+    </data>
+   <data name="lblCongratulations" xml:space="preserve">
+        <value>تهانينا</value>
+    </data>
+   <data name="lblGotoMyProducts" xml:space="preserve">
+        <value>انتقل إلى منتجاتي</value>
+    </data>
+   <data name="lblSRDetails" xml:space="preserve">
+        <value>تفاصيل ريال سعودي</value>
+    </data>
+   <data name="lblFollowUp" xml:space="preserve">
+        <value>متابعة</value>
+    </data>
+   <data name="lblPleaseContactAdmin" xml:space="preserve">
+        <value>يرجى الاتصال بالمسؤول.</value>
+    </data>
+   <data name="lblProductModelNumber" xml:space="preserve">
+        <value>رقم طراز المنتج</value>
+    </data>
+   <data name="lblServiceRequestType" xml:space="preserve">
+        <value>نوع طلب الخدمة</value>
+    </data>
+   <data name="lblServiceLocation" xml:space="preserve">
+        <value>موقع الخدمة</value>
+    </data>
+   <data name="lblVisitchargesareapplicable" xml:space="preserve">
+        <value>( رسوم الزيارة قابلة للتطبيق )</value>
+    </data>
+   <data name="lblUploadProductPhoto" xml:space="preserve">
+        <value>صورة المنتج</value>
+    </data>
+   <data name="lblPleaseselectservicerequesttype" xml:space="preserve">
+        <value>يرجى تحديد نوع طلب الخدمة.</value>
+    </data>
+   <data name="lblPleaseenteralternatenumber" xml:space="preserve">
+        <value>يرجى إدخال رقم بديل.</value>
+    </data>
+   <data name="lblPleaseselectaddresstosubmit" xml:space="preserve">
+        <value>يرجى تحديد عنوان لتقديم.</value>
+    </data>
+   <data name="lblAMCRequestMessage" xml:space="preserve">
+        <value>شكرا لك على طلب AMC ، سوف تتلقى بطاقة خدمة AMC في غضون 24 ساعة ، إذا لم يكن يرجى الاتصال.</value>
+    </data>
+   <data name="lblGotoAMCHistory" xml:space="preserve">
+        <value>انتقل إلى AMC تاريخ</value>
+    </data>
+   <data name="msgAddressupdated" xml:space="preserve">
+        <value>تم تحديث العنوان</value>
+    </data>
+   <data name="msgAddresscreated" xml:space="preserve">
+        <value>تم إنشاء العنوان</value>
+    </data>
+   <data name="msgAMCRequestcreatedsuccessfully" xml:space="preserve">
+        <value>تم إنشاء طلب AMC بنجاح</value>
+    </data>
+   <data name="msgYourinquirysubmittedsuccessfully" xml:space="preserve">
+        <value>قدم استفسارك بنجاح</value>
+    </data>
+   <data name="msgFeedbacksubmittedSuccessfully" xml:space="preserve">
+        <value>تم إرسال الملاحظات بنجاح</value>
+    </data>
+   <data name="msgInvalidloginattempt" xml:space="preserve">
+        <value>محاولة تسجيل دخول غير صحيحة. المستخدم مع التفاصيل التي تم إدخالها غير موجود.</value>
+    </data>
+   <data name="msgYourpasswordisincorrect" xml:space="preserve">
+        <value>كلمة مرورك غير صحيحة</value>
+    </data>
+     <data name="msgUpdatetheapp" xml:space="preserve">
+        <value>Please update the App to the latest version</value>
+   </data>
+   <data name="msgPleaseentercorrectusernameandpassword" xml:space="preserve">
+        <value>الرجاء إدخال اسم المستخدم وكلمة المرور الصحيحين</value>
+    </data>
+   <data name="msgEmailalreadyregistered" xml:space="preserve">
+        <value>البريد الإلكتروني مسجل بالفعل ، يرجى محاولة تسجيل الدخول</value>
+    </data>
+   <data name="msgMobilenumberalreadyregistered" xml:space="preserve">
+        <value>رقم الهاتف المحمول مسجل بالفعل ، يرجى محاولة تسجيل الدخول</value>
+    </data>
+   <data name="msgInvalidusername" xml:space="preserve">
+        <value>اسم المستخدم غير صحيح</value>
+    </data>
+   <data name="msgUserwiththeentereddetailsdoesnotexists" xml:space="preserve">
+        <value>المستخدم مع التفاصيل المدخلة غير موجود.</value>
+    </data>
+   <data name="msgOTPhasbeensenttoenteredEmailorMobile" xml:space="preserve">
+        <value>تم إرسال OTP إلى البريد الإلكتروني أو الهاتف المحمول</value>
+    </data>
+   <data name="msgEnteredcurrentpasswordisincorrect" xml:space="preserve">
+        <value>أدخلت كلمة المرور الحالية غير صحيحة</value>
+    </data>
+   <data name="msgPasswordchangedsuccessfully" xml:space="preserve">
+        <value>تم تغيير الرقم السري بنجاح.</value>
+    </data>
+   <data name="msgFailedtochangepassword" xml:space="preserve">
+        <value>فشل تغيير كلمة المرور.</value>
+    </data>
+   <data name="msgNewOTPCreated" xml:space="preserve">
+        <value>تم إنشاء / إرسال OTP جديد</value>
+    </data>
+   <data name="msgOrderplacedsuccessfully." xml:space="preserve">
+        <value>تم تقديم الطلب بنجاح.</value>
+    </data>
+   <data name="msgOrderreturnrequestsubmittedsuccessfully" xml:space="preserve">
+        <value>تم إرسال طلب الإرجاع بنجاح.</value>
+    </data>
+   <data name="msgFullOrderreturnrequestubmittedsuccessfully" xml:space="preserve">
+        <value>تم إرسال طلب الإرجاع الكامل بنجاح.</value>
+    </data>
+   <data name="msgSparepartrequestsubmitted" xml:space="preserve">
+        <value>تم تقديم طلب قطع غيار</value>
+    </data>
+   <data name="msgProfileupdatedsuccessfully" xml:space="preserve">
+        <value>تم تحديث الملف الشخصي بنجاح</value>
+    </data>
+   <data name="msgProductisalreadyregistered" xml:space="preserve">
+        <value>المنتج الذي يحمل هذا الطراز والرقم التسلسلي مسجل بالفعل</value>
+    </data>
+   <data name="msgProductregisteredsuccessfully" xml:space="preserve">
+        <value>تم تسجيل المنتج بنجاح</value>
+    </data>
+   <data name="msgProductnotsaved" xml:space="preserve">
+        <value>لم يتم حفظ المنتج</value>
+    </data>
+   <data name="msgThankyoufortakingpartinsurvey" xml:space="preserve">
+        <value>شكرا لك على المشاركة في الاستطلاع</value>
+    </data>
+   <data name="msgServicerequestupdatedSuccessfully" xml:space="preserve">
+        <value>تم تحديث طلب الخدمة بنجاح</value>
+    </data>
+   <data name="msgPromocodeAppliedSuccessfully" xml:space="preserve">
+        <value>تم تطبيق الرمز الترويجي بنجاح</value>
+    </data>
+   <data name="msgErrorinapplyingPromoCode" xml:space="preserve">
+        <value>خطأ في تطبيق الرمز الترويجي</value>
+    </data>
+   <data name="msgStandbysetrequestalreadyexists" xml:space="preserve">
+        <value>طلب تعيين الاستعداد موجود بالفعل</value>
+    </data>
+   <data name="msgStandbysetrequestcreatedsuccessfully" xml:space="preserve">
+        <value>تم إنشاء طلب مجموعة الاستعداد بنجاح</value>
+    </data>
+   <data name="msgInvoicegeneratedsuccesfully" xml:space="preserve">
+        <value>فاتورة تم إنشاؤها بنجاح</value>
+    </data>
+   <data name="msgYouhavealreadyparticipatedinsurvey" xml:space="preserve">
+        <value>لقد شاركت بالفعل في الاستطلاع</value>
+    </data>
+   <data name="msgNopromotionavailable" xml:space="preserve">
+        <value>لا يوجد عرض ترويجي متاح!</value>
+    </data>
+   <data name="msgparticipatinginsurvey" xml:space="preserve">
+        <value>شكرا لك على المشاركة في الاستطلاع.</value>
+    </data>
+   <data name="msgInquiry" xml:space="preserve">
+        <value>شكرا لك على استفسارك وسيقوم فريقنا بالرد عليك قريبا.</value>
+    </data>
+   <data name="msgNotedQuery" xml:space="preserve">
+        <value>شكرا لك! لقد لاحظنا استفسارك. سيتصل بك أحد ممثلي الخدمة لدينا قريبًا.</value>
+    </data>
+   <data name="msgThankyouforyourfeedback" xml:space="preserve">
+        <value>شكرا لك على ملاحظاتك.</value>
+    </data>
+   <data name="msgAMCrequestsentsuccessfully" xml:space="preserve">
+        <value>تم إرسال طلب AMC بنجاح.</value>
+    </data>
+   <data name="msgOrderreturnedsuccessfully" xml:space="preserve">
+        <value>تم إرجاع الطلب بنجاح</value>
+    </data>
+   <data name="lblHello" xml:space="preserve">
+        <value> مرحبا </value>  
+    </data>
+   <data name="msgLocationNotProvide" xml:space="preserve">
+        <value>لن نقدم خدمة على هذا الموقع.</value>
+    </data>
+   <data name="lblErrorEnableGPS" xml:space="preserve">
+        <value>فشل العثور على موقع GPS. الرجاء تمكين GPS.</value>
+    </data>
+   <data name="msgServicerequestisalreadyinprogress" xml:space="preserve">
+        <value>طلب الخدمة قيد التقدم بالفعل. الرقم المرجعي هو</value>
+    </data>
+   <data name="lblGotoServiceRequests" xml:space="preserve">
+        <value>انتقل إلى طلبات الخدمة</value>
+    </data>
+   <data name="titleIwilltakemyproducttoservicecenter" xml:space="preserve">
+        <value>سوف آخذ منتجي إلى مركز الخدمة</value>
+    </data>
+   <data name="titleIPreferHomeService" xml:space="preserve">
+        <value>أنا أفضل خدمة المنزل</value>
+    </data>
+   <data name="lblErrorIncorrectToken" xml:space="preserve">
+        <value>الرمز الذي تم إدخاله غير صحيح.</value>
+    </data>
+   <data name="lblErrorFailedReturnOrder" xml:space="preserve">
+        <value>فشل في إرجاع الطلب.</value>
+    </data>
+   <data name="lblOthers" xml:space="preserve">
+        <value>آخر  </value>
+    </data>
+   <data name="lblEnteryourqueryrequest" xml:space="preserve">
+        <value>شكرا لك! الرجاء إدخال استفسارك / طلبك.</value>
+    </data>
+   <data name="lblPleaseEnteryourqueryrequest" xml:space="preserve">
+        <value>الرجاء إدخال استفسارك / طلب هنا.</value>
+    </data>
+   <data name="lblThankYouForVIsitingUs" xml:space="preserve">
+        <value>شكرا لزيارتكم لنا!</value>
+    </data>
+   <data name="lblPleaseTellUsMoreInDetail" xml:space="preserve">
+        <value>من فضلك أخبرنا بمزيد من التفصيل.</value>
+    </data>
+   <data name="titleNotifications" xml:space="preserve">
+        <value> إشعارات</value>
+    </data>
+   <data name="lblNoNotifications" xml:space="preserve">
+        <value>لا إشعارات</value>
+    </data>
+   <data name="lblDomestic" xml:space="preserve">
+        <value>المحلية</value>
+    </data>
+   <data name="lblExtended" xml:space="preserve">
+        <value>ممتد، طويل، ممدود</value>
+    </data>
+   <data name="lblInternational" xml:space="preserve">
+        <value>دولي</value>
+    </data>
+   <data name="lblOutwarranty" xml:space="preserve">
+        <value>الضمان خارج</value>
+    </data>
+   <data name="lblAwaitingconfirmation" xml:space="preserve">
+        <value>بانتظار التأكيد</value>
+    </data>
+   <data name="lblAll" xml:space="preserve">
+        <value>كل</value>
+    </data>
+   <data name="lblCurrency" xml:space="preserve">
+        <value>عملة</value>
+    </data>
+   <data name="lblSearch" xml:space="preserve">
+        <value>البحث</value>
+    </data>
+   <data name="lblTrack" xml:space="preserve">
+        <value>ترتيب المسار</value>
+    </data>
+   <data name="lblOrderTracking" xml:space="preserve">
+        <value>تتبع الطلب</value>
+    </data>
+   <data name="lblCostEstimation" xml:space="preserve">
+        <value>تقدير التكاليف</value>
+    </data>
+   <data name="lblNoCostEstimation" xml:space="preserve">
+        <value>لا يوجد تقدير للتكلفة</value>
+    </data>
+   <data name="lblEstimationDate" xml:space="preserve">
+        <value>تاريخ التقدير:</value>
+    </data>
+   <data name="lblApprovalDate" xml:space="preserve">
+        <value>تاريخ الموافقة:</value>
+    </data>
+   <data name="lblEstimationStatus" xml:space="preserve">
+        <value>حالة:</value>
+    </data>
+   <data name="lblView" xml:space="preserve">
+        <value>منظر</value>
+    </data>
+   <data name="lblGoToProducts" xml:space="preserve">
+        <value>انتقل إلى المنتجات</value>
+    </data>
+   <data name="lblPostalCode" xml:space="preserve">
+        <value>رمز بريدي</value>
+    </data>
+   <data name="lblOTPVerificationMsg" xml:space="preserve">
+        <value>تم إرسال OTP إلى</value>
+    </data>
+   <data name="SparePartSuccessMsg" xml:space="preserve">
+        <value>تم تقديم طلب جزء الخدمة بنجاح</value>
+    </data>
+   <data name="lblNumOfYear" xml:space="preserve">
+        <value> :عدد السنوات</value>
+    </data>
+   <data name="lblRequestDate" xml:space="preserve">
+        <value>تاريخ الطلب : </value>
+    </data>
+   <data name="lblContractDuration" xml:space="preserve">
+        <value>مدة العقد : </value>
+    </data>
+   
+   <data name="lblCustName" xml:space="preserve">
+        <value>اسم العميل :</value>
+    </data>
+   <data name="lblDiscountAmount" xml:space="preserve">
+        <value>كود الخصم الترويجي</value>
+    </data>
+   <data name="lblTaxName" xml:space="preserve">
+        <value>اسم الضريبة</value>
+    </data>
+
+    <data name="ErrorMsgMobilenumberisnotavailable" xml:space="preserve">
+        <value>رقم الهاتف غير متوفر</value>
+    </data>
+
+     <data name="lblServiceCharges" xml:space="preserve">
+        <value>رسوم الخدمات</value>
+    </data>
+
+    <data name="lblPartCharges" xml:space="preserve">
+        <value>رسوم جزئية</value>
+    </data>
+
+    <data name="lblPartNumber" xml:space="preserve">
+        <value>رقم القطعة</value>
+    </data>
+
+
+     <data name="lblApproved" xml:space="preserve">
+        <value>وافق</value>
+    </data>
+
+     <data name="lblPending" xml:space="preserve">
+        <value>ريثما</value>
+    </data>
+
+    <data name="lblAMCTypeNotAvailable" xml:space="preserve">
+        <value>نوع AMC غير متوفر</value>
+    </data>
+
+    <data name="lblqty" xml:space="preserve">
+        <value>الكمية</value>
+    </data>
+
+    <data name="lblRepair" xml:space="preserve">
+        <value>بصلح</value>
+    </data>
+
+     <data name="lblPromoCodeDiscount" xml:space="preserve">
+        <value>خصم الرمز الترويجي</value>
+    </data>
+
+    <data name="lblTitle" xml:space="preserve">
+        <value>عنوان</value>
+    </data>
+
+     <data name="lblCreationDate" xml:space="preserve">
+        <value>تاريخ الإنشاء</value>
+    </data>
+
+    <data name="lblAnnouncementDate" xml:space="preserve">
+        <value>تاريخ الإعلان</value>
+    </data>
+
+      <data name="lblStartDate" xml:space="preserve">
+        <value>تاريخ البدء</value>
+    </data>
+
+    <data name="lblExpiryDate" xml:space="preserve">
+        <value>تاريخ الانتهاء</value>
+    </data>
+
+     <data name="lblOTPVerificationMsg" xml:space="preserve">
+        <value>تم التحقق بنجاح.</value>
+    </data>
+
+    <data name="lblRegister" xml:space="preserve">
+        <value>يسجل</value>
+    </data>
+
+    <data name="msgCheckInternetConnectivity" xml:space="preserve">
+        <value>الرجاء التحقق من اتصال الانترنت الخاص بك.</value>
+    </data>
+
+</root>

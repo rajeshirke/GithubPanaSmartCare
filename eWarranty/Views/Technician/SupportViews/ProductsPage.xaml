@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="eWarranty.Views.Technician.SupportViews.ProductsPage"
+             xmlns:contr="clr-namespace:eWarranty.Controls"
+              xmlns:local="clr-namespace:eWarranty"
+               xmlns:lang="clr-namespace:eWarranty.Hepler"
+             Title="Select Product">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                 <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <SearchBar Placeholder="Search Model Number" Grid.Row="0"/>
+            <ListView Grid.Row="1" ItemsSource="{Binding ProductModels}" SeparatorVisibility="Default" HasUnevenRows="False"  RowHeight="90" ItemSelected="ListView_ItemSelected"  >              
+                <ListView.ItemTemplate>  
+                    <DataTemplate>  
+                        <ViewCell>
+                            <Grid Padding="0,10,0,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="2"/>
+                                </Grid.RowDefinitions>
+                            <Grid HeightRequest="70" Padding="10,0,10,0" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="wallettravel" Grid.Column="0" Grid.RowSpan="2"/>
+                                <Label Text="Customer Name" Grid.Column="1" Grid.Row="0" TextColor="#333333"/>
+                                    <Label Text="{Binding ProductName}" Grid.Column="1" Grid.Row="1" TextColor="#9F9F9F"/>
+                                    <Image Source="details" Grid.Column="2" Grid.RowSpan="2"/>
+                            </Grid>
+                                </Grid>
+                        </ViewCell>  
+                    </DataTemplate>  
+               </ListView.ItemTemplate>  
+            </ListView> 
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
