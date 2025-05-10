@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3qogklMY7L8gOeDkkl3h2osFZAM+C7MRVxGXxesp68a+jrGU2Fq2E0XWSAOMWpyFMerC0Znpz4XywC++dhumlw==",
+  "dgSpecHash": "MgFEbhEdJgcND4T0zaLIKWDmBo8PH+6QiY+ImJtMNPMZnsvZA/wqvE0YxVFJ8aqR5y7U2CjnPlzT8A8LD0s97Q==",
   "success": true,
-  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
+  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
   "expectedPackageFiles": [
     "/Users/imacslim2015/.nuget/packages/andhud/1.4.2/andhud.1.4.2.nupkg.sha512",
     "/Users/imacslim2015/.nuget/packages/com.airbnb.android.lottie/4.2.2/com.airbnb.android.lottie.4.2.2.nupkg.sha512",

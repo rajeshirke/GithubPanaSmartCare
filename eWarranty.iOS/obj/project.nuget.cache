@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y67JigfMBYrWG5KgE/PW3yJa1Sz8fX7gbizHe5EjB6mBDcsR53XAq9nUcsOK2ifH2B07Qi0OQb9685N0IYshg==",
+  "dgSpecHash": "Is6WbjBsfEsFKz7tuKhdKuJVN0/jj4Sp3whKWOenjmRLZEwzXSOPb5cYQMgjahYRn/CFSlafbxSB0gLlzBy4YA==",
   "success": true,
-  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
+  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
   "expectedPackageFiles": [
     "/Users/imacslim2015/.nuget/packages/btprogresshud/1.3.2/btprogresshud.1.3.2.nupkg.sha512",
     "/Users/imacslim2015/.nuget/packages/com.airbnb.ios.lottie/2.5.13/com.airbnb.ios.lottie.2.5.13.nupkg.sha512",

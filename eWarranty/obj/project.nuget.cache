@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ta3msnStjbh1pugO2P3P2My2mEfnnNRkpyg/ZgpwuzcMf4pgI+LPUiC91/CpEwNUuw35mFHAXq/XdAv+d61Uaw==",
+  "dgSpecHash": "xqU+GQpqu6d1Sh+mKffqpDsSxopiLdxtPhqixTYkS4veICqK2UfIpAbs75ZInWZMVGQTMAvAxDWxZnS6nrTUPw==",
   "success": true,
-  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj",
+  "projectFilePath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj",
   "expectedPackageFiles": [
     "/Users/imacslim2015/.nuget/packages/com.airbnb.xamarin.forms.lottie/4.1.0/com.airbnb.xamarin.forms.lottie.4.1.0.nupkg.sha512",
     "/Users/imacslim2015/.nuget/packages/dltoolkit.forms.controls.flowlistview/2.0.11/dltoolkit.forms.controls.flowlistview.2.0.11.nupkg.sha512",

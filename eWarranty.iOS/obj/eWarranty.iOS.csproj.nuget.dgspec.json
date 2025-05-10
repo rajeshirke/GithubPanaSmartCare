@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj": {}
+    "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj": {}
   },
   "projects": {
-    "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj": {
+    "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
+        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
         "projectName": "eWarranty.Core",
-        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
+        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
         "packagesPath": "/Users/imacslim2015/.nuget/packages/",
-        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/obj/",
+        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/imacslim2015/.config/NuGet/NuGet.Config"
@@ -71,14 +71,14 @@
         }
       }
     },
-    "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj": {
+    "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
+        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
         "projectName": "eWarranty.iOS",
-        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
+        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/eWarranty.iOS.csproj",
         "packagesPath": "/Users/imacslim2015/.nuget/packages/",
-        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.iOS/obj/",
+        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.iOS/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -93,8 +93,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj": {
-                "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj"
+              "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj": {
+                "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj"
               }
             }
           }
@@ -258,14 +258,14 @@
         }
       }
     },
-    "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj": {
+    "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj",
+        "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj",
         "projectName": "eWarranty",
-        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj",
+        "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj",
         "packagesPath": "/Users/imacslim2015/.nuget/packages/",
-        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/obj/",
+        "outputPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/imacslim2015/.config/NuGet/NuGet.Config"
@@ -281,8 +281,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj": {
-                "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj"
+              "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj": {
+                "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj"
               }
             }
           }

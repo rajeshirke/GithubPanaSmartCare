@@ -334,11 +334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
+      "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
       "projectName": "eWarranty.Core",
-      "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
+      "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/eWarranty.Core.csproj",
       "packagesPath": "/Users/imacslim2015/.nuget/packages/",
-      "outputPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Core/obj/",
+      "outputPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Core/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/imacslim2015/.config/NuGet/NuGet.Config"

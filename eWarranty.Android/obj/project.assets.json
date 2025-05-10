@@ -9976,11 +9976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
+      "projectUniqueName": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
       "projectName": "eWarranty.Android",
-      "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
+      "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Android/eWarranty.Android.csproj",
       "packagesPath": "/Users/imacslim2015/.nuget/packages/",
-      "outputPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty.Android/obj/",
+      "outputPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -9995,8 +9995,8 @@
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj": {
-              "projectPath": "/Users/imacslim2015/Projects/PanaSmartCare/eWarranty/eWarranty/eWarranty.csproj"
+            "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj": {
+              "projectPath": "/Users/imacslim2015/Projects/PanaSmartCareGithub/eWarranty/eWarranty/eWarranty.csproj"
             }
           }
         }
