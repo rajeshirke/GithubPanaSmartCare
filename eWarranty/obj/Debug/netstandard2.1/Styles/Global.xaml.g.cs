@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("eWarranty.Styles.Global.xaml", "Styles/Global.xaml", typeof(global::__XamlGeneratedCode__.@__Typede211fc1a8ea491a81fe59482e83a3d2))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("eWarranty.Styles.Global.xaml", "Styles/Global.xaml", typeof(global::__XamlGeneratedCode__.@__Type2ca87a8867994198997fe7f9f05f8bdf))]
 
 namespace @__XamlGeneratedCode__ {
     
@@ -16,16 +16,16 @@ namespace @__XamlGeneratedCode__ {
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Styles/Global.xaml")]
     [global::Xamarin.Forms.Xaml.XamlCompilationAttribute(global::Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
     [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
-    public partial class @__Typede211fc1a8ea491a81fe59482e83a3d2 : global::Xamarin.Forms.ResourceDictionary {
+    public partial class @__Type2ca87a8867994198997fe7f9f05f8bdf : global::Xamarin.Forms.ResourceDictionary {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        public @__Typede211fc1a8ea491a81fe59482e83a3d2() {
+        public @__Type2ca87a8867994198997fe7f9f05f8bdf() {
             this.InitializeComponent();
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(@__Typede211fc1a8ea491a81fe59482e83a3d2));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(@__Type2ca87a8867994198997fe7f9f05f8bdf));
         }
     }
 }
