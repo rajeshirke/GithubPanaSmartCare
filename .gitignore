@@ -1,6 +1,4 @@
 ﻿# Ignore APK files and build artifacts
 *.apk
 eWarranty.Android/bin/
-eWarranty.Android/obj/*.apk
-eWarranty.Android/bin/
 eWarranty.Android/obj/

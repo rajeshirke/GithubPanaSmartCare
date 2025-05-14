@@ -1,38 +1,24 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{47960A9F-A298-4A63-A7A2-9EF36D911836}|Default">
+﻿<Properties StartupConfiguration="{47960A9F-A298-4A63-A7A2-9EF36D911836}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.galaxy_nexus_r_11_0_-_api_30" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="13.2.2.0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.ItemProperties.eWarranty.Android Xamarin.HotReload.DebuggerTimeoutException.eWarranty.Android.HideInfoBar="True" AndroidDesignerPreferredTheme="MainTheme" PreferredExecutionTarget="Android.galaxy_nexus_r_11_0_-_api_30" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="eWarranty/App.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="eWarranty.Android/Properties/AndroidManifest.xml">
     <Files>
-      <File FileName="eWarranty/eWarranty.csproj" Line="4" Column="21" />
-      <File FileName="eWarranty/Controls/CustomNavigationPage.xaml" Line="4" Column="63" />
-      <File FileName="eWarranty.Core/eWarranty.Core.csproj" />
-      <File FileName="eWarranty.Core/ResponseModels/ServiceRequestDetailsNewResponse.cs" Line="92" Column="26" />
-      <File FileName="eWarranty.Core/DataServices/WebServiceUtils.cs" Line="19" Column="9" />
-      <File FileName="eWarranty/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="eWarranty/Views/Account/LoginPage.xaml" Line="44" Column="27" />
+      <File FileName="eWarranty.Android/Resources/drawable/splash_screen.xml" Line="11" Column="39" />
+      <File FileName="eWarranty.Android/MainApplication.cs" Line="1" Column="1" />
+      <File FileName="eWarranty.Android/MainActivity.cs" Line="27" Column="67" />
+      <File FileName="eWarranty.Android/SplashActivity.cs" Line="4" Column="18" />
+      <File FileName="eWarranty.Android/Properties/AndroidManifest.xml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="eWarranty" expanded="True">
-            <Node name="eWarranty" expanded="True">
-              <Node name="App.xaml" expanded="True">
-                <Node name="App.xaml.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="eWarranty.Core">
-              <Node name="Properties" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
+        <State name="__root__" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.galaxy_nexus_r_11_0_-_api_30" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.eWarranty.Android AndroidDesignerPreferredTheme="MainTheme" PreferredExecutionTarget="Android.galaxy_nexus_r_11_0_-_api_30" Xamarin.HotReload.DebuggerTimeoutException.eWarranty.Android.HideInfoBar="True" />
 </Properties>
